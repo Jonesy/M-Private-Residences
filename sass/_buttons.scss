@@ -1,0 +1,13 @@
+.btn {
+  $height: 30px;
+  height: $height;
+  padding: 0 15px;
+  display: inline-block;
+  line-height: $height;
+  @include border-radius(4px);
+  background: $midgrey;
+  @include transition(all 0.25s ease-in);
+  &:hover {
+    background: lighten($midgrey, 20%);
+  }
+}

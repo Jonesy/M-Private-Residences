@@ -1,0 +1,10 @@
+@mixin hidetext() {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Type mixins */
+@mixin narrow() {
+  font-family: "Arial Narrow", Helvetica, Arial, sans-serif;
+}

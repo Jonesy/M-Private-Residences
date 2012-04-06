@@ -1,0 +1,28 @@
+body {
+  font-size: 100%;
+}
+
+h1 {
+  font-size: 1.25em;
+  font-weight: normal;
+  @include narrow();
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 0.69em;
+  line-height: 1.82em;
+}
+
+small {
+  font-size: 0.63em;
+}
+
+address {
+  @extend p;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+}

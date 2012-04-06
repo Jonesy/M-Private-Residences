@@ -1,0 +1,61 @@
+$container: 980px;
+$cols: 12;
+$gutter: 20px;
+$column-width: 60px;
+
+[class^="span"] {
+  margin: 0 0 0 $gutter;
+  float: left;
+  position: relative;
+
+  &:last-child {
+    margin-right: $gutter;
+  }
+}
+
+@for $i from 1 through $cols {
+  .span#{$i} {
+    @if $i == 1 {
+      width: $column-width * $i;
+    } @else {
+      width: ($column-width * $i) + ($gutter * $i) - $gutter;
+    }
+  }
+}
+
+.container {
+  width: $container;
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  clear: both;
+}
+
+.row {
+  width: 100%;
+  *zoom: 1;
+  position: relative;
+
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+// Helpers
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.clear {
+  clear: both;
+}

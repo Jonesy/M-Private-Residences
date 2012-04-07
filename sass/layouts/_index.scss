@@ -9,18 +9,5 @@
 }
 
 #home-locations {
-  ul {
-    @extend .span2;
-    margin: 0 0 1em;
-    padding: 0;
-    float: left;
-    list-style: none;
-    font-size: 0.75em;
-    font-weight: bold;
-
-    li {
-      line-height: 1.7em;
-      margin: 0 0 1px;
-    }
-  }
+  
 }

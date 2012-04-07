@@ -439,7 +439,7 @@ table {
 .span1 {
   width: 60px; }
 
-.span2, #home-locations ul {
+.span2, ul.nav-list {
   width: 140px; }
 
 .span3, #logo {
@@ -528,6 +528,17 @@ address {
 a {
   text-decoration: none; }
 
+ul.nav-list {
+  margin: 0 0 1em;
+  padding: 0;
+  float: left;
+  list-style: none;
+  font-size: 0.75em;
+  font-weight: bold; }
+  ul.nav-list li {
+    line-height: 1.7em;
+    margin: 0 0 1px; }
+
 .btn {
   height: 30px;
   padding: 0 15px;
@@ -611,7 +622,7 @@ header[role="banner"] {
       font-size: 0.94em;
       text-transform: uppercase;
       font-family: "Arial Narrow", Helvetica, Arial, sans-serif; }
-      header[role="banner"] ul.main-nav li a {
+      header[role="banner"] ul.main-nav li > a {
         width: 120px;
         height: 80px;
         padding: 0 20px;
@@ -629,15 +640,29 @@ header[role="banner"] {
         -ms-transition: background-color 0.25s ease-in;
         -o-transition: background-color 0.25s ease-in;
         transition: background-color 0.25s ease-in; }
-        header[role="banner"] ul.main-nav li a:hover {
+        header[role="banner"] ul.main-nav li > a img {
+          margin: 0 0 0 10px;
+          top: -3px;
+          position: relative;
+          filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=33);
+          opacity: 0.33;
+          -webkit-transition: opacity 0.4s ease-in;
+          -moz-transition: opacity 0.4s ease-in;
+          -ms-transition: opacity 0.4s ease-in;
+          -o-transition: opacity 0.4s ease-in;
+          transition: opacity 0.4s ease-in; }
+        header[role="banner"] ul.main-nav li > a:hover {
           background-color: #fff; }
-    header[role="banner"] ul.sub-nav {
+          header[role="banner"] ul.main-nav li > a:hover img {
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+            opacity: 1; }
+    header[role="banner"] ul.secondary-nav {
       float: right;
       margin: 25px 20px 0 0; }
-      header[role="banner"] ul.sub-nav li {
+      header[role="banner"] ul.secondary-nav li {
         width: 70px;
         font-weight: bold; }
-        header[role="banner"] ul.sub-nav li a:not(.btn) {
+        header[role="banner"] ul.secondary-nav li a:not(.btn) {
           font-size: 0.69em;
           line-height: 30px; }
   header[role="banner"] .shadow {
@@ -652,6 +677,28 @@ header[role="banner"] {
     background-image: -o-linear-gradient(rgba(7, 7, 7, 0), rgba(7, 7, 7, 0.75));
     background-image: -ms-linear-gradient(rgba(7, 7, 7, 0), rgba(7, 7, 7, 0.75));
     background-image: linear-gradient(rgba(7, 7, 7, 0), rgba(7, 7, 7, 0.75)); }
+
+/* Subnav dropdown */
+#subnav-container {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: #fff; }
+  #subnav-container .container {
+    display: table;
+    margin-bottom: 10px; }
+    #subnav-container .container ul {
+      width: 160px;
+      float: left; }
+      #subnav-container .container ul:last-child {
+        width: 140px; }
+      #subnav-container .container ul li {
+        width: 85px;
+        margin: 0 0 10px; }
+        #subnav-container .container ul li a {
+          color: #333333; }
 
 div[role="main"] {
   width: 100%;
@@ -693,17 +740,6 @@ div[role="main"] {
   font-family: "Arial Narrow", Helvetica, Arial, sans-serif;
   font-size: 1.67em;
   font-weight: bold; }
-
-#home-locations ul {
-  margin: 0 0 1em;
-  padding: 0;
-  float: left;
-  list-style: none;
-  font-size: 0.75em;
-  font-weight: bold; }
-  #home-locations ul li {
-    line-height: 1.7em;
-    margin: 0 0 1px; }
 
 footer {
   width: 100%;

@@ -21,13 +21,14 @@ header[role="banner"] {
 
     &.main-nav {
       $button-width: 160px;
+
       li {
         width: $button-width;
         font-size: 0.94em;
         text-transform: uppercase;
         @include UniversLightCnd;
 
-        a {
+        > a {
           width: $button-width - ($gutter *2);
           height: $height;
           padding: 0 $gutter;
@@ -38,15 +39,27 @@ header[role="banner"] {
             rgba($darkgrey, 0.75) rgba($darkgrey, 1))
           );
           @include transition(background-color 0.25s ease-in);
+          
+          img {
+            margin: 0 0 0 10px;
+            top: -3px;
+            position: relative;
+            @include opacity(0.33);
+            @include transition(opacity 0.4s ease-in);
+          }
 
           &:hover {
             background-color: #fff;
+            img {
+              @include opacity(1);
+            }
           }
+
         }
       }
     }
 
-    &.sub-nav {
+    &.secondary-nav {
       float: right;
       margin: 25px $gutter 0 0;
 
@@ -71,6 +84,39 @@ header[role="banner"] {
     @include background-image(linear-gradient(
       rgba(#070707, 0) rgba(#070707, 0.75)
     ));
+  }
+}
+
+/* Subnav dropdown */
+#subnav-container {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: #fff;
+
+  .container {
+    display: table;
+    margin-bottom: 10px;
+
+    ul {
+      width: 160px;
+      float: left;
+
+      &:last-child {
+        width: 140px;
+      }
+
+      li {
+        width: 85px;
+        margin: 0 0 10px;
+
+        a {
+          color: $body;
+        }
+      }
+    }
   }
 }
 

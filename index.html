@@ -24,11 +24,11 @@
         </div>
         <nav>
           <ul class="main-nav">
-            <li><a href="#">Experiences</a></li>
-            <li><a href="#">Residences</a></li>
-            <li><a href="#">Memberships</a></li>
+            <li><a href="#">Experiences <img src="images/svg/caret.svg" alt=""></a></li>
+            <li><a href="#">Residences <img src="images/svg/caret.svg" alt=""></a></li>
+            <li><a href="#">Memberships <img src="images/svg/caret.svg" alt=""></a></li>
           </ul>
-          <ul class="sub-nav">
+          <ul class="secondary-nav">
             <li><a href="#">Alliances</a></li>
             <li><a href="#">Blog</a></li>
             <li><a href="#" class="btn">Register</a></li>
@@ -38,8 +38,60 @@
       <div class="shadow"></div>
     </header> <!-- / header banner -->
 
+    <div id="subnav-container" style="display:none">
+      <div id="subnav-experiences" class="container">
+        <div class="span2">
+          <h2>Canada</h2>
+          <ul class="nav-list">
+            <li><a href="#">Kelowna, BC</a></li>
+            <li><a href="#">The Shutters, Victoria, BC</a></li>
+            <li><a href="#">Bear Mountain, Victoria, BC</a></li>
+            <li><a href="#">Whistler, BC</a></li>
+          </ul>
+        </div>
+        <div class="span4">
+          <h2>USA</h2>
+          <ul class="nav-list">
+            <li><a href="#">La Quinta, CA</a></li>
+            <li><a href="#">Rancho Mirage, CA</a></li>
+            <li><a href="#">Gold C mmttanyon, AZ</a></li>
+            <li><a href="#">Paradise Valley, AZ</a></li>
+          </ul>
+          <ul class="nav-list">
+            <li><a href="#">Las Vegas, NV</a></li>
+            <li><a href="#">Oahu, HI</a></li>
+            <li><a href="#">Big Island, HI</a></li>
+            <li><a href="#">New York, NY</a></li>
+          </ul>
+        </div>
+        <div class="span2">
+          <h2>Caribbean</h2>
+          <ul class="nav-list">
+            <li><a href="#">St. Philip, Barbados West Indies</a></li>
+          </ul>
+        </div>
+        <div class="span2">
+          <h2>Mexico</h2>
+          <ul class="nav-list">
+            <li><a href="#">La Estancia, Cabo San Lucas</a></li>
+            <li><a href="#">Esperanza 2402, Cabo San Lucas</a></li>
+            <li><a href="#">Esperanza 2404, Cabo San Lucas</a></li>
+          </ul>
+        </div>
+        <div class="span2">
+          <h2>Europe</h2>
+          <ul class="nav-list">
+            <li><a href="#">London, England</a></li>
+              <li><a href="#">St. Remy, Provence, France</a></li>
+          </ul>
+        </div>
+      </div> <!-- / #subnav-experiences -->
+    </div> <!-- / #subnav-container -->
+
     <section id="experiences">
-        asdf
+      <div class="container">
+        <img src="http://placehold.it/980x520" alt="" style="margin:0 auto">
+      </div>
     </section> <!-- /#experiences -->
 
     <div id="main">
@@ -51,7 +103,7 @@
         </div>
         <div id="home-locations" class="span4">
           <h2>Locations</h2>
-          <ul>
+          <ul class="nav-list">
             <li>Kelowna, BC</li>
             <li>Whistler, BC</li>
             <li>Rancho Mirage, CA </li>
@@ -59,7 +111,7 @@
             <li>Paradise Valley, AZ </li>
             <li>Las Vegas, NV</li>
           </ul>
-          <ul>
+          <ul class="nav-list">
             <li>Big Island, HI </li>
             <li>New York, NY </li>
             <li>St. Philip, Barbados </li>
@@ -78,15 +130,15 @@
               <label for="your-email">Your Email</label>
               <input type="text" name="your-email" id="your-email" value="">
               <button class="btn">Sign Up</button>
-            </form>
-          </div>
+            </form> <!-- .sign-up-form -->
+          </div> <!-- / .box -->
         </aside>
-      </div>
-    </div>
+      </div> <!-- / .container -->
+    </div> <!-- / #main -->
 
     <footer>
       <div class="container">
-        <nav class="span4">
+        <nav id="footer-nav" class="span4">
           <ul>
             <li><a href="#">About M</a></li>
             <li><a href="#">Members</a></li>
@@ -94,7 +146,7 @@
             <li><a href="#">Contact</a></li>
           </ul>
           <p><a href="#">Sitemap</a> | <a href="#">Legal</a> | <a href="#">Privacy</a></p>
-        </nav>
+        </nav> <!-- / #footer-nav -->
         <div class="span4">
           <h1>Sign Up to Learn More!</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a nulla arcu, ac condimentum nulla. nulla tempor lorem sit amet tortor ultrices nec tempus tortor aliquam. </p>
@@ -103,7 +155,7 @@
             <input type="text" name="your-email" id="your-email" value="">
             <button class="btn">Sign Up</button>
           </form>
-        </div>
+        </div> <!-- / Sign up to learn more -->
         <div class="span4">
           <h1>M Private Residences</h1>
           <address>
@@ -112,10 +164,10 @@
             Call <strong>403.264.0993</strong>
           </address>
           <small>© 2012 M Private Residences</small>
-        </div>    
-      </div>
+        </div> <!-- / Address -->
+      </div> <!-- /.container -->
     </footer>
-  </div>
+  </div> <!-- / .wrapper -->
 <!-- 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>

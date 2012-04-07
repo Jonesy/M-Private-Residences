@@ -1,0 +1,55 @@
+footer {
+  width: 100%;
+  min-height: 400px;
+  padding: 20px 0 0;
+  background: #666666;
+  clear: both;
+  color: #cccccc;
+  @include background-image(linear-gradient(
+    rgba(#000, 0.25) 0%, rgba(#000, 0) 5%
+  ));
+
+  h1,
+  strong {
+    color: #fff;
+  }
+
+  small,
+  a {
+    color: #999999;
+    @include transition(color 0.2s ease-in);
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  nav {
+    padding-top: 10px;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        width: 140px;
+        float: left;
+        margin: 7px 0 5px;
+        text-transform: uppercase;
+        @include UniversLightCnd();
+
+        &:nth-child(2n-1) {
+          margin-right: $gutter;
+        }
+      }
+    }
+
+    p {
+      display: inline-block;
+      margin: 1.5em 0;
+      a {
+        color: #999;
+      }
+    }
+  }
+}

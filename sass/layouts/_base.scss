@@ -1,0 +1,103 @@
+header[role="banner"] {
+  $height: 80px;
+  width: 100%;
+  height: $height;
+  position: relative;
+  color: #fff;
+  background: $darkgrey;
+
+  a {
+    color: #fff;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    float: left;
+
+    li {
+      float: left;
+    }
+
+    &.main-nav {
+      $button-width: 160px;
+      li {
+        width: $button-width;
+        font-size: 0.94em;
+        text-transform: uppercase;
+        @include UniversLightCnd;
+
+        a {
+          width: $button-width - ($gutter *2);
+          height: $height;
+          padding: 0 $gutter;
+          float: left;
+          line-height: $height;
+          background-color: $darkgrey;
+          @include background-image(linear-gradient(
+            rgba($darkgrey, 0.75) rgba($darkgrey, 1))
+          );
+          @include transition(background-color 0.25s ease-in);
+
+          &:hover {
+            background-color: #fff;
+          }
+        }
+      }
+    }
+
+    &.sub-nav {
+      float: right;
+      margin: 25px $gutter 0 0;
+
+      li {
+        width: 70px;
+        font-weight: bold;
+
+        a:not(.btn) {
+          font-size: 0.69em;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+
+  .shadow {
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    bottom: 0;
+    z-index: 999;
+    @include background-image(linear-gradient(
+      rgba(#070707, 0) rgba(#070707, 0.75)
+    ));
+  }
+}
+
+div[role="main"] {
+  width: 100%;
+  display: inline-block;
+  clear: both;
+}
+
+#logo {
+  @extend .span3;
+  margin: 15px 0 0 $gutter;
+  float: left;
+
+  a {
+    width: image-width('m-logo.png');
+    height: image-height('m-logo.png');
+    display: inline-block;
+    @include hidetext();
+    background: image-url('m-logo.png');
+  }
+}
+
+#main {
+  width: 100%;
+  padding: 20px 0;
+  clear: both;
+  display: inline-block;
+  background: white;
+}

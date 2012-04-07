@@ -1,16 +1,25 @@
 body {
   font-size: 100%;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1 {
   font-size: 1.25em;
   font-weight: normal;
-  @include narrow();
+  @include UniversLightCnd;
   text-transform: uppercase;
 }
 
+h2 {
+  @include UniversLightCnd;
+  font-size: 1.25em;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin: 1em 0;
+}
+
 p {
-  font-size: 0.69em;
+  font-size: 0.75em;
   line-height: 1.82em;
 }
 

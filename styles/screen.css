@@ -1,4 +1,5 @@
-/* Type mixins */
+/* System */
+/* Utilities */
 /* normalize.css 2012-03-11T12:53 UTC - http://github.com/necolas/normalize.css */
 /* =============================================================================
    HTML5 display definitions
@@ -421,6 +422,13 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+/* Type mixins */
+/* Components */
+.wrapper {
+  width: 100%;
+  display: table;
+  position: relative; }
+
 [class^="span"] {
   margin: 0 0 0 20px;
   float: left;
@@ -431,7 +439,7 @@ table {
 .span1 {
   width: 60px; }
 
-.span2 {
+.span2, #home-locations ul {
   width: 140px; }
 
 .span3, #logo {
@@ -491,7 +499,8 @@ table {
   clear: both; }
 
 body {
-  font-size: 100%; }
+  font-size: 100%;
+  -webkit-font-smoothing: antialiased; }
 
 h1 {
   font-size: 1.25em;
@@ -499,8 +508,15 @@ h1 {
   font-family: "Arial Narrow", Helvetica, Arial, sans-serif;
   text-transform: uppercase; }
 
+h2 {
+  font-family: "Arial Narrow", Helvetica, Arial, sans-serif;
+  font-size: 1.25em;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin: 1em 0; }
+
 p, address {
-  font-size: 0.69em;
+  font-size: 0.75em;
   line-height: 1.82em; }
 
 small {
@@ -516,6 +532,8 @@ a {
   height: 30px;
   padding: 0 15px;
   display: inline-block;
+  font-size: 0.81em;
+  font-weight: bold;
   line-height: 30px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -523,19 +541,57 @@ a {
   -o-border-radius: 4px;
   border-radius: 4px;
   background: #484848;
+  color: #fff;
   -webkit-transition: all 0.25s ease-in;
   -moz-transition: all 0.25s ease-in;
   -ms-transition: all 0.25s ease-in;
   -o-transition: all 0.25s ease-in;
-  transition: all 0.25s ease-in; }
+  transition: all 0.25s ease-in;
+  border: none;
+  /* Default button */
+  /* Silver button */ }
   .btn:hover {
     background: #7b7b7b; }
+  .btn.silver-btn {
+    background: #eaeaea;
+    color: #333; }
+    .btn.silver-btn:hover {
+      background: #b7b7b7; }
 
-.wrapper {
+label {
   width: 100%;
-  display: table;
-  position: relative; }
+  display: inline-block;
+  line-height: 2em;
+  clear: both;
+  font-size: 0.81em;
+  text-transform: uppercase;
+  font-family: "Arial Narrow", Helvetica, Arial, sans-serif; }
+  label:after {
+    display: table;
+    content: ""; }
 
+input[type="text"] {
+  height: 28px;
+  padding: 0 5px;
+  font-size: 0.75em;
+  border: 1px solid #ccc; }
+  input[type="text"]:focus {
+    border: 1px solid #666;
+    outline: 0; }
+
+.sign-up-form {
+  position: relative; }
+  .sign-up-form input[type="text"] {
+    width: 170px;
+    padding-right: -15px;
+    display: inline-block; }
+    footer .sign-up-form input[type="text"] {
+      border-color: white; }
+  .sign-up-form button {
+    position: relative;
+    margin-left: -10px; }
+
+/* Page layouts */
 header[role="banner"] {
   width: 100%;
   height: 80px;
@@ -580,9 +636,9 @@ header[role="banner"] {
       margin: 25px 20px 0 0; }
       header[role="banner"] ul.sub-nav li {
         width: 70px;
-        font-size: 0.69em;
         font-weight: bold; }
-        header[role="banner"] ul.sub-nav li a {
+        header[role="banner"] ul.sub-nav li a:not(.btn) {
+          font-size: 0.69em;
           line-height: 30px; }
   header[role="banner"] .shadow {
     width: 100%;
@@ -614,16 +670,45 @@ div[role="main"] {
     overflow: hidden;
     background: url('../images/m-logo.png?1333696298'); }
 
-#hero {
+#main {
+  width: 100%;
+  padding: 20px 0;
+  clear: both;
+  display: inline-block;
+  background: white; }
+
+.box {
+  padding: 20px;
+  color: #666;
+  background: #eaeaea; }
+  .box h2 {
+    margin-top: 0; }
+
+#experiences {
   width: 100%;
   height: 520px;
   background: #202020; }
+
+#index aside strong {
+  font-family: "Arial Narrow", Helvetica, Arial, sans-serif;
+  font-size: 1.67em;
+  font-weight: bold; }
+
+#home-locations ul {
+  margin: 0 0 1em;
+  padding: 0;
+  float: left;
+  list-style: none;
+  font-size: 0.75em;
+  font-weight: bold; }
+  #home-locations ul li {
+    line-height: 1.7em;
+    margin: 0 0 1px; }
 
 footer {
   width: 100%;
   min-height: 400px;
   padding: 20px 0 0;
-  display: inline-block;
   background: #666666;
   clear: both;
   color: #cccccc;
@@ -638,9 +723,15 @@ footer {
     color: #fff; }
   footer small,
   footer a {
-    color: #999999; }
-  footer a:hover {
-    color: #fff; }
+    color: #999999;
+    -webkit-transition: color 0.2s ease-in;
+    -moz-transition: color 0.2s ease-in;
+    -ms-transition: color 0.2s ease-in;
+    -o-transition: color 0.2s ease-in;
+    transition: color 0.2s ease-in; }
+    footer small:hover,
+    footer a:hover {
+      color: #fff; }
   footer nav {
     padding-top: 10px; }
     footer nav ul {
@@ -650,7 +741,7 @@ footer {
       footer nav ul li {
         width: 140px;
         float: left;
-        margin: 10px 0;
+        margin: 7px 0 5px;
         text-transform: uppercase;
         font-family: "Arial Narrow", Helvetica, Arial, sans-serif; }
         footer nav ul li:nth-child(2n-1) {

@@ -1,0 +1,45 @@
+label {
+  width: 100%;
+  display: inline-block;
+  line-height: 2em;
+  clear: both;
+  font-size: 0.81em;
+  text-transform: uppercase;
+  @include UniversLightCnd;
+
+  &:after {
+    display: table;
+    content: "";
+  }
+}
+
+input[type="text"] {
+  height: 28px;
+  padding: 0 5px;
+  font-size: 0.75em;
+  border: 1px solid #ccc;
+
+  &:focus {
+    border: 1px solid #666;
+    outline: 0;
+  }
+}
+
+.sign-up-form {
+  position: relative;
+
+  input[type="text"]{
+    width: 170px;
+    padding-right: -15px;
+    display: inline-block;
+
+    footer & {
+      border-color: white;
+    }
+  }
+
+  button {
+    position: relative;
+    margin-left: -10px;
+  }
+}

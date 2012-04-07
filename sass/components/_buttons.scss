@@ -3,11 +3,26 @@
   height: $height;
   padding: 0 15px;
   display: inline-block;
+  font-size: 0.81em;
+  font-weight: bold;
   line-height: $height;
   @include border-radius(4px);
   background: $midgrey;
+  color: #fff;
   @include transition(all 0.25s ease-in);
+  border: none;
+
+  /* Default button */
   &:hover {
     background: lighten($midgrey, 20%);
+  }
+  /* Silver button */
+  &.silver-btn {
+    background: $silver;
+    color: #333;
+
+    &:hover {
+      background: darken($silver, 20%);
+    }
   }
 }

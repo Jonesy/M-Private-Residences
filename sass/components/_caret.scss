@@ -1,0 +1,26 @@
+img.caret {
+  position: relative;
+  &.up {
+    @include rotate(-180deg);
+    top: -2px;
+  }
+
+  &.right {
+    @include rotate(-90deg);
+  }
+
+  &.down {
+    @include rotate(-180deg);
+  }
+
+  &.left {
+    @include rotate(90deg);
+  }
+}
+
+/* For extending only */
+.nav-caret {
+  @include opacity(0.33);
+  @include transition(all 0.3s ease-in);
+  @include backface-visibility(hidden);
+}

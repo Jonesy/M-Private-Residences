@@ -4,7 +4,21 @@
   overflow: hidden;
 }
 
-/* Type mixins */
-@mixin UniversLightCnd() {
-  font-family: "Arial Narrow", Helvetica, Arial, sans-serif;
+/* 
+  Type mixins
+  =========================== */
+
+/*
+  Weights:
+  Light 300
+  Bold 700
+*/
+@mixin ProximaCondensed($weight: 300) {
+  font-family: "proxima-nova-condensed", "Arial Narrow", Helvetica, Arial, sans-serif;
+  font-weight: $weight;
+}
+
+@mixin Proxima($weight: 400) {
+  font-family: "proxima-nova", Helvetica, Arial, sans-serif;
+  font-weight: $weight;
 }

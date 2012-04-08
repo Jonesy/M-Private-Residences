@@ -26,13 +26,14 @@ header[role="banner"] {
         width: $button-width;
         font-size: 0.94em;
         text-transform: uppercase;
-        @include UniversLightCnd;
+        @include ProximaCondensed;
 
         > a {
           width: $button-width - ($gutter *2);
           height: $height;
           padding: 0 $gutter;
           float: left;
+          position: relative;
           line-height: $height;
           background-color: $darkgrey;
           @include background-image(linear-gradient(
@@ -42,7 +43,8 @@ header[role="banner"] {
           
           img {
             margin: 0 0 0 10px;
-            top: -3px;
+            display: inline-block;
+            vertical-align: middle;
             position: relative;
             @include opacity(0.33);
             @include transition(opacity 0.4s ease-in);
@@ -67,23 +69,16 @@ header[role="banner"] {
         width: 70px;
         font-weight: bold;
 
+        &:last-child {
+          width: auto;
+        }
+
         a:not(.btn) {
           font-size: 0.69em;
           line-height: 30px;
         }
       }
     }
-  }
-
-  .shadow {
-    width: 100%;
-    height: 20px;
-    position: absolute;
-    bottom: 0;
-    z-index: 999;
-    @include background-image(linear-gradient(
-      rgba(#070707, 0) rgba(#070707, 0.75)
-    ));
   }
 }
 
@@ -147,3 +142,14 @@ div[role="main"] {
   display: inline-block;
   background: white;
 }
+
+.shadow {
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    bottom: 0;
+    z-index: 999;
+    @include background-image(linear-gradient(
+      rgba(#070707, 0) rgba(#070707, 0.75)
+    ));
+  }

@@ -422,7 +422,14 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* Type mixins */
+/* 
+  Type mixins
+  =========================== */
+/*
+  Weights:
+  Light 300
+  Bold 700
+*/
 /* Components */
 .wrapper {
   width: 100%;
@@ -445,7 +452,7 @@ table {
 .span3, #logo {
   width: 220px; }
 
-.span4 {
+.span4, #experiences nav ul li {
   width: 300px; }
 
 .span5 {
@@ -472,11 +479,11 @@ table {
 .span12 {
   width: 940px; }
 
-.container {
+.container, #experiences nav ul {
   width: 980px;
   margin: 0 auto;
   position: relative;
-  display: block;
+  display: table;
   clear: both; }
 
 .row {
@@ -500,20 +507,27 @@ table {
 
 body {
   font-size: 100%;
+  font-family: "proxima-nova", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased; }
 
 h1 {
-  font-size: 1.25em;
-  font-weight: normal;
-  font-family: "Arial Narrow", Helvetica, Arial, sans-serif;
+  font-size: 1.88em;
+  font-family: "proxima-nova-condensed", "Arial Narrow", Helvetica, Arial, sans-serif;
+  font-weight: 300;
   text-transform: uppercase; }
 
 h2 {
-  font-family: "Arial Narrow", Helvetica, Arial, sans-serif;
+  font-family: "proxima-nova-condensed", "Arial Narrow", Helvetica, Arial, sans-serif;
+  font-weight: 300;
   font-size: 1.25em;
-  font-weight: normal;
   text-transform: uppercase;
   margin: 1em 0; }
+
+h3 {
+  font-family: "proxima-nova", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 0.94em; }
 
 p, address {
   font-size: 0.75em;
@@ -576,7 +590,8 @@ label {
   clear: both;
   font-size: 0.81em;
   text-transform: uppercase;
-  font-family: "Arial Narrow", Helvetica, Arial, sans-serif; }
+  font-family: "proxima-nova-condensed", "Arial Narrow", Helvetica, Arial, sans-serif;
+  font-weight: 300; }
   label:after {
     display: table;
     content: ""; }
@@ -602,6 +617,46 @@ input[type="text"] {
     position: relative;
     margin-left: -10px; }
 
+img.caret {
+  position: relative; }
+  img.caret.up {
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+    top: -2px; }
+  img.caret.right, #experiences nav ul li a:hover img.caret {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg); }
+  img.caret.down {
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    transform: rotate(-180deg); }
+  img.caret.left {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg); }
+
+/* For extending only */
+.nav-caret, #experiences nav ul li a img.caret {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=33);
+  opacity: 0.33;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; }
+
 /* Page layouts */
 header[role="banner"] {
   width: 100%;
@@ -621,12 +676,14 @@ header[role="banner"] {
       width: 160px;
       font-size: 0.94em;
       text-transform: uppercase;
-      font-family: "Arial Narrow", Helvetica, Arial, sans-serif; }
+      font-family: "proxima-nova-condensed", "Arial Narrow", Helvetica, Arial, sans-serif;
+      font-weight: 300; }
       header[role="banner"] ul.main-nav li > a {
         width: 120px;
         height: 80px;
         padding: 0 20px;
         float: left;
+        position: relative;
         line-height: 80px;
         background-color: #202020;
         background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(32, 32, 32, 0.75)), color-stop(100%, #202020));
@@ -642,7 +699,8 @@ header[role="banner"] {
         transition: background-color 0.25s ease-in; }
         header[role="banner"] ul.main-nav li > a img {
           margin: 0 0 0 10px;
-          top: -3px;
+          display: inline-block;
+          vertical-align: middle;
           position: relative;
           filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=33);
           opacity: 0.33;
@@ -662,21 +720,11 @@ header[role="banner"] {
       header[role="banner"] ul.secondary-nav li {
         width: 70px;
         font-weight: bold; }
+        header[role="banner"] ul.secondary-nav li:last-child {
+          width: auto; }
         header[role="banner"] ul.secondary-nav li a:not(.btn) {
           font-size: 0.69em;
           line-height: 30px; }
-  header[role="banner"] .shadow {
-    width: 100%;
-    height: 20px;
-    position: absolute;
-    bottom: 0;
-    z-index: 999;
-    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(7, 7, 7, 0)), color-stop(100%, rgba(7, 7, 7, 0.75)));
-    background-image: -webkit-linear-gradient(rgba(7, 7, 7, 0), rgba(7, 7, 7, 0.75));
-    background-image: -moz-linear-gradient(rgba(7, 7, 7, 0), rgba(7, 7, 7, 0.75));
-    background-image: -o-linear-gradient(rgba(7, 7, 7, 0), rgba(7, 7, 7, 0.75));
-    background-image: -ms-linear-gradient(rgba(7, 7, 7, 0), rgba(7, 7, 7, 0.75));
-    background-image: linear-gradient(rgba(7, 7, 7, 0), rgba(7, 7, 7, 0.75)); }
 
 /* Subnav dropdown */
 #subnav-container {
@@ -686,18 +734,18 @@ header[role="banner"] {
   right: 0;
   z-index: 9999;
   background: #fff; }
-  #subnav-container .container {
+  #subnav-container .container, #subnav-container #experiences nav ul, #experiences nav #subnav-container ul {
     display: table;
     margin-bottom: 10px; }
-    #subnav-container .container ul {
+    #subnav-container .container ul, #subnav-container #experiences nav ul ul, #experiences nav #subnav-container ul ul {
       width: 160px;
       float: left; }
-      #subnav-container .container ul:last-child {
+      #subnav-container .container ul:last-child, #subnav-container #experiences nav ul ul:last-child, #experiences nav #subnav-container ul ul:last-child {
         width: 140px; }
-      #subnav-container .container ul li {
+      #subnav-container .container ul li, #subnav-container #experiences nav ul ul li, #experiences nav #subnav-container ul ul li {
         width: 85px;
         margin: 0 0 10px; }
-        #subnav-container .container ul li a {
+        #subnav-container .container ul li a, #subnav-container #experiences nav ul ul li a, #experiences nav #subnav-container ul ul li a {
           color: #333333; }
 
 div[role="main"] {
@@ -724,6 +772,19 @@ div[role="main"] {
   display: inline-block;
   background: white; }
 
+.shadow {
+  width: 100%;
+  height: 20px;
+  position: absolute;
+  bottom: 0;
+  z-index: 999;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(7, 7, 7, 0)), color-stop(100%, rgba(7, 7, 7, 0.75)));
+  background-image: -webkit-linear-gradient(rgba(7, 7, 7, 0), rgba(7, 7, 7, 0.75));
+  background-image: -moz-linear-gradient(rgba(7, 7, 7, 0), rgba(7, 7, 7, 0.75));
+  background-image: -o-linear-gradient(rgba(7, 7, 7, 0), rgba(7, 7, 7, 0.75));
+  background-image: -ms-linear-gradient(rgba(7, 7, 7, 0), rgba(7, 7, 7, 0.75));
+  background-image: linear-gradient(rgba(7, 7, 7, 0), rgba(7, 7, 7, 0.75)); }
+
 .box {
   padding: 20px;
   color: #666;
@@ -734,10 +795,67 @@ div[role="main"] {
 #experiences {
   width: 100%;
   height: 520px;
+  position: relative;
   background: #202020; }
+  #experiences img {
+    display: block; }
+  #experiences nav {
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #202020; }
+    #experiences nav ul {
+      padding: 0; }
+      #experiences nav ul li {
+        margin-left: 20px;
+        float: left; }
+        #experiences nav ul li a {
+          width: 260px;
+          height: 80px;
+          padding: 0 20px;
+          display: inline-block;
+          color: #fff;
+          background-color: rgba(255, 255, 255, 0);
+          background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(32, 32, 32, 0.75)), color-stop(100%, #202020));
+          background-image: -webkit-linear-gradient(rgba(32, 32, 32, 0.75), #202020);
+          background-image: -moz-linear-gradient(rgba(32, 32, 32, 0.75), #202020);
+          background-image: -o-linear-gradient(rgba(32, 32, 32, 0.75), #202020);
+          background-image: -ms-linear-gradient(rgba(32, 32, 32, 0.75), #202020);
+          background-image: linear-gradient(rgba(32, 32, 32, 0.75), #202020);
+          -webkit-transition: background-color 0.25s ease-in;
+          -moz-transition: background-color 0.25s ease-in;
+          -ms-transition: background-color 0.25s ease-in;
+          -o-transition: background-color 0.25s ease-in;
+          transition: background-color 0.25s ease-in; }
+          #experiences nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.5); }
+            #experiences nav ul li a:hover img.caret {
+              filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+              opacity: 1; }
+            #experiences nav ul li a:hover h3 {
+              color: #fff; }
+          #experiences nav ul li a img.caret {
+            margin-left: 10px;
+            display: inline-block;
+            vertical-align: middle; }
+          #experiences nav ul li a h2 {
+            margin: 0.75em 0 0.25em;
+            position: relative; }
+          #experiences nav ul li a h3 {
+            margin: 0;
+            color: #999;
+            -webkit-transition: color 0.25s ease-in;
+            -moz-transition: color 0.25s ease-in;
+            -ms-transition: color 0.25s ease-in;
+            -o-transition: color 0.25s ease-in;
+            transition: color 0.25s ease-in; }
 
 #index aside strong {
-  font-family: "Arial Narrow", Helvetica, Arial, sans-serif;
+  font-family: "proxima-nova-condensed", "Arial Narrow", Helvetica, Arial, sans-serif;
+  font-weight: 300;
   font-size: 1.67em;
   font-weight: bold; }
 
@@ -779,7 +897,8 @@ footer {
         float: left;
         margin: 7px 0 5px;
         text-transform: uppercase;
-        font-family: "Arial Narrow", Helvetica, Arial, sans-serif; }
+        font-family: "proxima-nova-condensed", "Arial Narrow", Helvetica, Arial, sans-serif;
+        font-weight: 300; }
         footer nav ul li:nth-child(2n-1) {
           margin-right: 20px; }
     footer nav p, footer nav address {

@@ -5,7 +5,7 @@ label {
   clear: both;
   font-size: 0.81em;
   text-transform: uppercase;
-  @include UniversLightCnd;
+  @include ProximaCondensed;
 
   &:after {
     display: table;

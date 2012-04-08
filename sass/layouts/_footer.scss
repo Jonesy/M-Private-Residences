@@ -36,7 +36,7 @@ footer {
         float: left;
         margin: 7px 0 5px;
         text-transform: uppercase;
-        @include UniversLightCnd();
+        @include ProximaCondensed();
 
         &:nth-child(2n-1) {
           margin-right: $gutter;

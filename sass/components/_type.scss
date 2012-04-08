@@ -1,21 +1,25 @@
 body {
   font-size: 100%;
+  @include Proxima;
   -webkit-font-smoothing: antialiased;
 }
 
 h1 {
-  font-size: 1.25em;
-  font-weight: normal;
-  @include UniversLightCnd;
+  font-size: 1.88em;
+  @include ProximaCondensed;
   text-transform: uppercase;
 }
 
 h2 {
-  @include UniversLightCnd;
+  @include ProximaCondensed;
   font-size: 1.25em;
-  font-weight: normal;
   text-transform: uppercase;
   margin: 1em 0;
+}
+
+h3 {
+  @include Proxima($weight: 300);
+  font-size: 0.94em;
 }
 
 p {

@@ -1,9 +1,8 @@
 #index {
   aside {
     strong {
-      @include ProximaCondensed;
+      @include ProximaCondensed($weight: 700);
       font-size: 1.67em;
-      font-weight: bold;
     }
   }
 }

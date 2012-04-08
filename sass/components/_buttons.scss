@@ -17,12 +17,67 @@
     background: lighten($midgrey, 20%);
   }
   /* Silver button */
-  &.silver-btn {
+  &.btn-silver {
     background: $silver;
     color: #333;
 
     &:hover {
       background: darken($silver, 20%);
+    }
+  }
+}
+
+.btn-zoom {
+  $dimension: 40px;
+  width: $dimension;
+  height: $dimension;
+  overflow: hidden;
+  display: inline-block;
+  line-height: 50px;
+  text-align: center;
+  background: $headlines;
+  @include transition(background-color 0.25s ease-in);
+
+  img {
+    width: 27px;
+    height: 27px;
+    line-height: $dimension;
+    margin: 6px auto;
+    vertical-align: middle;
+    display: block;
+    position: relative;
+  }
+
+  &:hover {
+    @extend .btn:hover;
+  }
+}
+
+/**
+  NOTE: Uses css triangle for the right corner, CSS transitios don't work as of now.
+*/
+a.btn-arrow {
+  display: inline-block;
+  position: relative;
+  background: $body;
+
+  h2 {
+    margin: 0 10px;
+    line-height: 2.70em;
+    color: #fff;
+
+    &:after {
+      @include arrow;
+    }
+  }
+
+  &:hover {
+    background: $silver;
+    h2 {
+      color: $body;
+        &:after {
+          border-left-color: $silver;
+        }
     }
   }
 }

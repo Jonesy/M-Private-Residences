@@ -1,0 +1,90 @@
+#main {
+
+  article {
+    ul { 
+      margin: 0 0 0 1em;
+      padding: 0;
+
+      li {
+        font-size: 0.75em;
+        line-height: 1.25em;
+        margin: 2px 0;
+      }
+    }
+
+    .features {
+      width: 100%;
+      clear: both;
+      margin: 0 0 30px;
+      display: inline-block;
+
+      .features-list {
+        @extend .span4;
+        float: left;
+      }
+
+      aside {
+        @extend .span4;
+        float: right;
+        position: relative;
+
+        a.btn-zoom {
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
+.mbassadors {
+  width: 100%;
+  float: left;
+  margin: 0 0 30px;
+  ul {
+    @include ul-reset($no-bullet: true);
+
+    li {
+      margin: 0 0 30px;
+    }
+  }
+
+  blockquote {
+    @extend .span3;
+    float: right;
+
+    p {
+      margin: 0;
+      line-height: 1.5em;
+    }
+  }
+}
+
+.featured-quote {
+  width: 100%;
+  float: left;
+  margin-top: 25px;
+  position: relative;
+
+  blockquote {
+    p {
+      @include ProximaCondensed;
+      font-size: 1.25em;
+      line-height: 1.25em;
+      margin-bottom: 0.25em;
+      color: #999;
+    }
+    /* Insert the fancy quote before */
+    &:before {
+      content:"\201C";
+      font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+      font-size: 160px;
+      line-height: 1em;
+      position: absolute;
+      top: -55px;
+      left: 0;
+      color: #f0f0f0;
+    }
+  }
+}

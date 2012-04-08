@@ -4,6 +4,24 @@
   overflow: hidden;
 }
 
+@mixin ul-reset($no-bullet: false) {
+  margin: 0;
+  padding: 0;
+  @if $no-bullet {
+    list-style: none;
+  }
+}
+/* TODO: Make this extendible for other directions */
+@mixin arrow($dir: right, $color: $body) {
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: -27px;
+  content: "";
+  border-top: 27px solid transparent;
+  border-bottom: 27px solid transparent;
+  border-left: 27px solid $color;
+}
 /* 
   Type mixins
   =========================== */

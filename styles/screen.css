@@ -422,6 +422,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+/* TODO: Make this extendible for other directions */
 /* 
   Type mixins
   =========================== */
@@ -449,10 +450,10 @@ table {
 .span2, ul.nav-list {
   width: 140px; }
 
-.span3, #logo {
+.span3, #logo, .mbassadors blockquote {
   width: 220px; }
 
-.span4, #experiences nav ul li {
+.span4, #experiences nav ul li, #main article .features .features-list, #main article .features aside {
   width: 300px; }
 
 .span5 {
@@ -509,13 +510,17 @@ body {
   font-size: 100%;
   font-family: "proxima-nova", Helvetica, Arial, sans-serif;
   font-weight: 400;
+  color: #666666;
   -webkit-font-smoothing: antialiased; }
+
+h1, h2, h3 {
+  color: #333333; }
 
 h1 {
   font-size: 1.88em;
+  margin: 0.35em 0;
   font-family: "proxima-nova-condensed", "Arial Narrow", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  text-transform: uppercase; }
+  font-weight: 300; }
 
 h2 {
   font-family: "proxima-nova-condensed", "Arial Narrow", Helvetica, Arial, sans-serif;
@@ -523,6 +528,9 @@ h2 {
   font-size: 1.25em;
   text-transform: uppercase;
   margin: 1em 0; }
+  h2 em {
+    font-style: normal;
+    font-weight: 700; }
 
 h3 {
   font-family: "proxima-nova", Helvetica, Arial, sans-serif;
@@ -541,6 +549,13 @@ address {
 
 a {
   text-decoration: none; }
+
+blockquote {
+  margin: 0; }
+  blockquote cite {
+    margin: 0;
+    font-size: 0.67em;
+    color: #000; }
 
 ul.nav-list {
   margin: 0 0 1em;
@@ -575,13 +590,62 @@ ul.nav-list {
   border: none;
   /* Default button */
   /* Silver button */ }
-  .btn:hover {
+  .btn:hover, .btn-zoom:hover {
     background: #7b7b7b; }
-  .btn.silver-btn {
+  .btn.btn-silver {
     background: #eaeaea;
     color: #333; }
-    .btn.silver-btn:hover {
+    .btn.btn-silver:hover, .btn-silver.btn-zoom:hover {
       background: #b7b7b7; }
+
+.btn-zoom {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  display: inline-block;
+  line-height: 50px;
+  text-align: center;
+  background: #333333;
+  -webkit-transition: background-color 0.25s ease-in;
+  -moz-transition: background-color 0.25s ease-in;
+  -ms-transition: background-color 0.25s ease-in;
+  -o-transition: background-color 0.25s ease-in;
+  transition: background-color 0.25s ease-in; }
+  .btn-zoom img {
+    width: 27px;
+    height: 27px;
+    line-height: 40px;
+    margin: 6px auto;
+    vertical-align: middle;
+    display: block;
+    position: relative; }
+
+/**
+  NOTE: Uses css triangle for the right corner, CSS transitios don't work as of now.
+*/
+a.btn-arrow {
+  display: inline-block;
+  position: relative;
+  background: #666666; }
+  a.btn-arrow h2 {
+    margin: 0 10px;
+    line-height: 2.70em;
+    color: #fff; }
+    a.btn-arrow h2:after {
+      width: 0;
+      height: 0;
+      position: absolute;
+      right: -27px;
+      content: "";
+      border-top: 27px solid transparent;
+      border-bottom: 27px solid transparent;
+      border-left: 27px solid #666666; }
+  a.btn-arrow:hover {
+    background: #eaeaea; }
+    a.btn-arrow:hover h2 {
+      color: #666666; }
+      a.btn-arrow:hover h2:after {
+        border-left-color: #eaeaea; }
 
 label {
   width: 100%;
@@ -746,7 +810,7 @@ header[role="banner"] {
         width: 85px;
         margin: 0 0 10px; }
         #subnav-container .container ul li a, #subnav-container #experiences nav ul ul li a, #experiences nav #subnav-container ul ul li a {
-          color: #333333; }
+          color: #666666; }
 
 div[role="main"] {
   width: 100%;
@@ -784,6 +848,55 @@ div[role="main"] {
   background-image: -o-linear-gradient(rgba(7, 7, 7, 0), rgba(7, 7, 7, 0.75));
   background-image: -ms-linear-gradient(rgba(7, 7, 7, 0), rgba(7, 7, 7, 0.75));
   background-image: linear-gradient(rgba(7, 7, 7, 0), rgba(7, 7, 7, 0.75)); }
+
+footer {
+  width: 100%;
+  min-height: 400px;
+  padding: 20px 0 0;
+  background: #666666;
+  clear: both;
+  color: #cccccc;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.25)), color-stop(5%, rgba(0, 0, 0, 0)));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 5%);
+  background-image: -moz-linear-gradient(rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 5%);
+  background-image: -o-linear-gradient(rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 5%);
+  background-image: -ms-linear-gradient(rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 5%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 5%); }
+  footer h1,
+  footer h2,
+  footer strong {
+    color: #fff; }
+  footer small,
+  footer a {
+    color: #999999;
+    -webkit-transition: color 0.2s ease-in;
+    -moz-transition: color 0.2s ease-in;
+    -ms-transition: color 0.2s ease-in;
+    -o-transition: color 0.2s ease-in;
+    transition: color 0.2s ease-in; }
+    footer small:hover,
+    footer a:hover {
+      color: #fff; }
+  footer nav {
+    padding-top: 10px; }
+    footer nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none; }
+      footer nav ul li {
+        width: 140px;
+        float: left;
+        margin: 7px 0 5px;
+        text-transform: uppercase;
+        font-family: "proxima-nova-condensed", "Arial Narrow", Helvetica, Arial, sans-serif;
+        font-weight: 300; }
+        footer nav ul li:nth-child(2n-1) {
+          margin-right: 20px; }
+    footer nav p, footer nav address {
+      display: inline-block;
+      margin: 1.5em 0; }
+      footer nav p a, footer nav address a {
+        color: #999; }
 
 .box {
   padding: 20px;
@@ -855,54 +968,67 @@ div[role="main"] {
 
 #index aside strong {
   font-family: "proxima-nova-condensed", "Arial Narrow", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  font-size: 1.67em;
-  font-weight: bold; }
+  font-weight: 700;
+  font-size: 1.67em; }
 
-footer {
+#main article ul {
+  margin: 0 0 0 1em;
+  padding: 0; }
+  #main article ul li {
+    font-size: 0.75em;
+    line-height: 1.25em;
+    margin: 2px 0; }
+#main article .features {
   width: 100%;
-  min-height: 400px;
-  padding: 20px 0 0;
-  background: #666666;
   clear: both;
-  color: #cccccc;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.25)), color-stop(5%, rgba(0, 0, 0, 0)));
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 5%);
-  background-image: -moz-linear-gradient(rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 5%);
-  background-image: -o-linear-gradient(rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 5%);
-  background-image: -ms-linear-gradient(rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 5%);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 5%); }
-  footer h1,
-  footer strong {
-    color: #fff; }
-  footer small,
-  footer a {
-    color: #999999;
-    -webkit-transition: color 0.2s ease-in;
-    -moz-transition: color 0.2s ease-in;
-    -ms-transition: color 0.2s ease-in;
-    -o-transition: color 0.2s ease-in;
-    transition: color 0.2s ease-in; }
-    footer small:hover,
-    footer a:hover {
-      color: #fff; }
-  footer nav {
-    padding-top: 10px; }
-    footer nav ul {
+  margin: 0 0 30px;
+  display: inline-block; }
+  #main article .features .features-list {
+    float: left; }
+  #main article .features aside {
+    float: right;
+    position: relative; }
+    #main article .features aside a.btn-zoom {
+      position: absolute;
+      top: 0;
+      right: 0; }
+
+.mbassadors {
+  width: 100%;
+  float: left;
+  margin: 0 0 30px; }
+  .mbassadors ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    .mbassadors ul li {
+      margin: 0 0 30px; }
+  .mbassadors blockquote {
+    float: right; }
+    .mbassadors blockquote p, .mbassadors blockquote address {
       margin: 0;
-      padding: 0;
-      list-style: none; }
-      footer nav ul li {
-        width: 140px;
-        float: left;
-        margin: 7px 0 5px;
-        text-transform: uppercase;
-        font-family: "proxima-nova-condensed", "Arial Narrow", Helvetica, Arial, sans-serif;
-        font-weight: 300; }
-        footer nav ul li:nth-child(2n-1) {
-          margin-right: 20px; }
-    footer nav p, footer nav address {
-      display: inline-block;
-      margin: 1.5em 0; }
-      footer nav p a, footer nav address a {
-        color: #999; }
+      line-height: 1.5em; }
+
+.featured-quote {
+  width: 100%;
+  float: left;
+  margin-top: 25px;
+  position: relative; }
+  .featured-quote blockquote {
+    /* Insert the fancy quote before */ }
+    .featured-quote blockquote p, .featured-quote blockquote address {
+      font-family: "proxima-nova-condensed", "Arial Narrow", Helvetica, Arial, sans-serif;
+      font-weight: 300;
+      font-size: 1.25em;
+      line-height: 1.25em;
+      margin-bottom: 0.25em;
+      color: #999; }
+    .featured-quote blockquote:before {
+      content: "\201C";
+      font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+      font-size: 160px;
+      line-height: 1em;
+      position: absolute;
+      top: -55px;
+      left: 0;
+      color: #f0f0f0; }

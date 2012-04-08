@@ -1,13 +1,18 @@
 body {
   font-size: 100%;
   @include Proxima;
+  color: $body;
   -webkit-font-smoothing: antialiased;
+}
+
+h1,h2,h3 {
+  color: $headlines;
 }
 
 h1 {
   font-size: 1.88em;
+  margin: 0.35em 0;
   @include ProximaCondensed;
-  text-transform: uppercase;
 }
 
 h2 {
@@ -15,6 +20,11 @@ h2 {
   font-size: 1.25em;
   text-transform: uppercase;
   margin: 1em 0;
+
+  em {
+    font-style: normal;
+    font-weight: 700;
+  }
 }
 
 h3 {
@@ -38,6 +48,16 @@ address {
 
 a {
   text-decoration: none;
+}
+
+blockquote {
+  margin: 0;
+
+  cite {
+    margin: 0;
+    font-size: 0.67em;
+    color: #000;
+  }
 }
 
 ul.nav-list {

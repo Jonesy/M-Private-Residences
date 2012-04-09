@@ -5,6 +5,11 @@ footer {
   background: #666666;
   clear: both;
   color: #cccccc;
+  background: {
+    image: image-url("shim/bg-footer.gif");
+    repeat: repeat-x;
+    position: left top;
+  }
   @include background-image(linear-gradient(
     rgba(#000, 0.25) 0%, rgba(#000, 0) 5%
   ));

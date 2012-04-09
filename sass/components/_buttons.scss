@@ -51,6 +51,18 @@
   &:hover {
     @extend .btn:hover;
   }
+
+  /* Non-SVG Shim */
+  .no-svg & {
+    background: {
+      image: image-url("shim/zoom.png");
+      position: center center;
+      repeat: no-repeat;
+    }
+    img {
+      display: none;
+    }
+  }
 }
 
 /**

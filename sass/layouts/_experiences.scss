@@ -4,6 +4,21 @@
   position: relative;
   background: $darkgrey;
 
+  /* CSS2 Shims */
+  .no-cssgradients & {
+    .shadow {
+      display: none;
+    }
+
+    nav {
+      background: image-url("shim/bg-header.gif") repeat-x 0 0;
+
+      ul li a:hover {
+        background: image-url("shim/bg-header-nav.gif") repeat-x 0 0;
+      }
+    }
+  }
+
   img {
     display: block;
   }
@@ -32,11 +47,28 @@
           padding: 0 $gutter;
           display: inline-block;
           color: #fff;
-          background-color: rgba(#fff, 0);
+          background-: rgba(#fff, 0);
           @include background-image(linear-gradient(
             rgba($darkgrey, 0.75), rgba($darkgrey, 1))
           );
           @include transition(background-color 0.25s ease-in);
+
+          .no-svg &,
+          .lt-ie9 & {
+            i {
+              width: image-width("shim/caret-up-off.png");
+              height: image-height("shim/caret-up-off.png");
+              margin: 0 0 0 10px;
+              display: inline-block;
+              vertical-align: middle;
+              overflow: hidden;
+              background: image-url("shim/caret-up-off.png") no-repeat 0 0;
+
+              img {
+                display: none;
+              }
+            }
+          }
 
           &:hover {
             background-color: rgba(#fff, 0.5);
@@ -46,6 +78,7 @@
               @extend .caret.right;
             }
 
+            h2,
             h3 {
               color: #fff;
             }
@@ -61,6 +94,7 @@
           h2 {
             margin: 0.75em 0 0.25em;
             position: relative;
+            @include transition(color 0.25s ease-in);
           }
 
           h3 {

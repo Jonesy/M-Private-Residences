@@ -8,19 +8,19 @@
         <ul>
           <li>
             <a href="#">
-              <h2>Experience Name One <img src="images/svg/caret.svg" alt="" class="caret up"></h2>
+              <h2>Experience Name One <i><img src="images/svg/caret.svg" alt="" class="caret up"></i></h2>
               <h3>For Couples</h3>
             </a>
           </li>
           <li>
             <a href="#">
-              <h2>Kelowna, BC <img src="images/svg/caret.svg" alt="" class="caret up"></h2>
+              <h2>Kelowna, BC <i><img src="images/svg/caret.svg" alt="" class="caret up"></i></h2>
               <h3>Featured Residence</h3>
             </a>
           </li>
           <li>
             <a href="#">
-              <h2>Membership <img src="images/svg/caret.svg" alt="" class="caret up"></h2>
+              <h2>Membership <i><img src="images/svg/caret.svg" alt="" class="caret up"></i></h2>
               <h3>Benefits</h3>
             </a>
           </li>

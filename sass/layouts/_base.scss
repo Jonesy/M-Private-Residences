@@ -6,6 +6,26 @@ header[role="banner"] {
   color: #fff;
   background: $darkgrey;
 
+  /* CSS2 Shims */
+  .no-cssgradients & {
+    background: {
+      image: image-url("shim/bg-header.gif");
+      repeat: repeat-x;
+      position: left top;
+    } 
+
+    & .shadow {
+      display: none;
+    }
+
+    & ul.main-nav li a {
+      background: none;
+      &:hover {
+        background: image-url("shim/bg-header-nav.gif");
+      }
+    }
+  }
+
   a {
     color: #fff;
   }
@@ -41,6 +61,23 @@ header[role="banner"] {
           );
           @include transition(background-color 0.25s ease-in);
           
+          .no-svg &,
+          .lt-ie9 & {
+            i {
+              width: image-width("shim/caret-down-off.png");
+              height: image-height("shim/caret-down-off.png");
+              margin: 0 0 0 10px;
+              display: inline-block;
+              vertical-align: middle;
+              overflow: hidden;
+              background: image-url("shim/caret-down-off.png") no-repeat 0 0;
+
+              img {
+                display: none;
+              }
+            }
+          }
+
           img {
             margin: 0 0 0 10px;
             display: inline-block;
@@ -67,15 +104,16 @@ header[role="banner"] {
 
       li {
         width: 70px;
+        font-size: 0.75em;
         font-weight: bold;
+        line-height: 30px;
 
         &:last-child {
           width: auto;
         }
 
-        a:not(.btn) {
-          font-size: 0.69em;
-          line-height: 30px;
+        a.btn {
+          font-size: 1.083em;
         }
       }
     }

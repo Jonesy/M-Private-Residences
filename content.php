@@ -72,8 +72,8 @@
 
           <div class="featured-quote">
             <blockquote>
-              <p>It ain't what you takin', it's who you takin' from, ya feel me? How you expect to run with the wolves come night when you spend all day sparring with the puppies? </p>
-              <cite>- Omar Little</cite>
+              <p>Well, you know what they say: "stupid criminals make stupid cops". I'm proud to be chasing this guy.</p>
+              <cite>- James McNulty</cite>
             </blockquote>
           </div>
 

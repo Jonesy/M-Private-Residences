@@ -1,7 +1,7 @@
 label {
   width: 100%;
   display: inline-block;
-  line-height: 2em;
+  line-height: 1.9em;
   clear: both;
   font-size: 0.81em;
   text-transform: uppercase;
@@ -32,6 +32,7 @@ input[type="text"] {
     width: 170px;
     padding-right: -15px;
     display: inline-block;
+    float: left;
 
     footer & {
       border-color: white;

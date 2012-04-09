@@ -26,9 +26,9 @@
         </div>
         <nav>
           <ul class="main-nav">
-            <li><a href="#">Experiences <img src="images/svg/caret.svg" alt=""></a></li>
-            <li><a href="#">Residences <img src="images/svg/caret.svg" alt=""></a></li>
-            <li><a href="#">Memberships <img src="images/svg/caret.svg" alt=""></a></li>
+            <li><a href="#">Experiences <i><img src="images/svg/caret.svg" alt=""></i></a></li>
+            <li><a href="#">Residences <i><img src="images/svg/caret.svg" alt=""></i></a></li>
+            <li><a href="#">Memberships <i><img src="images/svg/caret.svg" alt=""></i></a></li>
           </ul>
           <ul class="secondary-nav">
             <li><a href="#">Alliances</a></li>

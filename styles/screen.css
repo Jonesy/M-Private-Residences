@@ -724,7 +724,7 @@ img.caret-left {
   transform: rotate(90deg); }
 
 /* For extending only */
-.nav-caret, .exp-lrg-btn img[class^="caret-"], #experiences nav ul li a img[class^="caret-"], #experiences.full-page ul li .exp-callout img[class^="caret-"] {
+.nav-caret {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=33);
   opacity: 0.33;
   -webkit-transition: all 0.3s ease-in;
@@ -987,10 +987,34 @@ footer {
     #experiences nav ul li a:hover h3,
     #experiences.full-page ul li .exp-callout:hover h3 {
       color: #fff; }
-  .exp-lrg-btn img[class^="caret-"], #experiences nav ul li a img[class^="caret-"], #experiences.full-page ul li .exp-callout img[class^="caret-"] {
-    margin-left: 10px;
+  .exp-lrg-btn i, #experiences nav ul li a i, #experiences.full-page ul li .exp-callout i {
+    position: relative;
     display: inline-block;
-    vertical-align: middle; }
+    margin: 0 0 0 8px;
+    top: -3px; }
+    .exp-lrg-btn i img, #experiences nav ul li a i img, #experiences.full-page ul li .exp-callout i img {
+      -webkit-transform: rotate(-180deg);
+      -moz-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+      -o-transform: rotate(-180deg);
+      transform: rotate(-180deg);
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=33);
+      opacity: 0.33;
+      -webkit-transition: all 0.25s ease-in;
+      -moz-transition: all 0.25s ease-in;
+      -ms-transition: all 0.25s ease-in;
+      -o-transition: all 0.25s ease-in;
+      transition: all 0.25s ease-in;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden; }
+  .exp-lrg-btn:hover i img, #experiences nav ul li a:hover i img, #experiences.full-page ul li .exp-callout:hover i img {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg); }
   .exp-lrg-btn h2, #experiences nav ul li a h2, #experiences.full-page ul li .exp-callout h2 {
     margin: 0.75em 0 0.25em;
     position: relative;
@@ -1240,6 +1264,11 @@ ul.location-selection {
           margin: 0 0 0 8px;
           top: -3px; }
           ul.location-selection li h3 a i img {
+            -webkit-transform: rotate(-90deg);
+            -moz-transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
+            -o-transform: rotate(-90deg);
+            transform: rotate(-90deg);
             filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=33);
             opacity: 0.33;
             -webkit-transition: all 0.25s ease-in;
@@ -1252,11 +1281,11 @@ ul.location-selection {
         ul.location-selection li h3 a:hover i img {
           filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
           opacity: 1;
-          -webkit-transform: rotate(0deg);
-          -moz-transform: rotate(0deg);
-          -ms-transform: rotate(0deg);
-          -o-transform: rotate(0deg);
-          transform: rotate(0deg); }
+          -webkit-transform: rotate(-180deg);
+          -moz-transform: rotate(-180deg);
+          -ms-transform: rotate(-180deg);
+          -o-transform: rotate(-180deg);
+          transform: rotate(-180deg); }
         ul.location-selection li h3 a:hover {
           background-color: #414141; }
     ul.location-selection li ul {

@@ -24,10 +24,22 @@
 }
 
 /* Base class for any large box link with a small caret */
-@mixin btn-with-caret($anim: false) {
+@mixin btn-with-caret($dir: right, $anim: false) {
   $rotate: 0;
+  @if $anim == up {
+    $rotate: -180deg;
+  }
+
+  @if $anim == right {
+    $rotate: -90deg;
+  }
+
   @if $anim == down {
-    $rotate: 0deg;
+    $rotate: -180deg;
+  }
+
+  @if $anim == left {
+    $rotate: 90deg;
   }
 
   i {
@@ -37,6 +49,21 @@
     top: -3px;
 
     img {
+        @if $dir == up {
+          @include rotate(-180deg);
+          top: -2px;
+        }
+
+        @if $dir == right {
+          @include rotate(-90deg);
+        }
+
+        @if $dir == down {
+          @include rotate(-180deg);
+        }
+        @if $dir == left {
+          @include rotate(90deg);
+        }
       @include opacity(0.33);
       @include transition(all 0.25s ease-in);
       @include backface-visibility(hidden);

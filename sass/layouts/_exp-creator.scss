@@ -82,7 +82,7 @@ ul.location-selection {
         float: left;
         color: #fff;
         background-color: #000;
-        @include btn-with-caret($anim: down);
+        @include btn-with-caret($dir: right, $anim: up);
         @include background-image(linear-gradient(
           rgba(#202020, 0.9), rgba(#202020, 0.1)
         ));

@@ -42,12 +42,7 @@
     }
   }
 
-  img[class^="caret-"] {
-    margin-left: 10px;
-    display: inline-block;
-    vertical-align: middle;
-    @extend .nav-caret;
-  }
+  @include btn-with-caret($dir: down, $anim: right);
 
   h2 {
     margin: 0.75em 0 0.25em;

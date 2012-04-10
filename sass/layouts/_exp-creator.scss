@@ -1,0 +1,127 @@
+#experience-creator {
+  min-height: 600px;
+  header {
+    margin-bottom: 30px;
+
+    h1 {
+      margin-bottom: 0;
+    }
+
+    h3 {
+      color: #999;
+    }
+
+    h1, h3 {
+      text-transform: uppercase;
+    }
+
+    small {
+      margin: 0;
+      font-style: italic;
+    }
+  }
+}
+
+.breadcrumb {
+  float: right;
+  color: $headlines;
+  background: image-url("bg-breadcrumb.png") no-repeat center bottom;
+
+  ol {
+    list-style: none;
+
+    li {
+      padding: 0 15px;
+      float: left;
+      position: relative;
+      font-size: 0.69em;
+      @include Proxima();
+      line-height: 28px;
+
+      &:after {
+        counter-increment:section;
+        content: counter(section);
+        position: absolute;
+        top: 28px;
+        left: 50%;
+        font-size: 1.36em;
+        @include Proxima;
+        color: $body;
+      }
+
+      &.current {
+        font-weight: 700;
+        color: #000;
+      }
+    }
+  }
+}
+
+ul.location-selection {
+  @include ul-reset($no-bullet: true);
+
+  li {
+    position: relative;
+
+    img {
+      display: block;
+    }
+
+    h3 {
+      margin: 0;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      line-height: 2.50em;
+      text-transform: uppercase;
+
+      a {
+        width: 90%;
+        padding: 0 5%;
+        float: left;
+        color: #fff;
+        background-color: #000;
+        @include btn-with-caret($anim: down);
+        @include background-image(linear-gradient(
+          rgba(#202020, 0.9), rgba(#202020, 0.1)
+        ));
+        @include transition(background-color 0.25s ease-in);
+
+        &:hover {
+          background-color: #414141;
+        }
+      }
+    }
+
+    ul {
+      width: 100%;
+      @include ul-reset($no-bullet: true);
+      display: none;
+      position: absolute;
+      right: 0;
+      left: 0;
+      background: #fff;
+
+      li {
+        width: 100%;
+        float: left;
+        font-size: 0.69em;
+        @include Proxima(700);
+
+        a {
+          width: 90%;
+          padding: 8px 5%;
+          float: left;
+          color: $headlines;
+          @include transition(all 0.25s ease-in);
+
+          &:hover {
+            color: #000;
+            background: #f4f4f4;
+          }
+        }
+      }
+    }
+  }
+}

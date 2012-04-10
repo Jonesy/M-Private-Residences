@@ -1,3 +1,7 @@
+body {
+  counter-reset:section;
+}
+
 header[role="banner"] {
   $height: 80px;
   width: 100%;
@@ -177,8 +181,11 @@ div[role="main"] {
   width: 100%;
   padding: 20px 0;
   clear: both;
-  display: inline-block;
   background: white;
+
+  &.grey-page {
+    background: #eaeaea;
+  }
 }
 
 .shadow {

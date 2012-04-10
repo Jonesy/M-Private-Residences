@@ -423,6 +423,7 @@ table {
   border-spacing: 0; }
 
 /* TODO: Make this extendible for other directions */
+/* Base class for any large box link with a small caret */
 /* 
   Type mixins
   =========================== */
@@ -629,7 +630,7 @@ ul.nav-list {
       display: none; }
 
 /**
-  NOTE: Uses css triangle for the right corner, CSS transitios don't work as of now.
+  NOTE: Uses css triangle for the right corner, CSS transitions don't work as of now.
 */
 a.btn-arrow {
   display: inline-block;
@@ -735,6 +736,9 @@ img.caret-left {
   backface-visibility: hidden; }
 
 /* Page layouts */
+body {
+  counter-reset: section; }
+
 header[role="banner"] {
   width: 100%;
   height: 80px;
@@ -868,8 +872,9 @@ div[role="main"] {
   width: 100%;
   padding: 20px 0;
   clear: both;
-  display: inline-block;
   background: white; }
+  #main.grey-page {
+    background: #eaeaea; }
 
 .shadow {
   width: 100%;
@@ -1153,3 +1158,133 @@ footer {
       top: -55px;
       left: 0;
       color: #f0f0f0; }
+
+#experience-creator {
+  min-height: 600px; }
+  #experience-creator header {
+    margin-bottom: 30px; }
+    #experience-creator header h1 {
+      margin-bottom: 0; }
+    #experience-creator header h3 {
+      color: #999; }
+    #experience-creator header h1, #experience-creator header h3 {
+      text-transform: uppercase; }
+    #experience-creator header small {
+      margin: 0;
+      font-style: italic; }
+
+.breadcrumb {
+  float: right;
+  color: #333333;
+  background: url('../images/bg-breadcrumb.png?1334043581') no-repeat center bottom; }
+  .breadcrumb ol {
+    list-style: none; }
+    .breadcrumb ol li {
+      padding: 0 15px;
+      float: left;
+      position: relative;
+      font-size: 0.69em;
+      font-family: "proxima-nova", Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      line-height: 28px; }
+      .breadcrumb ol li:after {
+        counter-increment: section;
+        content: counter(section);
+        position: absolute;
+        top: 28px;
+        left: 50%;
+        font-size: 1.36em;
+        font-family: "proxima-nova", Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        color: #666666; }
+      .breadcrumb ol li.current {
+        font-weight: 700;
+        color: #000; }
+
+ul.location-selection {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  ul.location-selection li {
+    position: relative; }
+    ul.location-selection li img {
+      display: block; }
+    ul.location-selection li h3 {
+      margin: 0;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      line-height: 2.50em;
+      text-transform: uppercase; }
+      ul.location-selection li h3 a {
+        width: 90%;
+        padding: 0 5%;
+        float: left;
+        color: #fff;
+        background-color: #000;
+        background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(32, 32, 32, 0.9)), color-stop(100%, rgba(32, 32, 32, 0.1)));
+        background-image: -webkit-linear-gradient(rgba(32, 32, 32, 0.9), rgba(32, 32, 32, 0.1));
+        background-image: -moz-linear-gradient(rgba(32, 32, 32, 0.9), rgba(32, 32, 32, 0.1));
+        background-image: -o-linear-gradient(rgba(32, 32, 32, 0.9), rgba(32, 32, 32, 0.1));
+        background-image: -ms-linear-gradient(rgba(32, 32, 32, 0.9), rgba(32, 32, 32, 0.1));
+        background-image: linear-gradient(rgba(32, 32, 32, 0.9), rgba(32, 32, 32, 0.1));
+        -webkit-transition: background-color 0.25s ease-in;
+        -moz-transition: background-color 0.25s ease-in;
+        -ms-transition: background-color 0.25s ease-in;
+        -o-transition: background-color 0.25s ease-in;
+        transition: background-color 0.25s ease-in; }
+        ul.location-selection li h3 a i {
+          position: relative;
+          display: inline-block;
+          margin: 0 0 0 8px;
+          top: -3px; }
+          ul.location-selection li h3 a i img {
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=33);
+            opacity: 0.33;
+            -webkit-transition: all 0.25s ease-in;
+            -moz-transition: all 0.25s ease-in;
+            -ms-transition: all 0.25s ease-in;
+            -o-transition: all 0.25s ease-in;
+            transition: all 0.25s ease-in;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden; }
+        ul.location-selection li h3 a:hover i img {
+          filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+          opacity: 1;
+          -webkit-transform: rotate(0deg);
+          -moz-transform: rotate(0deg);
+          -ms-transform: rotate(0deg);
+          -o-transform: rotate(0deg);
+          transform: rotate(0deg); }
+        ul.location-selection li h3 a:hover {
+          background-color: #414141; }
+    ul.location-selection li ul {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: none;
+      position: absolute;
+      right: 0;
+      left: 0;
+      background: #fff; }
+      ul.location-selection li ul li {
+        width: 100%;
+        float: left;
+        font-size: 0.69em;
+        font-family: "proxima-nova", Helvetica, Arial, sans-serif;
+        font-weight: 700; }
+        ul.location-selection li ul li a {
+          width: 90%;
+          padding: 8px 5%;
+          float: left;
+          color: #333333;
+          -webkit-transition: all 0.25s ease-in;
+          -moz-transition: all 0.25s ease-in;
+          -ms-transition: all 0.25s ease-in;
+          -o-transition: all 0.25s ease-in;
+          transition: all 0.25s ease-in; }
+          ul.location-selection li ul li a:hover {
+            color: #000;
+            background: #f4f4f4; }

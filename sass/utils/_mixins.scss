@@ -23,6 +23,36 @@
   border-left: 27px solid $color;
 }
 
+/* Base class for any large box link with a small caret */
+@mixin btn-with-caret($anim: false) {
+  $rotate: 0;
+  @if $anim == down {
+    $rotate: 0deg;
+  }
+
+  i {
+    position: relative;
+    display: inline-block;
+    margin: 0 0 0 8px;
+    top: -3px;
+
+    img {
+      @include opacity(0.33);
+      @include transition(all 0.25s ease-in);
+      @include backface-visibility(hidden);
+    }
+  }
+
+  &:hover {
+    i img {
+      @include opacity(1);
+      @if $anim != false {
+        @include rotate($rotate);
+      }
+    }
+  }
+}
+
 /* 
   Type mixins
   =========================== */

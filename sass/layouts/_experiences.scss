@@ -1,3 +1,68 @@
+.exp-lrg-btn {
+  width: 300px - ($gutter * 2);
+  height: 80px;
+  padding: 0 $gutter;
+  display: inline-block;
+  color: #fff;
+  background-: rgba(#fff, 0);
+  cursor: pointer;
+  @include background-image(linear-gradient(
+    rgba($darkgrey, 0.75), rgba($darkgrey, 1))
+  );
+  @include transition(background-color 0.25s ease-in);
+
+  .no-svg &,
+  .lt-ie9 & {
+    i {
+      width: image-width("shim/caret-up-off.png");
+      height: image-height("shim/caret-up-off.png");
+      margin: 0 0 0 10px;
+      display: inline-block;
+      vertical-align: middle;
+      overflow: hidden;
+      background: image-url("shim/caret-up-off.png") no-repeat 0 0;
+
+      img {
+        display: none;
+      }
+    }
+  }
+
+  &:hover {
+    background-color: rgba(#fff, 0.5);
+
+    img[class^="caret-"] {
+      @include opacity(1);
+      @extend .caret.right;
+    }
+
+    h2,
+    h3 {
+      color: #fff;
+    }
+  }
+
+  img[class^="caret-"] {
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    @extend .nav-caret;
+  }
+
+  h2 {
+    margin: 0.75em 0 0.25em;
+    position: relative;
+    color: #fff;
+    @include transition(color 0.25s ease-in);
+  }
+
+  h3 {
+    margin: 0;
+    color: #999;
+    @include transition(color 0.25s ease-in);
+  }
+}
+
 #experiences {
   width: 100%;
   height: 520px;
@@ -24,9 +89,8 @@
   }
 
   nav {
-    $height: 80px;
     width: 100%;
-    height: $height;
+    height: 80px;
     position: absolute;
     right: 0;
     bottom: 0;
@@ -42,67 +106,83 @@
         float: left;
 
         a {
-          width: 300px - ($gutter * 2);
-          height: $height;
-          padding: 0 $gutter;
-          display: inline-block;
-          color: #fff;
-          background-: rgba(#fff, 0);
-          @include background-image(linear-gradient(
-            rgba($darkgrey, 0.75), rgba($darkgrey, 1))
-          );
-          @include transition(background-color 0.25s ease-in);
-
-          .no-svg &,
-          .lt-ie9 & {
-            i {
-              width: image-width("shim/caret-up-off.png");
-              height: image-height("shim/caret-up-off.png");
-              margin: 0 0 0 10px;
-              display: inline-block;
-              vertical-align: middle;
-              overflow: hidden;
-              background: image-url("shim/caret-up-off.png") no-repeat 0 0;
-
-              img {
-                display: none;
-              }
-            }
-          }
-
-          &:hover {
-            background-color: rgba(#fff, 0.5);
-
-            img.caret {
-              @include opacity(1);
-              @extend .caret.right;
-            }
-
-            h2,
-            h3 {
-              color: #fff;
-            }
-          }
-
-          img.caret {
-            margin-left: 10px;
-            display: inline-block;
-            vertical-align: middle;
-            @extend .nav-caret;
-          }
-
-          h2 {
-            margin: 0.75em 0 0.25em;
-            position: relative;
-            @include transition(color 0.25s ease-in);
-          }
-
-          h3 {
-            margin: 0;
-            color: #999;
-            @include transition(color 0.25s ease-in);
-          }
+          @extend .exp-lrg-btn;
         }
+      }
+    }
+  }
+
+  /* Experiences landing page */
+  &.full-page {
+    height: 100%;
+    padding-bottom: 50px;
+
+    .shadow {
+      display: none;
+    }
+
+    nav {
+      height: auto;
+      position: relative;
+      top: -42px;
+      background: none;
+    }
+
+    ul li .exp-callout {
+      @extend .exp-lrg-btn;
+      height: auto;
+      background-color: $darkgrey;
+      @include background-image(linear-gradient(
+        rgba($darkgrey, 0.1), rgba($darkgrey, 1))
+      );
+
+      &:hover {
+        background-color: #414141;
+      }
+
+      a {
+        width: auto;
+        height: auto;
+        font-size: 1em;
+      }
+    }
+  }
+
+  .exp-thumbnails {
+    width: 300px;
+    height: 80px;
+    margin: 25px 0;
+    float: left;
+    position: relative;
+    left: -$gutter;
+    background: #000;
+
+    button {
+      width: 30px;
+      height: 80px;
+      border: none;
+      float: left;
+      padding: 0;
+      background: #000;
+      color: #fff;
+      text-align: center;
+      font-size: 80px;
+
+      img {
+        margin: 0 auto;
+      }
+    }
+
+    ol {
+      width: 240px;
+      padding: 0;
+      margin: 0;
+      float: left;
+
+      li {
+        width: 80px;
+        margin: 0;
+        float: left;
       }
     }
   }

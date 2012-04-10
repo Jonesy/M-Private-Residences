@@ -588,6 +588,7 @@ ul.nav-list {
   -o-transition: all 0.25s ease-in;
   transition: all 0.25s ease-in;
   border: none;
+  -webkit-background-clip: padding-box;
   /* Default button */
   /* Silver button */ }
   .btn:hover, .btn-zoom:hover {
@@ -689,36 +690,40 @@ input[type="text"] {
     position: relative;
     margin-left: -10px; }
 
-img.caret {
+img[class^="caret-"] {
   position: relative; }
-  img.caret.up {
-    -webkit-transform: rotate(-180deg);
-    -moz-transform: rotate(-180deg);
-    -ms-transform: rotate(-180deg);
-    -o-transform: rotate(-180deg);
-    transform: rotate(-180deg);
-    top: -2px; }
-  img.caret.right, #experiences nav ul li a:hover img.caret {
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    transform: rotate(-90deg); }
-  img.caret.down {
-    -webkit-transform: rotate(-180deg);
-    -moz-transform: rotate(-180deg);
-    -ms-transform: rotate(-180deg);
-    -o-transform: rotate(-180deg);
-    transform: rotate(-180deg); }
-  img.caret.left {
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    transform: rotate(90deg); }
+
+img.caret-up {
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+  top: -2px; }
+
+img.caret-right {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg); }
+
+img.caret-down {
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+  transform: rotate(-180deg); }
+
+img.caret-left {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg); }
 
 /* For extending only */
-.nav-caret, #experiences nav ul li a img.caret {
+.nav-caret, .exp-lrg-btn img[class^="caret-"], #experiences nav ul li a img[class^="caret-"], #experiences.full-page ul li .exp-callout img[class^="caret-"] {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=33);
   opacity: 0.33;
   -webkit-transition: all 0.3s ease-in;
@@ -938,12 +943,74 @@ footer {
   .box h2 {
     margin-top: 0; }
 
+.exp-lrg-btn, #experiences nav ul li a, #experiences.full-page ul li .exp-callout {
+  width: 260px;
+  height: 80px;
+  padding: 0 20px;
+  display: inline-block;
+  color: #fff;
+  background-: rgba(255, 255, 255, 0);
+  cursor: pointer;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(32, 32, 32, 0.75)), color-stop(100%, #202020));
+  background-image: -webkit-linear-gradient(rgba(32, 32, 32, 0.75), #202020);
+  background-image: -moz-linear-gradient(rgba(32, 32, 32, 0.75), #202020);
+  background-image: -o-linear-gradient(rgba(32, 32, 32, 0.75), #202020);
+  background-image: -ms-linear-gradient(rgba(32, 32, 32, 0.75), #202020);
+  background-image: linear-gradient(rgba(32, 32, 32, 0.75), #202020);
+  -webkit-transition: background-color 0.25s ease-in;
+  -moz-transition: background-color 0.25s ease-in;
+  -ms-transition: background-color 0.25s ease-in;
+  -o-transition: background-color 0.25s ease-in;
+  transition: background-color 0.25s ease-in; }
+  .no-svg .exp-lrg-btn i, .no-svg #experiences nav ul li a i, #experiences nav ul li .no-svg a i, .no-svg #experiences.full-page ul li .exp-callout i, #experiences.full-page ul li .no-svg .exp-callout i, .lt-ie9 .exp-lrg-btn i, .lt-ie9 #experiences nav ul li a i, #experiences nav ul li .lt-ie9 a i, .lt-ie9 #experiences.full-page ul li .exp-callout i, #experiences.full-page ul li .lt-ie9 .exp-callout i {
+    width: 8px;
+    height: 5px;
+    margin: 0 0 0 10px;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    background: url('../images/shim/caret-up-off.png?1334010468') no-repeat 0 0; }
+    .no-svg .exp-lrg-btn i img, .no-svg #experiences nav ul li a i img, #experiences nav ul li .no-svg a i img, .no-svg #experiences.full-page ul li .exp-callout i img, #experiences.full-page ul li .no-svg .exp-callout i img, .lt-ie9 .exp-lrg-btn i img, .lt-ie9 #experiences nav ul li a i img, #experiences nav ul li .lt-ie9 a i img, .lt-ie9 #experiences.full-page ul li .exp-callout i img, #experiences.full-page ul li .lt-ie9 .exp-callout i img {
+      display: none; }
+  .exp-lrg-btn:hover, #experiences nav ul li a:hover, #experiences.full-page ul li .exp-callout:hover {
+    background-color: rgba(255, 255, 255, 0.5); }
+    .exp-lrg-btn:hover img[class^="caret-"], #experiences nav ul li a:hover img[class^="caret-"], #experiences.full-page ul li .exp-callout:hover img[class^="caret-"] {
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+      opacity: 1; }
+    .exp-lrg-btn:hover h2, #experiences nav ul li a:hover h2, #experiences.full-page ul li .exp-callout:hover h2,
+    .exp-lrg-btn:hover h3,
+    #experiences nav ul li a:hover h3,
+    #experiences.full-page ul li .exp-callout:hover h3 {
+      color: #fff; }
+  .exp-lrg-btn img[class^="caret-"], #experiences nav ul li a img[class^="caret-"], #experiences.full-page ul li .exp-callout img[class^="caret-"] {
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: middle; }
+  .exp-lrg-btn h2, #experiences nav ul li a h2, #experiences.full-page ul li .exp-callout h2 {
+    margin: 0.75em 0 0.25em;
+    position: relative;
+    color: #fff;
+    -webkit-transition: color 0.25s ease-in;
+    -moz-transition: color 0.25s ease-in;
+    -ms-transition: color 0.25s ease-in;
+    -o-transition: color 0.25s ease-in;
+    transition: color 0.25s ease-in; }
+  .exp-lrg-btn h3, #experiences nav ul li a h3, #experiences.full-page ul li .exp-callout h3 {
+    margin: 0;
+    color: #999;
+    -webkit-transition: color 0.25s ease-in;
+    -moz-transition: color 0.25s ease-in;
+    -ms-transition: color 0.25s ease-in;
+    -o-transition: color 0.25s ease-in;
+    transition: color 0.25s ease-in; }
+
 #experiences {
   width: 100%;
   height: 520px;
   position: relative;
   background: #202020;
-  /* CSS2 Shims */ }
+  /* CSS2 Shims */
+  /* Experiences landing page */ }
   .no-cssgradients #experiences .shadow {
     display: none; }
   .no-cssgradients #experiences nav {
@@ -965,62 +1032,60 @@ footer {
       #experiences nav ul li {
         margin-left: 20px;
         float: left; }
-        #experiences nav ul li a {
-          width: 260px;
-          height: 80px;
-          padding: 0 20px;
-          display: inline-block;
-          color: #fff;
-          background-: rgba(255, 255, 255, 0);
-          background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(32, 32, 32, 0.75)), color-stop(100%, #202020));
-          background-image: -webkit-linear-gradient(rgba(32, 32, 32, 0.75), #202020);
-          background-image: -moz-linear-gradient(rgba(32, 32, 32, 0.75), #202020);
-          background-image: -o-linear-gradient(rgba(32, 32, 32, 0.75), #202020);
-          background-image: -ms-linear-gradient(rgba(32, 32, 32, 0.75), #202020);
-          background-image: linear-gradient(rgba(32, 32, 32, 0.75), #202020);
-          -webkit-transition: background-color 0.25s ease-in;
-          -moz-transition: background-color 0.25s ease-in;
-          -ms-transition: background-color 0.25s ease-in;
-          -o-transition: background-color 0.25s ease-in;
-          transition: background-color 0.25s ease-in; }
-          .no-svg #experiences nav ul li a i, .lt-ie9 #experiences nav ul li a i {
-            width: 8px;
-            height: 5px;
-            margin: 0 0 0 10px;
-            display: inline-block;
-            vertical-align: middle;
-            overflow: hidden;
-            background: url('../images/shim/caret-up-off.png?1334010468') no-repeat 0 0; }
-            .no-svg #experiences nav ul li a i img, .lt-ie9 #experiences nav ul li a i img {
-              display: none; }
-          #experiences nav ul li a:hover {
-            background-color: rgba(255, 255, 255, 0.5); }
-            #experiences nav ul li a:hover img.caret {
-              filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-              opacity: 1; }
-            #experiences nav ul li a:hover h2,
-            #experiences nav ul li a:hover h3 {
-              color: #fff; }
-          #experiences nav ul li a img.caret {
-            margin-left: 10px;
-            display: inline-block;
-            vertical-align: middle; }
-          #experiences nav ul li a h2 {
-            margin: 0.75em 0 0.25em;
-            position: relative;
-            -webkit-transition: color 0.25s ease-in;
-            -moz-transition: color 0.25s ease-in;
-            -ms-transition: color 0.25s ease-in;
-            -o-transition: color 0.25s ease-in;
-            transition: color 0.25s ease-in; }
-          #experiences nav ul li a h3 {
-            margin: 0;
-            color: #999;
-            -webkit-transition: color 0.25s ease-in;
-            -moz-transition: color 0.25s ease-in;
-            -ms-transition: color 0.25s ease-in;
-            -o-transition: color 0.25s ease-in;
-            transition: color 0.25s ease-in; }
+  #experiences.full-page {
+    height: 100%;
+    padding-bottom: 50px; }
+    #experiences.full-page .shadow {
+      display: none; }
+    #experiences.full-page nav {
+      height: auto;
+      position: relative;
+      top: -42px;
+      background: none; }
+    #experiences.full-page ul li .exp-callout {
+      height: auto;
+      background-color: #202020;
+      background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(32, 32, 32, 0.1)), color-stop(100%, #202020));
+      background-image: -webkit-linear-gradient(rgba(32, 32, 32, 0.1), #202020);
+      background-image: -moz-linear-gradient(rgba(32, 32, 32, 0.1), #202020);
+      background-image: -o-linear-gradient(rgba(32, 32, 32, 0.1), #202020);
+      background-image: -ms-linear-gradient(rgba(32, 32, 32, 0.1), #202020);
+      background-image: linear-gradient(rgba(32, 32, 32, 0.1), #202020); }
+      #experiences.full-page ul li .exp-callout:hover {
+        background-color: #414141; }
+      #experiences.full-page ul li .exp-callout a {
+        width: auto;
+        height: auto;
+        font-size: 1em; }
+  #experiences .exp-thumbnails {
+    width: 300px;
+    height: 80px;
+    margin: 25px 0;
+    float: left;
+    position: relative;
+    left: -20px;
+    background: #000; }
+    #experiences .exp-thumbnails button {
+      width: 30px;
+      height: 80px;
+      border: none;
+      float: left;
+      padding: 0;
+      background: #000;
+      color: #fff;
+      text-align: center;
+      font-size: 80px; }
+      #experiences .exp-thumbnails button img {
+        margin: 0 auto; }
+    #experiences .exp-thumbnails ol {
+      width: 240px;
+      padding: 0;
+      margin: 0;
+      float: left; }
+      #experiences .exp-thumbnails ol li {
+        width: 80px;
+        margin: 0;
+        float: left; }
 
 #index aside strong {
   font-family: "proxima-nova-condensed", "Arial Narrow", Helvetica, Arial, sans-serif;

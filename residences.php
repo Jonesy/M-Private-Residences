@@ -27,7 +27,7 @@
         </div> <!-- / .fitler -->
       </header> <!-- / exp creator header -->
 
-      <ul class="location-selection">
+      <ul class="locations-grid">
         <li class="span4">
           <img src="http://placehold.it/300x148" alt="">
           <h3><a href="#">Location name</a></h3>

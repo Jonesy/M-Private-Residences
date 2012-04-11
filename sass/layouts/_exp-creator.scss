@@ -31,26 +31,22 @@
 
     .filter {
       .btn-group {
-        border-right: 1px solid $headlines;
+        border-right: 1px solid $body;
         float: left;
         margin: 0;
 
+        &:first-child {
+        
+        }
         &:last-child {
           border: none;
+          margin: 0 0 0 10px;
         }
       }
 
       ul {
         float: left;
         @include ul-reset($no-bullet: true);
-
-        &:first-child {
-          margin: 0 10px 0 0;
-        }
-
-        &:last-child {
-          margin: 0 0 0 10px;
-        }
 
         li {
           margin: 0 10px 0 0;
@@ -117,10 +113,10 @@
   }
 }
 
-ul.location-selection {
+ul.locations-grid {
   @include ul-reset($no-bullet: true);
 
-  li {
+  li.span4 {
     position: relative;
     margin-bottom: 40px;
 
@@ -193,14 +189,41 @@ ul.location-selection {
     dl {
       margin: 0;
       padding: 10px 0;
+
       dt {
-        input[type="checkbox"] {
-          margin: 4px 10px;
-          float: left;
-          display: inline;
+        min-height: 40px;
+        position: relative;
+        label {
+          width: 225px;
+          @extend h2;
+          margin: 0 0 0 40px;
+          cursor: pointer;
+          display: inline-block;
+          position: relative;
+
+          input[type="checkbox"] {
+            margin: -10px 0 0 -10px;
+            position: absolute;
+            left: -20px;
+            top: 50%;
+          }
         }
-        h2 {
-          margin-left: 40px;
+
+        button.toggle {
+          width: 16px;
+          height: 16px;
+          margin: -9px 0 0;
+          text-align: center;
+          line-height: 8px;
+          padding: 0;
+          font-size: 8px;
+          background: #fff;
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          border: 1px solid #9b9b9b;
+          color: #9b9b9b;
+          @include border-radius(100px);
         }
       }
       dd {

@@ -18,7 +18,7 @@
         <h1>I Want to Go To The...</h1>
         <small>Make your selections below:</small>
       </header> <!-- / exp creator header -->
-      <ul class="location-selection">
+      <ul class="locations-grid">
         <li class="span4">
           <img src="http://placehold.it/300x148" alt="">
           <h3><a href="#">Sun <i><img src="images/svg/caret.svg" alt="" class="caret-right"></i></a></h3>

@@ -20,19 +20,25 @@
         <small>Make your selections below:</small>
       </header> <!-- / exp creator header -->
 
-      <ul class="location-selection">
+      <ul class="locations-grid">
         <li class="span4">
           <img src="http://placehold.it/300x148" alt="">
           <h3><a href="#" class="selected">Golf <i><img src="images/svg/caret.svg" alt="" class="caret-right"></i></a></h3>
           <dl>
             <dt>
-              <input type="checkbox" name="" value="">
-              <h2>Golf Course Name One</h2>
+              <button class="toggle">+</button>
+              <label>
+                <input type="checkbox" name="" value="">
+                Golf Course Name One
+              </label>
             </dt>
             <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. etiam at fermentum ipsum. Suspendisse facilisis fringilla nunc sit amet dignissim. In feugiat, sem sed mattis eleifend, nunc nibh pellentesque lacus, et facilisis.</dd>
             <dt>
-              <input type="checkbox" name="" value="">
-              <h2>Golf Course Name Two</h2>
+              <button class="toggle">+</button>
+              <label>
+                <input type="checkbox" name="" value="">
+                Golf Course Name One
+              </label>
             </dt>
             <dd style="display:none">Lorem ipsum dolor sit amet, consectetur adipiscing elit. etiam at fermentum ipsum. Suspendisse facilisis fringilla nunc sit amet dignissim. In feugiat, sem sed mattis eleifend, nunc nibh pellentesque lacus, et facilisis.</dd>
           </dl>

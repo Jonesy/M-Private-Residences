@@ -106,7 +106,7 @@ h1 {
   font-size: 2em;
   margin: 0.67em 0; }
 
-h2 {
+h2, ul.locations-grid li.span4 dl dt label, #experiences nav ul.locations-grid li dl dt label, ul.locations-grid #main article .features li.features-list dl dt label, #main article .features ul.locations-grid li.features-list dl dt label {
   font-size: 1.5em;
   margin: 0.83em 0; }
 
@@ -514,7 +514,7 @@ body {
   color: #666666;
   -webkit-font-smoothing: antialiased; }
 
-h1, h2, h3 {
+h1, h2, ul.locations-grid li.span4 dl dt label, #experiences nav ul.locations-grid li dl dt label, ul.locations-grid #main article .features li.features-list dl dt label, #main article .features ul.locations-grid li.features-list dl dt label, h3 {
   color: #333333; }
 
 h1 {
@@ -523,13 +523,13 @@ h1 {
   font-family: "proxima-nova-condensed", "Arial Narrow", Helvetica, Arial, sans-serif;
   font-weight: 300; }
 
-h2 {
+h2, ul.locations-grid li.span4 dl dt label, #experiences nav ul.locations-grid li dl dt label, ul.locations-grid #main article .features li.features-list dl dt label, #main article .features ul.locations-grid li.features-list dl dt label {
   font-family: "proxima-nova-condensed", "Arial Narrow", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-size: 1.25em;
   text-transform: uppercase;
   margin: 1em 0; }
-  h2 em {
+  h2 em, ul.locations-grid li.span4 dl dt label em, #experiences nav ul.locations-grid li dl dt label em, ul.locations-grid #main article .features li.features-list dl dt label em, #main article .features ul.locations-grid li.features-list dl dt label em {
     font-style: normal;
     font-weight: 700; }
 
@@ -641,11 +641,11 @@ a.btn-arrow {
   display: inline-block;
   position: relative;
   background: #666666; }
-  a.btn-arrow h2 {
+  a.btn-arrow h2, a.btn-arrow ul.locations-grid li.span4 dl dt label, ul.locations-grid li.span4 dl dt a.btn-arrow label, a.btn-arrow #experiences nav ul.locations-grid li dl dt label, #experiences nav ul.locations-grid li dl dt a.btn-arrow label, a.btn-arrow ul.locations-grid #main article .features li.features-list dl dt label, ul.locations-grid #main article .features li.features-list dl dt a.btn-arrow label, a.btn-arrow #main article .features ul.locations-grid li.features-list dl dt label, #main article .features ul.locations-grid li.features-list dl dt a.btn-arrow label {
     margin: 0 10px;
     line-height: 2.70em;
     color: #fff; }
-    a.btn-arrow h2:after {
+    a.btn-arrow h2:after, a.btn-arrow ul.locations-grid li.span4 dl dt label:after, ul.locations-grid li.span4 dl dt a.btn-arrow label:after, a.btn-arrow #experiences nav ul.locations-grid li dl dt label:after, #experiences nav ul.locations-grid li dl dt a.btn-arrow label:after, a.btn-arrow ul.locations-grid #main article .features li.features-list dl dt label:after, ul.locations-grid #main article .features li.features-list dl dt a.btn-arrow label:after, a.btn-arrow #main article .features ul.locations-grid li.features-list dl dt label:after, #main article .features ul.locations-grid li.features-list dl dt a.btn-arrow label:after {
       width: 0;
       height: 0;
       position: absolute;
@@ -656,9 +656,9 @@ a.btn-arrow {
       border-left: 27px solid #666666; }
   a.btn-arrow:hover {
     background: #eaeaea; }
-    a.btn-arrow:hover h2 {
+    a.btn-arrow:hover h2, a.btn-arrow:hover ul.locations-grid li.span4 dl dt label, ul.locations-grid li.span4 dl dt a.btn-arrow:hover label, a.btn-arrow:hover #experiences nav ul.locations-grid li dl dt label, #experiences nav ul.locations-grid li dl dt a.btn-arrow:hover label, a.btn-arrow:hover ul.locations-grid #main article .features li.features-list dl dt label, ul.locations-grid #main article .features li.features-list dl dt a.btn-arrow:hover label, a.btn-arrow:hover #main article .features ul.locations-grid li.features-list dl dt label, #main article .features ul.locations-grid li.features-list dl dt a.btn-arrow:hover label {
       color: #666666; }
-      a.btn-arrow:hover h2:after {
+      a.btn-arrow:hover h2:after, a.btn-arrow:hover ul.locations-grid li.span4 dl dt label:after, ul.locations-grid li.span4 dl dt a.btn-arrow:hover label:after, a.btn-arrow:hover #experiences nav ul.locations-grid li dl dt label:after, #experiences nav ul.locations-grid li dl dt a.btn-arrow:hover label:after, a.btn-arrow:hover ul.locations-grid #main article .features li.features-list dl dt label:after, ul.locations-grid #main article .features li.features-list dl dt a.btn-arrow:hover label:after, a.btn-arrow:hover #main article .features ul.locations-grid li.features-list dl dt label:after, #main article .features ul.locations-grid li.features-list dl dt a.btn-arrow:hover label:after {
         border-left-color: #eaeaea; }
 
 label {
@@ -912,6 +912,14 @@ footer.main {
   background-image: linear-gradient(rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 5%); }
   footer.main h1,
   footer.main h2,
+  footer.main ul.locations-grid li.span4 dl dt label,
+  ul.locations-grid li.span4 dl dt footer.main label,
+  footer.main #experiences nav ul.locations-grid li dl dt label,
+  #experiences nav ul.locations-grid li dl dt footer.main label,
+  footer.main ul.locations-grid #main article .features li.features-list dl dt label,
+  ul.locations-grid #main article .features li.features-list dl dt footer.main label,
+  footer.main #main article .features ul.locations-grid li.features-list dl dt label,
+  #main article .features ul.locations-grid li.features-list dl dt footer.main label,
   footer.main strong {
     color: #fff; }
   footer.main small,
@@ -950,7 +958,7 @@ footer.main {
   padding: 20px;
   color: #666;
   background: #eaeaea; }
-  .box h2 {
+  .box h2, .box ul.locations-grid li.span4 dl dt label, ul.locations-grid li.span4 dl dt .box label, .box #experiences nav ul.locations-grid li dl dt label, #experiences nav ul.locations-grid li dl dt .box label, .box ul.locations-grid #main article .features li.features-list dl dt label, ul.locations-grid #main article .features li.features-list dl dt .box label, .box #main article .features ul.locations-grid li.features-list dl dt label, #main article .features ul.locations-grid li.features-list dl dt .box label {
     margin-top: 0; }
 
 .exp-lrg-btn, #experiences nav ul li a, #experiences.full-page ul li .exp-callout {
@@ -987,7 +995,7 @@ footer.main {
     .exp-lrg-btn:hover img[class^="caret-"], #experiences nav ul li a:hover img[class^="caret-"], #experiences.full-page ul li .exp-callout:hover img[class^="caret-"] {
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
       opacity: 1; }
-    .exp-lrg-btn:hover h2, #experiences nav ul li a:hover h2, #experiences.full-page ul li .exp-callout:hover h2,
+    .exp-lrg-btn:hover h2, #experiences nav ul li a:hover h2, #experiences.full-page ul li .exp-callout:hover h2, .exp-lrg-btn:hover ul.locations-grid li.span4 dl dt label, ul.locations-grid li.span4 dl dt .exp-lrg-btn:hover label, #experiences nav ul.locations-grid li.span4 a:hover dl dt label, #experiences nav ul.locations-grid li.span4 dl dt a:hover label, #experiences.full-page ul.locations-grid li.span4 .exp-callout:hover dl dt label, #experiences.full-page ul.locations-grid li.span4 dl dt .exp-callout:hover label, .exp-lrg-btn:hover #experiences nav ul.locations-grid li dl dt label, #experiences nav ul.locations-grid li dl dt .exp-lrg-btn:hover label, #experiences nav ul.locations-grid li a:hover dl dt label, #experiences nav ul.locations-grid li dl dt a:hover label, #experiences.full-page nav ul.locations-grid li .exp-callout:hover dl dt label, #experiences.full-page nav ul.locations-grid li dl dt .exp-callout:hover label, .exp-lrg-btn:hover ul.locations-grid #main article .features li.features-list dl dt label, ul.locations-grid #main article .features li.features-list dl dt .exp-lrg-btn:hover label, #experiences nav ul.locations-grid #main article .features li.features-list a:hover dl dt label, #experiences nav ul.locations-grid #main article .features li.features-list dl dt a:hover label, #experiences.full-page ul.locations-grid #main article .features li.features-list .exp-callout:hover dl dt label, #experiences.full-page ul.locations-grid #main article .features li.features-list dl dt .exp-callout:hover label, .exp-lrg-btn:hover #main article .features ul.locations-grid li.features-list dl dt label, #main article .features ul.locations-grid li.features-list dl dt .exp-lrg-btn:hover label, #experiences nav #main article .features ul.locations-grid li.features-list a:hover dl dt label, #main article .features #experiences nav ul.locations-grid li.features-list a:hover dl dt label, #experiences nav #main article .features ul.locations-grid li.features-list dl dt a:hover label, #main article .features #experiences nav ul.locations-grid li.features-list dl dt a:hover label, #experiences.full-page #main article .features ul.locations-grid li.features-list .exp-callout:hover dl dt label, #main article .features #experiences.full-page ul.locations-grid li.features-list .exp-callout:hover dl dt label, #experiences.full-page #main article .features ul.locations-grid li.features-list dl dt .exp-callout:hover label, #main article .features #experiences.full-page ul.locations-grid li.features-list dl dt .exp-callout:hover label,
     .exp-lrg-btn:hover h3,
     #experiences nav ul li a:hover h3,
     #experiences.full-page ul li .exp-callout:hover h3 {
@@ -1012,7 +1020,7 @@ footer.main {
       transition: all 0.25s ease-in;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden; }
-  .exp-lrg-btn:hover i img, #experiences nav ul li a:hover i img, #experiences.full-page ul li .exp-callout:hover i img {
+  .exp-lrg-btn:hover i img, #experiences nav ul li a:hover i img, #experiences.full-page ul li .exp-callout:hover i img, .exp-lrg-btn.selected i img, #experiences nav ul li a.selected i img, #experiences.full-page ul li .selected.exp-callout i img {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: rotate(-90deg);
@@ -1020,7 +1028,7 @@ footer.main {
     -ms-transform: rotate(-90deg);
     -o-transform: rotate(-90deg);
     transform: rotate(-90deg); }
-  .exp-lrg-btn h2, #experiences nav ul li a h2, #experiences.full-page ul li .exp-callout h2 {
+  .exp-lrg-btn h2, #experiences nav ul li a h2, #experiences.full-page ul li .exp-callout h2, .exp-lrg-btn ul.locations-grid li.span4 dl dt label, ul.locations-grid li.span4 dl dt .exp-lrg-btn label, #experiences nav ul.locations-grid li.span4 a dl dt label, #experiences nav ul.locations-grid li.span4 dl dt a label, #experiences.full-page ul.locations-grid li.span4 .exp-callout dl dt label, #experiences.full-page ul.locations-grid li.span4 dl dt .exp-callout label, .exp-lrg-btn #experiences nav ul.locations-grid li dl dt label, #experiences nav ul.locations-grid li dl dt .exp-lrg-btn label, #experiences nav ul.locations-grid li a dl dt label, #experiences nav ul.locations-grid li dl dt a label, #experiences.full-page nav ul.locations-grid li .exp-callout dl dt label, #experiences.full-page nav ul.locations-grid li dl dt .exp-callout label, .exp-lrg-btn ul.locations-grid #main article .features li.features-list dl dt label, ul.locations-grid #main article .features li.features-list dl dt .exp-lrg-btn label, #experiences nav ul.locations-grid #main article .features li.features-list a dl dt label, #experiences nav ul.locations-grid #main article .features li.features-list dl dt a label, #experiences.full-page ul.locations-grid #main article .features li.features-list .exp-callout dl dt label, #experiences.full-page ul.locations-grid #main article .features li.features-list dl dt .exp-callout label, .exp-lrg-btn #main article .features ul.locations-grid li.features-list dl dt label, #main article .features ul.locations-grid li.features-list dl dt .exp-lrg-btn label, #experiences nav #main article .features ul.locations-grid li.features-list a dl dt label, #main article .features #experiences nav ul.locations-grid li.features-list a dl dt label, #experiences nav #main article .features ul.locations-grid li.features-list dl dt a label, #main article .features #experiences nav ul.locations-grid li.features-list dl dt a label, #experiences.full-page #main article .features ul.locations-grid li.features-list .exp-callout dl dt label, #main article .features #experiences.full-page ul.locations-grid li.features-list .exp-callout dl dt label, #experiences.full-page #main article .features ul.locations-grid li.features-list dl dt .exp-callout label, #main article .features #experiences.full-page ul.locations-grid li.features-list dl dt .exp-callout label {
     margin: 0.75em 0 0.25em;
     position: relative;
     color: #fff;
@@ -1210,20 +1218,17 @@ footer.main {
       display: inline-block;
       font-style: italic; }
     #experience-creator header .filter .btn-group {
-      border-right: 1px solid #333333;
+      border-right: 1px solid #666666;
       float: left;
       margin: 0; }
       #experience-creator header .filter .btn-group:last-child {
-        border: none; }
+        border: none;
+        margin: 0 0 0 10px; }
     #experience-creator header .filter ul {
       float: left;
       margin: 0;
       padding: 0;
       list-style: none; }
-      #experience-creator header .filter ul:first-child {
-        margin: 0 10px 0 0; }
-      #experience-creator header .filter ul:last-child {
-        margin: 0 0 0 10px; }
       #experience-creator header .filter ul li {
         margin: 0 10px 0 0;
         float: left; }
@@ -1270,16 +1275,16 @@ footer.main {
     font-weight: 400;
     color: #666666; }
 
-ul.location-selection {
+ul.locations-grid {
   margin: 0;
   padding: 0;
   list-style: none; }
-  ul.location-selection li {
+  ul.locations-grid li.span4, #experiences nav ul.locations-grid li, ul.locations-grid #main article .features li.features-list, #main article .features ul.locations-grid li.features-list {
     position: relative;
     margin-bottom: 40px; }
-    ul.location-selection li img {
+    ul.locations-grid li.span4 img, #experiences nav ul.locations-grid li img, ul.locations-grid #main article .features li.features-list img, #main article .features ul.locations-grid li.features-list img {
       display: block; }
-    ul.location-selection li h3 {
+    ul.locations-grid li.span4 h3, #experiences nav ul.locations-grid li h3, ul.locations-grid #main article .features li.features-list h3, #main article .features ul.locations-grid li.features-list h3 {
       margin: 0;
       position: absolute;
       right: 0;
@@ -1287,7 +1292,7 @@ ul.location-selection {
       left: 0;
       line-height: 2.50em;
       text-transform: uppercase; }
-      ul.location-selection li h3 a {
+      ul.locations-grid li.span4 h3 a, #experiences nav ul.locations-grid li h3 a, ul.locations-grid #main article .features li.features-list h3 a, #main article .features ul.locations-grid li.features-list h3 a {
         width: 90%;
         padding: 0 5%;
         float: left;
@@ -1304,12 +1309,12 @@ ul.location-selection {
         -ms-transition: background-color 0.25s ease-in;
         -o-transition: background-color 0.25s ease-in;
         transition: background-color 0.25s ease-in; }
-        ul.location-selection li h3 a i {
+        ul.locations-grid li.span4 h3 a i, #experiences nav ul.locations-grid li h3 a i, ul.locations-grid #main article .features li.features-list h3 a i, #main article .features ul.locations-grid li.features-list h3 a i {
           position: relative;
           display: inline-block;
           margin: 0 0 0 8px;
           top: -3px; }
-          ul.location-selection li h3 a i img {
+          ul.locations-grid li.span4 h3 a i img, #experiences nav ul.locations-grid li h3 a i img, ul.locations-grid #main article .features li.features-list h3 a i img, #main article .features ul.locations-grid li.features-list h3 a i img {
             -webkit-transform: rotate(-90deg);
             -moz-transform: rotate(-90deg);
             -ms-transform: rotate(-90deg);
@@ -1324,7 +1329,7 @@ ul.location-selection {
             transition: all 0.25s ease-in;
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden; }
-        ul.location-selection li h3 a:hover i img {
+        ul.locations-grid li.span4 h3 a:hover i img, #experiences nav ul.locations-grid li h3 a:hover i img, ul.locations-grid #main article .features li.features-list h3 a:hover i img, #main article .features ul.locations-grid li.features-list h3 a:hover i img, ul.locations-grid li.span4 h3 a.selected i img, #experiences nav ul.locations-grid li h3 a.selected i img, ul.locations-grid #main article .features li.features-list h3 a.selected i img, #main article .features ul.locations-grid li.features-list h3 a.selected i img {
           filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
           opacity: 1;
           -webkit-transform: rotate(0deg);
@@ -1332,14 +1337,14 @@ ul.location-selection {
           -ms-transform: rotate(0deg);
           -o-transform: rotate(0deg);
           transform: rotate(0deg); }
-        ul.location-selection li h3 a:hover, ul.location-selection li h3 a.selected {
+        ul.locations-grid li.span4 h3 a:hover, #experiences nav ul.locations-grid li h3 a:hover, ul.locations-grid #main article .features li.features-list h3 a:hover, #main article .features ul.locations-grid li.features-list h3 a:hover, ul.locations-grid li.span4 h3 a.selected, #experiences nav ul.locations-grid li h3 a.selected, ul.locations-grid #main article .features li.features-list h3 a.selected, #main article .features ul.locations-grid li.features-list h3 a.selected {
           background-color: #414141; }
-        ul.location-selection li h3 a.selected i {
+        ul.locations-grid li.span4 h3 a.selected i, #experiences nav ul.locations-grid li h3 a.selected i, ul.locations-grid #main article .features li.features-list h3 a.selected i, #main article .features ul.locations-grid li.features-list h3 a.selected i {
           position: relative;
           display: inline-block;
           margin: 0 0 0 8px;
           top: -3px; }
-          ul.location-selection li h3 a.selected i img {
+          ul.locations-grid li.span4 h3 a.selected i img, #experiences nav ul.locations-grid li h3 a.selected i img, ul.locations-grid #main article .features li.features-list h3 a.selected i img, #main article .features ul.locations-grid li.features-list h3 a.selected i img {
             -webkit-transform: rotate(-180deg);
             -moz-transform: rotate(-180deg);
             -ms-transform: rotate(-180deg);
@@ -1354,10 +1359,10 @@ ul.location-selection {
             transition: all 0.25s ease-in;
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden; }
-        ul.location-selection li h3 a.selected:hover i img {
+        ul.locations-grid li.span4 h3 a.selected:hover i img, #experiences nav ul.locations-grid li h3 a.selected:hover i img, ul.locations-grid #main article .features li.features-list h3 a.selected:hover i img, #main article .features ul.locations-grid li.features-list h3 a.selected:hover i img, ul.locations-grid li.span4 h3 a.selected.selected i img, #experiences nav ul.locations-grid li h3 a.selected.selected i img, ul.locations-grid #main article .features li.features-list h3 a.selected.selected i img, #main article .features ul.locations-grid li.features-list h3 a.selected.selected i img {
           filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
           opacity: 1; }
-    ul.location-selection li ul, ul.location-selection li dl {
+    ul.locations-grid li.span4 ul, #experiences nav ul.locations-grid li ul, ul.locations-grid #main article .features li.features-list ul, #main article .features ul.locations-grid li.features-list ul, ul.locations-grid li.span4 dl, #experiences nav ul.locations-grid li dl, ul.locations-grid #main article .features li.features-list dl, #main article .features ul.locations-grid li.features-list dl {
       width: 100%;
       margin: 0;
       padding: 0;
@@ -1367,13 +1372,13 @@ ul.location-selection {
       right: 0;
       left: 0;
       background: #fff; }
-      ul.location-selection li ul li, ul.location-selection li dl li {
+      ul.locations-grid li.span4 ul li, #experiences nav ul.locations-grid li ul li, ul.locations-grid #main article .features li.features-list ul li, #main article .features ul.locations-grid li.features-list ul li, ul.locations-grid li.span4 dl li, #experiences nav ul.locations-grid li dl li, ul.locations-grid #main article .features li.features-list dl li, #main article .features ul.locations-grid li.features-list dl li {
         width: 100%;
         float: left;
         font-size: 0.69em;
         font-family: "proxima-nova", Helvetica, Arial, sans-serif;
         font-weight: 700; }
-        ul.location-selection li ul li a, ul.location-selection li dl li a {
+        ul.locations-grid li.span4 ul li a, #experiences nav ul.locations-grid li ul li a, ul.locations-grid #main article .features li.features-list ul li a, #main article .features ul.locations-grid li.features-list ul li a, ul.locations-grid li.span4 dl li a, #experiences nav ul.locations-grid li dl li a, ul.locations-grid #main article .features li.features-list dl li a, #main article .features ul.locations-grid li.features-list dl li a {
           width: 90%;
           padding: 8px 5%;
           float: left;
@@ -1383,19 +1388,46 @@ ul.location-selection {
           -ms-transition: all 0.25s ease-in;
           -o-transition: all 0.25s ease-in;
           transition: all 0.25s ease-in; }
-          ul.location-selection li ul li a:hover, ul.location-selection li dl li a:hover {
+          ul.locations-grid li.span4 ul li a:hover, #experiences nav ul.locations-grid li ul li a:hover, ul.locations-grid #main article .features li.features-list ul li a:hover, #main article .features ul.locations-grid li.features-list ul li a:hover, ul.locations-grid li.span4 dl li a:hover, #experiences nav ul.locations-grid li dl li a:hover, ul.locations-grid #main article .features li.features-list dl li a:hover, #main article .features ul.locations-grid li.features-list dl li a:hover {
             color: #000;
             background: #f4f4f4; }
-    ul.location-selection li dl {
+    ul.locations-grid li.span4 dl, #experiences nav ul.locations-grid li dl, ul.locations-grid #main article .features li.features-list dl, #main article .features ul.locations-grid li.features-list dl {
       margin: 0;
       padding: 10px 0; }
-      ul.location-selection li dl dt input[type="checkbox"] {
-        margin: 4px 10px;
-        float: left;
-        display: inline; }
-      ul.location-selection li dl dt h2 {
-        margin-left: 40px; }
-      ul.location-selection li dl dd {
+      ul.locations-grid li.span4 dl dt, #experiences nav ul.locations-grid li dl dt, ul.locations-grid #main article .features li.features-list dl dt, #main article .features ul.locations-grid li.features-list dl dt {
+        min-height: 40px;
+        position: relative; }
+        ul.locations-grid li.span4 dl dt label, #experiences nav ul.locations-grid li dl dt label, ul.locations-grid #main article .features li.features-list dl dt label, #main article .features ul.locations-grid li.features-list dl dt label {
+          width: 225px;
+          margin: 0 0 0 40px;
+          cursor: pointer;
+          display: inline-block;
+          position: relative; }
+          ul.locations-grid li.span4 dl dt label input[type="checkbox"], #experiences nav ul.locations-grid li dl dt label input[type="checkbox"], ul.locations-grid #main article .features li.features-list dl dt label input[type="checkbox"], #main article .features ul.locations-grid li.features-list dl dt label input[type="checkbox"] {
+            margin: -10px 0 0 -10px;
+            position: absolute;
+            left: -20px;
+            top: 50%; }
+        ul.locations-grid li.span4 dl dt button.toggle, #experiences nav ul.locations-grid li dl dt button.toggle, ul.locations-grid #main article .features li.features-list dl dt button.toggle, #main article .features ul.locations-grid li.features-list dl dt button.toggle {
+          width: 16px;
+          height: 16px;
+          margin: -9px 0 0;
+          text-align: center;
+          line-height: 8px;
+          padding: 0;
+          font-size: 8px;
+          background: #fff;
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          border: 1px solid #9b9b9b;
+          color: #9b9b9b;
+          -webkit-border-radius: 100px;
+          -moz-border-radius: 100px;
+          -ms-border-radius: 100px;
+          -o-border-radius: 100px;
+          border-radius: 100px; }
+      ul.locations-grid li.span4 dl dd, #experiences nav ul.locations-grid li dl dd, ul.locations-grid #main article .features li.features-list dl dd, #main article .features ul.locations-grid li.features-list dl dd {
         margin: 0;
         padding: 0 10px 20px 40px;
         font-size: 0.75em;

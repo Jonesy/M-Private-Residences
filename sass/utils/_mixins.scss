@@ -70,7 +70,8 @@
     }
   }
 
-  &:hover {
+  &:hover,
+  &.selected {
     i img {
       @include opacity(1);
       @if $animateTo != false {

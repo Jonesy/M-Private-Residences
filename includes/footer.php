@@ -1,5 +1,5 @@
 
-    <footer>
+    <footer class="main">
       <div class="container">
         <nav id="footer-nav" class="span4">
           <ul>

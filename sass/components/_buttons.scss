@@ -17,13 +17,23 @@
   &:hover {
     background: lighten($midgrey, 20%);
   }
-  /* Silver button */
+
   &.btn-silver {
     background: $silver;
     color: #333;
 
     &:hover {
       background: darken($silver, 20%);
+    }
+  }
+
+  &.btn-white {
+    background: #fff;
+    color: $headlines;
+
+    &:hover {
+      background: $headlines;
+      color: #fff;
     }
   }
 }

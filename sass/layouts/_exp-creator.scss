@@ -1,6 +1,7 @@
 #experience-creator {
   min-height: 600px;
   header {
+    position: relative;
     margin-bottom: 30px;
 
     h1 {
@@ -8,6 +9,7 @@
     }
 
     h3 {
+      @include ProximaCondensed;
       color: #999;
     }
 
@@ -15,9 +17,57 @@
       text-transform: uppercase;
     }
 
+    a.next-step {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+
     small {
-      margin: 0;
+      margin: 0 0 10px;
+      display: inline-block;
       font-style: italic;
+    }
+
+    .filter {
+      .btn-group {
+        border-right: 1px solid $headlines;
+        float: left;
+        margin: 0;
+
+        &:last-child {
+          border: none;
+        }
+      }
+
+      ul {
+        float: left;
+        @include ul-reset($no-bullet: true);
+
+        &:first-child {
+          margin: 0 10px 0 0;
+        }
+
+        &:last-child {
+          margin: 0 0 0 10px;
+        }
+
+        li {
+          margin: 0 10px 0 0;
+          float: left;
+        }
+      }
+    }
+  }
+
+  footer {
+    margin: 350px 0 0;
+    float: left;
+    @extend .container;
+    position: relative;
+
+    a {
+      float: right;
     }
   }
 }
@@ -31,6 +81,7 @@
     list-style: none;
 
     li {
+      height: 28px;
       padding: 0 15px;
       float: left;
       position: relative;
@@ -38,22 +89,31 @@
       @include Proxima();
       line-height: 28px;
 
-      &:after {
-        counter-increment:section;
-        content: counter(section);
-        position: absolute;
-        top: 28px;
-        left: 50%;
-        font-size: 1.36em;
-        @include Proxima;
-        color: $body;
-      }
-
       &.current {
+        $caret-height: image-height("breadcrumb-current.png");
         font-weight: 700;
         color: #000;
+        background: image-url("breadcrumb-current.png") no-repeat center (28px - ($caret-height / 2));
+
+        @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+          background-position: center bottom;          
+        }
       }
     }
+  }
+
+  &.numbered ol li:after {
+    counter-increment:section;
+    content: counter(section);
+    width: 20px;
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    margin-left: -10px;
+    text-align: center;
+    font-size: 1.36em;
+    @include Proxima;
+    color: $body;
   }
 }
 
@@ -62,6 +122,7 @@ ul.location-selection {
 
   li {
     position: relative;
+    margin-bottom: 40px;
 
     img {
       display: block;
@@ -82,22 +143,27 @@ ul.location-selection {
         float: left;
         color: #fff;
         background-color: #000;
-        @include btn-with-caret($dir: right, $anim: up);
+        @include btn-with-caret($dir: right, $animateTo: down);
         @include background-image(linear-gradient(
           rgba(#202020, 0.9), rgba(#202020, 0.1)
         ));
         @include transition(background-color 0.25s ease-in);
 
-        &:hover {
+        &:hover,
+        &.selected {
           background-color: #414141;
+        }
+
+        &.selected {
+          @include btn-with-caret($dir: down);
         }
       }
     }
 
-    ul {
+    ul, dl {
       width: 100%;
       @include ul-reset($no-bullet: true);
-      display: none;
+      /*display: none;*/
       position: absolute;
       right: 0;
       left: 0;
@@ -121,6 +187,28 @@ ul.location-selection {
             background: #f4f4f4;
           }
         }
+      }
+    }
+
+    dl {
+      margin: 0;
+      padding: 10px 0;
+      dt {
+        input[type="checkbox"] {
+          margin: 4px 10px;
+          float: left;
+          display: inline;
+        }
+        h2 {
+          margin-left: 40px;
+        }
+      }
+      dd {
+        margin: 0;
+        padding: 0 10px $gutter 40px;
+        font-size: 0.75em;
+        line-height: 1.8em;
+        border-bottom: 1px solid $silver;
       }
     }
   }

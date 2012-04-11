@@ -481,7 +481,7 @@ table {
 .span12 {
   width: 940px; }
 
-.container, #experiences nav ul {
+.container, #experiences nav ul, #experience-creator footer {
   width: 980px;
   margin: 0 auto;
   position: relative;
@@ -590,8 +590,7 @@ ul.nav-list {
   transition: all 0.25s ease-in;
   border: none;
   -webkit-background-clip: padding-box;
-  /* Default button */
-  /* Silver button */ }
+  /* Default button */ }
   .btn:hover, .btn-zoom:hover {
     background: #7b7b7b; }
   .btn.btn-silver {
@@ -599,6 +598,12 @@ ul.nav-list {
     color: #333; }
     .btn.btn-silver:hover, .btn-silver.btn-zoom:hover {
       background: #b7b7b7; }
+  .btn.btn-white {
+    background: #fff;
+    color: #333333; }
+    .btn.btn-white:hover, .btn-white.btn-zoom:hover {
+      background: #333333;
+      color: #fff; }
 
 .btn-zoom {
   width: 40px;
@@ -837,18 +842,18 @@ header[role="banner"] {
   right: 0;
   z-index: 9999;
   background: #fff; }
-  #subnav-container .container, #subnav-container #experiences nav ul, #experiences nav #subnav-container ul {
+  #subnav-container .container, #subnav-container #experiences nav ul, #experiences nav #subnav-container ul, #subnav-container #experience-creator footer, #experience-creator #subnav-container footer {
     display: table;
     margin-bottom: 10px; }
-    #subnav-container .container ul, #subnav-container #experiences nav ul ul, #experiences nav #subnav-container ul ul {
+    #subnav-container .container ul, #subnav-container #experiences nav ul ul, #experiences nav #subnav-container ul ul, #subnav-container #experience-creator footer ul, #experience-creator #subnav-container footer ul {
       width: 160px;
       float: left; }
-      #subnav-container .container ul:last-child, #subnav-container #experiences nav ul ul:last-child, #experiences nav #subnav-container ul ul:last-child {
+      #subnav-container .container ul:last-child, #subnav-container #experiences nav ul ul:last-child, #experiences nav #subnav-container ul ul:last-child, #subnav-container #experience-creator footer ul:last-child, #experience-creator #subnav-container footer ul:last-child {
         width: 140px; }
-      #subnav-container .container ul li, #subnav-container #experiences nav ul ul li, #experiences nav #subnav-container ul ul li {
+      #subnav-container .container ul li, #subnav-container #experiences nav ul ul li, #experiences nav #subnav-container ul ul li, #subnav-container #experience-creator footer ul li, #experience-creator #subnav-container footer ul li {
         width: 85px;
         margin: 0 0 10px; }
-        #subnav-container .container ul li a, #subnav-container #experiences nav ul ul li a, #experiences nav #subnav-container ul ul li a {
+        #subnav-container .container ul li a, #subnav-container #experiences nav ul ul li a, #experiences nav #subnav-container ul ul li a, #subnav-container #experience-creator footer ul li a, #experience-creator #subnav-container footer ul li a {
           color: #666666; }
 
 div[role="main"] {
@@ -889,7 +894,7 @@ div[role="main"] {
   background-image: -ms-linear-gradient(rgba(7, 7, 7, 0), rgba(7, 7, 7, 0.75));
   background-image: linear-gradient(rgba(7, 7, 7, 0), rgba(7, 7, 7, 0.75)); }
 
-footer {
+footer.main {
   width: 100%;
   min-height: 400px;
   padding: 20px 0 0;
@@ -905,40 +910,40 @@ footer {
   background-image: -o-linear-gradient(rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 5%);
   background-image: -ms-linear-gradient(rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 5%);
   background-image: linear-gradient(rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 5%); }
-  footer h1,
-  footer h2,
-  footer strong {
+  footer.main h1,
+  footer.main h2,
+  footer.main strong {
     color: #fff; }
-  footer small,
-  footer a {
+  footer.main small,
+  footer.main a {
     color: #999999;
     -webkit-transition: color 0.2s ease-in;
     -moz-transition: color 0.2s ease-in;
     -ms-transition: color 0.2s ease-in;
     -o-transition: color 0.2s ease-in;
     transition: color 0.2s ease-in; }
-    footer small:hover,
-    footer a:hover {
+    footer.main small:hover,
+    footer.main a:hover {
       color: #fff; }
-  footer nav {
+  footer.main nav {
     padding-top: 10px; }
-    footer nav ul {
+    footer.main nav ul {
       margin: 0;
       padding: 0;
       list-style: none; }
-      footer nav ul li {
+      footer.main nav ul li {
         width: 140px;
         float: left;
         margin: 7px 0 5px;
         text-transform: uppercase;
         font-family: "proxima-nova-condensed", "Arial Narrow", Helvetica, Arial, sans-serif;
         font-weight: 300; }
-        footer nav ul li:nth-child(2n-1) {
+        footer.main nav ul li:nth-child(2n-1) {
           margin-right: 20px; }
-    footer nav p, footer nav address {
+    footer.main nav p, footer.main nav address {
       display: inline-block;
       margin: 1.5em 0; }
-      footer nav p a, footer nav address a {
+      footer.main nav p a, footer.main nav address a {
         color: #999; }
 
 .box {
@@ -1186,16 +1191,48 @@ footer {
 #experience-creator {
   min-height: 600px; }
   #experience-creator header {
+    position: relative;
     margin-bottom: 30px; }
     #experience-creator header h1 {
       margin-bottom: 0; }
     #experience-creator header h3 {
+      font-family: "proxima-nova-condensed", "Arial Narrow", Helvetica, Arial, sans-serif;
+      font-weight: 300;
       color: #999; }
     #experience-creator header h1, #experience-creator header h3 {
       text-transform: uppercase; }
+    #experience-creator header a.next-step {
+      position: absolute;
+      right: 0;
+      bottom: 0; }
     #experience-creator header small {
-      margin: 0;
+      margin: 0 0 10px;
+      display: inline-block;
       font-style: italic; }
+    #experience-creator header .filter .btn-group {
+      border-right: 1px solid #333333;
+      float: left;
+      margin: 0; }
+      #experience-creator header .filter .btn-group:last-child {
+        border: none; }
+    #experience-creator header .filter ul {
+      float: left;
+      margin: 0;
+      padding: 0;
+      list-style: none; }
+      #experience-creator header .filter ul:first-child {
+        margin: 0 10px 0 0; }
+      #experience-creator header .filter ul:last-child {
+        margin: 0 0 0 10px; }
+      #experience-creator header .filter ul li {
+        margin: 0 10px 0 0;
+        float: left; }
+  #experience-creator footer {
+    margin: 350px 0 0;
+    float: left;
+    position: relative; }
+    #experience-creator footer a {
+      float: right; }
 
 .breadcrumb {
   float: right;
@@ -1204,6 +1241,7 @@ footer {
   .breadcrumb ol {
     list-style: none; }
     .breadcrumb ol li {
+      height: 28px;
       padding: 0 15px;
       float: left;
       position: relative;
@@ -1211,26 +1249,34 @@ footer {
       font-family: "proxima-nova", Helvetica, Arial, sans-serif;
       font-weight: 400;
       line-height: 28px; }
-      .breadcrumb ol li:after {
-        counter-increment: section;
-        content: counter(section);
-        position: absolute;
-        top: 28px;
-        left: 50%;
-        font-size: 1.36em;
-        font-family: "proxima-nova", Helvetica, Arial, sans-serif;
-        font-weight: 400;
-        color: #666666; }
       .breadcrumb ol li.current {
         font-weight: 700;
-        color: #000; }
+        color: #000;
+        background: url('../images/breadcrumb-current.png?1334128535') no-repeat center 22.5px; }
+        @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+          .breadcrumb ol li.current {
+            background-position: center bottom; } }
+  .breadcrumb.numbered ol li:after {
+    counter-increment: section;
+    content: counter(section);
+    width: 20px;
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    margin-left: -10px;
+    text-align: center;
+    font-size: 1.36em;
+    font-family: "proxima-nova", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    color: #666666; }
 
 ul.location-selection {
   margin: 0;
   padding: 0;
   list-style: none; }
   ul.location-selection li {
-    position: relative; }
+    position: relative;
+    margin-bottom: 40px; }
     ul.location-selection li img {
       display: block; }
     ul.location-selection li h3 {
@@ -1281,30 +1327,53 @@ ul.location-selection {
         ul.location-selection li h3 a:hover i img {
           filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
           opacity: 1;
-          -webkit-transform: rotate(-180deg);
-          -moz-transform: rotate(-180deg);
-          -ms-transform: rotate(-180deg);
-          -o-transform: rotate(-180deg);
-          transform: rotate(-180deg); }
-        ul.location-selection li h3 a:hover {
+          -webkit-transform: rotate(0deg);
+          -moz-transform: rotate(0deg);
+          -ms-transform: rotate(0deg);
+          -o-transform: rotate(0deg);
+          transform: rotate(0deg); }
+        ul.location-selection li h3 a:hover, ul.location-selection li h3 a.selected {
           background-color: #414141; }
-    ul.location-selection li ul {
+        ul.location-selection li h3 a.selected i {
+          position: relative;
+          display: inline-block;
+          margin: 0 0 0 8px;
+          top: -3px; }
+          ul.location-selection li h3 a.selected i img {
+            -webkit-transform: rotate(-180deg);
+            -moz-transform: rotate(-180deg);
+            -ms-transform: rotate(-180deg);
+            -o-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=33);
+            opacity: 0.33;
+            -webkit-transition: all 0.25s ease-in;
+            -moz-transition: all 0.25s ease-in;
+            -ms-transition: all 0.25s ease-in;
+            -o-transition: all 0.25s ease-in;
+            transition: all 0.25s ease-in;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden; }
+        ul.location-selection li h3 a.selected:hover i img {
+          filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+          opacity: 1; }
+    ul.location-selection li ul, ul.location-selection li dl {
       width: 100%;
       margin: 0;
       padding: 0;
       list-style: none;
-      display: none;
+      /*display: none;*/
       position: absolute;
       right: 0;
       left: 0;
       background: #fff; }
-      ul.location-selection li ul li {
+      ul.location-selection li ul li, ul.location-selection li dl li {
         width: 100%;
         float: left;
         font-size: 0.69em;
         font-family: "proxima-nova", Helvetica, Arial, sans-serif;
         font-weight: 700; }
-        ul.location-selection li ul li a {
+        ul.location-selection li ul li a, ul.location-selection li dl li a {
           width: 90%;
           padding: 8px 5%;
           float: left;
@@ -1314,6 +1383,21 @@ ul.location-selection {
           -ms-transition: all 0.25s ease-in;
           -o-transition: all 0.25s ease-in;
           transition: all 0.25s ease-in; }
-          ul.location-selection li ul li a:hover {
+          ul.location-selection li ul li a:hover, ul.location-selection li dl li a:hover {
             color: #000;
             background: #f4f4f4; }
+    ul.location-selection li dl {
+      margin: 0;
+      padding: 10px 0; }
+      ul.location-selection li dl dt input[type="checkbox"] {
+        margin: 4px 10px;
+        float: left;
+        display: inline; }
+      ul.location-selection li dl dt h2 {
+        margin-left: 40px; }
+      ul.location-selection li dl dd {
+        margin: 0;
+        padding: 0 10px 20px 40px;
+        font-size: 0.75em;
+        line-height: 1.8em;
+        border-bottom: 1px solid #eaeaea; }

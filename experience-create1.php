@@ -4,7 +4,7 @@
   <div class="container">
     <section id="experience-creator">
       <header class="span12">
-        <div class="breadcrumb">
+        <div class="breadcrumb numbered">
           <ol>
             <li class="current">Destination</li>
             <li>Activities</li>

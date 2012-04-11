@@ -24,21 +24,21 @@
 }
 
 /* Base class for any large box link with a small caret */
-@mixin btn-with-caret($dir: right, $anim: false) {
+@mixin btn-with-caret($dir: right, $animateTo: false) {
   $rotate: 0;
-  @if $anim == up {
+  @if $animateTo == up {
     $rotate: -180deg;
   }
 
-  @if $anim == right {
+  @if $animateTo == right {
     $rotate: -90deg;
   }
 
-  @if $anim == down {
-    $rotate: -180deg;
+  @if $animateTo == down {
+    $rotate: 0deg;
   }
 
-  @if $anim == left {
+  @if $animateTo == left {
     $rotate: 90deg;
   }
 
@@ -73,7 +73,7 @@
   &:hover {
     i img {
       @include opacity(1);
-      @if $anim != false {
+      @if $animateTo != false {
         @include rotate($rotate);
       }
     }

@@ -23,21 +23,21 @@
       <ul class="locations-grid">
         <li class="span4">
           <img src="http://placehold.it/300x148" alt="">
-          <h3><a href="#" class="selected">Golf <i><img src="images/svg/caret.svg" alt="" class="caret-right"></i></a></h3>
+          <h3><a href="#" class="selected">Golf <i><img src="images/svg/caret.svg" alt=""></i></a></h3>
           <dl>
             <dt>
-              <button class="toggle">+</button>
+              <button class="toggle"><img src="/images/svg/button-expand.svg" alt=""></button>
               <label>
-                <input type="checkbox" name="" value="">
+                <span><input type="checkbox" name="" value=""></span>
                 Golf Course Name One
               </label>
             </dt>
             <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. etiam at fermentum ipsum. Suspendisse facilisis fringilla nunc sit amet dignissim. In feugiat, sem sed mattis eleifend, nunc nibh pellentesque lacus, et facilisis.</dd>
             <dt>
-              <button class="toggle">+</button>
+              <button class="toggle"><img src="/images/svg/button-hide.svg" alt=""></button>
               <label>
-                <input type="checkbox" name="" value="">
-                Golf Course Name One
+                <span><input type="checkbox" name="" value=""></span>
+                Golf Course Name One is Really Long
               </label>
             </dt>
             <dd style="display:none">Lorem ipsum dolor sit amet, consectetur adipiscing elit. etiam at fermentum ipsum. Suspendisse facilisis fringilla nunc sit amet dignissim. In feugiat, sem sed mattis eleifend, nunc nibh pellentesque lacus, et facilisis.</dd>
@@ -45,11 +45,11 @@
         </li>
         <li class="span4">
           <img src="http://placehold.it/300x148" alt="">
-          <h3><a href="#">Attend Shows <i><img src="images/svg/caret.svg" alt="" class="caret-right"></i></a></h3>
+          <h3><a href="#">Attend Shows <i><img src="images/svg/caret.svg" alt=""></i></a></h3>
         </li>
         <li class="span4">
           <img src="http://placehold.it/300x148" alt="">
-          <h3><a href="#">Go on Tours <i><img src="images/svg/caret.svg" alt="" class="caret-right"></i></a></h3>
+          <h3><a href="#">Go on Tours <i><img src="images/svg/caret.svg" alt=""></i></a></h3>
         </li>
       </ul> <!-- / ul.location-selection -->
       <footer>

@@ -29,6 +29,22 @@ footer.main {
     }
   }
 
+  .social-links {
+    a {
+      margin: 0 6px 0 0;
+      img {
+        @include opacity(0.88);
+        @include transition(opacity 0.25s ease-in);
+      }
+
+      &:hover {
+        img {
+          @include opacity(1);
+        }
+      }
+    }
+  }
+
   nav {
     padding-top: 10px;
 

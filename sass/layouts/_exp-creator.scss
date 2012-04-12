@@ -193,37 +193,50 @@ ul.locations-grid {
       dt {
         min-height: 40px;
         position: relative;
+
         label {
           width: 225px;
           @extend h2;
-          margin: 0 0 0 40px;
+          margin: 10px 0 10px 40px;
           cursor: pointer;
+          line-height: 1em;
           display: inline-block;
           position: relative;
 
-          input[type="checkbox"] {
-            margin: -10px 0 0 -10px;
+          span {
+            width: 11px;
+            height: 11px;
+            margin: -7px 0 0 -7px;
             position: absolute;
             left: -20px;
             top: 50%;
+            display: inline-block;
+            border: 1px solid $body;
+            cursor: pointer;
+
+            input[type="checkbox"] {
+              opacity: 0;  
+            }
           }
+
         }
 
         button.toggle {
-          width: 16px;
-          height: 16px;
+          width: 18px;
+          height: 18px;
           margin: -9px 0 0;
           text-align: center;
-          line-height: 8px;
           padding: 0;
-          font-size: 8px;
           background: #fff;
           position: absolute;
           right: 10px;
           top: 50%;
-          border: 1px solid #9b9b9b;
+          border: none;
           color: #9b9b9b;
-          @include border-radius(100px);
+          img {
+            width: 18px;
+            height: 18px;
+          }
         }
       }
       dd {

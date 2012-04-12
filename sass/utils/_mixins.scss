@@ -24,58 +24,60 @@
 }
 
 /* Base class for any large box link with a small caret */
-@mixin btn-with-caret($dir: right, $animateTo: false) {
-  $rotate: 0;
-  @if $animateTo == up {
-    $rotate: -180deg;
+@mixin btn-with-caret($dir: down, $animateTo: false) {
+  $start: 0;
+  $end: 0;
+
+  @if $dir == up {
+    $start: -2;
   }
 
-  @if $animateTo == right {
-    $rotate: -90deg;
+  @if $dir == right {
+    $start: -1;
   }
 
-  @if $animateTo == down {
-    $rotate: 0deg;
+  @if $dir == left {
+    $start: 1;
   }
 
-  @if $animateTo == left {
-    $rotate: 90deg;
+  @if $animateTo != false {
+    @if $animateTo == up {
+      $end: -1;
+    }
+
+    @if $animateTo == right {
+      $end: 1;
+    }
+
+    @if $animateTo == left {
+      $end: 2;
+    }
   }
+
+
+  $startPosition: #{$start * 90}deg;
+  $endPosition: #{$start - $end * 90}deg;
 
   i {
     position: relative;
     display: inline-block;
     margin: 0 0 0 8px;
     top: -3px;
-
-    img {
-        @if $dir == up {
-          @include rotate(-180deg);
-          top: -2px;
-        }
-
-        @if $dir == right {
-          @include rotate(-90deg);
-        }
-
-        @if $dir == down {
-          @include rotate(-180deg);
-        }
-        @if $dir == left {
-          @include rotate(90deg);
-        }
-      @include opacity(0.33);
-      @include transition(all 0.25s ease-in);
-      @include backface-visibility(hidden);
+    @if $dir == up {
+      top: -2px;
     }
+    @include rotate($startPosition);
+    @include transition(all 0.25s ease-in);
+    @include opacity(0.33);
+    @include backface-visibility(hidden);
   }
 
   &:hover,
   &.selected {
-    i img {
+    i {
       @include opacity(1);
       @if $animateTo != false {
-        @include rotate($rotate);
+        @include rotate($endPosition);
       }
     }
   }

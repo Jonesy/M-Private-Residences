@@ -21,7 +21,7 @@
       <ul class="locations-grid">
         <li class="span4">
           <img src="http://placehold.it/300x148" alt="">
-          <h3><a href="#">Sun <i><img src="images/svg/caret.svg" alt=""></i></a></h3>
+          <h3><a href="#">Sun <i class="caret"><img src="images/svg/caret.svg" alt=""></i></a></h3>
           <ul>
             <li><a href="#">Las Vegas, Nevada</a></li>
             <li><a href="#">New York, New York</a></li>
@@ -31,7 +31,7 @@
         </li>
         <li class="span4">
           <img src="http://placehold.it/300x148" alt="">
-          <h3><a href="#">Snow <i><img src="images/svg/caret.svg" alt=""></i></a></h3>
+          <h3><a href="#">Snow <i class="caret"><img src="images/svg/caret.svg" alt=""></i></a></h3>
           <ul>
             <li><a href="#">Las Vegas, Nevada</a></li>
             <li><a href="#">New York, New York</a></li>
@@ -41,7 +41,7 @@
         </li>
         <li class="span4">
           <img src="http://placehold.it/300x148" alt="">
-          <h3><a href="#">City <i><img src="images/svg/caret.svg" alt=""></i></a></h3>
+          <h3><a href="#">City <i class="caret"><img src="images/svg/caret.svg" alt=""></i></a></h3>
           <ul>
             <li><a href="#">Las Vegas, Nevada</a></li>
             <li><a href="#">New York, New York</a></li>

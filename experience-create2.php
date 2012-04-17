@@ -23,9 +23,9 @@
       <ul class="locations-grid">
         <li class="span4">
           <img src="http://placehold.it/300x148" alt="">
-          <h3><a href="#" class="selected">Golf <i><img src="images/svg/caret.svg" alt=""></i></a></h3>
+          <h3><a href="#" class="selected">Golf <i class="caret"><img src="images/svg/caret.svg" alt=""></i></a></h3>
           <dl>
-            <dt>
+            <dt class="selected">
               <button class="toggle"><img src="/images/svg/button-expand.svg" alt=""></button>
               <label>
                 <span><input type="checkbox" name="" value=""></span>
@@ -45,11 +45,11 @@
         </li>
         <li class="span4">
           <img src="http://placehold.it/300x148" alt="">
-          <h3><a href="#">Attend Shows <i><img src="images/svg/caret.svg" alt=""></i></a></h3>
+          <h3><a href="#">Attend Shows <i class="caret"><img src="images/svg/caret.svg" alt=""></i></a></h3>
         </li>
         <li class="span4">
           <img src="http://placehold.it/300x148" alt="">
-          <h3><a href="#">Go on Tours <i><img src="images/svg/caret.svg" alt=""></i></a></h3>
+          <h3><a href="#">Go on Tours <i class="caret"><img src="images/svg/caret.svg" alt=""></i></a></h3>
         </li>
       </ul> <!-- / ul.location-selection -->
       <footer>

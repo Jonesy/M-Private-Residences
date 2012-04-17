@@ -19,8 +19,8 @@
   }
 
   &.btn-silver {
-    background: $silver;
-    color: #333;
+    background: $silver !important;
+    color: #333 !important;
 
     &:hover {
       background: darken($silver, 20%);
@@ -65,11 +65,14 @@
 
   /* Non-SVG Shim */
   .no-svg & {
-    background: {
-      image: image-url("shim/zoom.png");
-      position: center center;
-      repeat: no-repeat;
+    i {
+      width: image-width("shim/zoom.png");
+      height: image-height("shim/zoom.png");
+      margin: 6px auto;
+      display: inline-block;
+      @include shim-sprite(zoom);
     }
+
     img {
       display: none;
     }
@@ -86,11 +89,66 @@ button.toggle {
   text-align: center;
   border: none;
   color: #9b9b9b;
+
   img {
     width: $dimension;
     height: $dimension;
     vertical-align: top;
   }
+
+  .no-svg & {
+    width: image-width("shim/btn-open.png");
+    height: image-height("shim/btn-open.png");
+    @include shim-sprite(btn-open);
+
+    img {
+      display: none !important;
+    }
+  }
+
+  .no-svg .selected & {
+    @include shim-sprite(btn-close);      
+  }
+}
+
+button[class^="gallery-nav"] {
+  width: 30px;
+  height: 80px;
+  border: none;
+  float: left;
+  padding: 0;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  font-size: 80px;
+
+  .no-svg & {
+    i {
+      width: image-width("shim/caret-lrg-next.png");
+      height: image-height("shim/caret-lrg-next.png");
+      overflow: hidden;
+      float: left;
+      display: block;
+      border: none;
+      margin: 0 10px;
+    }
+
+    img {
+      display: none;
+    }
+  }
+
+  img {
+    margin: 0 auto;
+  }
+}
+
+button.gallery-nav-next i {
+  @include shim-sprite(caret-lrg-next);
+}
+
+button.gallery-nav-prev i {
+  @include shim-sprite(caret-lrg-prev);
 }
 
 /**

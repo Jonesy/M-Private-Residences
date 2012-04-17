@@ -1,7 +1,7 @@
 /* System */
 /* Utilities */
-.shim-sprite, footer.main .social-links .svgclippaths a.social-facebook {
-  background: url('../images/shim-s3ad8d207ea.png') no-repeat; }
+.shim-sprite, .no-svg .btn-zoom i, .no-svg button.toggle, .no-svg .selected button.toggle, button.gallery-nav-next i, button.gallery-nav-prev i, .no-svg footer.main .social-links a.social-facebook, .no-svg footer.main .social-links a.social-twitter, .no-svg footer.main .social-links a.social-gplus {
+  background: url('../images/shim-sd01bde928f.png') no-repeat; }
 
 /* normalize.css 2012-03-11T12:53 UTC - http://github.com/necolas/normalize.css */
 /* =============================================================================
@@ -597,8 +597,8 @@ ul.nav-list {
   .btn:hover, .btn-zoom:hover {
     background: #7b7b7b; }
   .btn.btn-silver {
-    background: #eaeaea;
-    color: #333; }
+    background: #eaeaea !important;
+    color: #333 !important; }
     .btn.btn-silver:hover, .btn-silver.btn-zoom:hover {
       background: #b7b7b7; }
   .btn.btn-white {
@@ -630,12 +630,14 @@ ul.nav-list {
     vertical-align: middle;
     display: block;
     position: relative; }
-  .no-svg .btn-zoom {
-    background-image: url('../images/shim/zoom.png?1334010465');
-    background-position: center center;
-    background-repeat: no-repeat; }
-    .no-svg .btn-zoom img {
-      display: none; }
+  .no-svg .btn-zoom i {
+    width: 27px;
+    height: 28px;
+    margin: 6px auto;
+    display: inline-block;
+    background-position: 0 0; }
+  .no-svg .btn-zoom img {
+    display: none; }
 
 button.toggle {
   width: 19px;
@@ -650,6 +652,43 @@ button.toggle {
     width: 19px;
     height: 19px;
     vertical-align: top; }
+  .no-svg button.toggle {
+    width: 17px;
+    height: 17px;
+    background-position: 0 -154px; }
+    .no-svg button.toggle img {
+      display: none !important; }
+  .no-svg .selected button.toggle {
+    background-position: 0 -171px; }
+
+button[class^="gallery-nav"] {
+  width: 30px;
+  height: 80px;
+  border: none;
+  float: left;
+  padding: 0;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  font-size: 80px; }
+  .no-svg button[class^="gallery-nav"] i {
+    width: 10px;
+    height: 20px;
+    overflow: hidden;
+    float: left;
+    display: block;
+    border: none;
+    margin: 0 10px; }
+  .no-svg button[class^="gallery-nav"] img {
+    display: none; }
+  button[class^="gallery-nav"] img {
+    margin: 0 auto; }
+
+button.gallery-nav-next i {
+  background-position: 0 -208px; }
+
+button.gallery-nav-prev i {
+  background-position: 0 -188px; }
 
 /**
   NOTE: Uses css triangle for the right corner, CSS transitions don't work as of now.
@@ -816,9 +855,10 @@ dl.accordion dt {
   padding: 5px 0 15px;
   position: relative;
   line-height: 1em;
-  color: #666666; }
+  color: #666666;
+  border-bottom: 1px solid #ccc; }
   dl.accordion dt.selected {
-    border-bottom: 1px solid #ccc; }
+    border: none; }
   .js dl.accordion dt {
     padding: 5px 0 15px 30px; }
   dl.accordion dt button {
@@ -1043,14 +1083,18 @@ footer.main {
     .svg footer.main .social-links a:hover img {
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
       opacity: 1; }
-  footer.main .social-links .svgclippaths a {
+  .no-svg footer.main .social-links a {
     width: 42px;
     height: 42px;
     float: left;
     overflow: hidden; }
-    footer.main .social-links .svgclippaths a.social-facebook {
+    .no-svg footer.main .social-links a.social-facebook {
       background-position: 0 -112px; }
-    footer.main .social-links .svgclippaths a img {
+    .no-svg footer.main .social-links a.social-twitter {
+      background-position: 0 -70px; }
+    .no-svg footer.main .social-links a.social-gplus {
+      background-position: 0 -28px; }
+    .no-svg footer.main .social-links a img {
       display: none; }
   footer.main nav {
     padding-top: 10px; }
@@ -1111,16 +1155,6 @@ footer.main {
   -ms-transition: background-color 0.25s ease-in;
   -o-transition: background-color 0.25s ease-in;
   transition: background-color 0.25s ease-in; }
-  .no-svg .exp-lrg-btn i, .no-svg #experiences nav ul li a i, #experiences nav ul li .no-svg a i, .no-svg #experiences.full-page ul li .exp-callout i, #experiences.full-page ul li .no-svg .exp-callout i, .lt-ie9 .exp-lrg-btn i, .lt-ie9 #experiences nav ul li a i, #experiences nav ul li .lt-ie9 a i, .lt-ie9 #experiences.full-page ul li .exp-callout i, #experiences.full-page ul li .lt-ie9 .exp-callout i {
-    width: 8px;
-    height: 5px;
-    margin: 0 0 0 10px;
-    display: inline-block;
-    vertical-align: middle;
-    overflow: hidden;
-    background: url('../images/shim/caret-up-off.png?1334010468') no-repeat 0 0; }
-    .no-svg .exp-lrg-btn i img, .no-svg #experiences nav ul li a i img, #experiences nav ul li .no-svg a i img, .no-svg #experiences.full-page ul li .exp-callout i img, #experiences.full-page ul li .no-svg .exp-callout i img, .lt-ie9 .exp-lrg-btn i img, .lt-ie9 #experiences nav ul li a i img, #experiences nav ul li .lt-ie9 a i img, .lt-ie9 #experiences.full-page ul li .exp-callout i img, #experiences.full-page ul li .lt-ie9 .exp-callout i img {
-      display: none; }
   .exp-lrg-btn:hover, #experiences nav ul li a:hover, #experiences.full-page ul li .exp-callout:hover {
     background-color: rgba(255, 255, 255, 0.5); }
     .exp-lrg-btn:hover h2, #experiences nav ul li a:hover h2, #experiences.full-page ul li .exp-callout:hover h2, .exp-lrg-btn:hover ul.locations-grid li.span4 dl dt label, ul.locations-grid li.span4 dl dt .exp-lrg-btn:hover label, #experiences nav ul.locations-grid li.span4 a:hover dl dt label, #experiences nav ul.locations-grid li.span4 dl dt a:hover label, #experiences.full-page ul.locations-grid li.span4 .exp-callout:hover dl dt label, #experiences.full-page ul.locations-grid li.span4 dl dt .exp-callout:hover label, .exp-lrg-btn:hover #experiences nav ul.locations-grid li dl dt label, #experiences nav ul.locations-grid li dl dt .exp-lrg-btn:hover label, #experiences nav ul.locations-grid li a:hover dl dt label, #experiences nav ul.locations-grid li dl dt a:hover label, #experiences.full-page nav ul.locations-grid li .exp-callout:hover dl dt label, #experiences.full-page nav ul.locations-grid li dl dt .exp-callout:hover label, .exp-lrg-btn:hover ul.locations-grid #main article .features li.features-list dl dt label, ul.locations-grid #main article .features li.features-list dl dt .exp-lrg-btn:hover label, #experiences nav ul.locations-grid #main article .features li.features-list a:hover dl dt label, #experiences nav ul.locations-grid #main article .features li.features-list dl dt a:hover label, #experiences.full-page ul.locations-grid #main article .features li.features-list .exp-callout:hover dl dt label, #experiences.full-page ul.locations-grid #main article .features li.features-list dl dt .exp-callout:hover label, .exp-lrg-btn:hover #main article .features ul.locations-grid li.features-list dl dt label, #main article .features ul.locations-grid li.features-list dl dt .exp-lrg-btn:hover label, #experiences nav #main article .features ul.locations-grid li.features-list a:hover dl dt label, #main article .features #experiences nav ul.locations-grid li.features-list a:hover dl dt label, #experiences nav #main article .features ul.locations-grid li.features-list dl dt a:hover label, #main article .features #experiences nav ul.locations-grid li.features-list dl dt a:hover label, #experiences.full-page #main article .features ul.locations-grid li.features-list .exp-callout:hover dl dt label, #main article .features #experiences.full-page ul.locations-grid li.features-list .exp-callout:hover dl dt label, #experiences.full-page #main article .features ul.locations-grid li.features-list dl dt .exp-callout:hover label, #main article .features #experiences.full-page ul.locations-grid li.features-list dl dt .exp-callout:hover label,
@@ -1128,7 +1162,7 @@ footer.main {
     #experiences nav ul li a:hover h3,
     #experiences.full-page ul li .exp-callout:hover h3 {
       color: #fff; }
-  .exp-lrg-btn i, #experiences nav ul li a i, #experiences.full-page ul li .exp-callout i {
+  .exp-lrg-btn i.caret, #experiences nav ul li a i.caret, #experiences.full-page ul li .exp-callout i.caret {
     position: relative;
     display: inline-block;
     margin: 0 0 0 8px;
@@ -1165,6 +1199,16 @@ footer.main {
     -ms-transition: color 0.25s ease-in;
     -o-transition: color 0.25s ease-in;
     transition: color 0.25s ease-in; }
+    .no-svg .exp-lrg-btn h2 i, .no-svg #experiences nav ul li a h2 i, #experiences nav ul li .no-svg a h2 i, .no-svg #experiences.full-page ul li .exp-callout h2 i, #experiences.full-page ul li .no-svg .exp-callout h2 i, .no-svg .exp-lrg-btn ul.locations-grid li.span4 dl dt label i, ul.locations-grid li.span4 dl dt .no-svg .exp-lrg-btn label i, .no-svg #experiences nav ul.locations-grid li.span4 a dl dt label i, .no-svg #experiences nav ul.locations-grid li.span4 dl dt a label i, #experiences nav ul.locations-grid li.span4 .no-svg a dl dt label i, #experiences nav ul.locations-grid li.span4 dl dt .no-svg a label i, .no-svg #experiences.full-page ul.locations-grid li.span4 .exp-callout dl dt label i, .no-svg #experiences.full-page ul.locations-grid li.span4 dl dt .exp-callout label i, #experiences.full-page ul.locations-grid li.span4 .no-svg .exp-callout dl dt label i, #experiences.full-page ul.locations-grid li.span4 dl dt .no-svg .exp-callout label i, .no-svg .exp-lrg-btn #experiences nav ul.locations-grid li dl dt label i, #experiences nav ul.locations-grid li dl dt .no-svg .exp-lrg-btn label i, .no-svg #experiences nav ul.locations-grid li a dl dt label i, .no-svg #experiences nav ul.locations-grid li dl dt a label i, #experiences nav ul.locations-grid li .no-svg a dl dt label i, #experiences nav ul.locations-grid li dl dt .no-svg a label i, .no-svg #experiences.full-page nav ul.locations-grid li .exp-callout dl dt label i, .no-svg #experiences.full-page nav ul.locations-grid li dl dt .exp-callout label i, #experiences.full-page nav ul.locations-grid li .no-svg .exp-callout dl dt label i, #experiences.full-page nav ul.locations-grid li dl dt .no-svg .exp-callout label i, .no-svg .exp-lrg-btn ul.locations-grid #main article .features li.features-list dl dt label i, ul.locations-grid #main article .features li.features-list dl dt .no-svg .exp-lrg-btn label i, .no-svg #experiences nav ul.locations-grid #main article .features li.features-list a dl dt label i, .no-svg #experiences nav ul.locations-grid #main article .features li.features-list dl dt a label i, #experiences nav ul.locations-grid #main article .features li.features-list .no-svg a dl dt label i, #experiences nav ul.locations-grid #main article .features li.features-list dl dt .no-svg a label i, .no-svg #experiences.full-page ul.locations-grid #main article .features li.features-list .exp-callout dl dt label i, .no-svg #experiences.full-page ul.locations-grid #main article .features li.features-list dl dt .exp-callout label i, #experiences.full-page ul.locations-grid #main article .features li.features-list .no-svg .exp-callout dl dt label i, #experiences.full-page ul.locations-grid #main article .features li.features-list dl dt .no-svg .exp-callout label i, .no-svg .exp-lrg-btn #main article .features ul.locations-grid li.features-list dl dt label i, #main article .features ul.locations-grid li.features-list dl dt .no-svg .exp-lrg-btn label i, .no-svg #experiences nav #main article .features ul.locations-grid li.features-list a dl dt label i, #main article .features .no-svg #experiences nav ul.locations-grid li.features-list a dl dt label i, .no-svg #experiences nav #main article .features ul.locations-grid li.features-list dl dt a label i, #main article .features .no-svg #experiences nav ul.locations-grid li.features-list dl dt a label i, #experiences nav #main article .features ul.locations-grid li.features-list .no-svg a dl dt label i, #main article .features #experiences nav ul.locations-grid li.features-list .no-svg a dl dt label i, #experiences nav #main article .features ul.locations-grid li.features-list dl dt .no-svg a label i, #main article .features #experiences nav ul.locations-grid li.features-list dl dt .no-svg a label i, .no-svg #experiences.full-page #main article .features ul.locations-grid li.features-list .exp-callout dl dt label i, #main article .features .no-svg #experiences.full-page ul.locations-grid li.features-list .exp-callout dl dt label i, .no-svg #experiences.full-page #main article .features ul.locations-grid li.features-list dl dt .exp-callout label i, #main article .features .no-svg #experiences.full-page ul.locations-grid li.features-list dl dt .exp-callout label i, #experiences.full-page #main article .features ul.locations-grid li.features-list .no-svg .exp-callout dl dt label i, #main article .features #experiences.full-page ul.locations-grid li.features-list .no-svg .exp-callout dl dt label i, #experiences.full-page #main article .features ul.locations-grid li.features-list dl dt .no-svg .exp-callout label i, #main article .features #experiences.full-page ul.locations-grid li.features-list dl dt .no-svg .exp-callout label i, .lt-ie9 .exp-lrg-btn h2 i, .lt-ie9 #experiences nav ul li a h2 i, #experiences nav ul li .lt-ie9 a h2 i, .lt-ie9 #experiences.full-page ul li .exp-callout h2 i, #experiences.full-page ul li .lt-ie9 .exp-callout h2 i, .lt-ie9 .exp-lrg-btn ul.locations-grid li.span4 dl dt label i, ul.locations-grid li.span4 dl dt .lt-ie9 .exp-lrg-btn label i, .lt-ie9 #experiences nav ul.locations-grid li.span4 a dl dt label i, .lt-ie9 #experiences nav ul.locations-grid li.span4 dl dt a label i, #experiences nav ul.locations-grid li.span4 .lt-ie9 a dl dt label i, #experiences nav ul.locations-grid li.span4 dl dt .lt-ie9 a label i, .lt-ie9 #experiences.full-page ul.locations-grid li.span4 .exp-callout dl dt label i, .lt-ie9 #experiences.full-page ul.locations-grid li.span4 dl dt .exp-callout label i, #experiences.full-page ul.locations-grid li.span4 .lt-ie9 .exp-callout dl dt label i, #experiences.full-page ul.locations-grid li.span4 dl dt .lt-ie9 .exp-callout label i, .lt-ie9 .exp-lrg-btn #experiences nav ul.locations-grid li dl dt label i, #experiences nav ul.locations-grid li dl dt .lt-ie9 .exp-lrg-btn label i, .lt-ie9 #experiences nav ul.locations-grid li a dl dt label i, .lt-ie9 #experiences nav ul.locations-grid li dl dt a label i, #experiences nav ul.locations-grid li .lt-ie9 a dl dt label i, #experiences nav ul.locations-grid li dl dt .lt-ie9 a label i, .lt-ie9 #experiences.full-page nav ul.locations-grid li .exp-callout dl dt label i, .lt-ie9 #experiences.full-page nav ul.locations-grid li dl dt .exp-callout label i, #experiences.full-page nav ul.locations-grid li .lt-ie9 .exp-callout dl dt label i, #experiences.full-page nav ul.locations-grid li dl dt .lt-ie9 .exp-callout label i, .lt-ie9 .exp-lrg-btn ul.locations-grid #main article .features li.features-list dl dt label i, ul.locations-grid #main article .features li.features-list dl dt .lt-ie9 .exp-lrg-btn label i, .lt-ie9 #experiences nav ul.locations-grid #main article .features li.features-list a dl dt label i, .lt-ie9 #experiences nav ul.locations-grid #main article .features li.features-list dl dt a label i, #experiences nav ul.locations-grid #main article .features li.features-list .lt-ie9 a dl dt label i, #experiences nav ul.locations-grid #main article .features li.features-list dl dt .lt-ie9 a label i, .lt-ie9 #experiences.full-page ul.locations-grid #main article .features li.features-list .exp-callout dl dt label i, .lt-ie9 #experiences.full-page ul.locations-grid #main article .features li.features-list dl dt .exp-callout label i, #experiences.full-page ul.locations-grid #main article .features li.features-list .lt-ie9 .exp-callout dl dt label i, #experiences.full-page ul.locations-grid #main article .features li.features-list dl dt .lt-ie9 .exp-callout label i, .lt-ie9 .exp-lrg-btn #main article .features ul.locations-grid li.features-list dl dt label i, #main article .features ul.locations-grid li.features-list dl dt .lt-ie9 .exp-lrg-btn label i, .lt-ie9 #experiences nav #main article .features ul.locations-grid li.features-list a dl dt label i, #main article .features .lt-ie9 #experiences nav ul.locations-grid li.features-list a dl dt label i, .lt-ie9 #experiences nav #main article .features ul.locations-grid li.features-list dl dt a label i, #main article .features .lt-ie9 #experiences nav ul.locations-grid li.features-list dl dt a label i, #experiences nav #main article .features ul.locations-grid li.features-list .lt-ie9 a dl dt label i, #main article .features #experiences nav ul.locations-grid li.features-list .lt-ie9 a dl dt label i, #experiences nav #main article .features ul.locations-grid li.features-list dl dt .lt-ie9 a label i, #main article .features #experiences nav ul.locations-grid li.features-list dl dt .lt-ie9 a label i, .lt-ie9 #experiences.full-page #main article .features ul.locations-grid li.features-list .exp-callout dl dt label i, #main article .features .lt-ie9 #experiences.full-page ul.locations-grid li.features-list .exp-callout dl dt label i, .lt-ie9 #experiences.full-page #main article .features ul.locations-grid li.features-list dl dt .exp-callout label i, #main article .features .lt-ie9 #experiences.full-page ul.locations-grid li.features-list dl dt .exp-callout label i, #experiences.full-page #main article .features ul.locations-grid li.features-list .lt-ie9 .exp-callout dl dt label i, #main article .features #experiences.full-page ul.locations-grid li.features-list .lt-ie9 .exp-callout dl dt label i, #experiences.full-page #main article .features ul.locations-grid li.features-list dl dt .lt-ie9 .exp-callout label i, #main article .features #experiences.full-page ul.locations-grid li.features-list dl dt .lt-ie9 .exp-callout label i {
+      width: 8px;
+      height: 5px;
+      margin: 0 0 0 10px;
+      display: inline-block;
+      vertical-align: middle;
+      overflow: hidden;
+      background: url('../images/shim/caret-up-off.png?1334010468') no-repeat 0 0; }
+      .no-svg .exp-lrg-btn h2 i img, .no-svg #experiences nav ul li a h2 i img, #experiences nav ul li .no-svg a h2 i img, .no-svg #experiences.full-page ul li .exp-callout h2 i img, #experiences.full-page ul li .no-svg .exp-callout h2 i img, .no-svg .exp-lrg-btn ul.locations-grid li.span4 dl dt label i img, ul.locations-grid li.span4 dl dt .no-svg .exp-lrg-btn label i img, .no-svg #experiences nav ul.locations-grid li.span4 a dl dt label i img, .no-svg #experiences nav ul.locations-grid li.span4 dl dt a label i img, #experiences nav ul.locations-grid li.span4 .no-svg a dl dt label i img, #experiences nav ul.locations-grid li.span4 dl dt .no-svg a label i img, .no-svg #experiences.full-page ul.locations-grid li.span4 .exp-callout dl dt label i img, .no-svg #experiences.full-page ul.locations-grid li.span4 dl dt .exp-callout label i img, #experiences.full-page ul.locations-grid li.span4 .no-svg .exp-callout dl dt label i img, #experiences.full-page ul.locations-grid li.span4 dl dt .no-svg .exp-callout label i img, .no-svg .exp-lrg-btn #experiences nav ul.locations-grid li dl dt label i img, #experiences nav ul.locations-grid li dl dt .no-svg .exp-lrg-btn label i img, .no-svg #experiences nav ul.locations-grid li a dl dt label i img, .no-svg #experiences nav ul.locations-grid li dl dt a label i img, #experiences nav ul.locations-grid li .no-svg a dl dt label i img, #experiences nav ul.locations-grid li dl dt .no-svg a label i img, .no-svg #experiences.full-page nav ul.locations-grid li .exp-callout dl dt label i img, .no-svg #experiences.full-page nav ul.locations-grid li dl dt .exp-callout label i img, #experiences.full-page nav ul.locations-grid li .no-svg .exp-callout dl dt label i img, #experiences.full-page nav ul.locations-grid li dl dt .no-svg .exp-callout label i img, .no-svg .exp-lrg-btn ul.locations-grid #main article .features li.features-list dl dt label i img, ul.locations-grid #main article .features li.features-list dl dt .no-svg .exp-lrg-btn label i img, .no-svg #experiences nav ul.locations-grid #main article .features li.features-list a dl dt label i img, .no-svg #experiences nav ul.locations-grid #main article .features li.features-list dl dt a label i img, #experiences nav ul.locations-grid #main article .features li.features-list .no-svg a dl dt label i img, #experiences nav ul.locations-grid #main article .features li.features-list dl dt .no-svg a label i img, .no-svg #experiences.full-page ul.locations-grid #main article .features li.features-list .exp-callout dl dt label i img, .no-svg #experiences.full-page ul.locations-grid #main article .features li.features-list dl dt .exp-callout label i img, #experiences.full-page ul.locations-grid #main article .features li.features-list .no-svg .exp-callout dl dt label i img, #experiences.full-page ul.locations-grid #main article .features li.features-list dl dt .no-svg .exp-callout label i img, .no-svg .exp-lrg-btn #main article .features ul.locations-grid li.features-list dl dt label i img, #main article .features ul.locations-grid li.features-list dl dt .no-svg .exp-lrg-btn label i img, .no-svg #experiences nav #main article .features ul.locations-grid li.features-list a dl dt label i img, #main article .features .no-svg #experiences nav ul.locations-grid li.features-list a dl dt label i img, .no-svg #experiences nav #main article .features ul.locations-grid li.features-list dl dt a label i img, #main article .features .no-svg #experiences nav ul.locations-grid li.features-list dl dt a label i img, #experiences nav #main article .features ul.locations-grid li.features-list .no-svg a dl dt label i img, #main article .features #experiences nav ul.locations-grid li.features-list .no-svg a dl dt label i img, #experiences nav #main article .features ul.locations-grid li.features-list dl dt .no-svg a label i img, #main article .features #experiences nav ul.locations-grid li.features-list dl dt .no-svg a label i img, .no-svg #experiences.full-page #main article .features ul.locations-grid li.features-list .exp-callout dl dt label i img, #main article .features .no-svg #experiences.full-page ul.locations-grid li.features-list .exp-callout dl dt label i img, .no-svg #experiences.full-page #main article .features ul.locations-grid li.features-list dl dt .exp-callout label i img, #main article .features .no-svg #experiences.full-page ul.locations-grid li.features-list dl dt .exp-callout label i img, #experiences.full-page #main article .features ul.locations-grid li.features-list .no-svg .exp-callout dl dt label i img, #main article .features #experiences.full-page ul.locations-grid li.features-list .no-svg .exp-callout dl dt label i img, #experiences.full-page #main article .features ul.locations-grid li.features-list dl dt .no-svg .exp-callout label i img, #main article .features #experiences.full-page ul.locations-grid li.features-list dl dt .no-svg .exp-callout label i img, .lt-ie9 .exp-lrg-btn h2 i img, .lt-ie9 #experiences nav ul li a h2 i img, #experiences nav ul li .lt-ie9 a h2 i img, .lt-ie9 #experiences.full-page ul li .exp-callout h2 i img, #experiences.full-page ul li .lt-ie9 .exp-callout h2 i img, .lt-ie9 .exp-lrg-btn ul.locations-grid li.span4 dl dt label i img, ul.locations-grid li.span4 dl dt .lt-ie9 .exp-lrg-btn label i img, .lt-ie9 #experiences nav ul.locations-grid li.span4 a dl dt label i img, .lt-ie9 #experiences nav ul.locations-grid li.span4 dl dt a label i img, #experiences nav ul.locations-grid li.span4 .lt-ie9 a dl dt label i img, #experiences nav ul.locations-grid li.span4 dl dt .lt-ie9 a label i img, .lt-ie9 #experiences.full-page ul.locations-grid li.span4 .exp-callout dl dt label i img, .lt-ie9 #experiences.full-page ul.locations-grid li.span4 dl dt .exp-callout label i img, #experiences.full-page ul.locations-grid li.span4 .lt-ie9 .exp-callout dl dt label i img, #experiences.full-page ul.locations-grid li.span4 dl dt .lt-ie9 .exp-callout label i img, .lt-ie9 .exp-lrg-btn #experiences nav ul.locations-grid li dl dt label i img, #experiences nav ul.locations-grid li dl dt .lt-ie9 .exp-lrg-btn label i img, .lt-ie9 #experiences nav ul.locations-grid li a dl dt label i img, .lt-ie9 #experiences nav ul.locations-grid li dl dt a label i img, #experiences nav ul.locations-grid li .lt-ie9 a dl dt label i img, #experiences nav ul.locations-grid li dl dt .lt-ie9 a label i img, .lt-ie9 #experiences.full-page nav ul.locations-grid li .exp-callout dl dt label i img, .lt-ie9 #experiences.full-page nav ul.locations-grid li dl dt .exp-callout label i img, #experiences.full-page nav ul.locations-grid li .lt-ie9 .exp-callout dl dt label i img, #experiences.full-page nav ul.locations-grid li dl dt .lt-ie9 .exp-callout label i img, .lt-ie9 .exp-lrg-btn ul.locations-grid #main article .features li.features-list dl dt label i img, ul.locations-grid #main article .features li.features-list dl dt .lt-ie9 .exp-lrg-btn label i img, .lt-ie9 #experiences nav ul.locations-grid #main article .features li.features-list a dl dt label i img, .lt-ie9 #experiences nav ul.locations-grid #main article .features li.features-list dl dt a label i img, #experiences nav ul.locations-grid #main article .features li.features-list .lt-ie9 a dl dt label i img, #experiences nav ul.locations-grid #main article .features li.features-list dl dt .lt-ie9 a label i img, .lt-ie9 #experiences.full-page ul.locations-grid #main article .features li.features-list .exp-callout dl dt label i img, .lt-ie9 #experiences.full-page ul.locations-grid #main article .features li.features-list dl dt .exp-callout label i img, #experiences.full-page ul.locations-grid #main article .features li.features-list .lt-ie9 .exp-callout dl dt label i img, #experiences.full-page ul.locations-grid #main article .features li.features-list dl dt .lt-ie9 .exp-callout label i img, .lt-ie9 .exp-lrg-btn #main article .features ul.locations-grid li.features-list dl dt label i img, #main article .features ul.locations-grid li.features-list dl dt .lt-ie9 .exp-lrg-btn label i img, .lt-ie9 #experiences nav #main article .features ul.locations-grid li.features-list a dl dt label i img, #main article .features .lt-ie9 #experiences nav ul.locations-grid li.features-list a dl dt label i img, .lt-ie9 #experiences nav #main article .features ul.locations-grid li.features-list dl dt a label i img, #main article .features .lt-ie9 #experiences nav ul.locations-grid li.features-list dl dt a label i img, #experiences nav #main article .features ul.locations-grid li.features-list .lt-ie9 a dl dt label i img, #main article .features #experiences nav ul.locations-grid li.features-list .lt-ie9 a dl dt label i img, #experiences nav #main article .features ul.locations-grid li.features-list dl dt .lt-ie9 a label i img, #main article .features #experiences nav ul.locations-grid li.features-list dl dt .lt-ie9 a label i img, .lt-ie9 #experiences.full-page #main article .features ul.locations-grid li.features-list .exp-callout dl dt label i img, #main article .features .lt-ie9 #experiences.full-page ul.locations-grid li.features-list .exp-callout dl dt label i img, .lt-ie9 #experiences.full-page #main article .features ul.locations-grid li.features-list dl dt .exp-callout label i img, #main article .features .lt-ie9 #experiences.full-page ul.locations-grid li.features-list dl dt .exp-callout label i img, #experiences.full-page #main article .features ul.locations-grid li.features-list .lt-ie9 .exp-callout dl dt label i img, #main article .features #experiences.full-page ul.locations-grid li.features-list .lt-ie9 .exp-callout dl dt label i img, #experiences.full-page #main article .features ul.locations-grid li.features-list dl dt .lt-ie9 .exp-callout label i img, #main article .features #experiences.full-page ul.locations-grid li.features-list dl dt .lt-ie9 .exp-callout label i img {
+        display: none; }
   .exp-lrg-btn h3, #experiences nav ul li a h3, #experiences.full-page ul li .exp-callout h3 {
     margin: 0;
     color: #999;
@@ -1223,6 +1267,8 @@ footer.main {
       background-image: linear-gradient(rgba(32, 32, 32, 0.1), #202020); }
       #experiences.full-page ul li .exp-callout:hover {
         background-color: #414141; }
+        .no-cssgradients #experiences.full-page ul li .exp-callout:hover {
+          background: url('../images/shim/bg-exp-nav.gif?1334679552') repeat-x 0 0; }
       #experiences.full-page ul li .exp-callout a {
         width: auto;
         height: auto;
@@ -1235,18 +1281,6 @@ footer.main {
     position: relative;
     left: -20px;
     background: #000; }
-    #experiences .exp-thumbnails button {
-      width: 30px;
-      height: 80px;
-      border: none;
-      float: left;
-      padding: 0;
-      background: #000;
-      color: #fff;
-      text-align: center;
-      font-size: 80px; }
-      #experiences .exp-thumbnails button img {
-        margin: 0 auto; }
     #experiences .exp-thumbnails ol {
       width: 240px;
       padding: 0;
@@ -1452,7 +1486,7 @@ ul.locations-grid {
         -ms-transition: background-color 0.25s ease-in;
         -o-transition: background-color 0.25s ease-in;
         transition: background-color 0.25s ease-in; }
-        ul.locations-grid li.span4 h3 a i, #experiences nav ul.locations-grid li h3 a i, ul.locations-grid #main article .features li.features-list h3 a i, #main article .features ul.locations-grid li.features-list h3 a i {
+        ul.locations-grid li.span4 h3 a i.caret, #experiences nav ul.locations-grid li h3 a i.caret, ul.locations-grid #main article .features li.features-list h3 a i.caret, #main article .features ul.locations-grid li.features-list h3 a i.caret {
           position: relative;
           display: inline-block;
           margin: 0 0 0 8px;
@@ -1481,7 +1515,7 @@ ul.locations-grid {
           transform: rotate(-1deg); }
         ul.locations-grid li.span4 h3 a:hover, #experiences nav ul.locations-grid li h3 a:hover, ul.locations-grid #main article .features li.features-list h3 a:hover, #main article .features ul.locations-grid li.features-list h3 a:hover, ul.locations-grid li.span4 h3 a.selected, #experiences nav ul.locations-grid li h3 a.selected, ul.locations-grid #main article .features li.features-list h3 a.selected, #main article .features ul.locations-grid li.features-list h3 a.selected {
           background-color: #414141; }
-        ul.locations-grid li.span4 h3 a.selected i, #experiences nav ul.locations-grid li h3 a.selected i, ul.locations-grid #main article .features li.features-list h3 a.selected i, #main article .features ul.locations-grid li.features-list h3 a.selected i {
+        ul.locations-grid li.span4 h3 a.selected i.caret, #experiences nav ul.locations-grid li h3 a.selected i.caret, ul.locations-grid #main article .features li.features-list h3 a.selected i.caret, #main article .features ul.locations-grid li.features-list h3 a.selected i.caret {
           position: relative;
           display: inline-block;
           margin: 0 0 0 8px;
@@ -1556,6 +1590,7 @@ ul.locations-grid {
             border: 1px solid #666666;
             cursor: pointer; }
             ul.locations-grid li.span4 dl dt label span input[type="checkbox"], #experiences nav ul.locations-grid li dl dt label span input[type="checkbox"], ul.locations-grid #main article .features li.features-list dl dt label span input[type="checkbox"], #main article .features ul.locations-grid li.features-list dl dt label span input[type="checkbox"] {
+              filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
               opacity: 0; }
         ul.locations-grid li.span4 dl dt button.toggle, #experiences nav ul.locations-grid li dl dt button.toggle, ul.locations-grid #main article .features li.features-list dl dt button.toggle, #main article .features ul.locations-grid li.features-list dl dt button.toggle {
           margin: -10px 0 0;

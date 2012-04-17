@@ -20,20 +20,20 @@
       <div class="container">
         <article class="span8">
           <dl class="accordion">
-            <dt><button class="toggle"><img src="/images/svg/button-expand.svg" alt=""></button>Proin elementum leo in nisi mattis quis ultricies ante in nisi mattis malesuada.</dt>
+            <dt class="selected"><button class="toggle"><img src="/images/svg/button-expand.svg" alt=""></button>Proin elementum leo in nisi mattis quis ultricies ante in nisi mattis malesuada.</dt>
             <dd>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis tellus in nisl convallis iaculis sed cursus massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. nulla facilisi. ut vitae vulputate erat. Phasellus dictum bibendum vehicula.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis tellus in nisl convallis iaculis sed cursus massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. nulla facilisi. ut vitae vulputate erat. Phasellus dictum bibendum vehicula.</p>
-            </dd>
-            <dt><button class="toggle"><img src="/images/svg/button-expand.svg" alt=""></button>Proin elementum leo in nisi mattis quis ultricies ante in nisi mattis malesuada.</dt>
-            <dd>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis tellus in nisl convallis iaculis sed cursus massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. nulla facilisi. ut vitae vulputate erat. Phasellus dictum bibendum vehicula.</p>
             </dd>
             <dt class="selected"><button class="toggle"><img src="/images/svg/button-expand.svg" alt=""></button>Proin elementum leo in nisi mattis quis ultricies ante in nisi mattis malesuada.</dt>
+            <dd>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis tellus in nisl convallis iaculis sed cursus massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. nulla facilisi. ut vitae vulputate erat. Phasellus dictum bibendum vehicula.</p>
+            </dd>
+            <dt><button class="toggle"><img src="/images/svg/button-expand.svg" alt=""></button>Proin elementum leo in nisi mattis quis ultricies ante in nisi mattis malesuada.</dt>
             <dd style="display:none">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis tellus in nisl convallis iaculis sed cursus massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. nulla facilisi. ut vitae vulputate erat. Phasellus dictum bibendum vehicula.</p>
             </dd>
-            <dt class="selected"><button class="toggle"><img src="/images/svg/button-expand.svg" alt=""></button>Proin elementum leo in nisi mattis quis ultricies ante in nisi mattis malesuada.</dt>
+            <dt><button class="toggle"><img src="/images/svg/button-expand.svg" alt=""></button>Proin elementum leo in nisi mattis quis ultricies ante in nisi mattis malesuada.</dt>
             <dd style="display:none">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis tellus in nisl convallis iaculis sed cursus massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. nulla facilisi. ut vitae vulputate erat. Phasellus dictum bibendum vehicula.</p>
             </dd>

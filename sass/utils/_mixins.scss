@@ -58,7 +58,7 @@
   $startPosition: #{$start * 90}deg;
   $endPosition: #{$start - $end * 90}deg;
 
-  i {
+  i.caret {
     position: relative;
     display: inline-block;
     margin: 0 0 0 8px;

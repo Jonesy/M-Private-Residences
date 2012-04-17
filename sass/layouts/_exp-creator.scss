@@ -170,7 +170,7 @@ ul.locations-grid {
             cursor: pointer;
 
             input[type="checkbox"] {
-              opacity: 0;  
+              @include opacity(0);  
             }
           }
 

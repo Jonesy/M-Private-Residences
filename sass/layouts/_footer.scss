@@ -45,7 +45,7 @@ footer.main {
       }
     }
 
-    .svgclippaths a {
+    .no-svg & a {
       width: image-width("shim/social-facebook.png");
       height: image-height("shim/social-facebook.png");
       float: left;
@@ -53,6 +53,14 @@ footer.main {
 
       &.social-facebook {
         @include shim-sprite(social-facebook);
+      }
+
+      &.social-twitter {
+        @include shim-sprite(social-twitter);
+      }
+
+      &.social-gplus {
+        @include shim-sprite(social-gplus);
       }
 
       img {

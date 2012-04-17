@@ -9,9 +9,10 @@ dl.accordion {
     @extend h1;
     line-height: 1em;
     color: $body;
+    @include bdr;
 
     &.selected {
-      @include bdr;
+      border: none;
     }
 
     .js & {

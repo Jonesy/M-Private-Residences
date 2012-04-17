@@ -32,15 +32,31 @@ footer.main {
   .social-links {
     a {
       margin: 0 6px 0 0;
-      img {
+
+      .svg & img {
         @include opacity(0.88);
         @include transition(opacity 0.25s ease-in);
       }
 
       &:hover {
-        img {
+        .svg & img {
           @include opacity(1);
         }
+      }
+    }
+
+    .svgclippaths a {
+      width: image-width("shim/social-facebook.png");
+      height: image-height("shim/social-facebook.png");
+      float: left;
+      overflow: hidden;
+
+      &.social-facebook {
+        @include shim-sprite(social-facebook);
+      }
+
+      img {
+        display: none;
       }
     }
   }

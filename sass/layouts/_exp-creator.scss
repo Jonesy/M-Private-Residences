@@ -68,51 +68,6 @@
   }
 }
 
-.breadcrumb {
-  float: right;
-  color: $headlines;
-  background: image-url("bg-breadcrumb.png") no-repeat center bottom;
-
-  ol {
-    list-style: none;
-
-    li {
-      height: 28px;
-      padding: 0 15px;
-      float: left;
-      position: relative;
-      font-size: 0.69em;
-      @include Proxima();
-      line-height: 28px;
-
-      &.current {
-        $caret-height: image-height("breadcrumb-current.png");
-        font-weight: 700;
-        color: #000;
-        background: image-url("breadcrumb-current.png") no-repeat center (28px - ($caret-height / 2));
-
-        @media only screen and (-webkit-min-device-pixel-ratio: 2) {
-          background-position: center bottom;          
-        }
-      }
-    }
-  }
-
-  &.numbered ol li:after {
-    counter-increment:section;
-    content: counter(section);
-    width: 20px;
-    position: absolute;
-    top: 28px;
-    left: 50%;
-    margin-left: -10px;
-    text-align: center;
-    font-size: 1.36em;
-    @include Proxima;
-    color: $body;
-  }
-}
-
 ul.locations-grid {
   @include ul-reset($no-bullet: true);
 
@@ -222,21 +177,11 @@ ul.locations-grid {
         }
 
         button.toggle {
-          width: 18px;
-          height: 18px;
-          margin: -9px 0 0;
-          text-align: center;
-          padding: 0;
-          background: #fff;
+          margin: -10px 0 0;
           position: absolute;
           right: 10px;
           top: 50%;
-          border: none;
-          color: #9b9b9b;
-          img {
-            width: 18px;
-            height: 18px;
-          }
+          
         }
       }
       dd {

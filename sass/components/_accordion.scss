@@ -1,0 +1,46 @@
+@mixin bdr {
+  border-bottom: 1px solid #ccc;
+}
+dl.accordion {
+  dt {
+    margin-bottom: 0;
+    padding: 5px 0 15px;
+    position: relative;
+    @extend h1;
+    line-height: 1em;
+    color: $body;
+
+    &.selected {
+      @include bdr;
+    }
+
+    .js & {
+      padding: 5px 0 15px 30px;
+    }
+
+    button {
+      position: absolute;
+      top: 10px;
+      left: 0;
+
+      /* Hide just incase if JS is disabled */
+      .no-js & {
+        display: none;
+      }
+    }
+  }
+
+  dd {
+    margin: 0;
+    padding: 0 0 5px;
+    @include bdr;
+
+    .js & {
+      padding-left: 30px;
+    }
+
+    p {
+      margin-top: 0;
+    }
+  }
+}

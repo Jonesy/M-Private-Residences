@@ -2,6 +2,7 @@
 @import "compass/css3";
 
 /* Utilities */
+@import "shim/*.png";
 @import "utils/normalize";
 @import "utils/mixins";
 @import "utils/palette";
@@ -12,6 +13,7 @@
 @import "components/buttons";
 @import "components/forms";
 @import "components/caret";
+@import "components/accordion";
 
 /* Page layouts */
 @import "layouts/base";
@@ -21,3 +23,4 @@
 @import "layouts/index";
 @import "layouts/content";
 @import "layouts/exp-creator";
+

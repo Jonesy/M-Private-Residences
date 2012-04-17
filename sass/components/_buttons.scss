@@ -76,6 +76,23 @@
   }
 }
 
+button.toggle {
+  $dimension: 19px;
+  width: $dimension;
+  height: $dimension;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  text-align: center;
+  border: none;
+  color: #9b9b9b;
+  img {
+    width: $dimension;
+    height: $dimension;
+    vertical-align: top;
+  }
+}
+
 /**
   NOTE: Uses css triangle for the right corner, CSS transitions don't work as of now.
 */

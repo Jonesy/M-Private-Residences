@@ -1,9 +1,27 @@
+$boxWidth: 300px;
 .box {
+  width: $boxWidth - ($gutter * 2);
+  float: left;
   padding: $gutter;
   color: #666;
   background: $silver;
+  display: inline-block;
 
   h2 {
     margin-top: 0;
+  }
+}
+
+.login-callout {
+  h2 {
+    width: 44%;
+    margin: 0;
+    text-transform: none;
+    color: $headlines;
+  }
+
+  a.btn {
+    margin-top: 10px;
+    float: right;
   }
 }

@@ -1,5 +1,9 @@
 #main {
 
+  .subnav-header {
+    margin-bottom: 60px;
+  }
+
   article {
     ul { 
       margin: 0 0 0 1em;
@@ -38,10 +42,63 @@
   }
 }
 
+.page-subnav,
+.breadcrumb {
+  min-width: image-width("bg-breadcrumb.png");
+  float: right;
+  color: $headlines;
+  background: image-url("bg-breadcrumb.png") no-repeat center bottom;
+
+  ol {
+    list-style: none;
+
+    li {
+      height: 28px;
+      padding: 0 15px;
+      float: left;
+      position: relative;
+      font-size: 0.69em;
+      @include Proxima();
+      line-height: 28px;
+
+      a {
+        font-weight: bold;
+        color: $headlines;
+      }
+
+      &.selected,
+      &.current {
+        $caret-height: image-height("breadcrumb-current.png");
+        font-weight: 700;
+        color: #000;
+        background: image-url("breadcrumb-current.png") no-repeat center (28px - ($caret-height / 2));
+
+        @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+          background-position: center bottom;          
+        }
+      }
+    }
+  }
+
+  &.numbered ol li:after {
+    counter-increment:section;
+    content: counter(section);
+    width: 20px;
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    margin-left: -10px;
+    text-align: center;
+    font-size: 1.36em;
+    @include Proxima;
+    color: $body;
+  }
+}
+
 .mbassadors {
   width: 100%;
   float: left;
-  margin: 0 0 30px;
+  margin: 0 0 10px;
   ul {
     @include ul-reset($no-bullet: true);
 
@@ -64,7 +121,7 @@
 .featured-quote {
   width: 100%;
   float: left;
-  margin-top: 25px;
+  margin-top: 65px;
   position: relative;
 
   blockquote {

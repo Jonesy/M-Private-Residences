@@ -10,9 +10,9 @@
           </ul>
           <p><a href="#">Sitemap</a> | <a href="#">Legal</a> | <a href="#">Privacy</a></p>
           <div class="social-links">
-            <a href="#"><img src="/images/svg/social-facebook.svg" alt="Share on Facebook" title="Share on Facebook"></a>
-            <a href="#"><img src="/images/svg/social-twitter.svg" alt="Share on Twitter" title="Share on Twitter"></a>
-            <a href="#"><img src="/images/svg/social-gplus.svg" alt="Share on Google+" title="Share on Google+"></a>
+            <a href="#" class="social-facebook"><img src="/images/svg/social-facebook.svg" alt="Share on Facebook" title="Share on Facebook"></a>
+            <a href="#" class="social-twitter"><img src="/images/svg/social-twitter.svg" alt="Share on Twitter" title="Share on Twitter"></a>
+            <a href="#" class="social-gplus"><img src="/images/svg/social-gplus.svg" alt="Share on Google+" title="Share on Google+"></a>
           </div>
         </nav> <!-- / #footer-nav -->
         <div class="span4">

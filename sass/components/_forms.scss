@@ -1,3 +1,9 @@
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
 label {
   width: 100%;
   display: inline-block;
@@ -11,9 +17,17 @@ label {
     display: table;
     content: "";
   }
+
+  em {
+    text-transform: none;
+    color: $lightgrey;
+    font-size: 11px;
+  }
 }
 
-input[type="text"] {
+textarea,
+input[type="text"],
+input[type="password"]  {
   height: 28px;
   padding: 0 5px;
   font-size: 0.75em;
@@ -22,6 +36,71 @@ input[type="text"] {
   &:focus {
     border: 1px solid #666;
     outline: 0;
+  }
+}
+
+textarea {
+  height: auto;
+}
+
+.form-field {
+  $width: 300px;
+  width: $width;
+  margin: 0 0 20px;
+  float: left;
+
+  &:nth-child(odd) {
+    margin-right: $gutter;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  textarea {
+    width: $width - 12px;
+  }
+
+  &.full-width {
+    $width: 620px;
+    width: $width;
+    margin-right: 0;
+
+    textarea {
+      width: $width - 12px;
+    }
+
+    select {
+      width: 100%;
+    }
+  }
+
+  &.error {
+    * {
+      color: $error;
+      border-color: $error;
+    }
+  }
+}
+
+.form-submit {
+  width: 100%;
+  margin: 0 0 40px;
+  clear: both;
+  float: left;
+}
+
+.radio-group {
+  label {
+    width: 100%;
+    margin: 0 20px 0 0;
+    display: inline;
+    line-height: 2.4em;
+    clear: both;
+    font-size: 0.81em;
+    text-transform: none;
+
+    input[type="radio"] {
+      margin-right: 4px;
+    }
   }
 }
 

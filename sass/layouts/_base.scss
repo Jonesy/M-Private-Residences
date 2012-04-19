@@ -31,7 +31,7 @@ header[role="banner"] {
   }
 
   a {
-    color: #fff;
+    color: #ccc;
   }
 
   ul {
@@ -63,7 +63,7 @@ header[role="banner"] {
           @include background-image(linear-gradient(
             rgba($darkgrey, 0.75) rgba($darkgrey, 1))
           );
-          @include transition(background-color 0.25s ease-in);
+          @include transition(all 0.25s ease-in);
           
           .no-svg &,
           .lt-ie9 & {
@@ -92,6 +92,7 @@ header[role="banner"] {
           }
 
           &:hover {
+            color: #fff;
             background-color: #fff;
             img {
               @include opacity(1);
@@ -116,8 +117,16 @@ header[role="banner"] {
           width: auto;
         }
 
-        a.btn {
-          font-size: 1.083em;
+        a {
+          @include transition(color 0.25s ease-in);
+          &:hover {
+            color: #fff;
+          }
+
+          &.btn {
+            font-size: 1.083em;
+            @include transition(background-color 0.25s ease-in);
+          }
         }
       }
     }

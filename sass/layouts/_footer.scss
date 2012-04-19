@@ -11,7 +11,7 @@ footer.main {
     position: left top;
   }
   @include background-image(linear-gradient(
-    rgba(#000, 0.25) 0%, rgba(#000, 0) 5%
+    rgba(#000, 0.25) 0%, rgba(#000, 0) 3%
   ));
 
   h1,
@@ -80,8 +80,9 @@ footer.main {
       li {
         width: 140px;
         float: left;
-        margin: 7px 0 5px;
+        margin: 7px 0 10px;
         text-transform: uppercase;
+        line-height: 0.85em;
         @include ProximaCondensed();
 
         &:nth-child(2n-1) {

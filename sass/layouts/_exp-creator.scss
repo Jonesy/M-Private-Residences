@@ -1,12 +1,8 @@
 #experience-creator {
   min-height: 600px;
-  header {
-    position: relative;
-    margin-bottom: 30px;
 
-    h1 {
-      margin-bottom: 0;
-    }
+  header {
+    margin-bottom: 30px;
 
     h3 {
       @include ProximaCondensed;
@@ -17,6 +13,10 @@
       text-transform: uppercase;
     }
 
+    h1 {
+      margin-bottom: 0.5em;
+    }
+
     a.next-step {
       position: absolute;
       right: 0;
@@ -24,35 +24,8 @@
     }
 
     small {
-      margin: 0 0 10px;
-      display: inline-block;
+      margin: 0 0 22px;
       font-style: italic;
-    }
-
-    .filter {
-      .btn-group {
-        border-right: 1px solid $body;
-        float: left;
-        margin: 0;
-
-        &:first-child {
-        
-        }
-        &:last-child {
-          border: none;
-          margin: 0 0 0 10px;
-        }
-      }
-
-      ul {
-        float: left;
-        @include ul-reset($no-bullet: true);
-
-        li {
-          margin: 0 10px 0 0;
-          float: left;
-        }
-      }
     }
   }
 
@@ -81,10 +54,6 @@ ul.locations-grid {
 
     h3 {
       margin: 0;
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      left: 0;
       line-height: 2.50em;
       text-transform: uppercase;
 
@@ -118,6 +87,7 @@ ul.locations-grid {
       position: absolute;
       right: 0;
       left: 0;
+      top: 185px;
       background: #fff;
 
       li {

@@ -8,7 +8,7 @@
   line-height: $height;
   @include border-radius(4px);
   background: $midgrey;
-  color: #fff;
+  color: #eaeaea;
   @include transition(all 0.25s ease-in);
   border: none;
   -webkit-background-clip: padding-box;
@@ -19,21 +19,27 @@
   }
 
   &.btn-silver {
-    background: $silver !important;
-    color: #333 !important;
+    background: $silver;
+    color: #333;
 
     &:hover {
-      background: darken($silver, 20%);
+      color: #000;
+      background: #dddddd;
     }
   }
 
   &.btn-white {
     background: #fff;
-    color: $headlines;
+    color: $body;
+
+    &.selected,
+    &.selected:hover {
+      color: #fff;
+      background: $headlines;
+    }
 
     &:hover {
-      background: $headlines;
-      color: #fff;
+      color: #000;
     }
   }
 }
@@ -170,11 +176,11 @@ a.btn-arrow {
   }
 
   &:hover {
-    background: $silver;
+    background: #000;
     h2 {
-      color: $body;
+      color: #fff;
         &:after {
-          border-left-color: $silver;
+          border-left-color: #000;
         }
     }
   }

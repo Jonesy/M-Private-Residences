@@ -16,7 +16,15 @@
   <script type="text/javascript" src="http://use.typekit.com/iaz2gyo.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
+<?php 
+$file = substr($_SERVER["SCRIPT_NAME"], 1);
+if ($file == 'index.php'):
+?>
 <body id="index">
+<?php else: ?>
+<body>
+<?php endif; ?>
+
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
   <div class="wrapper">
     <header role="banner">
@@ -28,7 +36,7 @@
           <ul class="main-nav">
             <li><a href="#">Experiences <i><img src="images/svg/caret.svg" alt=""></i></a></li>
             <li><a href="#">Residences <i><img src="images/svg/caret.svg" alt=""></i></a></li>
-            <li><a href="#">Memberships <i><img src="images/svg/caret.svg" alt=""></i></a></li>
+            <li><a href="#">Membership</a></li>
           </ul>
           <ul class="secondary-nav">
             <li><a href="#">Alliances</a></li>

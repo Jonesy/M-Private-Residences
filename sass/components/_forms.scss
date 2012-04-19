@@ -123,3 +123,10 @@ textarea {
     margin-left: -10px;
   }
 }
+
+form {
+  button.btn:hover {
+    color: #fff;
+    background-color: #000;
+  }
+}

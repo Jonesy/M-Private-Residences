@@ -1,4 +1,4 @@
-<?php include('includes/header.php'); ?>
+  <?php include('includes/header.php'); ?>
 
     <section id="experiences">
       <div class="container">
@@ -7,20 +7,20 @@
       <nav>
         <ul>
           <li>
-            <a href="#">
-              <h2>Experience Name One <i><img src="images/svg/caret.svg" alt=""></i></h2>
+            <a href="#" class="callout-hero">
+              <h2>Experience Name One <i class="caret"><img src="images/svg/caret.svg" alt=""></i></h2>
               <h3>For Couples</h3>
             </a>
           </li>
           <li>
-            <a href="#">
-              <h2>Kelowna, BC <i><img src="images/svg/caret.svg" alt=""></i></h2>
+            <a href="#" class="callout-hero">
+              <h2>Kelowna, BC <i class="caret"><img src="images/svg/caret.svg" alt=""></i></h2>
               <h3>Featured Residence</h3>
             </a>
           </li>
           <li>
-            <a href="#">
-              <h2>Membership <i><img src="images/svg/caret.svg" alt=""></i></h2>
+            <a href="#" class="callout-hero">
+              <h2>Membership <i class="caret"><img src="images/svg/caret.svg" alt=""></i></h2>
               <h3>Benefits</h3>
             </a>
           </li>
@@ -31,28 +31,28 @@
 
     <div id="main">
       <div class="container">
-        <div class="span4">
+        <div class="span4 intro-column">
           <h2>About M Private Residences</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a nulla arcu, ac condimentum nulla. nulla tempor lorem sit amet tortor ultrices nec tempus tortor aliquam. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi eu metus in.<br><br></p>
           <a href="#" class="btn btn-silver">Learn More</a>
         </div>
-        <div id="home-locations" class="span4">
+        <div id="home-locations" class="span4 intro-column">
           <h2>Locations</h2>
           <ul class="nav-list">
-            <li>Kelowna, BC</li>
-            <li>Whistler, BC</li>
-            <li>Rancho Mirage, CA </li>
-            <li>Gold Canyon, AZ </li>
-            <li>Paradise Valley, AZ </li>
-            <li>Las Vegas, NV</li>
+            <li><a href="#">Kelowna, BC</a></li>
+            <li><a href="#">Whistler, BC</a></li>
+            <li><a href="#">Rancho Mirage, CA</a></li>
+            <li><a href="#">Gold Canyon, AZ</a></li>
+            <li><a href="#">Paradise Valley, AZ</a></li>
+            <li><a href="#">Las Vegas, NV</a></li>
           </ul>
           <ul class="nav-list">
-            <li>Big Island, HI </li>
-            <li>New York, NY </li>
-            <li>St. Philip, Barbados </li>
-            <li>Cabo San Lucas </li>
-            <li>London, England </li>
-            <li>Provence, France</li>
+            <li><a href="#">Big Island, HI</a></li>
+            <li><a href="#">New York, NY</a></li>
+            <li><a href="#">St. Philip, Barbados</a></li>
+            <li><a href="#">Cabo San Lucas</a></li>
+            <li><a href="#">London, England</a></li>
+            <li><a href="#">Provence, France</a></li>
           </ul>
           <a href="#" class="btn btn-silver">See All Locations</a>
         </div>

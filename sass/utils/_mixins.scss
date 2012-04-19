@@ -81,6 +81,23 @@
       }
     }
   }
+
+  .no-svg &,
+    .lt-ie9 & {
+      i {
+        width: image-width("shim/caret-up-off.png");
+        height: image-height("shim/caret-up-off.png");
+        margin: 0 0 0 10px;
+        display: inline-block;
+        vertical-align: middle;
+        overflow: hidden;
+        background: image-url("shim/caret-up-off.png") no-repeat 0 0;
+
+        img {
+          display: none;
+        }
+      }
+    }
 }
 
 /* 

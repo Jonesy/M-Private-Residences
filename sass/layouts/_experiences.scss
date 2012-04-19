@@ -20,31 +20,13 @@
     }
   }
 
-  @include btn-with-caret($dir: up, $animateTo: right);
+  @include btn-with-caret($dir: up);
 
   h2 {
     margin: 0.75em 0 0.25em;
     position: relative;
     color: #fff;
     @include transition(color 0.25s ease-in);
-
-    .no-svg &,
-    .lt-ie9 & {
-      i {
-        width: image-width("shim/caret-up-off.png");
-        height: image-height("shim/caret-up-off.png");
-        margin: 0 0 0 10px;
-        display: inline-block;
-        vertical-align: middle;
-        overflow: hidden;
-        background: image-url("shim/caret-up-off.png") no-repeat 0 0;
-
-        img {
-          display: none;
-        }
-      }
-    }
-    
   }
 
   h3 {
@@ -96,7 +78,7 @@
         margin-left: $gutter;
         float: left;
 
-        a {
+        a.callout-hero {
           @extend .exp-lrg-btn;
         }
       }

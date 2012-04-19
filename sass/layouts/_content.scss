@@ -1,7 +1,53 @@
-#main {
+header.page-header {
+  position: relative;
 
+  h1 {
+    text-transform: uppercase;
+    line-height: 0.85em;
+    margin: 0.6em 0;
+  }
+
+  small {
+    width: 100%;
+    margin: 0 0 2.00em;
+    display: block;
+    clear: both;
+  }
+
+  .filter {
+    display: inline-block;
+    clear: both;
+    margin-bottom: 30px;
+
+    .btn-group {
+      border-right: 1px solid $body;
+      float: left;
+      margin: 0;
+
+      &:first-child {
+      
+      }
+      &:last-child {
+        border: none;
+        margin: 0 0 0 10px;
+      }
+    }
+
+    ul {
+      float: left;
+      @include ul-reset($no-bullet: true);
+
+      li {
+        margin: 0 10px 0 0;
+        float: left;
+      }
+    }
+  }
+}
+
+#main {
   .subnav-header {
-    margin-bottom: 60px;
+    margin-bottom: 30px;
   }
 
   article {
@@ -50,6 +96,7 @@
   background: image-url("bg-breadcrumb.png") no-repeat center bottom;
 
   ol {
+    margin: 12px 0;
     list-style: none;
 
     li {
@@ -62,7 +109,6 @@
       line-height: 28px;
 
       a {
-        font-weight: bold;
         color: $headlines;
       }
 
@@ -75,6 +121,10 @@
 
         @media only screen and (-webkit-min-device-pixel-ratio: 2) {
           background-position: center bottom;          
+        }
+
+        a {
+          font-weight: bold;
         }
       }
     }
@@ -92,6 +142,12 @@
     font-size: 1.36em;
     @include Proxima;
     color: $body;
+  }
+}
+
+.page-subnav {
+  ol {
+    margin: 20px 0;
   }
 }
 

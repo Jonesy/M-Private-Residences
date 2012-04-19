@@ -4,7 +4,7 @@
 
     <div id="main">
       <div class="container">
-        <header class="span12">
+        <header class="span12 page-header">
           <h1>Register to Learn More</h1>
           <!-- NOTE: Design is inconsistent to when these should be titlecase -->
         </header> <!-- / wide header -->

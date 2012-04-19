@@ -20,7 +20,7 @@
             </ol>
             <button class="gallery-nav-next"><i><img src="images/svg/caret-lrg-right.svg" alt=""></i></button>
           </div> <!-- / .exp-thumbnails -->
-          <p><a href="#" class="btn btn-silver">Learn More</a></p>
+          <p><a href="#" class="btn">Learn More</a></p>
         </div> <!-- / .exp-callout -->
       </li>
       <li>
@@ -37,7 +37,7 @@
             </ol>
             <button class="gallery-nav-next"><i><img src="images/svg/caret-lrg-right.svg" alt=""></i></button>
           </div> <!-- / .exp-thumbnails -->
-          <p><a href="#" class="btn btn-silver">Learn More</a></p>
+          <p><a href="#" class="btn">Learn More</a></p>
         </div> <!-- / .exp-callout -->
       </li>
       <li>
@@ -54,7 +54,7 @@
             </ol>
             <button class="gallery-nav-next"><i><img src="images/svg/caret-lrg-right.svg" alt=""></i></button>
           </div> <!-- / .exp-thumbnails -->
-          <p><a href="#" class="btn btn-silver">Learn More</a></p>
+          <p><a href="#" class="btn">Learn More</a></p>
         </div> <!-- / .exp-callout -->
       </li>
     </ul>

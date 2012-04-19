@@ -3,7 +3,7 @@
 <div id="main" class="grey-page">
   <div class="container">
     <section id="experience-creator">
-      <header class="span12">
+      <header class="span12 page-header">
         <div class="breadcrumb numbered">
           <ol>
             <li>Destination</li>
@@ -22,11 +22,11 @@
 
       <ul class="locations-grid">
         <li class="span4">
-          <img src="http://placehold.it/300x148" alt="">
+          <img src="http://placehold.it/300x150" alt="">
           <h3><a href="#" class="selected">Golf <i class="caret"><img src="images/svg/caret.svg" alt=""></i></a></h3>
           <dl>
             <dt class="selected">
-              <button class="toggle"><img src="/images/svg/button-expand.svg" alt=""></button>
+              <button class="toggle"><img src="/images/svg/button-hide.svg" alt=""></button>
               <label>
                 <span><input type="checkbox" name="" value=""></span>
                 Golf Course Name One
@@ -34,7 +34,7 @@
             </dt>
             <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. etiam at fermentum ipsum. Suspendisse facilisis fringilla nunc sit amet dignissim. In feugiat, sem sed mattis eleifend, nunc nibh pellentesque lacus, et facilisis.</dd>
             <dt>
-              <button class="toggle"><img src="/images/svg/button-hide.svg" alt=""></button>
+              <button class="toggle"><img src="/images/svg/button-expand.svg" alt=""></button>
               <label>
                 <span><input type="checkbox" name="" value=""></span>
                 Golf Course Name One is Really Long
@@ -44,11 +44,11 @@
           </dl>
         </li>
         <li class="span4">
-          <img src="http://placehold.it/300x148" alt="">
+          <img src="http://placehold.it/300x150" alt="">
           <h3><a href="#">Attend Shows <i class="caret"><img src="images/svg/caret.svg" alt=""></i></a></h3>
         </li>
         <li class="span4">
-          <img src="http://placehold.it/300x148" alt="">
+          <img src="http://placehold.it/300x150" alt="">
           <h3><a href="#">Go on Tours <i class="caret"><img src="images/svg/caret.svg" alt=""></i></a></h3>
         </li>
       </ul> <!-- / ul.location-selection -->

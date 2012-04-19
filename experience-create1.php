@@ -3,7 +3,7 @@
 <div id="main" class="grey-page">
   <div class="container">
     <section id="experience-creator">
-      <header class="span12">
+      <header class="span12 page-header">
         <div class="breadcrumb numbered">
           <ol>
             <li class="current">Destination</li>

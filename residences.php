@@ -2,14 +2,14 @@
 
 <div id="main" class="grey-page">
   <div class="container">
-    <section id="experience-creator">
-      <header class="span12">
+    <section id="">
+      <header class="span12 page-header">
         <h1>Our Residences</h1>
         <small>Select and deselect buttons to filter:</small>
         <div class="filter">
           <div class="btn-group">
             <ul>
-              <li><a href="#" class="btn btn-white">All</a></li>
+              <li><a href="#" class="btn btn-white selected">All</a></li>
               <li><a href="#" class="btn btn-white">Sun</a></li>
               <li><a href="#" class="btn btn-white">Snow</a></li>
               <li><a href="#" class="btn btn-white">City</a></li>
@@ -17,7 +17,7 @@
           </div>
           <div class="btn-group">
             <ul>
-              <li><a href="#" class="btn btn-white">All</a></li>
+              <li><a href="#" class="btn btn-white selected">All</a></li>
               <li><a href="#" class="btn btn-white">Canada</a></li>
               <li><a href="#" class="btn btn-white">USA</a></li>
               <li><a href="#" class="btn btn-white">Mexico</a></li>
@@ -29,39 +29,39 @@
 
       <ul class="locations-grid">
         <li class="span4">
-          <img src="http://placehold.it/300x148" alt="">
+          <img src="http://placehold.it/300x145" alt="">
           <h3><a href="#">Location name</a></h3>
         </li>
         <li class="span4">
-          <img src="http://placehold.it/300x148" alt="">
+          <img src="http://placehold.it/300x145" alt="">
           <h3><a href="#">Location name</a></h3>
         </li>
         <li class="span4">
-          <img src="http://placehold.it/300x148" alt="">
+          <img src="http://placehold.it/300x145" alt="">
           <h3><a href="#">Location name</a></h3>
         </li>
         <li class="span4">
-          <img src="http://placehold.it/300x148" alt="">
+          <img src="http://placehold.it/300x145" alt="">
           <h3><a href="#">Location name</a></h3>
         </li>
         <li class="span4">
-          <img src="http://placehold.it/300x148" alt="">
+          <img src="http://placehold.it/300x145" alt="">
           <h3><a href="#">Location name</a></h3>
         </li>
         <li class="span4">
-          <img src="http://placehold.it/300x148" alt="">
+          <img src="http://placehold.it/300x145" alt="">
           <h3><a href="#">Location name</a></h3>
         </li>
         <li class="span4">
-          <img src="http://placehold.it/300x148" alt="">
+          <img src="http://placehold.it/300x145" alt="">
           <h3><a href="#">Location name</a></h3>
         </li>
         <li class="span4">
-          <img src="http://placehold.it/300x148" alt="">
+          <img src="http://placehold.it/300x145" alt="">
           <h3><a href="#">Location name</a></h3>
         </li>
         <li class="span4">
-          <img src="http://placehold.it/300x148" alt="">
+          <img src="http://placehold.it/300x145" alt="">
           <h3><a href="#">Location name</a></h3>
         </li>
       </ul>

@@ -600,6 +600,7 @@ ul.nav-list {
   -webkit-background-clip: padding-box;
   /* Default button */ }
   .btn:hover, .btn-zoom:hover {
+    color: #fff;
     background: #7b7b7b; }
   .btn.btn-silver {
     background: #eaeaea;

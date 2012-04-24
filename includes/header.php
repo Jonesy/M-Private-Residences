@@ -34,8 +34,8 @@ if ($file == 'index.php'):
         </div>
         <nav>
           <ul class="main-nav">
-            <li><a href="#">Experiences <i><img src="images/svg/caret.svg" alt=""></i></a></li>
-            <li><a href="#">Residences <i><img src="images/svg/caret.svg" alt=""></i></a></li>
+            <li><a href="#" class="subnav" data-target="#subnav-experiences">Experiences <i><img src="images/svg/caret.svg" alt=""></i></a></li>
+            <li><a href="#" class="subnav" data-target="#subnav-residences">Residences <i><img src="images/svg/caret.svg" alt=""></i></a></li>
             <li><a href="#">Membership</a></li>
           </ul>
           <ul class="secondary-nav">
@@ -48,8 +48,8 @@ if ($file == 'index.php'):
       <div class="shadow"></div>
     </header> <!-- / header banner -->
 
-    <div id="subnav-container" style="display:none">
-      <div id="subnav-experiences" class="container">
+    <div id="subnav-experiences" class="subnav-container" style="display:none">
+      <div class="container">
         <div class="span2">
           <h2>Canada</h2>
           <ul class="nav-list">
@@ -95,5 +95,55 @@ if ($file == 'index.php'):
               <li><a href="#">St. Remy, Provence, France</a></li>
           </ul>
         </div>
-      </div> <!-- / #subnav-experiences -->
-    </div> <!-- / #subnav-container -->
+      </div> <!-- / .container -->
+    </div> <!-- / #subnav-experiences -->
+
+    <div id="subnav-residences" class="subnav-container" style="display:none">
+      <div class="container">
+        <div class="span2">
+          <h2>Canada.</h2>
+          <ul class="nav-list">
+            <li><a href="#">Kelowna, BC</a></li>
+            <li><a href="#">The Shutters, Victoria, BC</a></li>
+            <li><a href="#">Bear Mountain, Victoria, BC</a></li>
+            <li><a href="#">Whistler, BC</a></li>
+          </ul>
+        </div>
+        <div class="span4">
+          <h2>USA</h2>
+          <ul class="nav-list">
+            <li><a href="#">La Quinta, CA</a></li>
+            <li><a href="#">Rancho Mirage, CA</a></li>
+            <li><a href="#">Gold C mmttanyon, AZ</a></li>
+            <li><a href="#">Paradise Valley, AZ</a></li>
+          </ul>
+          <ul class="nav-list">
+            <li><a href="#">Las Vegas, NV</a></li>
+            <li><a href="#">Oahu, HI</a></li>
+            <li><a href="#">Big Island, HI</a></li>
+            <li><a href="#">New York, NY</a></li>
+          </ul>
+        </div>
+        <div class="span2">
+          <h2>Caribbean</h2>
+          <ul class="nav-list">
+            <li><a href="#">St. Philip, Barbados West Indies</a></li>
+          </ul>
+        </div>
+        <div class="span2">
+          <h2>Mexico</h2>
+          <ul class="nav-list">
+            <li><a href="#">La Estancia, Cabo San Lucas</a></li>
+            <li><a href="#">Esperanza 2402, Cabo San Lucas</a></li>
+            <li><a href="#">Esperanza 2404, Cabo San Lucas</a></li>
+          </ul>
+        </div>
+        <div class="span2">
+          <h2>Europe</h2>
+          <ul class="nav-list">
+            <li><a href="#">London, England</a></li>
+              <li><a href="#">St. Remy, Provence, France</a></li>
+          </ul>
+        </div>
+      </div> <!-- / .container -->
+    </div> <!-- / #subnav-residences -->

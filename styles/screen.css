@@ -829,8 +829,6 @@ dl.accordion dt {
   dl.accordion dt.selected {
     border: none;
     color: #000; }
-  .js dl.accordion dt {
-    padding: 5px 0 15px 30px; }
   dl.accordion dt button {
     position: absolute;
     top: 10px;
@@ -842,10 +840,12 @@ dl.accordion dd {
   margin: 0;
   padding: 0 0 5px;
   border-bottom: 1px solid #ccc; }
-  .js dl.accordion dd {
-    padding-left: 30px; }
   dl.accordion dd p, dl.accordion dd address {
     margin-top: 0; }
+dl.accordion.is-active dt {
+  padding: 5px 0 15px 30px; }
+dl.accordion.is-active dd {
+  padding-left: 30px; }
 
 /* Page layouts */
 body {
@@ -868,6 +868,8 @@ header[role="banner"] {
       background: none; }
       .no-cssgradients header[role="banner"] ul.main-nav li a:hover {
         background: url('../images/shim/bg-header-nav.gif?1334008240'); }
+  header[role="banner"] nav {
+    position: relative; }
   header[role="banner"] a {
     color: #ccc; }
   header[role="banner"] ul {
@@ -923,10 +925,10 @@ header[role="banner"] {
           -ms-transition: opacity 0.4s ease-in;
           -o-transition: opacity 0.4s ease-in;
           transition: opacity 0.4s ease-in; }
-        header[role="banner"] ul.main-nav li > a:hover {
+        header[role="banner"] ul.main-nav li > a:hover, header[role="banner"] ul.main-nav li > a.selected {
           color: #fff;
           background-color: #fff; }
-          header[role="banner"] ul.main-nav li > a:hover img {
+          header[role="banner"] ul.main-nav li > a:hover img, header[role="banner"] ul.main-nav li > a.selected img {
             filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
             opacity: 1; }
     header[role="banner"] ul.secondary-nav {
@@ -956,25 +958,25 @@ header[role="banner"] {
             transition: background-color 0.25s ease-in; }
 
 /* Subnav dropdown */
-#subnav-container {
+.subnav-container {
   position: absolute;
   top: 80px;
   left: 0;
   right: 0;
   z-index: 9999;
   background: #fff; }
-  #subnav-container .container, #subnav-container #experiences nav ul, #experiences nav #subnav-container ul, #subnav-container #experience-creator footer, #experience-creator #subnav-container footer {
+  .subnav-container .container, .subnav-container #experiences nav ul, #experiences nav .subnav-container ul, .subnav-container #experience-creator footer, #experience-creator .subnav-container footer {
     display: table;
     margin-bottom: 10px; }
-    #subnav-container .container ul, #subnav-container #experiences nav ul ul, #experiences nav #subnav-container ul ul, #subnav-container #experience-creator footer ul, #experience-creator #subnav-container footer ul {
+    .subnav-container .container ul, .subnav-container #experiences nav ul ul, #experiences nav .subnav-container ul ul, .subnav-container #experience-creator footer ul, #experience-creator .subnav-container footer ul {
       width: 160px;
       float: left; }
-      #subnav-container .container ul:last-child, #subnav-container #experiences nav ul ul:last-child, #experiences nav #subnav-container ul ul:last-child, #subnav-container #experience-creator footer ul:last-child, #experience-creator #subnav-container footer ul:last-child {
+      .subnav-container .container ul:last-child, .subnav-container #experiences nav ul ul:last-child, #experiences nav .subnav-container ul ul:last-child, .subnav-container #experience-creator footer ul:last-child, #experience-creator .subnav-container footer ul:last-child {
         width: 140px; }
-      #subnav-container .container ul li, #subnav-container #experiences nav ul ul li, #experiences nav #subnav-container ul ul li, #subnav-container #experience-creator footer ul li, #experience-creator #subnav-container footer ul li {
+      .subnav-container .container ul li, .subnav-container #experiences nav ul ul li, #experiences nav .subnav-container ul ul li, .subnav-container #experience-creator footer ul li, #experience-creator .subnav-container footer ul li {
         width: 85px;
         margin: 0 0 10px; }
-        #subnav-container .container ul li a, #subnav-container #experiences nav ul ul li a, #experiences nav #subnav-container ul ul li a, #subnav-container #experience-creator footer ul li a, #experience-creator #subnav-container footer ul li a {
+        .subnav-container .container ul li a, .subnav-container #experiences nav ul ul li a, #experiences nav .subnav-container ul ul li a, .subnav-container #experience-creator footer ul li a, #experience-creator .subnav-container footer ul li a {
           color: #666666; }
 
 div[role="main"] {
@@ -1005,6 +1007,7 @@ div[role="main"] {
 .shadow {
   width: 100%;
   height: 20px;
+  display: none;
   position: absolute;
   bottom: 0;
   z-index: 999;

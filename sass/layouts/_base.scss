@@ -29,6 +29,9 @@ header[role="banner"] {
       }
     }
   }
+  nav {
+    position: relative;
+  }
 
   a {
     color: #ccc;
@@ -91,7 +94,8 @@ header[role="banner"] {
             @include transition(opacity 0.4s ease-in);
           }
 
-          &:hover {
+          &:hover,
+          &.selected {
             color: #fff;
             background-color: #fff;
             img {
@@ -134,7 +138,7 @@ header[role="banner"] {
 }
 
 /* Subnav dropdown */
-#subnav-container {
+.subnav-container {
   position: absolute;
   top: 80px;
   left: 0;
@@ -200,6 +204,7 @@ div[role="main"] {
 .shadow {
     width: 100%;
     height: 20px;
+    display: none;
     position: absolute;
     bottom: 0;
     z-index: 999;

@@ -16,10 +16,6 @@ dl.accordion {
       color: #000;
     }
 
-    .js & {
-      padding: 5px 0 15px 30px;
-    }
-
     button {
       position: absolute;
       top: 10px;
@@ -37,12 +33,18 @@ dl.accordion {
     padding: 0 0 5px;
     @include bdr;
 
-    .js & {
-      padding-left: 30px;
-    }
-
     p {
       margin-top: 0;
+    }
+  }
+
+  &.is-active {
+    dt {
+      padding: 5px 0 15px 30px;
+    }
+    
+    dd {
+      padding-left: 30px;
     }
   }
 }

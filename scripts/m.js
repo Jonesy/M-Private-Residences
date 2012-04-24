@@ -1,6 +1,6 @@
 (function($) {
 
-  $('a.subnav').navigation();
+  $('#nav').navigation();
   $('dl.accordion').accordion();
 
 })(jQuery);

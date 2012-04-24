@@ -33,7 +33,7 @@ if ($file == 'index.php'):
           <a href="/">M Private Residences</a>
         </div>
         <nav>
-          <ul class="main-nav">
+          <ul id="nav" class="main-nav">
             <li><a href="#" class="subnav" data-target="#subnav-experiences">Experiences <i><img src="images/svg/caret.svg" alt=""></i></a></li>
             <li><a href="#" class="subnav" data-target="#subnav-residences">Residences <i><img src="images/svg/caret.svg" alt=""></i></a></li>
             <li><a href="#">Membership</a></li>

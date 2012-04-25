@@ -41,6 +41,8 @@
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
   <script src="/scripts/m/navigation.js"></script>
   <script src="/scripts/m/accordion.js"></script>
+  <script src="/scripts/m/checkbox.js"></script>
+  <script src="/scripts/m/selectbox.js"></script>
   <script src="/scripts/m.js"></script>
 </body>
 </html>

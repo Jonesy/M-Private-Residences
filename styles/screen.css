@@ -1,7 +1,7 @@
 /* System */
 /* Utilities */
-.shim-sprite, .no-svg .btn-zoom i, .no-svg button.toggle, .no-svg .selected button.toggle, button.gallery-nav-next i, button.gallery-nav-prev i, .no-svg footer.main .social-links a.social-facebook, .no-svg footer.main .social-links a.social-twitter, .no-svg footer.main .social-links a.social-gplus {
-  background: url('../images/shim-sd01bde928f.png') no-repeat; }
+.shim-sprite, .no-svg .btn-zoom i, .no-svg button.toggle, .no-svg .selected button.toggle, button.gallery-nav-next i, button.gallery-nav-prev i, .no-svg footer.main .social-links a.social-facebook, .no-svg footer.main .social-links a.social-twitter, .no-svg footer.main .social-links a.social-gplus, ul.locations-grid li.span4 dl dt label span.checkbox span, #experiences nav ul.locations-grid li dl dt label span.checkbox span, ul.locations-grid #main article .features li.features-list dl dt label span.checkbox span, #main article .features ul.locations-grid li.features-list dl dt label span.checkbox span {
+  background: url('../images/shim-sc03813f004.png') no-repeat; }
 
 /* normalize.css 2012-03-11T12:53 UTC - http://github.com/necolas/normalize.css */
 /* =============================================================================
@@ -694,10 +694,10 @@ button[class^="gallery-nav"] {
     margin: 0 auto; }
 
 button.gallery-nav-next i {
-  background-position: 0 -208px; }
+  background-position: 0 -221px; }
 
 button.gallery-nav-prev i {
-  background-position: 0 -188px; }
+  background-position: 0 -201px; }
 
 /**
   NOTE: Uses css triangle for the right corner, CSS transitions don't work as of now.
@@ -1593,9 +1593,14 @@ ul.locations-grid {
           ul.locations-grid li.span4 ul li a:hover, #experiences nav ul.locations-grid li ul li a:hover, ul.locations-grid #main article .features li.features-list ul li a:hover, #main article .features ul.locations-grid li.features-list ul li a:hover, ul.locations-grid li.span4 dl li a:hover, #experiences nav ul.locations-grid li dl li a:hover, ul.locations-grid #main article .features li.features-list dl li a:hover, #main article .features ul.locations-grid li.features-list dl li a:hover {
             color: #000;
             background: #f4f4f4; }
+          ul.locations-grid li.span4 ul li a.selected, #experiences nav ul.locations-grid li ul li a.selected, ul.locations-grid #main article .features li.features-list ul li a.selected, #main article .features ul.locations-grid li.features-list ul li a.selected, ul.locations-grid li.span4 dl li a.selected, #experiences nav ul.locations-grid li dl li a.selected, ul.locations-grid #main article .features li.features-list dl li a.selected, #main article .features ul.locations-grid li.features-list dl li a.selected {
+            color: #f4f4f4;
+            background: #202020; }
     ul.locations-grid li.span4 dl, #experiences nav ul.locations-grid li dl, ul.locations-grid #main article .features li.features-list dl, #main article .features ul.locations-grid li.features-list dl {
       margin: 0;
       padding: 10px 0; }
+      .no-js ul.locations-grid li.span4 dl, .no-js #experiences nav ul.locations-grid li dl, #experiences nav .no-js ul.locations-grid li dl, .no-js ul.locations-grid #main article .features li.features-list dl, #main article .features .no-js ul.locations-grid li.features-list dl {
+        padding-bottom: 0; }
       ul.locations-grid li.span4 dl dt, #experiences nav ul.locations-grid li dl dt, ul.locations-grid #main article .features li.features-list dl dt, #main article .features ul.locations-grid li.features-list dl dt {
         min-height: 40px;
         position: relative; }
@@ -1606,7 +1611,7 @@ ul.locations-grid {
           line-height: 1em;
           display: inline-block;
           position: relative; }
-          ul.locations-grid li.span4 dl dt label span, #experiences nav ul.locations-grid li dl dt label span, ul.locations-grid #main article .features li.features-list dl dt label span, #main article .features ul.locations-grid li.features-list dl dt label span {
+          ul.locations-grid li.span4 dl dt label span.checkbox, #experiences nav ul.locations-grid li dl dt label span.checkbox, ul.locations-grid #main article .features li.features-list dl dt label span.checkbox, #main article .features ul.locations-grid li.features-list dl dt label span.checkbox {
             width: 11px;
             height: 11px;
             margin: -7px 0 0 -7px;
@@ -1616,17 +1621,42 @@ ul.locations-grid {
             display: inline-block;
             border: 1px solid #666666;
             cursor: pointer; }
-            ul.locations-grid li.span4 dl dt label span input[type="checkbox"], #experiences nav ul.locations-grid li dl dt label span input[type="checkbox"], ul.locations-grid #main article .features li.features-list dl dt label span input[type="checkbox"], #main article .features ul.locations-grid li.features-list dl dt label span input[type="checkbox"] {
+            ul.locations-grid li.span4 dl dt label span.checkbox input[type="checkbox"], #experiences nav ul.locations-grid li dl dt label span.checkbox input[type="checkbox"], ul.locations-grid #main article .features li.features-list dl dt label span.checkbox input[type="checkbox"], #main article .features ul.locations-grid li.features-list dl dt label span.checkbox input[type="checkbox"] {
               filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-              opacity: 0; }
+              opacity: 0;
+              cursor: pointer; }
+            .svg ul.locations-grid li.span4 dl dt label span.checkbox img, .svg #experiences nav ul.locations-grid li dl dt label span.checkbox img, #experiences nav .svg ul.locations-grid li dl dt label span.checkbox img, .svg ul.locations-grid #main article .features li.features-list dl dt label span.checkbox img, #main article .features .svg ul.locations-grid li.features-list dl dt label span.checkbox img, .no-svg ul.locations-grid li.span4 dl dt label span.checkbox span, .no-svg #experiences nav ul.locations-grid li dl dt label span.checkbox span, #experiences nav .no-svg ul.locations-grid li dl dt label span.checkbox span, .no-svg ul.locations-grid #main article .features li.features-list dl dt label span.checkbox span, #main article .features .no-svg ul.locations-grid li.features-list dl dt label span.checkbox span {
+              position: absolute;
+              top: -3px;
+              left: 1px; }
+            ul.locations-grid li.span4 dl dt label span.checkbox.checked img, #experiences nav ul.locations-grid li dl dt label span.checkbox.checked img, ul.locations-grid #main article .features li.features-list dl dt label span.checkbox.checked img, #main article .features ul.locations-grid li.features-list dl dt label span.checkbox.checked img, ul.locations-grid li.span4 dl dt label span.checkbox.checked span, #experiences nav ul.locations-grid li dl dt label span.checkbox.checked span, ul.locations-grid #main article .features li.features-list dl dt label span.checkbox.checked span, #main article .features ul.locations-grid li.features-list dl dt label span.checkbox.checked span {
+              display: block; }
+            ul.locations-grid li.span4 dl dt label span.checkbox.off img, #experiences nav ul.locations-grid li dl dt label span.checkbox.off img, ul.locations-grid #main article .features li.features-list dl dt label span.checkbox.off img, #main article .features ul.locations-grid li.features-list dl dt label span.checkbox.off img, ul.locations-grid li.span4 dl dt label span.checkbox.off span, #experiences nav ul.locations-grid li dl dt label span.checkbox.off span, ul.locations-grid #main article .features li.features-list dl dt label span.checkbox.off span, #main article .features ul.locations-grid li.features-list dl dt label span.checkbox.off span {
+              display: none; }
+            ul.locations-grid li.span4 dl dt label span.checkbox span, #experiences nav ul.locations-grid li dl dt label span.checkbox span, ul.locations-grid #main article .features li.features-list dl dt label span.checkbox span, #main article .features ul.locations-grid li.features-list dl dt label span.checkbox span {
+              width: 17px;
+              height: 14px;
+              background-position: 0 -188px; }
+          .no-js ul.locations-grid li.span4 dl dt label input[type="checkbox"], .no-js #experiences nav ul.locations-grid li dl dt label input[type="checkbox"], #experiences nav .no-js ul.locations-grid li dl dt label input[type="checkbox"], .no-js ul.locations-grid #main article .features li.features-list dl dt label input[type="checkbox"], #main article .features .no-js ul.locations-grid li.features-list dl dt label input[type="checkbox"] {
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+            opacity: 1;
+            margin: -7px 0 0 -7px;
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            display: inline-block; }
         ul.locations-grid li.span4 dl dt button.toggle, #experiences nav ul.locations-grid li dl dt button.toggle, ul.locations-grid #main article .features li.features-list dl dt button.toggle, #main article .features ul.locations-grid li.features-list dl dt button.toggle {
           margin: -10px 0 0;
           position: absolute;
           right: 10px;
           top: 50%; }
+          .no-js ul.locations-grid li.span4 dl dt button.toggle, .no-js #experiences nav ul.locations-grid li dl dt button.toggle, #experiences nav .no-js ul.locations-grid li dl dt button.toggle, .no-js ul.locations-grid #main article .features li.features-list dl dt button.toggle, #main article .features .no-js ul.locations-grid li.features-list dl dt button.toggle {
+            display: none; }
       ul.locations-grid li.span4 dl dd, #experiences nav ul.locations-grid li dl dd, ul.locations-grid #main article .features li.features-list dl dd, #main article .features ul.locations-grid li.features-list dl dd {
         margin: 0;
         padding: 0 10px 20px 40px;
         font-size: 0.75em;
         line-height: 1.8em;
         border-bottom: 1px solid #eaeaea; }
+        ul.locations-grid li.span4 dl dd:last-child, #experiences nav ul.locations-grid li dl dd:last-child, ul.locations-grid #main article .features li.features-list dl dd:last-child, #main article .features ul.locations-grid li.features-list dl dd:last-child {
+          border: none; }

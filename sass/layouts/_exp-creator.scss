@@ -107,6 +107,11 @@ ul.locations-grid {
             color: #000;
             background: #f4f4f4;
           }
+
+          &.selected {
+            color: #f4f4f4;
+            background: #202020;
+          }
         }
       }
     }
@@ -114,6 +119,10 @@ ul.locations-grid {
     dl {
       margin: 0;
       padding: 10px 0;
+
+      .no-js & {
+        padding-bottom: 0;
+      }
 
       dt {
         min-height: 40px;
@@ -128,7 +137,7 @@ ul.locations-grid {
           display: inline-block;
           position: relative;
 
-          span {
+          span.checkbox {
             width: 11px;
             height: 11px;
             margin: -7px 0 0 -7px;
@@ -140,8 +149,41 @@ ul.locations-grid {
             cursor: pointer;
 
             input[type="checkbox"] {
-              @include opacity(0);  
+              @include opacity(0);
+              cursor: pointer;
             }
+
+            .svg & img,
+            .no-svg & span {
+              position: absolute;
+              top: -3px;
+              left: 1px;
+            }
+
+            &.checked img,
+            &.checked span {
+              display: block;
+            }
+
+            &.off img,
+            &.off span {
+              display: none;
+            }
+
+            span {
+              width: 17px;
+              height: 14px;
+              @include shim-sprite(check);
+            }
+          }
+
+          .no-js & input[type="checkbox"] {
+            @include opacity(1);
+            margin: -7px 0 0 -7px;
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            display: inline-block;
           }
 
         }
@@ -152,6 +194,9 @@ ul.locations-grid {
           right: 10px;
           top: 50%;
           
+          .no-js & {
+            display: none;
+          }
         }
       }
       dd {
@@ -160,6 +205,10 @@ ul.locations-grid {
         font-size: 0.75em;
         line-height: 1.8em;
         border-bottom: 1px solid $silver;
+
+        &:last-child {
+          border: none;
+        }
       }
     }
   }

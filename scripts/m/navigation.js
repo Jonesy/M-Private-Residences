@@ -6,6 +6,9 @@
     var plugin = {
       settings: {},
       target: null,
+      mouseIsInNav: false,
+      selectedNavMenu: null,
+      mouseIsInSubNav: false,
       isMouseOutOfBounds: true,
       isActive: false,
 
@@ -21,11 +24,22 @@
         $(document).off('mousemove');
       },
 
-      checkMenu: function() {
-        console.log(this.isMouseOutOfBounds);
-        if (this.isMouseOutOfBounds && this.isActive === false) {
-          this.clearMenus();
-        }
+      checkMenuState: function() {
+        setTimeout(function() {
+          console.log(plugin.isActive);
+          if (!plugin.isActive) {
+            console.log('shut er down')
+            plugin.clearMenus();
+          }
+        }, 100);
+      },
+      leaveMenuItem: function() {
+        setTimeout(function() {
+          if (!plugin.selectedNavMenu) {
+            plugin.isActive = false;
+            plugin.checkMenuState();
+          }
+        }, 1000);
       }
     };
 
@@ -51,69 +65,64 @@
 
           plugin.clearMenus();
           $b.addClass('selected');
+
           if (target) {
+            console.log(plugin.selectedNavMenu);
             $(target).fadeIn();
+
             subnavHeight = $(target).height();
+            plugin.selectedNavMenu = target;
             plugin.isActive = true;
-            $(document).on('mousemove', trackMouse);
+
             $(target)
               .on('mouseenter', function() {
+                plugin.selectedNavMenu = $(this).prop('id');
+                plugin.isActive = true;
                 plugin.isActive = true;
               })
               .on('mouseleave', function() {
+                plugin.selectedNavMenu = null;
+                plugin.leaveMenuItem();
                 plugin.isActive = false;
-                plugin.checkMenu();
               });
           }
         })
-        .on('mouseleave', function() {
-          plugin.isActive = false;
-          timer = setTimeout(function() {
-            plugin.checkMenu();
-          }, 500);
-        });
+        // .on('mouseleave', function() {
+        //   plugin.isActive = false;
+        //   timer = setTimeout(function() {
+        //     plugin.checkMenuState();
+        //   }, 500);
+        // });
       });
 
-      $this.on('mouseleave', plugin.checkMenu);
+      $this.on('mouseleave', function() {
+        plugin.isActive = false;
+        plugin.selectedNavMenu = null;
+        plugin.checkMenuState();
+      });
 
+      $containers.on('mouseenter', function() {
+        plugin.selectedNavMenu = $(this).prop('id');
+        plugin.isActive = true;
+      })
+      .on('mouseleave', function() {
+        plugin.selectedNavMenu = null;
+        plugin.leaveMenuItem();
+      });
 
-    //   $this.mouseover(function() {
-    //     $this.addClass('selected');
-    //     if (plugin.isActive) {
-    //       plugin.clearMenus();
-    //     }
-
-    //     // timer = setTimeout(function() {plugin.checkMenu();}, 1000);
-
-    //     plugin.isActive = true;
-
-    //     $subnav.not(':animated').fadeIn().on('mouseout', function() {
-    //       plugin.isActive = true;
-    //     });
-    //     $(document).on('mousemove', trackMouse);
-    //   });
-
-    //   $this.mouseout(function() {
-    //     if (plugin.isMouseOutOfBounds) {
-    //       plugin.clearMenus();
-    //       // clearTimeout(timer);
-    //       $(document).off('mousemove', trackMouse);
-    //     }
-    //   });
-
-      function trackMouse(event) {
-        var y = event.pageY;
-        if (y > subnavOffsetTop + subnavHeight) {
-          console.log('way low');
-          plugin.isMouseOutOfBounds = true;
-        } else if (y > (subnavOffsetTop + subnavHeight) || y < subnavOffsetTop) {
-          console.log('way high');
-          plugin.isMouseOutOfBounds = true;
-        } else {
-          console.log('good');
-          plugin.isMouseOutOfBounds = false;
-        }
-      }
+      // function trackMouse(event) {
+      //   var y = event.pageY;
+      //   if (y > subnavOffsetTop + subnavHeight) {
+      //     console.log('way low');
+      //     plugin.isMouseOutOfBounds = true;
+      //   } else if (y > (subnavOffsetTop + subnavHeight) || y < subnavOffsetTop) {
+      //     console.log('way high');
+      //     plugin.isMouseOutOfBounds = true;
+      //   } else {
+      //     console.log('good');
+      //     plugin.isMouseOutOfBounds = false;
+      //   }
+      // }
     });
   }
 

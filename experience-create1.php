@@ -18,8 +18,8 @@
         <h1>I Want to Go To The...</h1>
         <small>Make your selections below:</small>
       </header> <!-- / exp creator header -->
-      <ul class="locations-grid">
-        <li class="span4">
+      <ul id="locations-select" class="locations-grid">
+        <li class="span4 selectbox">
           <img src="http://placehold.it/300x148" alt="">
           <h3><a href="#">Sun <i class="caret"><img src="images/svg/caret.svg" alt=""></i></a></h3>
           <ul>
@@ -29,7 +29,7 @@
             <li><a href="#">London, England</a></li>
           </ul>
         </li>
-        <li class="span4">
+        <li class="span4 selectbox">
           <img src="http://placehold.it/300x148" alt="">
           <h3><a href="#">Snow <i class="caret"><img src="images/svg/caret.svg" alt=""></i></a></h3>
           <ul>
@@ -39,7 +39,7 @@
             <li><a href="#">London, England</a></li>
           </ul>
         </li>
-        <li class="span4">
+        <li class="span4 selectbox">
           <img src="http://placehold.it/300x148" alt="">
           <h3><a href="#">City <i class="caret"><img src="images/svg/caret.svg" alt=""></i></a></h3>
           <ul>

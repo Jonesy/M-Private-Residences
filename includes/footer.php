@@ -10,10 +10,10 @@
           </ul>
           <p><a href="#">Sitemap</a> | <a href="#">Legal</a> | <a href="#">Privacy</a></p>
           <div class="social-links">
-            <a href="#" class="social-facebook"><img src="/images/svg/social-facebook.svg" alt="Share on Facebook" title="Share on Facebook"></a>
-            <a href="#" class="social-twitter"><img src="/images/svg/social-twitter.svg" alt="Share on Twitter" title="Share on Twitter"></a>
-            <a href="#" class="social-gplus"><img src="/images/svg/social-gplus.svg" alt="Share on Google+" title="Share on Google+"></a>
-          </div>
+            <a href="http://www.facebook.com/mprivateresidences" class="social-facebook" target="_blank"><img src="/images/svg/social-facebook.svg" alt="Share on Facebook" title="Share on Facebook"></a>
+            <a href="http://twitter.com/#!/thefinestdays" class="social-twitter" target="_blank"><img src="/images/svg/social-twitter.svg" alt="Share on Twitter" title="Share on Twitter"></a>
+            <a href="#" class="social-gplus" target="_blank"><img src="/images/svg/social-gplus.svg" alt="Share on Google+" title="Share on Google+"></a>
+          </div> <!-- /.social-links -->
         </nav> <!-- / #footer-nav -->
         <div class="span4">
           <h2>Sign Up to Learn More!</h2>

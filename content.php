@@ -24,7 +24,7 @@
               </ul>
             </div> <!-- / .features-list -->
             <aside>
-              <a href="#" class="btn-zoom"><i><img src="images/svg/zoom.svg" alt="Zoom"></i></a>
+              <a href="/images/_temp/fullsize/barbados.jpg" class="btn-zoom fancybox"><i><img src="images/svg/zoom.svg" alt="Zoom"></i></a>
               <img src="http://placehold.it/300x260">
             </aside> <!-- / .features-aside -->
           </div> <!-- / .features -->

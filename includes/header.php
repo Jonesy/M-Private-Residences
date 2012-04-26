@@ -10,6 +10,7 @@
   <meta name="description" content="">
 
   <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="styles/fancybox/jquery.fancybox.css">
   <link rel="stylesheet" href="styles/screen.css">
 
   <script src="scripts/libs/modernizr-2.5.3.min.js"></script>

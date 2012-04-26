@@ -8,7 +8,6 @@
     multiple: true
   }).find('dl').accordion();
 
-  if (!Modernizr.svg) {
-    // $('i.caret > img').remove();
-  }
+  $('.fancybox').fancybox();
+
 })(jQuery);

@@ -5,12 +5,9 @@
 
     var plugin = {
       settings: {},
-      target: null,
-      mouseIsInNav: false,
       selectedNavMenu: null,
-      mouseIsInSubNav: false,
-      isMouseOutOfBounds: true,
-      isActive: false,
+      selectedSubNavMenu: null,
+      hasMouseOverNav: null,
 
       init: function() {
         this.settings = $.extend({}, defaults, options);
@@ -18,112 +15,80 @@
 
       clearMenus: function() {
         $('.selected').removeClass('selected');
-        $('.subnav-container').fadeOut();
-        this.isActive = false;
-        timer = null;
-        $(document).off('mousemove');
+        $('.subnav-container:visible').fadeOut();
       },
 
       checkMenuState: function() {
-        setTimeout(function() {
-          console.log(plugin.isActive);
-          if (!plugin.isActive) {
-            console.log('shut er down')
-            plugin.clearMenus();
-          }
-        }, 100);
+        return !plugin.selectedNavMenu && !plugin.selectedSubNavMenu;
       },
+
       leaveMenuItem: function() {
         setTimeout(function() {
-          if (!plugin.selectedNavMenu) {
-            plugin.isActive = false;
-            plugin.checkMenuState();
+          if (plugin.checkMenuState()) {
+            plugin.clearMenus();
           }
-        }, 1000);
+        }, 500);
+      },
+
+      leaveNavigation: function(event) {
+        if (!plugin.hasMouseOverNav) {
+          plugin.selectedNavMenu = null;
+          plugin.leaveMenuItem();
+        }
       }
     };
 
     plugin.init();
-
-    var timer;
 
     return this.each(function() {
 
       var $this = $(this),
           $buttons = $this.find('a'),
           $subnavButtons = $buttons.filter('.subnav'),
-          $containers = $('.subnav-container'),
-          subnavOffsetTop = $this.height(),
-          subnavHeight,
-          subnavBottom = subnavOffsetTop + subnavHeight;
+          $containers = $('.subnav-container');
 
       $buttons.each(function() {
-        var $b = $(this);
+        var $button = $(this);
 
-        $b.on('mouseenter', function() {
-          var target = $b.data('target');
+        $button.on('mouseenter', function() {
+          var target = $button.data('target');
 
-          plugin.clearMenus();
-          $b.addClass('selected');
+          if (plugin.checkMenuState() || target !== plugin.selectedNavMenu) {
+            plugin.clearMenus();
+          }
+          plugin.selectedNavMenu = target;
 
           if (target) {
-            console.log(plugin.selectedNavMenu);
+            $button.addClass('selected');
             $(target).fadeIn();
 
-            subnavHeight = $(target).height();
             plugin.selectedNavMenu = target;
-            plugin.isActive = true;
 
             $(target)
               .on('mouseenter', function() {
-                plugin.selectedNavMenu = $(this).prop('id');
-                plugin.isActive = true;
-                plugin.isActive = true;
+                plugin.selectedNavMenu = target;
+                plugin.selectedSubNavMenu = target;
               })
               .on('mouseleave', function() {
-                plugin.selectedNavMenu = null;
+                plugin.selectedSubNavMenu = null;
                 plugin.leaveMenuItem();
-                plugin.isActive = false;
               });
           }
-        })
-        // .on('mouseleave', function() {
-        //   plugin.isActive = false;
-        //   timer = setTimeout(function() {
-        //     plugin.checkMenuState();
-        //   }, 500);
-        // });
+        });
       });
 
-      $this.on('mouseleave', function() {
-        plugin.isActive = false;
-        plugin.selectedNavMenu = null;
-        plugin.checkMenuState();
-      });
-
-      $containers.on('mouseenter', function() {
-        plugin.selectedNavMenu = $(this).prop('id');
-        plugin.isActive = true;
+      $this
+      .on('mouseenter', function() {
+        plugin.hasMouseOverNav = true;
       })
       .on('mouseleave', function() {
-        plugin.selectedNavMenu = null;
-        plugin.leaveMenuItem();
+        plugin.hasMouseOverNav = false;
+        plugin.leaveNavigation();
       });
 
-      // function trackMouse(event) {
-      //   var y = event.pageY;
-      //   if (y > subnavOffsetTop + subnavHeight) {
-      //     console.log('way low');
-      //     plugin.isMouseOutOfBounds = true;
-      //   } else if (y > (subnavOffsetTop + subnavHeight) || y < subnavOffsetTop) {
-      //     console.log('way high');
-      //     plugin.isMouseOutOfBounds = true;
-      //   } else {
-      //     console.log('good');
-      //     plugin.isMouseOutOfBounds = false;
-      //   }
-      // }
+      $('header,section').on('mouseenter', plugin.leaveNavigation);
+
     });
-  }
+  };
 
 })(jQuery);

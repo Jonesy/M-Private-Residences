@@ -164,6 +164,11 @@ header[role="banner"] {
 
         a {
           color: $body;
+          @include transition(color 0.25s ease-in);
+
+          &:hover {
+            color: #000;
+          }
         }
       }
     }
@@ -204,7 +209,6 @@ div[role="main"] {
 .shadow {
     width: 100%;
     height: 20px;
-    display: none;
     position: absolute;
     bottom: 0;
     z-index: 999;

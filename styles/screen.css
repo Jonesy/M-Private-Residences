@@ -977,7 +977,14 @@ header[role="banner"] {
         width: 85px;
         margin: 0 0 10px; }
         .subnav-container .container ul li a, .subnav-container #experiences nav ul ul li a, #experiences nav .subnav-container ul ul li a, .subnav-container #experience-creator footer ul li a, #experience-creator .subnav-container footer ul li a {
-          color: #666666; }
+          color: #666666;
+          -webkit-transition: color 0.25s ease-in;
+          -moz-transition: color 0.25s ease-in;
+          -ms-transition: color 0.25s ease-in;
+          -o-transition: color 0.25s ease-in;
+          transition: color 0.25s ease-in; }
+          .subnav-container .container ul li a:hover, .subnav-container #experiences nav ul ul li a:hover, #experiences nav .subnav-container ul ul li a:hover, .subnav-container #experience-creator footer ul li a:hover, #experience-creator .subnav-container footer ul li a:hover {
+            color: #000; }
 
 div[role="main"] {
   width: 100%;
@@ -1007,7 +1014,6 @@ div[role="main"] {
 .shadow {
   width: 100%;
   height: 20px;
-  display: none;
   position: absolute;
   bottom: 0;
   z-index: 999;

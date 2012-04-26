@@ -73,6 +73,8 @@ footer.main {
     padding-top: 10px;
 
     ul {
+      width: 100%;
+      float: left;
       margin: 0;
       padding: 0;
       list-style: none;
@@ -81,6 +83,7 @@ footer.main {
         width: 140px;
         float: left;
         margin: 7px 0 10px;
+        display: inline;
         text-transform: uppercase;
         line-height: 0.85em;
         @include ProximaCondensed();

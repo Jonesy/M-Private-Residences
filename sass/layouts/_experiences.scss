@@ -42,6 +42,10 @@
   position: relative;
   background: $darkgrey;
 
+  .banner {
+    text-align: center;
+  }
+
   /* CSS2 Shims */
   .no-cssgradients & {
     .shadow {
@@ -55,10 +59,6 @@
         background: image-url("shim/bg-header-nav.gif") repeat-x 0 0;
       }
     }
-  }
-
-  img {
-    display: block;
   }
 
   nav {

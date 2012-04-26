@@ -82,22 +82,22 @@
     }
   }
 
-  .no-svg &,
-    .lt-ie9 & {
-      i {
-        width: image-width("shim/caret-up-off.png");
-        height: image-height("shim/caret-up-off.png");
-        margin: 0 0 0 10px;
-        display: inline-block;
-        vertical-align: middle;
-        overflow: hidden;
-        background: image-url("shim/caret-up-off.png") no-repeat 0 0;
+  .no-svg i.caret,
+  .lt-ie9 i.caret {
+    width: image-width("shim/caret-#{$dir}-off.png");
+    height: image-height("shim/caret-#{$dir}-off.png");
+    top: 0;
+    margin: 0 0 0 10px;
+    display: inline;
+    float: left;
+    vertical-align: middle;
+    overflow: hidden;
+    @include shim-sprite(caret-#{$dir}-off);
 
-        img {
-          display: none;
-        }
-      }
+    img {
+      display: none;
     }
+  }
 }
 
 /* 

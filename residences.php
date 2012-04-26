@@ -15,6 +15,7 @@
               <li><a href="#" class="btn btn-white">City</a></li>
             </ul>
           </div>
+          <div class="pipe"></div>
           <div class="btn-group">
             <ul>
               <li><a href="#" class="btn btn-white selected">All</a></li>
@@ -29,39 +30,39 @@
 
       <ul class="locations-grid">
         <li class="span4">
-          <img src="http://placehold.it/300x145" alt="">
+          <img src="/images/_temp/grid/barbados.jpg" alt="">
           <h3><a href="#">Location name</a></h3>
         </li>
         <li class="span4">
-          <img src="http://placehold.it/300x145" alt="">
+          <img src="/images/_temp/grid/bear_mountain.jpg" alt="">
           <h3><a href="#">Location name</a></h3>
         </li>
         <li class="span4">
-          <img src="http://placehold.it/300x145" alt="">
+          <img src="/images/_temp/grid/big_island.jpg" alt="">
           <h3><a href="#">Location name</a></h3>
         </li>
         <li class="span4">
-          <img src="http://placehold.it/300x145" alt="">
+          <img src="/images/_temp/grid/cabo_esperanza.jpg" alt="">
           <h3><a href="#">Location name</a></h3>
         </li>
         <li class="span4">
-          <img src="http://placehold.it/300x145" alt="">
+          <img src="/images/_temp/grid/gold_canyon.jpg" alt="">
           <h3><a href="#">Location name</a></h3>
         </li>
         <li class="span4">
-          <img src="http://placehold.it/300x145" alt="">
+          <img src="/images/_temp/grid/kelowna.jpg" alt="">
           <h3><a href="#">Location name</a></h3>
         </li>
         <li class="span4">
-          <img src="http://placehold.it/300x145" alt="">
+          <img src="/images/_temp/grid/la_quinta.jpg" alt="">
           <h3><a href="#">Location name</a></h3>
         </li>
         <li class="span4">
-          <img src="http://placehold.it/300x145" alt="">
+          <img src="/images/_temp/grid/london.jpg" alt="">
           <h3><a href="#">Location name</a></h3>
         </li>
         <li class="span4">
-          <img src="http://placehold.it/300x145" alt="">
+          <img src="/images/_temp/grid/new_york.jpg" alt="">
           <h3><a href="#">Location name</a></h3>
         </li>
       </ul>

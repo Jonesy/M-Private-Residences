@@ -1,8 +1,8 @@
   <?php include('includes/header.php'); ?>
 
     <section id="experiences">
-      <div class="container">
-        <img src="http://placehold.it/940x440" alt="" style="margin:0 auto">
+      <div class="container banner">
+        <img src="/images/_temp/fullsize/paradise_valley.jpg" alt="" style="margin:0 auto">
       </div>
       <nav>
         <ul>

@@ -20,7 +20,7 @@
       </header> <!-- / exp creator header -->
       <ul id="locations-select" class="locations-grid">
         <li class="span4 selectbox">
-          <img src="http://placehold.it/300x148" alt="">
+          <img src="/images/_temp/grid/barbados.jpg" alt="">
           <h3><a href="#">Sun <i class="caret"><img src="images/svg/caret.svg" alt=""></i></a></h3>
           <ul>
             <li><a href="#">Las Vegas, Nevada</a></li>
@@ -30,7 +30,7 @@
           </ul>
         </li>
         <li class="span4 selectbox">
-          <img src="http://placehold.it/300x148" alt="">
+          <img src="/images/_temp/grid/whistler.jpg" alt="">
           <h3><a href="#">Snow <i class="caret"><img src="images/svg/caret.svg" alt=""></i></a></h3>
           <ul>
             <li><a href="#">Las Vegas, Nevada</a></li>
@@ -40,7 +40,7 @@
           </ul>
         </li>
         <li class="span4 selectbox">
-          <img src="http://placehold.it/300x148" alt="">
+          <img src="/images/_temp/grid/london.jpg" alt="">
           <h3><a href="#">City <i class="caret"><img src="images/svg/caret.svg" alt=""></i></a></h3>
           <ul>
             <li><a href="#">Las Vegas, Nevada</a></li>

@@ -1,3 +1,11 @@
+.lt-ie9 {
+  i.caret img {
+    display: none;
+    @include opacity(0);
+  }
+}
+
+
 .btn {
   $height: 30px;
   height: $height;
@@ -118,18 +126,20 @@ button.toggle {
   }
 }
 
-button[class^="gallery-nav"] {
+button[class^="gallery-nav-"] {
   width: 30px;
   height: 80px;
   border: none;
   float: left;
   padding: 0;
+  position: relative;
   background: #000;
   color: #fff;
   text-align: center;
   font-size: 80px;
 
-  .no-svg & {
+  .no-svg &,
+  .lt-ie9 & {
     i {
       width: image-width("shim/caret-lrg-next.png");
       height: image-height("shim/caret-lrg-next.png");
@@ -146,16 +156,22 @@ button[class^="gallery-nav"] {
   }
 
   img {
-    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    margin-top: image-height("shim/caret-lrg-next.png") / 2 * -1;
   }
 }
 
-button.gallery-nav-next i {
-  @include shim-sprite(caret-lrg-next);
-}
+.no-svg,
+.lt-ie9 {
+  button.gallery-nav-next i {
+    @include shim-sprite(caret-lrg-next);
+  }
 
-button.gallery-nav-prev i {
-  @include shim-sprite(caret-lrg-prev);
+  button.gallery-nav-prev i {
+    @include shim-sprite(caret-lrg-prev);
+  }
+
 }
 
 /**

@@ -20,17 +20,16 @@ header.page-header {
     margin-bottom: 30px;
 
     .btn-group {
-      border-right: 1px solid $body;
       float: left;
       margin: 0;
+    }
 
-      &:first-child {
-      
-      }
-      &:last-child {
-        border: none;
-        margin: 0 0 0 10px;
-      }
+    .pipe {
+      width: 1px;
+      height: 30px;
+      margin: 0 10px 0 0;
+      border-right: 1px solid $body;
+      float: left;
     }
 
     ul {

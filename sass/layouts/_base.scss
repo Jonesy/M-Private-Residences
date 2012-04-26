@@ -24,7 +24,8 @@ header[role="banner"] {
 
     & ul.main-nav li a {
       background: none;
-      &:hover {
+      &:hover,
+      &.selected {
         background: image-url("shim/bg-header-nav.gif");
       }
     }
@@ -97,7 +98,11 @@ header[role="banner"] {
           &:hover,
           &.selected {
             color: #fff;
-            background-color: #fff;
+
+            .cssgradients & {
+              background-color: #fff;
+            }
+
             img {
               @include opacity(1);
             }
@@ -153,6 +158,9 @@ header[role="banner"] {
     ul {
       width: 160px;
       float: left;
+      margin: 0;
+      padding: 0;
+      display: inline;
 
       &:last-child {
         width: 140px;
@@ -161,6 +169,7 @@ header[role="banner"] {
       li {
         width: 85px;
         margin: 0 0 10px;
+        float: left;
 
         a {
           color: $body;
@@ -185,11 +194,13 @@ div[role="main"] {
   @extend .span3;
   margin: 15px 0 0 $gutter;
   float: left;
+  position: relative;
 
   a {
     width: image-width('m-logo.png');
     height: image-height('m-logo.png');
     display: inline-block;
+    float: left;
     @include hidetext();
     background: image-url('m-logo.png');
   }

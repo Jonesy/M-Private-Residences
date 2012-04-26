@@ -86,7 +86,7 @@
         plugin.leaveNavigation();
       });
 
-      $('header,section').on('mouseenter', plugin.leaveNavigation);
+      $('header,section,#main').on('mouseenter', plugin.leaveNavigation);
 
     });
   };

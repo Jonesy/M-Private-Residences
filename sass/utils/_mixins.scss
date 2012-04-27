@@ -100,7 +100,7 @@
       }
     }
     &:hover,
-    &:selected {
+    &.selected {
       i.caret {
         @if $animateTo {
           width: image-width("shim/caret-#{$animateTo}-on.png");

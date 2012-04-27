@@ -45,13 +45,8 @@ ul.locations-grid {
   @include ul-reset($no-bullet: true);
 
   li.span4 {
-    min-height: 185px;
     position: relative;
     margin-bottom: 40px;
-
-    .ie-lt9 & {
-      height: auto;
-    }
 
     img {
       display: block;
@@ -94,10 +89,6 @@ ul.locations-grid {
       left: 0;
       top: 185px;
       background: #fff;
-
-      .lt-ie9 & {
-        top: 182px;
-      }
 
       li {
         width: 100%;
@@ -159,7 +150,6 @@ ul.locations-grid {
 
             input[type="checkbox"] {
               @include opacity(0);
-              border: 0px;
               cursor: pointer;
             }
 

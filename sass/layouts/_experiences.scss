@@ -20,7 +20,7 @@
     }
   }
 
-  @include btn-with-caret($dir: up);
+  @include btn-with-caret($dir: right);
 
   h2 {
     margin: 0.75em 0 0.25em;

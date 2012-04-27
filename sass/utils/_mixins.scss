@@ -62,9 +62,10 @@
     position: relative;
     display: inline-block;
     margin: 0 0 0 8px;
-    top: -3px;
     @if $dir == up {
       top: -2px;
+    } @else {
+      top: -3px;
     }
     @include rotate($startPosition);
     @include transition(all 0.25s ease-in);

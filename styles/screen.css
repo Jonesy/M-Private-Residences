@@ -577,7 +577,8 @@ ul.nav-list {
   float: left;
   list-style: none;
   font-size: 0.75em;
-  font-weight: bold; }
+  font-weight: bold;
+  zoom: 1; }
   ul.nav-list li {
     line-height: 1.7em;
     margin: 0 0 1px; }
@@ -996,27 +997,21 @@ header[role="banner"] {
   .subnav-container .container, .subnav-container #experiences nav ul, #experiences nav .subnav-container ul, .subnav-container #experience-creator footer, #experience-creator .subnav-container footer {
     display: table;
     margin-bottom: 10px; }
-    .subnav-container .container ul, .subnav-container #experiences nav ul ul, #experiences nav .subnav-container ul ul, .subnav-container #experience-creator footer ul, #experience-creator .subnav-container footer ul {
-      width: 160px;
-      float: left;
-      margin: 0;
-      padding: 0;
-      display: inline; }
-      .subnav-container .container ul:last-child, .subnav-container #experiences nav ul ul:last-child, #experiences nav .subnav-container ul ul:last-child, .subnav-container #experience-creator footer ul:last-child, #experience-creator .subnav-container footer ul:last-child {
-        width: 140px; }
-      .subnav-container .container ul li, .subnav-container #experiences nav ul ul li, #experiences nav .subnav-container ul ul li, .subnav-container #experience-creator footer ul li, #experience-creator .subnav-container footer ul li {
-        width: 85px;
-        margin: 0 0 10px;
-        float: left; }
-        .subnav-container .container ul li a, .subnav-container #experiences nav ul ul li a, #experiences nav .subnav-container ul ul li a, .subnav-container #experience-creator footer ul li a, #experience-creator .subnav-container footer ul li a {
-          color: #666666;
-          -webkit-transition: color 0.25s ease-in;
-          -moz-transition: color 0.25s ease-in;
-          -ms-transition: color 0.25s ease-in;
-          -o-transition: color 0.25s ease-in;
-          transition: color 0.25s ease-in; }
-          .subnav-container .container ul li a:hover, .subnav-container #experiences nav ul ul li a:hover, #experiences nav .subnav-container ul ul li a:hover, .subnav-container #experience-creator footer ul li a:hover, #experience-creator .subnav-container footer ul li a:hover {
-            color: #000; }
+    .subnav-container .container ul:last-child, .subnav-container #experiences nav ul ul:last-child, #experiences nav .subnav-container ul ul:last-child, .subnav-container #experience-creator footer ul:last-child, #experience-creator .subnav-container footer ul:last-child {
+      width: 140px; }
+    .subnav-container .container ul li, .subnav-container #experiences nav ul ul li, #experiences nav .subnav-container ul ul li, .subnav-container #experience-creator footer ul li, #experience-creator .subnav-container footer ul li {
+      width: 85px;
+      margin: 0 0 10px;
+      float: left; }
+      .subnav-container .container ul li a, .subnav-container #experiences nav ul ul li a, #experiences nav .subnav-container ul ul li a, .subnav-container #experience-creator footer ul li a, #experience-creator .subnav-container footer ul li a {
+        color: #666666;
+        -webkit-transition: color 0.25s ease-in;
+        -moz-transition: color 0.25s ease-in;
+        -ms-transition: color 0.25s ease-in;
+        -o-transition: color 0.25s ease-in;
+        transition: color 0.25s ease-in; }
+        .subnav-container .container ul li a:hover, .subnav-container #experiences nav ul ul li a:hover, #experiences nav .subnav-container ul ul li a:hover, .subnav-container #experience-creator footer ul li a:hover, #experience-creator .subnav-container footer ul li a:hover {
+          color: #000; }
 
 div[role="main"] {
   width: 100%;
@@ -1198,12 +1193,11 @@ footer.main {
     display: inline-block;
     margin: 0 0 0 8px;
     top: -3px;
-    top: -2px;
-    -webkit-transform: rotate(-180deg);
-    -moz-transform: rotate(-180deg);
-    -ms-transform: rotate(-180deg);
-    -o-transform: rotate(-180deg);
-    transform: rotate(-180deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
     -webkit-transition: all 0.25s ease-in;
     -moz-transition: all 0.25s ease-in;
     -ms-transition: all 0.25s ease-in;
@@ -1220,15 +1214,15 @@ footer.main {
   .exp-lrg-btn .lt-ie9 i.caret,
   #experiences nav ul li a.callout-hero .lt-ie9 i.caret,
   #experiences.full-page ul li .exp-callout .lt-ie9 i.caret {
-    width: 8px;
-    height: 5px;
+    width: 4px;
+    height: 8px;
     top: 0;
     margin: 0 0 0 10px;
     display: inline;
     float: left;
     vertical-align: middle;
     overflow: hidden;
-    background-position: 0 -261px; }
+    background-position: 0 -241px; }
     .exp-lrg-btn .no-svg i.caret img, #experiences nav ul li a.callout-hero .no-svg i.caret img, #experiences.full-page ul li .exp-callout .no-svg i.caret img,
     .exp-lrg-btn .lt-ie9 i.caret img,
     #experiences nav ul li a.callout-hero .lt-ie9 i.caret img,

@@ -69,34 +69,47 @@
     }
     @include rotate($startPosition);
     @include transition(all 0.25s ease-in);
-    @include opacity(0.33);
+    opacity: 0.33;
     @include backface-visibility(hidden);
   }
 
   &:hover,
   &.selected {
     i {
-      @include opacity(1);
+      opacity: 1;
       @if $animateTo != false {
         @include rotate($endPosition);
       }
     }
   }
 
-  .no-svg i.caret,
-  .lt-ie9 i.caret {
-    width: image-width("shim/caret-#{$dir}-off.png");
-    height: image-height("shim/caret-#{$dir}-off.png");
-    top: 0;
-    margin: 0 0 0 10px;
-    display: inline;
-    float: left;
-    vertical-align: middle;
-    overflow: hidden;
-    @include shim-sprite(caret-#{$dir}-off);
+  .no-svg &,
+  .lt-ie9 & {
+    i.caret {
+      width: image-width("shim/caret-#{$dir}-off.png");
+      height: image-height("shim/caret-#{$dir}-off.png");
+      top: 0;
+      margin: 0 0 0 10px;
+      display: inline-block;
+      vertical-align: middle;
+      overflow: hidden;
+      @include shim-sprite(caret-#{$dir}-off);
 
-    img {
-      display: none;
+      img {
+        display: none;
+      }
+    }
+    &:hover,
+    &:selected {
+      i.caret {
+        @if $animateTo {
+          width: image-width("shim/caret-#{$animateTo}-on.png");
+          height: image-height("shim/caret-#{$animateTo}-on.png");
+          @include shim-sprite(caret-#{$animateTo}-on);
+        } @else {
+          @include shim-sprite(caret-#{$dir}-on);
+        }
+      }
     }
   }
 }

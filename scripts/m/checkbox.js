@@ -23,7 +23,7 @@
       if (Modernizr.svg) {
         $this.after('<img src="/images/svg/check.svg">');
       } else {
-        $this.after('<span>')
+        $this.after('<span/>')
       }
 
       $this.on('change', function() {

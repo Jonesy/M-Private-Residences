@@ -15,8 +15,8 @@
       },
 
       clearMenus: function() {
-        $('.subnav-container').find('.selected').removeClass('selected');
-        $('.subnav-container').find('.subnav-container:visible').fadeOut();
+        $('#nav').find('a.selected').removeClass('selected');
+        $('.subnav-container:visible').fadeOut();
       },
 
       checkMenuState: function() {

@@ -624,7 +624,7 @@ ul.nav-list {
   .btn.btn-white {
     background: #fff;
     color: #666666; }
-    .btn.btn-white.selected {
+    .btn.btn-white.selected, .btn.btn-white.selected:hover, .btn-white.selected.btn-zoom:hover, .selected .btn.btn-white, .selected .btn.btn-white:hover, .selected .btn-white.btn-zoom:hover {
       color: #fff;
       background: #333333; }
     .btn.btn-white:hover, .btn-white.btn-zoom:hover {
@@ -707,7 +707,8 @@ button[class^="gallery-nav-"] {
   button[class^="gallery-nav-"] img {
     position: absolute;
     top: 50%;
-    margin-top: -10px; }
+    left: 0;
+    margin: -10px 10px 0; }
 
 .no-svg button.gallery-nav-next i,
 .lt-ie9 button.gallery-nav-next i {
@@ -1509,10 +1510,14 @@ header.page-header {
 ul.locations-grid {
   margin: 0;
   padding: 0;
-  list-style: none; }
+  list-style: none;
+  width: 100%;
+  float: left; }
   ul.locations-grid li.span4, #experiences nav ul.locations-grid li, ul.locations-grid #main article .features li.features-list, #main article .features ul.locations-grid li.features-list {
     position: relative;
     margin-bottom: 20px; }
+    ul.locations-grid li.span4.isotope-item:last-child, #experiences nav ul.locations-grid li.isotope-item:last-child, ul.locations-grid #main article .features li.isotope-item.features-list:last-child, #main article .features ul.locations-grid li.isotope-item.features-list:last-child {
+      margin-right: 0 !important; }
     ul.locations-grid li.span4 img, #experiences nav ul.locations-grid li img, ul.locations-grid #main article .features li.features-list img, #main article .features ul.locations-grid li.features-list img {
       display: block; }
     ul.locations-grid li.span4 h3, #experiences nav ul.locations-grid li h3, ul.locations-grid #main article .features li.features-list h3, #main article .features ul.locations-grid li.features-list h3 {
@@ -1628,6 +1633,7 @@ ul.locations-grid {
       right: 0;
       left: 0;
       top: 182px;
+      z-index: 1;
       background: #fff; }
       ul.locations-grid li.span4 ul li, #experiences nav ul.locations-grid li ul li, ul.locations-grid #main article .features li.features-list ul li, #main article .features ul.locations-grid li.features-list ul li, ul.locations-grid li.span4 dl li, #experiences nav ul.locations-grid li dl li, ul.locations-grid #main article .features li.features-list dl li, #main article .features ul.locations-grid li.features-list dl li {
         width: 100%;
@@ -1715,3 +1721,10 @@ ul.locations-grid {
         border-bottom: 1px solid #eaeaea; }
         ul.locations-grid li.span4 dl dd:last-child, #experiences nav ul.locations-grid li dl dd:last-child, ul.locations-grid #main article .features li.features-list dl dd:last-child, #main article .features ul.locations-grid li.features-list dl dd:last-child {
           border: none; }
+
+.isotope-item {
+  z-index: 2; }
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1; }

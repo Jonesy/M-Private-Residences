@@ -10,4 +10,32 @@
 
   $('.fancybox').fancybox();
 
+  var $residencesGrid = $('#our-residences'),
+      $residencesFilter = $('#residences-filter');
+  $residencesGrid.isotope({
+    itemSelector : '.residence'
+  });
+
+  $residencesFilter.find('a').on('click', function(event) {
+    event.preventDefault();
+
+    var selector = $(this).data('filter');
+
+    $(this).parent().siblings().removeClass('selected')
+    $(this).parent().addClass('selected');
+
+    $residencesGrid.trigger('changeFilters');
+
+    $residencesGrid.isotope({
+      filter: selector
+    });
+  });
+
+  $residencesGrid.on('changeFilters', function() {
+    var filters = $residencesFilter.find('.btn-group').map(function() {
+      return $(this).find('li.selected a').data('filter');
+    }).get().join('');
+    
+    $residencesGrid.isotope('option', {filter: filters}) 
+  });
 })(jQuery);

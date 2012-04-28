@@ -43,10 +43,16 @@
 
 ul.locations-grid {
   @include ul-reset($no-bullet: true);
+  width: 100%;
+  float: left;
 
   li.span4 {
     position: relative;
     margin-bottom: $gutter;
+
+    &.isotope-item:last-child {
+      margin-right: 0 !important;
+    }
 
     img {
       display: block;
@@ -99,6 +105,7 @@ ul.locations-grid {
       right: 0;
       left: 0;
       top: 182px;
+      z-index: 1;
       background: #fff;
 
       li {
@@ -223,4 +230,14 @@ ul.locations-grid {
       }
     }
   }
+}
+
+
+.isotope-item {
+  z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
 }

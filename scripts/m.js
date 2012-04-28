@@ -25,17 +25,13 @@
     $(this).parent().addClass('selected');
 
     $residencesGrid.trigger('changeFilters');
-
-    $residencesGrid.isotope({
-      filter: selector
-    });
   });
 
   $residencesGrid.on('changeFilters', function() {
     var filters = $residencesFilter.find('.btn-group').map(function() {
       return $(this).find('li.selected a').data('filter');
     }).get().join('');
-    
-    $residencesGrid.isotope('option', {filter: filters}) 
+
+    $(this).isotope({filter: filters});
   });
 })(jQuery);

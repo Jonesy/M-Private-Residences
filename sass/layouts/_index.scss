@@ -1,7 +1,7 @@
 #index {
   aside {
     strong {
-      @include ProximaCondensed($weight: 700);
+      font-family: "proxima-nova-extra-condensed";
       font-size: 1.67em;
     }
   }

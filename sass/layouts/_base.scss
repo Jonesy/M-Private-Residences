@@ -149,11 +149,15 @@ header[role="banner"] {
   left: 0;
   right: 0;
   z-index: 9999;
-  background: #fff;
+  background: #f3f3f3;
 
   .container {
     display: table;
     margin-bottom: 10px;
+    
+    h2 {
+      margin: 0.75em 0;
+    }
 
     ul {
       &:last-child {
@@ -164,9 +168,10 @@ header[role="banner"] {
         width: 85px;
         margin: 0 0 10px;
         float: left;
+        line-height: 1.1em;
 
         a {
-          color: $body;
+          color: $headlines;
           @include transition(color 0.25s ease-in);
 
           &:hover {

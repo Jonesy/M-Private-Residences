@@ -11,6 +11,7 @@
   height: $height;
   padding: 0 15px;
   display: inline-block;
+  @include Proxima(700);
   font-size: 0.81em;
   font-weight: bold;
   line-height: $height;
@@ -22,9 +23,14 @@
   -webkit-background-clip: padding-box;
 
   /* Default button */
-  &:hover {
+  &.hover-silver:hover {
     color: #fff;
     background: lighten($midgrey, 20%);
+  }
+
+  &:hover {
+    color: #ccc;
+    background: #000;
   }
 
   &.btn-silver {
@@ -41,8 +47,7 @@
     background: #fff;
     color: $body;
 
-    &.selected,
-    &.selected:hover {
+    &.selected {
       color: #fff;
       background: $headlines;
     }

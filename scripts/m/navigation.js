@@ -8,14 +8,15 @@
       selectedNavMenu: null,
       selectedSubNavMenu: null,
       hasMouseOverNav: null,
+      el: null,
 
       init: function() {
         this.settings = $.extend({}, defaults, options);
       },
 
       clearMenus: function() {
-        $('.selected').removeClass('selected');
-        $('.subnav-container:visible').fadeOut();
+        $('.subnav-container').find('.selected').removeClass('selected');
+        $('.subnav-container').find('.subnav-container:visible').fadeOut();
       },
 
       checkMenuState: function() {

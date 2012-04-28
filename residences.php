@@ -2,7 +2,7 @@
 
 <div id="main" class="grey-page">
   <div class="container">
-    <section id="">
+    <section id="residences">
       <header class="span12 page-header">
         <h1>Our Residences</h1>
         <small>Select and deselect buttons to filter:</small>

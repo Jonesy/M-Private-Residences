@@ -42,7 +42,7 @@ if ($file == 'index.php'):
           <ul class="secondary-nav">
             <li><a href="#">Alliances</a></li>
             <li><a href="#">Blog</a></li>
-            <li><a href="#" class="btn">Register</a></li>
+            <li><a href="#" class="btn hover-silver">Register</a></li>
           </ul>
         </nav>
       </div>

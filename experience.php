@@ -20,12 +20,12 @@
             </ol>
             <button class="gallery-nav-next"><i><img src="images/svg/caret-lrg-right.svg" alt=""></i></button>
           </div> <!-- / .exp-thumbnails -->
-          <p><a href="#" class="btn">Learn More</a></p>
+          <p><a href="#" class="btn hover-silver">Learn More</a></p>
         </div> <!-- / .exp-callout -->
       </li>
       <li>
         <div class="exp-callout">
-          <h2>Experience Name Two <i class="caret"></i></h2>
+          <h2>Experience Name Two <i class="caret"><img src="images/svg/caret.svg" alt=""></i></h2>
           <h3>Featured Residence</h3>
           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi eu metus in urna tempor tincidunt. Ut vitae diam a ipsum elementum.</p>
           <div class="exp-thumbnails">
@@ -37,7 +37,7 @@
             </ol>
             <button class="gallery-nav-next"><i><img src="images/svg/caret-lrg-right.svg" alt=""></i></button>
           </div> <!-- / .exp-thumbnails -->
-          <p><a href="#" class="btn">Learn More</a></p>
+          <p><a href="#" class="btn hover-silver">Learn More</a></p>
         </div> <!-- / .exp-callout -->
       </li>
       <li>
@@ -54,7 +54,7 @@
             </ol>
             <button class="gallery-nav-next"><i><img src="images/svg/caret-lrg-right.svg" alt=""></i></button>
           </div> <!-- / .exp-thumbnails -->
-          <p><a href="#" class="btn">Learn More</a></p>
+          <p><a href="#" class="btn hover-silver">Learn More</a></p>
         </div> <!-- / .exp-callout -->
       </li>
     </ul>

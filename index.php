@@ -25,7 +25,6 @@
             </a>
           </li>
         </ul>
-        <div class="shadow"></div>
       </nav>
     </section> <!-- /#experiences -->
 

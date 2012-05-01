@@ -47,7 +47,6 @@ if ($file == 'index.php'):
           </ul>
         </nav>
       </div>
-      <div class="shadow"></div>
     </header> <!-- / header banner -->
 
     <div id="subnav-experiences" class="subnav-container" style="display:none">

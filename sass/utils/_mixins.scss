@@ -4,6 +4,12 @@
   overflow: hidden;
 }
 
+@mixin shadow() {
+  @include background-image(linear-gradient(
+    rgba(#070707, 0) rgba(#070707, 0.75)
+  ));
+}
+
 @mixin ul-reset($no-bullet: false) {
   margin: 0;
   padding: 0;

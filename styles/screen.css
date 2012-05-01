@@ -887,18 +887,12 @@ header[role="banner"] {
   height: 80px;
   position: relative;
   color: #fff;
-  background: #202020;
+  background: #202020 url('../images/shim/bg-header.gif?1334008240') repeat-x left top;
   /* CSS2 Shims */ }
-  .no-cssgradients header[role="banner"] {
-    background-image: url('../images/shim/bg-header.gif?1334008240');
-    background-repeat: repeat-x;
-    background-position: left top; }
-    .no-cssgradients header[role="banner"] .shadow {
-      display: none; }
-    .no-cssgradients header[role="banner"] ul.main-nav li a {
-      background: none; }
-      .no-cssgradients header[role="banner"] ul.main-nav li a:hover, .no-cssgradients header[role="banner"] ul.main-nav li a.selected {
-        background: url('../images/shim/bg-header-nav.gif?1334008240'); }
+  .no-cssgradients header[role="banner"] ul.main-nav li a {
+    background: none; }
+    .no-cssgradients header[role="banner"] ul.main-nav li a:hover, .no-cssgradients header[role="banner"] ul.main-nav li a.selected {
+      background: url('../images/shim/bg-header-nav.gif?1334008240'); }
   header[role="banner"] nav {
     position: relative; }
   header[role="banner"] a {
@@ -922,18 +916,17 @@ header[role="banner"] {
         float: left;
         position: relative;
         line-height: 80px;
-        background-color: #202020;
-        background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(32, 32, 32, 0.75)), color-stop(100%, #202020));
-        background-image: -webkit-linear-gradient(rgba(32, 32, 32, 0.75), #202020);
-        background-image: -moz-linear-gradient(rgba(32, 32, 32, 0.75), #202020);
-        background-image: -o-linear-gradient(rgba(32, 32, 32, 0.75), #202020);
-        background-image: -ms-linear-gradient(rgba(32, 32, 32, 0.75), #202020);
-        background-image: linear-gradient(rgba(32, 32, 32, 0.75), #202020);
         -webkit-transition: all 0.25s ease-in;
         -moz-transition: all 0.25s ease-in;
         -ms-transition: all 0.25s ease-in;
         -o-transition: all 0.25s ease-in;
-        transition: all 0.25s ease-in; }
+        transition: all 0.25s ease-in;
+        background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(32, 32, 32, 0)), color-stop(100%, rgba(8, 8, 8, 0.15)));
+        background-image: -webkit-linear-gradient(rgba(32, 32, 32, 0), rgba(8, 8, 8, 0.15));
+        background-image: -moz-linear-gradient(rgba(32, 32, 32, 0), rgba(8, 8, 8, 0.15));
+        background-image: -o-linear-gradient(rgba(32, 32, 32, 0), rgba(8, 8, 8, 0.15));
+        background-image: -ms-linear-gradient(rgba(32, 32, 32, 0), rgba(8, 8, 8, 0.15));
+        background-image: linear-gradient(rgba(32, 32, 32, 0), rgba(8, 8, 8, 0.15)); }
         .no-svg header[role="banner"] ul.main-nav li > a i, .lt-ie9 header[role="banner"] ul.main-nav li > a i {
           width: 8px;
           height: 4px;
@@ -959,7 +952,7 @@ header[role="banner"] {
         header[role="banner"] ul.main-nav li > a:hover, header[role="banner"] ul.main-nav li > a.selected {
           color: #fff; }
           .cssgradients header[role="banner"] ul.main-nav li > a:hover, .cssgradients header[role="banner"] ul.main-nav li > a.selected {
-            background-color: #fff; }
+            background-color: rgba(255, 255, 255, 0.1); }
           header[role="banner"] ul.main-nav li > a:hover img, header[role="banner"] ul.main-nav li > a.selected img {
             filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
             opacity: 1; }
@@ -1045,19 +1038,6 @@ div[role="main"] {
   background: white; }
   #main.grey-page {
     background: #eaeaea; }
-
-.shadow {
-  width: 100%;
-  height: 20px;
-  position: absolute;
-  bottom: 0;
-  z-index: 999;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(7, 7, 7, 0)), color-stop(100%, rgba(7, 7, 7, 0.75)));
-  background-image: -webkit-linear-gradient(rgba(7, 7, 7, 0), rgba(7, 7, 7, 0.75));
-  background-image: -moz-linear-gradient(rgba(7, 7, 7, 0), rgba(7, 7, 7, 0.75));
-  background-image: -o-linear-gradient(rgba(7, 7, 7, 0), rgba(7, 7, 7, 0.75));
-  background-image: -ms-linear-gradient(rgba(7, 7, 7, 0), rgba(7, 7, 7, 0.75));
-  background-image: linear-gradient(rgba(7, 7, 7, 0), rgba(7, 7, 7, 0.75)); }
 
 footer.main {
   width: 100%;
@@ -1176,24 +1156,16 @@ footer.main {
   color: #fff;
   background-: rgba(255, 255, 255, 0);
   cursor: pointer;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(32, 32, 32, 0.75)), color-stop(100%, #202020));
-  background-image: -webkit-linear-gradient(rgba(32, 32, 32, 0.75), #202020);
-  background-image: -moz-linear-gradient(rgba(32, 32, 32, 0.75), #202020);
-  background-image: -o-linear-gradient(rgba(32, 32, 32, 0.75), #202020);
-  background-image: -ms-linear-gradient(rgba(32, 32, 32, 0.75), #202020);
-  background-image: linear-gradient(rgba(32, 32, 32, 0.75), #202020);
   -webkit-transition: background-color 0.25s ease-in;
   -moz-transition: background-color 0.25s ease-in;
   -ms-transition: background-color 0.25s ease-in;
   -o-transition: background-color 0.25s ease-in;
   transition: background-color 0.25s ease-in; }
-  .exp-lrg-btn:hover, #experiences nav ul li a.callout-hero:hover, #experiences.full-page ul li .exp-callout:hover {
-    background-color: rgba(255, 255, 255, 0.5); }
-    .exp-lrg-btn:hover h2, #experiences nav ul li a.callout-hero:hover h2, #experiences.full-page ul li .exp-callout:hover h2, .exp-lrg-btn:hover ul.locations-grid li.span4 dl dt label, ul.locations-grid li.span4 dl dt .exp-lrg-btn:hover label, #experiences nav ul.locations-grid li.span4 a.callout-hero:hover dl dt label, #experiences nav ul.locations-grid li.span4 dl dt a.callout-hero:hover label, #experiences.full-page ul.locations-grid li.span4 .exp-callout:hover dl dt label, #experiences.full-page ul.locations-grid li.span4 dl dt .exp-callout:hover label, .exp-lrg-btn:hover #experiences nav ul.locations-grid li dl dt label, #experiences nav ul.locations-grid li dl dt .exp-lrg-btn:hover label, #experiences nav ul.locations-grid li a.callout-hero:hover dl dt label, #experiences nav ul.locations-grid li dl dt a.callout-hero:hover label, #experiences.full-page nav ul.locations-grid li .exp-callout:hover dl dt label, #experiences.full-page nav ul.locations-grid li dl dt .exp-callout:hover label, .exp-lrg-btn:hover ul.locations-grid #main article .features li.features-list dl dt label, ul.locations-grid #main article .features li.features-list dl dt .exp-lrg-btn:hover label, #experiences nav ul.locations-grid #main article .features li.features-list a.callout-hero:hover dl dt label, #experiences nav ul.locations-grid #main article .features li.features-list dl dt a.callout-hero:hover label, #experiences.full-page ul.locations-grid #main article .features li.features-list .exp-callout:hover dl dt label, #experiences.full-page ul.locations-grid #main article .features li.features-list dl dt .exp-callout:hover label, .exp-lrg-btn:hover #main article .features ul.locations-grid li.features-list dl dt label, #main article .features ul.locations-grid li.features-list dl dt .exp-lrg-btn:hover label, #experiences nav #main article .features ul.locations-grid li.features-list a.callout-hero:hover dl dt label, #main article .features #experiences nav ul.locations-grid li.features-list a.callout-hero:hover dl dt label, #experiences nav #main article .features ul.locations-grid li.features-list dl dt a.callout-hero:hover label, #main article .features #experiences nav ul.locations-grid li.features-list dl dt a.callout-hero:hover label, #experiences.full-page #main article .features ul.locations-grid li.features-list .exp-callout:hover dl dt label, #main article .features #experiences.full-page ul.locations-grid li.features-list .exp-callout:hover dl dt label, #experiences.full-page #main article .features ul.locations-grid li.features-list dl dt .exp-callout:hover label, #main article .features #experiences.full-page ul.locations-grid li.features-list dl dt .exp-callout:hover label,
-    .exp-lrg-btn:hover h3,
-    #experiences nav ul li a.callout-hero:hover h3,
-    #experiences.full-page ul li .exp-callout:hover h3 {
-      color: #fff; }
+  .exp-lrg-btn:hover h2, #experiences nav ul li a.callout-hero:hover h2, #experiences.full-page ul li .exp-callout:hover h2, .exp-lrg-btn:hover ul.locations-grid li.span4 dl dt label, ul.locations-grid li.span4 dl dt .exp-lrg-btn:hover label, #experiences nav ul.locations-grid li.span4 a.callout-hero:hover dl dt label, #experiences nav ul.locations-grid li.span4 dl dt a.callout-hero:hover label, #experiences.full-page ul.locations-grid li.span4 .exp-callout:hover dl dt label, #experiences.full-page ul.locations-grid li.span4 dl dt .exp-callout:hover label, .exp-lrg-btn:hover #experiences nav ul.locations-grid li dl dt label, #experiences nav ul.locations-grid li dl dt .exp-lrg-btn:hover label, #experiences nav ul.locations-grid li a.callout-hero:hover dl dt label, #experiences nav ul.locations-grid li dl dt a.callout-hero:hover label, #experiences.full-page nav ul.locations-grid li .exp-callout:hover dl dt label, #experiences.full-page nav ul.locations-grid li dl dt .exp-callout:hover label, .exp-lrg-btn:hover ul.locations-grid #main article .features li.features-list dl dt label, ul.locations-grid #main article .features li.features-list dl dt .exp-lrg-btn:hover label, #experiences nav ul.locations-grid #main article .features li.features-list a.callout-hero:hover dl dt label, #experiences nav ul.locations-grid #main article .features li.features-list dl dt a.callout-hero:hover label, #experiences.full-page ul.locations-grid #main article .features li.features-list .exp-callout:hover dl dt label, #experiences.full-page ul.locations-grid #main article .features li.features-list dl dt .exp-callout:hover label, .exp-lrg-btn:hover #main article .features ul.locations-grid li.features-list dl dt label, #main article .features ul.locations-grid li.features-list dl dt .exp-lrg-btn:hover label, #experiences nav #main article .features ul.locations-grid li.features-list a.callout-hero:hover dl dt label, #main article .features #experiences nav ul.locations-grid li.features-list a.callout-hero:hover dl dt label, #experiences nav #main article .features ul.locations-grid li.features-list dl dt a.callout-hero:hover label, #main article .features #experiences nav ul.locations-grid li.features-list dl dt a.callout-hero:hover label, #experiences.full-page #main article .features ul.locations-grid li.features-list .exp-callout:hover dl dt label, #main article .features #experiences.full-page ul.locations-grid li.features-list .exp-callout:hover dl dt label, #experiences.full-page #main article .features ul.locations-grid li.features-list dl dt .exp-callout:hover label, #main article .features #experiences.full-page ul.locations-grid li.features-list dl dt .exp-callout:hover label,
+  .exp-lrg-btn:hover h3,
+  #experiences nav ul li a.callout-hero:hover h3,
+  #experiences.full-page ul li .exp-callout:hover h3 {
+    color: #fff; }
   .exp-lrg-btn i.caret, #experiences nav ul li a.callout-hero i.caret, #experiences.full-page ul li .exp-callout i.caret {
     position: relative;
     display: inline-block;
@@ -1254,8 +1226,6 @@ footer.main {
   /* Experiences landing page */ }
   #experiences .banner {
     text-align: center; }
-  .no-cssgradients #experiences .shadow {
-    display: none; }
   .no-cssgradients #experiences nav {
     background: url('../images/shim/bg-header.gif?1334008240') repeat-x 0 0; }
     .no-cssgradients #experiences nav ul li a:hover {
@@ -1267,7 +1237,7 @@ footer.main {
     right: 0;
     bottom: 0;
     left: 0;
-    background: #202020; }
+    background: #202020 url('../images/shim/bg-header.gif?1334008240') repeat-x left bottom; }
     #experiences nav ul {
       padding: 0; }
       #experiences nav ul li {
@@ -1276,8 +1246,6 @@ footer.main {
   #experiences.full-page {
     height: 100%;
     padding-bottom: 50px; }
-    #experiences.full-page .shadow {
-      display: none; }
     #experiences.full-page nav {
       height: auto;
       position: relative;

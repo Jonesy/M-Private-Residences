@@ -6,14 +6,9 @@
   color: #fff;
   background-: rgba(#fff, 0);
   cursor: pointer;
-  @include background-image(linear-gradient(
-    rgba($darkgrey, 0.75), rgba($darkgrey, 1))
-  );
   @include transition(background-color 0.25s ease-in);
 
   &:hover {
-    background-color: rgba(#fff, 0.5);
-    
     h2,
     h3 {
       color: #fff;
@@ -48,9 +43,6 @@
 
   /* CSS2 Shims */
   .no-cssgradients & {
-    .shadow {
-      display: none;
-    }
 
     nav {
       background: image-url("shim/bg-header.gif") repeat-x 0 0;
@@ -68,7 +60,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: $darkgrey;
+    background: $darkgrey image-url("shim/bg-header.gif") repeat-x left bottom;
 
     ul {
       @extend .container;
@@ -89,10 +81,6 @@
   &.full-page {
     height: 100%;
     padding-bottom: 50px;
-
-    .shadow {
-      display: none;
-    }
 
     nav {
       height: auto;

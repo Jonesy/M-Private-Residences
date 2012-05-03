@@ -6,19 +6,39 @@
       </div>
       <nav>
         <ul>
-          <li>
+          <li class="exp-callout">
             <a href="#" class="callout-hero">
               <h2>Experience Name One <i class="caret"><img src="images/svg/caret.svg" alt=""></i></h2>
               <h3>For Couples</h3>
             </a>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi eu metus in urna tempor tincidunt. Ut vitae diam a ipsum elementum.</p>
+            <div class="exp-thumbnails">
+              <button class="gallery-nav-prev"><i><img src="images/svg/caret-lrg-left.svg" alt=""></i></button>
+              <ol>
+                <li><img src="/images/_temp/thumbnails/bear_mountain.jpg" alt=""></li>
+                <li><img src="/images/_temp/thumbnails/kelowna.jpg" alt=""></li>
+                <li><img src="/images/_temp/thumbnails/victoria.jpg" alt=""></li>
+              </ol>
+              <button class="gallery-nav-next"><i><img src="images/svg/caret-lrg-right.svg" alt=""></i></button>
+            </div> <!-- / .exp-thumbnails -->
+            <p><a href="#" class="btn hover-silver">Learn More</a></p>
           </li>
-          <li>
-            <a href="#" class="callout-hero">
-              <h2>Kelowna, BC <i class="caret"><img src="images/svg/caret.svg" alt=""></i></h2>
+          <li class="exp-callout">
+            <h2>Kelowna, BC <i class="caret"><img src="images/svg/caret.svg" alt=""></i></h2>
               <h3>Featured Residence</h3>
-            </a>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi eu metus in urna tempor tincidunt. Ut vitae diam a ipsum elementum.</p>
+            <div class="exp-thumbnails">
+              <button class="gallery-nav-prev"><i><img src="images/svg/caret-lrg-left.svg" alt=""></i></button>
+              <ol>
+                <li><img src="/images/_temp/thumbnails/bear_mountain.jpg" alt=""></li>
+                <li><img src="/images/_temp/thumbnails/kelowna.jpg" alt=""></li>
+                <li><img src="/images/_temp/thumbnails/victoria.jpg" alt=""></li>
+              </ol>
+              <button class="gallery-nav-next"><i><img src="images/svg/caret-lrg-right.svg" alt=""></i></button>
+            </div> <!-- / .exp-thumbnails -->
+            <p><a href="#" class="btn hover-silver">Learn More</a></p>
           </li>
-          <li>
+          <li class="exp-callout">
             <a href="#" class="callout-hero">
               <h2>Membership <i class="caret"><img src="images/svg/caret.svg" alt=""></i></h2>
               <h3>Benefits</h3>
@@ -26,6 +46,19 @@
           </li>
         </ul>
       </nav>
+      <!-- JS -->
+      <div class="exp-subnav-holder exp-labels" style="display:none">
+        <ul>
+          <li>
+            <h2>Mauni-Lani</h2>
+            <h3>Hawaii, USA</h3>
+          </li>
+          <li>
+            <h2>Lakeshore Road</h2>
+            <h3>Kelowna, BC</h3>
+          </li>
+        </ul>
+      </div>
     </section> <!-- /#experiences -->
 
     <div id="main">

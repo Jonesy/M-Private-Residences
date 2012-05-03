@@ -15,7 +15,7 @@
     }
   }
 
-  @include btn-with-caret($dir: right);
+  @include btn-with-caret($dir: up);
 
   h2 {
     margin: 0.75em 0 0.25em;
@@ -34,6 +34,7 @@
 #experiences {
   width: 100%;
   height: 520px;
+  overflow-y: hidden;
   position: relative;
   background: $darkgrey;
 
@@ -60,20 +61,82 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: $darkgrey image-url("shim/bg-header.gif") repeat-x left bottom;
+    z-index: 10;
+    background: image-url("bg-header.png") repeat-x left bottom;
 
     ul {
       @extend .container;
       padding: 0;
+
       li {
         @extend .span4;
         margin-left: $gutter;
         float: left;
 
+        &.selected {
+          position: relative;
+          top: -272px;
+          @include background-image(linear-gradient(
+            #414141, rgba(#212121, 1) 90%, rgba(#212121, 0.65)
+          ));
+
+          a {
+            @include btn-with-caret($dir: right);
+            h2, h3 {
+              color: #fff;
+            }
+          }
+        }
+
         a.callout-hero {
           @extend .exp-lrg-btn;
+          padding: {
+            left: 0;
+            right: 0;
+          }
         }
       }
+    }
+  }
+
+  .exp-subnav-holder  {
+    position: absolute;
+    bottom: -80px;
+  }
+
+  /* White labels that popup to label the photos in the slides */
+  .exp-labels {
+    @extend nav;
+    z-index: 1;
+    ul {
+      li {
+        width: 300px - $gutter * 2;
+        height: 140px;
+        padding: ($gutter / 2) $gutter;
+        float: left;
+        position: relative;
+        top: -160px;
+        background: #fff;
+
+        h2 {
+          margin-bottom: 0.2em;
+        }
+
+        h3 {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .exp-callout {
+    @extend .exp-lrg-btn;
+    height: 352px;
+
+    a {
+      width: auto;
+      height: auto;
+      font-size: 1em;
     }
   }
 
@@ -89,8 +152,7 @@
       background: none;
     }
 
-    ul li .exp-callout {
-      @extend .exp-lrg-btn;
+    .exp-callout {
       height: auto;
       background-color: $darkgrey;
       @include background-image(linear-gradient(
@@ -104,12 +166,6 @@
         .no-cssgradients & {
           background: image-url("shim/bg-exp-nav.gif") repeat-x 0 0;
         }
-      }
-
-      a {
-        width: auto;
-        height: auto;
-        font-size: 1em;
       }
     }
   }
@@ -136,4 +192,5 @@
       }
     }
   }
+
 }

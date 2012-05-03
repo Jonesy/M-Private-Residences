@@ -18,9 +18,9 @@
 
     return this.each(function() {
 
-      var $this = $(this),
-          $button = $this.find('h3 > a'),
-          $list = $this.find('ul, dl'),
+      var $selectBox = $(this),
+          $button = $selectBox.find('h3 > a'),
+          $list = $selectBox.find('ul, dl'),
           $selections = $list.find('a');
 
       // Simple state definitions.
@@ -33,7 +33,7 @@
       $list.hide();
 
       // .selectbox
-      $this.on('mouseleave', function() {
+      $selectBox.on('mouseleave', function() {
         $list.trigger('hide');
       });
 
@@ -44,6 +44,7 @@
         })
         .on('mouseenter', function() {
           $(this).addClass('selected');
+          $selectBox.addClass('selected');
           $list.trigger('show');
         })
         .on('mouseleave', function() {
@@ -60,7 +61,7 @@
         })
         .on('hide', function() {
           if (plugin.settings.multiple) {
-            if ($this.find('input:checked').length) {
+            if ($selectBox.find('input:checked').length) {
               return false;
             }
           }
@@ -68,6 +69,7 @@
           if (!states.hasSelection) {
             $(this).slideUp();
             states.isSelectionsVisible = false;
+            $selectBox.removeClass('selected');
             $button.removeClass('selected');
           }
         });

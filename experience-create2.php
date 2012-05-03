@@ -21,7 +21,7 @@
       </header> <!-- / exp creator header -->
 
       <ul id="select-activities" class="locations-grid">
-        <li class="span4 selectbox">
+        <li class="span4 grayscale selectbox">
           <img src="/images/_temp/grid/st_remy.jpg" alt="">
           <h3><a href="#">Golf <i class="caret"><img src="images/svg/caret.svg" alt=""></i></a></h3>
           <dl>
@@ -41,7 +41,7 @@
             <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. etiam at fermentum ipsum. Suspendisse facilisis fringilla nunc sit amet dignissim. In feugiat, sem sed mattis eleifend, nunc nibh pellentesque lacus, et facilisis.</dd>
           </dl>
         </li>
-        <li class="span4 selectbox">
+        <li class="span4 grayscale selectbox">
           <img src="/images/_temp/grid/vegas.jpg" alt="">
           <h3><a href="#">Attend Shows <i class="caret"><img src="images/svg/caret.svg" alt=""></i></a></h3>
           <dl>
@@ -61,7 +61,7 @@
             <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. etiam at fermentum ipsum. Suspendisse facilisis fringilla nunc sit amet dignissim. In feugiat, sem sed mattis eleifend, nunc nibh pellentesque lacus, et facilisis.</dd>
           </dl>
         </li>
-        <li class="span4 selectbox">
+        <li class="span4 grayscale selectbox">
           <img src="/images/_temp/grid/bear_mountain.jpg" alt="">
           <h3><a href="#">Go on Tours <i class="caret"><img src="images/svg/caret.svg" alt=""></i></a></h3>
           <dl>

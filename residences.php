@@ -30,39 +30,39 @@
       </header> <!-- / exp creator header -->
 
       <ul id="our-residences" class="locations-grid">
-        <li class="span4 residence sun caribbean">
+        <li class="span4 grayscale residence sun caribbean">
           <img src="/images/_temp/grid/barbados.jpg" alt="">
           <h3><a href="#">Barbados</a></h3>
         </li>
-        <li class="span4 residence snow canada">
+        <li class="span4 grayscale residence snow canada">
           <img src="/images/_temp/grid/bear_mountain.jpg" alt="">
           <h3><a href="#">Bear Mountain</a></h3>
         </li>
-        <li class="span4 residence sun barbados">
+        <li class="span4 grayscale residence sun barbados">
           <img src="/images/_temp/grid/big_island.jpg" alt="">
           <h3><a href="#">Big Island</a></h3>
         </li>
-        <li class="span4 residence sun mexico">
+        <li class="span4 grayscale residence sun mexico">
           <img src="/images/_temp/grid/cabo_esperanza.jpg" alt="">
           <h3><a href="#">Cabo Esperanza</a></h3>
         </li>
-        <li class="span4 residence sun usa">
+        <li class="span4 grayscale residence sun usa">
           <img src="/images/_temp/grid/gold_canyon.jpg" alt="">
           <h3><a href="#">Gold Canyon</a></h3>
         </li>
-        <li class="span4 residence city canada">
+        <li class="span4 grayscale residence city canada">
           <img src="/images/_temp/grid/kelowna.jpg" alt="">
           <h3><a href="#">Kelowna</a></h3>
         </li>
-        <li class="span4 residence sun mexico">
+        <li class="span4 grayscale residence sun mexico">
           <img src="/images/_temp/grid/la_quinta.jpg" alt="">
           <h3><a href="#">La Quinta</a></h3>
         </li>
-        <li class="span4 residence city europe">
+        <li class="span4 grayscale residence city europe">
           <img src="/images/_temp/grid/london.jpg" alt="">
           <h3><a href="#">London</a></h3>
         </li>
-        <li class="span4 residence city usa">
+        <li class="span4 grayscale residence city usa">
           <img src="/images/_temp/grid/new_york.jpg" alt="">
           <h3><a href="#">New York</a></h3>
         </li>

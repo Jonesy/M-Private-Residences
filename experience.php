@@ -1,13 +1,13 @@
 <?php include('includes/header.php'); ?>
 
 <section id="experiences" class="full-page">
-  <div class="container">
+  <div class="container banner">
     <img src="/images/_temp/fullsize/rancho_mirage.jpg" alt="" style="margin:0 auto">
   </div>
   <nav>
     <ul>
       <li>
-        <div class="exp-callout">
+        <div class="exp-details">
           <h2>Experience Name One <i class="caret"><img src="images/svg/caret.svg" alt=""></i></h2>
           <h3>For Couples</h3>
           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi eu metus in urna tempor tincidunt. Ut vitae diam a ipsum elementum.</p>
@@ -21,10 +21,10 @@
             <button class="gallery-nav-next"><i><img src="images/svg/caret-lrg-right.svg" alt=""></i></button>
           </div> <!-- / .exp-thumbnails -->
           <p><a href="#" class="btn hover-silver">Learn More</a></p>
-        </div> <!-- / .exp-callout -->
+        </div> <!-- / .exp-details -->
       </li>
       <li>
-        <div class="exp-callout">
+        <div class="exp-details">
           <h2>Experience Name Two <i class="caret"><img src="images/svg/caret.svg" alt=""></i></h2>
           <h3>Featured Residence</h3>
           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi eu metus in urna tempor tincidunt. Ut vitae diam a ipsum elementum.</p>
@@ -38,10 +38,10 @@
             <button class="gallery-nav-next"><i><img src="images/svg/caret-lrg-right.svg" alt=""></i></button>
           </div> <!-- / .exp-thumbnails -->
           <p><a href="#" class="btn hover-silver">Learn More</a></p>
-        </div> <!-- / .exp-callout -->
+        </div> <!-- / .exp-details -->
       </li>
       <li>
-        <div class="exp-callout">
+        <div class="exp-details">
           <h2>Experience Name Three <i class="caret"><img src="images/svg/caret.svg" alt=""></i></h2>
           <h3>Benefits</h3>
           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi eu metus in urna tempor tincidunt. Ut vitae diam a ipsum elementum.</p>
@@ -55,7 +55,7 @@
             <button class="gallery-nav-next"><i><img src="images/svg/caret-lrg-right.svg" alt=""></i></button>
           </div> <!-- / .exp-thumbnails -->
           <p><a href="#" class="btn hover-silver">Learn More</a></p>
-        </div> <!-- / .exp-callout -->
+        </div> <!-- / .exp-details -->
       </li>
     </ul>
     <div class="shadow"></div>

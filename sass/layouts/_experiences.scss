@@ -129,7 +129,7 @@
     }
   }
 
-  .exp-callout {
+  .exp-details {
     @extend .exp-lrg-btn;
     height: 352px;
 
@@ -152,7 +152,7 @@
       background: none;
     }
 
-    .exp-callout {
+    .exp-details {
       height: auto;
       background-color: $darkgrey;
       @include background-image(linear-gradient(

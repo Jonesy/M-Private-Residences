@@ -2,11 +2,18 @@
 
     <section id="experiences">
       <div class="container banner">
+        <!-- 
+          Insert a generic poster image here, so if the JS doesn't load we don't load
+          14 or so large images and there is also still something to show the user
+
+          This entire area will be managed by JS, so some elements will be removed once 
+          it is properly hooked up
+         -->
         <img src="/images/_temp/fullsize/paradise_valley.jpg" alt="" style="margin:0 auto">
       </div>
       <nav>
         <ul>
-          <li class="exp-callout">
+          <li class="exp-details">
             <a href="#" class="callout-hero">
               <h2>Experience Name One <i class="caret"><img src="images/svg/caret.svg" alt=""></i></h2>
               <h3>For Couples</h3>
@@ -22,8 +29,8 @@
               <button class="gallery-nav-next"><i><img src="images/svg/caret-lrg-right.svg" alt=""></i></button>
             </div> <!-- / .exp-thumbnails -->
             <p><a href="#" class="btn hover-silver">Learn More</a></p>
-          </li>
-          <li class="exp-callout">
+          </li> <!-- / .exp-details -->
+          <li class="exp-details">
             <h2>Kelowna, BC <i class="caret"><img src="images/svg/caret.svg" alt=""></i></h2>
               <h3>Featured Residence</h3>
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi eu metus in urna tempor tincidunt. Ut vitae diam a ipsum elementum.</p>
@@ -38,22 +45,23 @@
             </div> <!-- / .exp-thumbnails -->
             <p><a href="#" class="btn hover-silver">Learn More</a></p>
           </li>
-          <li class="exp-callout">
+          <li class="exp-details">
             <a href="#" class="callout-hero">
               <h2>Membership <i class="caret"><img src="images/svg/caret.svg" alt=""></i></h2>
               <h3>Benefits</h3>
             </a>
-          </li>
+          </li> <!-- / .exp-details -->
         </ul>
       </nav>
-      <!-- JS -->
-      <div class="exp-subnav-holder exp-labels" style="display:none">
+
+      <!-- Will be hidden by default, and slid up by JS -->
+      <div class="exp-subnav-holder exp-labels">
         <ul>
           <li>
             <h2>Mauni-Lani</h2>
             <h3>Hawaii, USA</h3>
           </li>
-          <li>
+          <li style="display:none">
             <h2>Lakeshore Road</h2>
             <h3>Kelowna, BC</h3>
           </li>

@@ -1347,7 +1347,7 @@ footer.main {
         padding: 10px 20px;
         float: left;
         position: relative;
-        top: -160px;
+        top: 0;
         background: #fff; }
         #experiences .exp-labels ul li h2, #experiences .exp-labels ul.locations-grid li.span4 dl dt label, #experiences .exp-labels ul.locations-grid #main article .features li.features-list dl dt label, #experiences .exp-labels #main article .features ul.locations-grid li.features-list dl dt label, #main article .features #experiences .exp-labels ul.locations-grid li.features-list dl dt label {
           margin-bottom: 0.2em; }

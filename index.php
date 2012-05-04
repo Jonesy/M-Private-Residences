@@ -57,16 +57,7 @@
 
       <!-- Will be hidden by default, and slid up by JS -->
       <div class="exp-subnav-holder exp-labels">
-        <ul>
-          <li>
-            <h2>Mauni-Lani</h2>
-            <h3>Hawaii, USA</h3>
-          </li>
-          <li style="display:none">
-            <h2>Lakeshore Road</h2>
-            <h3>Kelowna, BC</h3>
-          </li>
-        </ul>
+        <ul id="exp-gallery-labels"></ul>
       </div>
     </section> <!-- /#experiences -->
 

@@ -17,6 +17,85 @@
   <script src="scripts/libs/modernizr-2.5.3.min.js"></script>
   <script type="text/javascript" src="http://use.typekit.com/iaz2gyo.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <script>
+    window.EXP = [
+      {
+        id: 1,
+        name: "Experience Name One",
+        subtext: "For Couples",
+        description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi eu metus in urna tempor tincidunt. Ut vitae diam a ipsum elementum.",
+        place: "Mauni-Lani",
+        location: "Hawaii, USA",
+        images: [
+          {
+            galleryId: 1,
+            large: "/images/_temp/fullsize/barbados.jpg",
+            thumb: "/images/_temp/fullsize/barbados.jpg"
+          },
+          {
+            galleryId: 1,
+            large: "/images/_temp/fullsize/barbados.jpg",
+            thumb: "/images/_temp/fullsize/barbados.jpg"
+          },
+          {
+            galleryId: 1,
+            large: "/images/_temp/fullsize/bear_mountain.jpg",
+            thumb: "/images/_temp/fullsize/bear_mountain.jpg"
+          },
+          {
+            galleryId: 1,
+            large: "/images/_temp/fullsize/big_island.jpg",
+            thumb: "/images/_temp/fullsize/big_island.jpg"
+          },
+          {
+            galleryId: 1,
+            large: "/images/_temp/fullsize/cabo_esperanza.jpg",
+            thumb: "/images/_temp/fullsize/cabo_esperanza.jpg"
+          },
+          {
+            galleryId: 1,
+            large: "/images/_temp/fullsize/gold_canyon.jpg",
+            thumb: "/images/_temp/fullsize/gold_canyon.jpg"
+          }
+        ]
+      },
+      {
+        id: 2,
+        name: "Kelowna, BC",
+        subtext: "Featured Residence",
+        description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi eu metus in urna tempor tincidunt. Ut vitae diam a ipsum elementum.",
+        place: "Lakeshore Road",
+        location: "Kelowna, BC",
+        images: [
+          {
+            galleryId: 2,
+            large: "/images/_temp/fullsize/kelowna.jpg",
+            thumb: "/images/_temp/fullsize/kelowna.jpg"
+          },
+          {
+            galleryId: 2,
+            large: "/images/_temp/fullsize/la_quinta.jpg",
+            thumb: "/images/_temp/fullsize/la_quinta.jpg"
+          },
+          {
+            galleryId: 2,
+            large: "/images/_temp/fullsize/london.jpg",
+            thumb: "/images/_temp/fullsize/london.jpg"
+          },
+          {
+            galleryId: 2,
+            large: "/images/_temp/fullsize/new_york.jpg",
+            thumb: "/images/_temp/fullsize/new_york.jpg"
+          },
+          {
+            galleryId: 2,
+            large: "/images/_temp/fullsize/paradise_valley.jpg",
+            thumb: "/images/_temp/fullsize/paradise_valley.jpg"
+          }
+        ]
+      }
+    ];
+  </script>
 </head>
 <?php 
 $file = substr($_SERVER["SCRIPT_NAME"], 1);

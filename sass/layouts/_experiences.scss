@@ -54,7 +54,35 @@
     }
   }
 
-  nav {
+  nav.gallery-controls {
+    width: 940px;
+    margin: 0 auto;
+    position: relative;
+    @include opacity(0);
+    @include transition(opacity 0.25s ease-in);
+
+    button {
+      width: 30px;
+      height: 35px;
+      position: absolute;
+      z-index: 99999;
+      top: 200px;
+
+      &.gallery-nav-prev {
+        left: -30px;
+      }
+
+      &.gallery-nav-next {
+        right: -30px;
+      }
+    }
+  }
+
+  .exp-slideshow:hover nav.gallery-controls {
+    @include opacity(1);
+  }
+
+  nav.tabs {
     width: 100%;
     height: 80px;
     position: absolute;
@@ -69,7 +97,7 @@
       padding: 0;
 
       li {
-        @extend .span4;
+        width: 260px;
         margin-left: $gutter;
         float: left;
 
@@ -97,6 +125,29 @@
         }
       }
     }
+
+    .exp-thumbnails {
+      width: 300px;
+      height: 80px;
+      margin: 25px 0;
+      float: left;
+      position: relative;
+      left: -$gutter;
+      background: #000;
+
+      ol {
+        width: 240px;
+        padding: 0;
+        margin: 0;
+        float: left;
+
+        li {
+          width: 80px;
+          margin: 0;
+          float: left;
+        }
+      }
+    }
   }
 
   .exp-subnav-holder  {
@@ -106,9 +157,12 @@
 
   /* White labels that popup to label the photos in the slides */
   .exp-labels {
-    @extend nav;
+    @extend nav.tabs;
     z-index: 1;
+
     ul {
+      list-style: none;
+
       li {
         width: 300px - $gutter * 2;
         height: 140px;
@@ -169,28 +223,17 @@
       }
     }
   }
+}
 
-  .exp-thumbnails {
-    width: 300px;
-    height: 80px;
-    margin: 25px 0;
+ul#gallery-images {
+  @include ul-reset(true);
+  width: 80000px;
+  margin: 0 0 0 $gutter;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  li {
     float: left;
-    position: relative;
-    left: -$gutter;
-    background: #000;
-
-    ol {
-      width: 240px;
-      padding: 0;
-      margin: 0;
-      float: left;
-
-      li {
-        width: 80px;
-        margin: 0;
-        float: left;
-      }
-    }
   }
-
 }

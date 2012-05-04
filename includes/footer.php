@@ -41,11 +41,28 @@
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
   <script src="/scripts/libs/jquery.fancybox.js"></script>
   <script src="/scripts/libs/jquery.isotope.js"></script>
+  <script src="/scripts/libs/underscore.js"></script>
+  <script src="/scripts/libs/backbone.js"></script>
   <script src="/scripts/libs/grayscale.js"></script>
   <script src="/scripts/m/navigation.js"></script>
   <script src="/scripts/m/accordion.js"></script>
   <script src="/scripts/m/checkbox.js"></script>
   <script src="/scripts/m/selectbox.js"></script>
   <script src="/scripts/m.js"></script>
+
+  <?php 
+  $file = substr($_SERVER["SCRIPT_NAME"], 1);
+  if ($file == 'index.php'): ?>
+  <script type="text/template" id="gallery-template">
+    <ul id="gallery-images"></ul>
+    <nav class="gallery-controls">
+     <button class="gallery-nav-prev"><i><img src="images/svg/caret-lrg-left.svg"></i></button>
+     <button class="gallery-nav-next"><i><img src="images/svg/caret-lrg-right.svg"></i></button>
+    </nav>
+  </script>
+  <script src="/scripts/experiences.js"></script>
+
+  
+  <?php endif; ?>
 </body>
 </html>

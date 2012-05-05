@@ -58,6 +58,14 @@
       this.invoke('reset');
       this.models[idx].select();
       M.galleryController.set('gallery', galleryId);
+    },
+    getGalleryImages: function(id) {
+      return this.filter(function(img) {
+        return img.get('galleryId') === id;
+      });
+    },
+    ids: function() {
+      return this.pluck('id');
     }
   });
 
@@ -75,9 +83,8 @@
   /**
     Views
     ---------------- */
-  M.LargeImageView = Backbone.View.extend({
+  M.ImageView = Backbone.View.extend({
     tagName: 'li',
-    template: _.template('<img src="<%= large %>" alt="">'),
     initialize: function() {
       this.model.bind('change', this.toggle, this);
     },
@@ -91,8 +98,17 @@
     render: function() {
       var template = this.template(this.model.toJSON());
       this.$el.html(template);
+      this.$el.fadeTo(10, 0.25);
       return this;
     }
+  });
+
+  M.LargeImageView = M.ImageView.extend({
+    template: _.template('<img src="<%= large %>" alt="">')
+  });
+
+  M.ThumbnailView = M.ImageView.extend({
+    template: _.template('<img src="<%= thumb %>" alt="">')
   });
 
   // The White labels
@@ -152,7 +168,7 @@
     template: _.template($('#gallery-template').html()),
 
     events: {
-      'mouseover': 'pauseSlideshow',
+      'mouseenter': 'pauseSlideshow',
       'mouseleave': 'startSlideshow',
       'click button.gallery-nav-prev': 'goToPrevImage',
       'click button.gallery-nav-next': 'goToNextImage'
@@ -211,11 +227,103 @@
 
     // Slideshow timers
     startSlideshow: function() {
-      timer = setInterval(M.galleryController.nextSlide, slideInt);
+      if (!this.model.get('selectedNav')) {
+        timer = setInterval(M.galleryController.nextSlide, slideInt);
+      }
     },
 
     pauseSlideshow: function() {
       window.clearInterval(timer);
+    }
+  });
+
+  // Tabs View
+  M.TabView = Backbone.View.extend({
+    template: _.template($('#exp-details-template').html()),
+    events: {
+      'click a.tab-button': 'open',
+      'click button.gallery-nav-prev': 'goToPrevImage',
+      'click button.gallery-nav-next': 'goToNextImage'
+    },
+    initialize: function() {
+      this.controller = this.options.controller;
+      this.controller.bind('change:selectedNav', this.openDetails, this);
+      this.images = M.galleryImages.getGalleryImages(this.model.get('id'));
+      this.render();
+    },
+
+    render: function() {
+      var data = _.extend({}, this.model.toJSON(), {thumbs: this.images}),
+          template = this.template(data);
+      this.$el.append(template);
+      _.each(this.images, this.renderThumbs, this);
+    },
+
+    renderThumbs: function(thumb) {
+      var thumb = new M.ThumbnailView({
+        model: thumb
+      });
+      this.$el.find('ol').append(thumb.render().el);
+    },
+
+    openDetails: function(controller) {
+      if (controller.get('selectedNav') === this.model) {
+        this.$el.addClass('selected').animate({
+          top: -272
+        }, 500);
+
+        var expImages = M.galleryImages.getGalleryImages(this.model.get('id')),
+            firstImgId = expImages[0].get('id'),
+            imageIdx = _.indexOf(M.galleryImages.ids(), firstImgId);
+
+        controller.set('index', imageIdx);
+
+        M.slideshow.pauseSlideshow();
+      } else {
+        this.$el.animate({
+          top: 0
+        }, 500, function() {
+          $(this).removeClass('selected');
+        });
+      }
+    },
+
+    // Button actions. Will clear timers.
+    goToNextImage: function() {
+      var controller = this.controller,
+          idx = controller.get('index');
+      if (idx < (this.images.length - 1)) {
+        controller.set('index', idx + 1);
+      }
+
+      if (idx === (this.images.length - 1)) {
+        this.close();
+      }
+
+      window.clearInterval(timer);
+    },
+
+    goToPrevImage: function() {
+      var controller = this.controller,
+          idx = controller.get('index');
+      if (idx > 0) {
+        controller.set('index', idx - 1);
+      }
+      window.clearInterval(timer);
+    },
+
+    open: function(event) {
+      event.preventDefault();
+      this.controller.set('selectedNav', this.model);
+    },
+
+    close: function() {
+      this.controller.set('selectedNav', null);
+      this.$el.animate({
+        top: 0
+      }, 500, function() {
+        $(this).removeClass('selected');
+      });
     }
   });
 
@@ -228,5 +336,17 @@
   M.slideshow = new M.SlideshowView({
     model: M.galleryController,
     collection: M.galleryImages
+  });
+
+  M.expTab1 = new M.TabView({
+    el: '#exp1',
+    model: M.experiences.models[0],
+    controller: M.galleryController
+  });
+
+  M.expTab2 = new M.TabView({
+    el: '#exp2',
+    model: M.experiences.models[1],
+    controller: M.galleryController
   });
 })(jQuery);

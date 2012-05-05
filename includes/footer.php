@@ -38,7 +38,7 @@
   </div> <!-- / .wrapper -->
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+  <script>window.jQuery || document.write('<script src="/scripts/libs/jquery-1.7.1.min.js"><\/script>')</script>
   <script src="/scripts/libs/jquery.fancybox.js"></script>
   <script src="/scripts/libs/jquery.isotope.js"></script>
   <script src="/scripts/libs/underscore.js"></script>
@@ -60,6 +60,15 @@
      <button class="gallery-nav-next"><i><img src="images/svg/caret-lrg-right.svg"></i></button>
     </nav>
   </script>
+  <script type="text/template" id="exp-details-template">
+    <p><%= description %></p>
+    <div class="exp-thumbnails">
+      <button class="gallery-nav-prev"><i><img src="images/svg/caret-lrg-left.svg" alt=""></i></button>
+      <ol></ol>
+      <button class="gallery-nav-next"><i><img src="images/svg/caret-lrg-right.svg" alt=""></i></button>
+    </div> <!-- / .exp-thumbnails -->
+    <p><a href="<%= url %>" class="btn hover-silver">Learn More</a></p>
+  </script> 
   <script src="/scripts/experiences.js"></script>
 
   

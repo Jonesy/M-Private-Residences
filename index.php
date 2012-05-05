@@ -14,40 +14,20 @@
       </div>
       <nav class="tabs">
         <ul>
-          <li class="exp-details">
-            <a href="#" class="callout-hero">
+          <li id="exp1" class="exp-details">
+            <a href="#" class="tab-button">
               <h2>Experience Name One <i class="caret"><img src="images/svg/caret.svg" alt=""></i></h2>
               <h3>For Couples</h3>
             </a>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi eu metus in urna tempor tincidunt. Ut vitae diam a ipsum elementum.</p>
-            <div class="exp-thumbnails">
-              <button class="gallery-nav-prev"><i><img src="images/svg/caret-lrg-left.svg" alt=""></i></button>
-              <ol>
-                <li><img src="/images/_temp/thumbnails/bear_mountain.jpg" alt=""></li>
-                <li><img src="/images/_temp/thumbnails/kelowna.jpg" alt=""></li>
-                <li><img src="/images/_temp/thumbnails/victoria.jpg" alt=""></li>
-              </ol>
-              <button class="gallery-nav-next"><i><img src="images/svg/caret-lrg-right.svg" alt=""></i></button>
-            </div> <!-- / .exp-thumbnails -->
-            <p><a href="#" class="btn hover-silver">Learn More</a></p>
           </li> <!-- / .exp-details -->
-          <li class="exp-details">
-            <h2>Kelowna, BC <i class="caret"><img src="images/svg/caret.svg" alt=""></i></h2>
+          <li id="exp2" class="exp-details">
+            <a href="#" class="tab-button">
+              <h2>Kelowna, BC <i class="caret"><img src="images/svg/caret.svg" alt=""></i></h2>
               <h3>Featured Residence</h3>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi eu metus in urna tempor tincidunt. Ut vitae diam a ipsum elementum.</p>
-            <div class="exp-thumbnails">
-              <button class="gallery-nav-prev"><i><img src="images/svg/caret-lrg-left.svg" alt=""></i></button>
-              <ol>
-                <li><img src="/images/_temp/thumbnails/bear_mountain.jpg" alt=""></li>
-                <li><img src="/images/_temp/thumbnails/kelowna.jpg" alt=""></li>
-                <li><img src="/images/_temp/thumbnails/victoria.jpg" alt=""></li>
-              </ol>
-              <button class="gallery-nav-next"><i><img src="images/svg/caret-lrg-right.svg" alt=""></i></button>
-            </div> <!-- / .exp-thumbnails -->
-            <p><a href="#" class="btn hover-silver">Learn More</a></p>
+            </a>
           </li>
           <li class="exp-details">
-            <a href="#" class="callout-hero">
+            <a href="#" class="tab-button">
               <h2>Membership <i class="caret"><img src="images/svg/caret.svg" alt=""></i></h2>
               <h3>Benefits</h3>
             </a>

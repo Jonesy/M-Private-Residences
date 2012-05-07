@@ -37,29 +37,23 @@
           {
             id: 12,
             galleryId: 1,
-            large: "/images/_temp/fullsize/barbados.jpg",
-            thumb: "/images/_temp/thumbnails/barbados.jpg"
-          },
-          {
-            id: 13,
-            galleryId: 1,
             large: "/images/_temp/fullsize/bear_mountain.jpg",
             thumb: "/images/_temp/thumbnails/bear_mountain.jpg"
           },
           {
-            id: 14,
+            id: 13,
             galleryId: 1,
             large: "/images/_temp/fullsize/big_island.jpg",
             thumb: "/images/_temp/thumbnails/big_island.jpg"
           },
           {
-            id: 15,
+            id: 14,
             galleryId: 1,
             large: "/images/_temp/fullsize/cabo_esperanza.jpg",
             thumb: "/images/_temp/thumbnails/cabo_esperanza.jpg"
           },
           {
-            id: 16,
+            id: 15,
             galleryId: 1,
             large: "/images/_temp/fullsize/gold_canyon.jpg",
             thumb: "/images/_temp/thumbnails/gold_canyon.jpg"
@@ -93,18 +87,18 @@
             large: "/images/_temp/fullsize/london.jpg",
             thumb: "/images/_temp/thumbnails/london.jpg"
           },
-          {
-            id: 23,
-            galleryId: 2,
-            large: "/images/_temp/fullsize/new_york.jpg",
-            thumb: "/images/_temp/thumbnails/new_york.jpg"
-          },
-          {
-            id: 24,
-            galleryId: 2,
-            large: "/images/_temp/fullsize/paradise_valley.jpg",
-            thumb: "/images/_temp/thumbnails/paradise_valley.jpg"
-          }
+          // {
+          //   id: 24,
+          //   galleryId: 2,
+          //   large: "/images/_temp/fullsize/new_york.jpg",
+          //   thumb: "/images/_temp/thumbnails/new_york.jpg"
+          // },
+          // {
+          //   id: 25,
+          //   galleryId: 2,
+          //   large: "/images/_temp/fullsize/paradise_valley.jpg",
+          //   thumb: "/images/_temp/thumbnails/paradise_valley.jpg"
+          // }
         ]
       }
     ];

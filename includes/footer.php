@@ -64,7 +64,9 @@
     <p><%= description %></p>
     <div class="exp-thumbnails">
       <button class="gallery-nav-prev"><i><img src="images/svg/caret-lrg-left.svg" alt=""></i></button>
-      <ol></ol>
+      <div class="exp-thumbnails-scroller">
+        <ol></ol>
+      </div>
       <button class="gallery-nav-next"><i><img src="images/svg/caret-lrg-right.svg" alt=""></i></button>
     </div> <!-- / .exp-thumbnails -->
     <p><a href="<%= url %>" class="btn hover-silver">Learn More</a></p>

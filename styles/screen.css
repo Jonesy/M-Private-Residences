@@ -1335,11 +1335,17 @@ footer.main {
       position: relative;
       left: -20px;
       background: #000; }
-      #experiences nav.tabs .exp-thumbnails ol, #experiences .exp-labels .exp-thumbnails ol {
+      #experiences nav.tabs .exp-thumbnails .exp-thumbnails-scroller, #experiences .exp-labels .exp-thumbnails .exp-thumbnails-scroller {
         width: 240px;
+        float: left;
+        position: relative;
+        overflow: hidden; }
+      #experiences nav.tabs .exp-thumbnails ol, #experiences .exp-labels .exp-thumbnails ol {
+        width: 1000px;
         padding: 0;
         margin: 0;
-        float: left; }
+        float: left;
+        position: relative; }
         #experiences nav.tabs .exp-thumbnails ol li, #experiences .exp-labels .exp-thumbnails ol li {
           width: 80px;
           margin: 0;

@@ -15,6 +15,9 @@
 
   // Model of the images, so thumbnail and large image can be bound.
   M.GalleryImage = Backbone.Model.extend({
+    defaults: {
+      isSelected: false
+    },
     reset: function() {
       this.set('isSelected', false);
     },
@@ -90,9 +93,9 @@
     },
     toggle: function(model, change) {
       if (model.get('isSelected')) {
-        this.$el.fadeTo('slow', 1);
+        this.$el.addClass('current').fadeTo('slow', 1);
       } else {
-        this.$el.fadeTo('slow', 0.25);
+        this.$el.removeClass('current').fadeTo('slow', 0.25);
       }
     },
     render: function() {
@@ -177,7 +180,6 @@
     initialize: function() {
       this.totalImages = this.collection.length;
       this.model.bind('change:index', this.updateIndex, this);
-
       // Be sure to remove the poster image which is there incase this all blows up.
       this.$el.empty();
       this.render();
@@ -186,7 +188,7 @@
     render: function() {
       this.$el.html(this.template());
       this.collection.each(this.renderImage, this);
-      M.galleryImages.selectIndex(0);
+      this.collection.selectIndex(0);
     },
 
     // Add the images
@@ -203,7 +205,7 @@
       var pullLeft = model.get('index') * this.imageWidth * -1;
       this.$el.find('ul').animate({
         left: pullLeft
-      })
+      });
     },
 
     // Button actions. Will clear timers.
@@ -241,13 +243,15 @@
   M.TabView = Backbone.View.extend({
     template: _.template($('#exp-details-template').html()),
     events: {
-      'click a.tab-button': 'open',
+      'click a.tab-button': 'toggleTab',
       'click button.gallery-nav-prev': 'goToPrevImage',
       'click button.gallery-nav-next': 'goToNextImage'
     },
+
     initialize: function() {
       this.controller = this.options.controller;
       this.controller.bind('change:selectedNav', this.openDetails, this);
+      this.controller.bind('change:index', this.slideThumbs, this);
       this.images = M.galleryImages.getGalleryImages(this.model.get('id'));
       this.render();
     },
@@ -291,13 +295,11 @@
     // Button actions. Will clear timers.
     goToNextImage: function() {
       var controller = this.controller,
+          galleryIdx = this.$el.find('ol li.current').index(),
           idx = controller.get('index');
-      if (idx < (this.images.length - 1)) {
-        controller.set('index', idx + 1);
-      }
 
-      if (idx === (this.images.length - 1)) {
-        this.close();
+      if (galleryIdx < (this.images.length - 1)) {
+        controller.set('index', idx + 1);
       }
 
       window.clearInterval(timer);
@@ -305,15 +307,43 @@
 
     goToPrevImage: function() {
       var controller = this.controller,
+          galleryIdx = this.$el.find('ol li.current').index(),
           idx = controller.get('index');
-      if (idx > 0) {
+
+      if (galleryIdx > 0) {
         controller.set('index', idx - 1);
       }
       window.clearInterval(timer);
     },
 
-    open: function(event) {
+    slideThumbs: function(model, changes) {
+      var galleryId = model.get('gallery'),
+          selectedGalleryId = this.controller.get('gallery'),
+          galleryIdx = this.$el.find('ol li.current').index(),
+          pullLeft = (galleryIdx === 0) ? 0 : (galleryIdx - 1) * 80 * -1;
+      
+      if (galleryId === selectedGalleryId && this.images.length > 3) {
+        if (galleryIdx < this.images.length - 1) {
+          this.$el.find('ol').animate({
+            left: pullLeft
+          });
+        }
+      }
+    },
+
+    toggleTab: function(event) {
       event.preventDefault();
+
+      var selectedNav = this.controller.get('selectedNav');
+
+      if (this.model === selectedNav) {
+        this.close();
+      } else {
+        this.open();
+      }
+    },
+
+    open: function() {
       this.controller.set('selectedNav', this.model);
     },
 
@@ -331,12 +361,8 @@
   M.expLabels = new M.GalleryLabelsView({
     model: M.galleryController,
     collection: M.experiences
-  })
-
-  M.slideshow = new M.SlideshowView({
-    model: M.galleryController,
-    collection: M.galleryImages
   });
+
 
   M.expTab1 = new M.TabView({
     el: '#exp1',
@@ -348,5 +374,10 @@
     el: '#exp2',
     model: M.experiences.models[1],
     controller: M.galleryController
+  });
+
+  M.slideshow = new M.SlideshowView({
+    model: M.galleryController,
+    collection: M.galleryImages
   });
 })(jQuery);

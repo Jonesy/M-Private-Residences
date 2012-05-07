@@ -144,11 +144,19 @@
       left: -$gutter;
       background: #000;
 
-      ol {
+      .exp-thumbnails-scroller {
         width: 240px;
+        float: left;
+        position: relative;
+        overflow: hidden;
+      }
+
+      ol {
+        width: 1000px;
         padding: 0;
         margin: 0;
         float: left;
+        position: relative;
 
         li {
           width: 80px;

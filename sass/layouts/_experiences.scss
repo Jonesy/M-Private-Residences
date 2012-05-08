@@ -2,6 +2,7 @@
   width: 300px - ($gutter * 2);
   height: 80px;
   padding: 0 $gutter;
+  position: relative;
   display: inline-block;
   color: #fff;
   background-: rgba(#fff, 0);
@@ -112,19 +113,18 @@
         margin-left: $gutter;
         float: left;
         position: relative;
+        display: inline-block;
+        overflow: hidden;
         @include transition(background-image 0.25s ease-in);
 
         a.tab-button {
           @extend .exp-lrg-btn;
           padding: 0;
+          position: relative;
         }
 
         p {
           margin: 0;
-        }
-
-        span.close-tab {
-          display: none;
         }
 
         &.selected {

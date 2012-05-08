@@ -1150,6 +1150,7 @@ footer.main {
   width: 260px;
   height: 80px;
   padding: 0 20px;
+  position: relative;
   display: inline-block;
   color: #fff;
   background-: rgba(255, 255, 255, 0);
@@ -1308,17 +1309,18 @@ footer.main {
         margin-left: 20px;
         float: left;
         position: relative;
+        display: inline-block;
+        overflow: hidden;
         -webkit-transition: background-image 0.25s ease-in;
         -moz-transition: background-image 0.25s ease-in;
         -ms-transition: background-image 0.25s ease-in;
         -o-transition: background-image 0.25s ease-in;
         transition: background-image 0.25s ease-in; }
         #experiences nav.tabs ul li a.tab-button, #experiences .exp-labels ul li a.tab-button {
-          padding: 0; }
+          padding: 0;
+          position: relative; }
         #experiences nav.tabs ul li p, #experiences .exp-labels ul li p, #experiences nav.tabs ul li address, #experiences .exp-labels ul li address {
           margin: 0; }
-        #experiences nav.tabs ul li span.close-tab, #experiences .exp-labels ul li span.close-tab {
-          display: none; }
         #experiences nav.tabs ul li.selected, #experiences .exp-labels ul li.selected {
           background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #414141), color-stop(90%, #212121), color-stop(100%, rgba(33, 33, 33, 0.65)));
           background-image: -webkit-linear-gradient(#414141, #212121 90%, rgba(33, 33, 33, 0.65));

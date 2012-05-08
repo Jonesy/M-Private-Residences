@@ -372,7 +372,7 @@
 
     close: function() {
       this.controller.set('selectedNav', null);
-      this.$el.find('.close-tab').fadeOut('fast', function() {
+      this.$el.find('a.tab-button span.close-tab').fadeOut('fast', function() {
         $(this).remove();
       });
       this.$el.animate({

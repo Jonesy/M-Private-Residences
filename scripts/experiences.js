@@ -103,16 +103,13 @@
 
   M.ThumbnailView = M.ImageView.extend({
     events: {
-      'click img': 'goToImage'
+      'click a': 'goToImage'
     },
-    // initialize: function() {
-    //   this.controller = this.options.controller;
-    // },
     goToImage: function(event) {
-      this.options.controller.set('index', M.galleryImages.indexOf(this.model));
       event.preventDefault();
+      this.options.controller.set('index', M.galleryImages.indexOf(this.model));
     },
-    template: _.template('<img src="<%= thumb %>" alt="">')
+    template: _.template('<a href="#"><img src="<%= thumb %>" alt=""></a>')
   });
 
   // The White labels
@@ -261,7 +258,12 @@
     render: function() {
       var data = _.extend({}, this.model.toJSON(), {thumbs: this.images}),
           template = this.template(data);
-      this.$el.append(template);
+
+      this.$el
+        .removeClass('static-tab')
+        .addClass('exp-nav-on')
+        .append(template);
+
       this.thumbsList = this.$el.find('ol');
       _.each(this.images, this.renderThumbs, this);
     },
@@ -277,7 +279,7 @@
     openDetails: function(controller) {
       if (controller.get('selectedNav') === this.model) {
         this.$el.addClass('selected').animate({
-          top: -272
+          top: -240
         }, 500);
 
         var expImages = M.galleryImages.getGalleryImages(this.model.get('id')),
@@ -364,11 +366,15 @@
     },
 
     open: function() {
+      this.$el.find('a.tab-button').append('<span class="close-tab">&times;</span>');
       this.controller.set('selectedNav', this.model);
     },
 
     close: function() {
       this.controller.set('selectedNav', null);
+      this.$el.find('.close-tab').fadeOut('fast', function() {
+        $(this).remove();
+      });
       this.$el.animate({
         top: 0
       }, 500, function() {

@@ -14,19 +14,19 @@
       </div>
       <nav class="tabs">
         <ul>
-          <li id="exp1" class="exp-details">
+          <li id="exp1" class="exp-details static-tab">
             <a href="#" class="tab-button">
               <h2>Experience Name One <i class="caret"><img src="images/svg/caret.svg" alt=""></i></h2>
               <h3>For Couples</h3>
             </a>
           </li> <!-- / .exp-details -->
-          <li id="exp2" class="exp-details">
+          <li id="exp2" class="exp-details static-tab">
             <a href="#" class="tab-button">
               <h2>Kelowna, BC <i class="caret"><img src="images/svg/caret.svg" alt=""></i></h2>
               <h3>Featured Residence</h3>
             </a>
           </li>
-          <li class="exp-details">
+          <li class="exp-details static-tab">
             <a href="#" class="tab-button">
               <h2>Membership <i class="caret"><img src="images/svg/caret.svg" alt=""></i></h2>
               <h3>Benefits</h3>

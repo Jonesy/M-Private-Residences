@@ -100,6 +100,47 @@
           //   thumb: "/images/_temp/thumbnails/paradise_valley.jpg"
           // }
         ]
+      },
+      {
+        id: 3,
+        name: "New York, NY",
+        subtext: "Featured Residence",
+        description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi eu metus in urna tempor tincidunt. Ut vitae diam a ipsum elementum.",
+        place: "Lakeshore Road",
+        location: "Kelowna, BC",
+        url: '/testpage',
+        images: [
+          {
+            id: 31,
+            galleryId: 3,
+            large: "/images/_temp/fullsize/kelowna.jpg",
+            thumb: "/images/_temp/thumbnails/kelowna.jpg"
+          },
+          {
+            id: 32,
+            galleryId: 3,
+            large: "/images/_temp/fullsize/la_quinta.jpg",
+            thumb: "/images/_temp/thumbnails/la_quinta.jpg"
+          },
+          {
+            id: 33,
+            galleryId: 3,
+            large: "/images/_temp/fullsize/london.jpg",
+            thumb: "/images/_temp/thumbnails/london.jpg"
+          },
+          {
+            id: 34,
+            galleryId: 3,
+            large: "/images/_temp/fullsize/new_york.jpg",
+            thumb: "/images/_temp/thumbnails/new_york.jpg"
+          },
+          {
+            id: 35,
+            galleryId: 3,
+            large: "/images/_temp/fullsize/paradise_valley.jpg",
+            thumb: "/images/_temp/thumbnails/paradise_valley.jpg"
+          }
+        ]
       }
     ];
   </script>

@@ -57,7 +57,7 @@
   <script src="/scripts/m.js"></script>
   <?php 
   $file = substr($_SERVER["SCRIPT_NAME"], 1);
-  if ($file == 'index.php'): ?>
+  if ($file == 'index.php' || $file == 'experience.php'): ?>
   <script type="text/template" id="gallery-template">
     <ul id="gallery-images"></ul>
     <nav class="gallery-controls">
@@ -77,8 +77,69 @@
     <p class="learn-more-btn"><a href="<%= url %>" class="btn hover-silver">Learn More</a></p>
   </script> 
   <script src="/scripts/experiences.js"></script>
+  <?php endif; ?>
 
-  
+  <?php if ($file == 'index.php'): ?>
+  <script>
+    M.init();
+    // Init the views
+    M.expLabels = new M.GalleryLabelsView({
+      model: M.galleryController,
+      collection: M.experiences
+    });
+
+
+    M.expTab1 = new M.TabView({
+      el: '#exp1',
+      model: M.experiences.models[0],
+      controller: M.galleryController
+    });
+
+    M.expTab2 = new M.TabView({
+      el: '#exp2',
+      model: M.experiences.models[1],
+      controller: M.galleryController
+    });
+
+    M.slideshow = new M.SlideshowView({
+      model: M.galleryController,
+      collection: M.galleryImages
+    });
+
+    M.galleryController.set('gallery', 1);
+  </script>
+  <?php endif; ?>
+
+  <?php if ($file == 'experience.php'): ?>
+  <script>
+    M.init();
+    
+    M.expTab1 = new M.TabView({
+      el: '#exp1',
+      model: M.experiences.models[0],
+      controller: M.galleryController,
+      isVisible: true
+    });
+
+    M.expTab2 = new M.TabView({
+      el: '#exp2',
+      model: M.experiences.models[1],
+      controller: M.galleryController,
+      isVisible: true
+    });
+
+    M.expTab3 = new M.TabView({
+      el: '#exp3',
+      model: M.experiences.models[2],
+      controller: M.galleryController,
+      isVisible: true
+    });
+
+    M.slideshow = new M.SlideshowView({
+      model: M.galleryController,
+      collection: M.galleryImages
+    });
+  </script>
   <?php endif; ?>
 </body>
 </html>

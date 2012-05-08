@@ -9,6 +9,19 @@
       slideInt = 5000,
       timer;
 
+  M.init = function() {
+    // Boot
+    // Kick off all the collections, controllers, timer.
+    M.experiences = new M.Experiences(EXP);
+    M.galleryImages = new M.GalleryImages(IMAGES);
+    M.galleryController.set('totalImages', M.galleryImages.length);
+    timer = setInterval(M.galleryController.nextSlide, slideInt);
+
+    // Update the gallery collection index when the controller updates.
+    M.galleryController.on('change:index', function(model, change) {
+      M.galleryImages.selectIndex(model.get('index'));
+    });
+  };
 
   /**
     Models
@@ -402,13 +415,14 @@
 
     toggleTab: function(event) {
       event.preventDefault();
+      if (!this.options.isVisible) {
+        var selectedNav = this.controller.get('selectedNav');
 
-      var selectedNav = this.controller.get('selectedNav');
-
-      if (this.model === selectedNav) {
-        this.close();
-      } else {
-        this.open();
+        if (this.model === selectedNav) {
+          this.close();
+        } else {
+          this.open();
+        }
       }
     },
 
@@ -435,41 +449,5 @@
     }
   });
 
-  // Boot
-  // Kick off all the collections, controllers, timer.
-  M.experiences = new M.Experiences(EXP);
-  M.galleryImages = new M.GalleryImages(IMAGES);
-  M.galleryController.set('totalImages', M.galleryImages.length);
-  timer = setInterval(M.galleryController.nextSlide, slideInt);
-
-  // Update the gallery collection index when the controller updates.
-  M.galleryController.on('change:index', function(model, change) {
-    M.galleryImages.selectIndex(model.get('index'));
-  });
-
-  // Init the views
-  M.expLabels = new M.GalleryLabelsView({
-    model: M.galleryController,
-    collection: M.experiences
-  });
-
-
-  M.expTab1 = new M.TabView({
-    el: '#exp1',
-    model: M.experiences.models[0],
-    controller: M.galleryController
-  });
-
-  M.expTab2 = new M.TabView({
-    el: '#exp2',
-    model: M.experiences.models[1],
-    controller: M.galleryController
-  });
-
-  M.slideshow = new M.SlideshowView({
-    model: M.galleryController,
-    collection: M.galleryImages
-  });
-
-  M.galleryController.set('gallery', 1);
+  
 })(jQuery);

@@ -1160,14 +1160,16 @@ footer.main {
   -ms-transition: background-color 0.25s ease-in;
   -o-transition: background-color 0.25s ease-in;
   transition: background-color 0.25s ease-in; }
-  .exp-lrg-btn:hover h2, #experiences nav.tabs ul li a.tab-button:hover h2, #experiences .exp-labels ul li a.tab-button:hover h2, #experiences nav.tabs ul li a.callout-hero:hover h2, #experiences .exp-labels ul li a.callout-hero:hover h2, #experiences .exp-details:hover h2, .exp-lrg-btn:hover ul.locations-grid li.span4 dl dt label, ul.locations-grid li.span4 dl dt .exp-lrg-btn:hover label, #experiences nav.tabs ul.locations-grid li.span4 a.tab-button:hover dl dt label, #experiences nav.tabs ul.locations-grid li.span4 dl dt a.tab-button:hover label, #experiences .exp-labels ul.locations-grid li.span4 a.tab-button:hover dl dt label, #experiences .exp-labels ul.locations-grid li.span4 dl dt a.tab-button:hover label, #experiences nav.tabs ul.locations-grid li.span4 a.callout-hero:hover dl dt label, #experiences nav.tabs ul.locations-grid li.span4 dl dt a.callout-hero:hover label, #experiences .exp-labels ul.locations-grid li.span4 a.callout-hero:hover dl dt label, #experiences .exp-labels ul.locations-grid li.span4 dl dt a.callout-hero:hover label, #experiences .exp-details:hover ul.locations-grid li.span4 dl dt label, ul.locations-grid li.span4 dl dt #experiences .exp-details:hover label, .exp-lrg-btn:hover ul.locations-grid #main article .features li.features-list dl dt label, ul.locations-grid #main article .features li.features-list dl dt .exp-lrg-btn:hover label, #experiences nav.tabs ul.locations-grid #main article .features li.features-list a.tab-button:hover dl dt label, #experiences nav.tabs ul.locations-grid #main article .features li.features-list dl dt a.tab-button:hover label, #experiences .exp-labels ul.locations-grid #main article .features li.features-list a.tab-button:hover dl dt label, #experiences .exp-labels ul.locations-grid #main article .features li.features-list dl dt a.tab-button:hover label, #experiences nav.tabs ul.locations-grid #main article .features li.features-list a.callout-hero:hover dl dt label, #experiences nav.tabs ul.locations-grid #main article .features li.features-list dl dt a.callout-hero:hover label, #experiences .exp-labels ul.locations-grid #main article .features li.features-list a.callout-hero:hover dl dt label, #experiences .exp-labels ul.locations-grid #main article .features li.features-list dl dt a.callout-hero:hover label, #experiences .exp-details:hover ul.locations-grid #main article .features li.features-list dl dt label, ul.locations-grid #main article .features li.features-list dl dt #experiences .exp-details:hover label, .exp-lrg-btn:hover #main article .features ul.locations-grid li.features-list dl dt label, #main article .features ul.locations-grid li.features-list dl dt .exp-lrg-btn:hover label, #experiences nav.tabs #main article .features ul.locations-grid li.features-list a.tab-button:hover dl dt label, #main article .features #experiences nav.tabs ul.locations-grid li.features-list a.tab-button:hover dl dt label, #experiences nav.tabs #main article .features ul.locations-grid li.features-list dl dt a.tab-button:hover label, #main article .features #experiences nav.tabs ul.locations-grid li.features-list dl dt a.tab-button:hover label, #experiences .exp-labels #main article .features ul.locations-grid li.features-list a.tab-button:hover dl dt label, #main article .features #experiences .exp-labels ul.locations-grid li.features-list a.tab-button:hover dl dt label, #experiences .exp-labels #main article .features ul.locations-grid li.features-list dl dt a.tab-button:hover label, #main article .features #experiences .exp-labels ul.locations-grid li.features-list dl dt a.tab-button:hover label, #experiences nav.tabs #main article .features ul.locations-grid li.features-list a.callout-hero:hover dl dt label, #main article .features #experiences nav.tabs ul.locations-grid li.features-list a.callout-hero:hover dl dt label, #experiences nav.tabs #main article .features ul.locations-grid li.features-list dl dt a.callout-hero:hover label, #main article .features #experiences nav.tabs ul.locations-grid li.features-list dl dt a.callout-hero:hover label, #experiences .exp-labels #main article .features ul.locations-grid li.features-list a.callout-hero:hover dl dt label, #main article .features #experiences .exp-labels ul.locations-grid li.features-list a.callout-hero:hover dl dt label, #experiences .exp-labels #main article .features ul.locations-grid li.features-list dl dt a.callout-hero:hover label, #main article .features #experiences .exp-labels ul.locations-grid li.features-list dl dt a.callout-hero:hover label, #experiences .exp-details:hover #main article .features ul.locations-grid li.features-list dl dt label, #main article .features ul.locations-grid li.features-list dl dt #experiences .exp-details:hover label,
-  .exp-lrg-btn:hover h3,
-  #experiences nav.tabs ul li a.tab-button:hover h3,
-  #experiences .exp-labels ul li a.tab-button:hover h3,
-  #experiences nav.tabs ul li a.callout-hero:hover h3,
-  #experiences .exp-labels ul li a.callout-hero:hover h3,
-  #experiences .exp-details:hover h3 {
-    color: #fff; }
+  .exp-lrg-btn:hover, #experiences nav.tabs ul li a.tab-button:hover, #experiences .exp-labels ul li a.tab-button:hover, #experiences nav.tabs ul li a.callout-hero:hover, #experiences .exp-labels ul li a.callout-hero:hover, #experiences .exp-details:hover {
+    background: none; }
+    .exp-lrg-btn:hover h2, #experiences nav.tabs ul li a.tab-button:hover h2, #experiences .exp-labels ul li a.tab-button:hover h2, #experiences nav.tabs ul li a.callout-hero:hover h2, #experiences .exp-labels ul li a.callout-hero:hover h2, #experiences .exp-details:hover h2, .exp-lrg-btn:hover ul.locations-grid li.span4 dl dt label, ul.locations-grid li.span4 dl dt .exp-lrg-btn:hover label, #experiences nav.tabs ul.locations-grid li.span4 a.tab-button:hover dl dt label, #experiences nav.tabs ul.locations-grid li.span4 dl dt a.tab-button:hover label, #experiences .exp-labels ul.locations-grid li.span4 a.tab-button:hover dl dt label, #experiences .exp-labels ul.locations-grid li.span4 dl dt a.tab-button:hover label, #experiences nav.tabs ul.locations-grid li.span4 a.callout-hero:hover dl dt label, #experiences nav.tabs ul.locations-grid li.span4 dl dt a.callout-hero:hover label, #experiences .exp-labels ul.locations-grid li.span4 a.callout-hero:hover dl dt label, #experiences .exp-labels ul.locations-grid li.span4 dl dt a.callout-hero:hover label, #experiences .exp-details:hover ul.locations-grid li.span4 dl dt label, ul.locations-grid li.span4 dl dt #experiences .exp-details:hover label, .exp-lrg-btn:hover ul.locations-grid #main article .features li.features-list dl dt label, ul.locations-grid #main article .features li.features-list dl dt .exp-lrg-btn:hover label, #experiences nav.tabs ul.locations-grid #main article .features li.features-list a.tab-button:hover dl dt label, #experiences nav.tabs ul.locations-grid #main article .features li.features-list dl dt a.tab-button:hover label, #experiences .exp-labels ul.locations-grid #main article .features li.features-list a.tab-button:hover dl dt label, #experiences .exp-labels ul.locations-grid #main article .features li.features-list dl dt a.tab-button:hover label, #experiences nav.tabs ul.locations-grid #main article .features li.features-list a.callout-hero:hover dl dt label, #experiences nav.tabs ul.locations-grid #main article .features li.features-list dl dt a.callout-hero:hover label, #experiences .exp-labels ul.locations-grid #main article .features li.features-list a.callout-hero:hover dl dt label, #experiences .exp-labels ul.locations-grid #main article .features li.features-list dl dt a.callout-hero:hover label, #experiences .exp-details:hover ul.locations-grid #main article .features li.features-list dl dt label, ul.locations-grid #main article .features li.features-list dl dt #experiences .exp-details:hover label, .exp-lrg-btn:hover #main article .features ul.locations-grid li.features-list dl dt label, #main article .features ul.locations-grid li.features-list dl dt .exp-lrg-btn:hover label, #experiences nav.tabs #main article .features ul.locations-grid li.features-list a.tab-button:hover dl dt label, #main article .features #experiences nav.tabs ul.locations-grid li.features-list a.tab-button:hover dl dt label, #experiences nav.tabs #main article .features ul.locations-grid li.features-list dl dt a.tab-button:hover label, #main article .features #experiences nav.tabs ul.locations-grid li.features-list dl dt a.tab-button:hover label, #experiences .exp-labels #main article .features ul.locations-grid li.features-list a.tab-button:hover dl dt label, #main article .features #experiences .exp-labels ul.locations-grid li.features-list a.tab-button:hover dl dt label, #experiences .exp-labels #main article .features ul.locations-grid li.features-list dl dt a.tab-button:hover label, #main article .features #experiences .exp-labels ul.locations-grid li.features-list dl dt a.tab-button:hover label, #experiences nav.tabs #main article .features ul.locations-grid li.features-list a.callout-hero:hover dl dt label, #main article .features #experiences nav.tabs ul.locations-grid li.features-list a.callout-hero:hover dl dt label, #experiences nav.tabs #main article .features ul.locations-grid li.features-list dl dt a.callout-hero:hover label, #main article .features #experiences nav.tabs ul.locations-grid li.features-list dl dt a.callout-hero:hover label, #experiences .exp-labels #main article .features ul.locations-grid li.features-list a.callout-hero:hover dl dt label, #main article .features #experiences .exp-labels ul.locations-grid li.features-list a.callout-hero:hover dl dt label, #experiences .exp-labels #main article .features ul.locations-grid li.features-list dl dt a.callout-hero:hover label, #main article .features #experiences .exp-labels ul.locations-grid li.features-list dl dt a.callout-hero:hover label, #experiences .exp-details:hover #main article .features ul.locations-grid li.features-list dl dt label, #main article .features ul.locations-grid li.features-list dl dt #experiences .exp-details:hover label,
+    .exp-lrg-btn:hover h3,
+    #experiences nav.tabs ul li a.tab-button:hover h3,
+    #experiences .exp-labels ul li a.tab-button:hover h3,
+    #experiences nav.tabs ul li a.callout-hero:hover h3,
+    #experiences .exp-labels ul li a.callout-hero:hover h3,
+    #experiences .exp-details:hover h3 {
+      color: #fff; }
   .exp-lrg-btn.exp-nav-on i.caret, #experiences nav.tabs ul li a.exp-nav-on.tab-button i.caret, #experiences .exp-labels ul li a.exp-nav-on.tab-button i.caret, #experiences nav.tabs ul li a.exp-nav-on.callout-hero i.caret, #experiences .exp-labels ul li a.exp-nav-on.callout-hero i.caret, #experiences .exp-nav-on.exp-details i.caret {
     position: relative;
     display: inline-block;
@@ -1257,6 +1259,7 @@ footer.main {
   height: 520px;
   overflow: hidden;
   position: relative;
+  display: inline-block;
   background: #202020;
   /* CSS2 Shims */
   /* White labels that popup to label the photos in the slides */
@@ -1265,8 +1268,6 @@ footer.main {
     text-align: center; }
   .no-cssgradients #experiences nav {
     background: url('../images/shim/bg-header.gif?1334008240') repeat-x 0 0; }
-    .no-cssgradients #experiences nav ul li a:hover {
-      background: url('../images/shim/bg-header-nav.gif?1334008240') repeat-x 0 0; }
   #experiences nav.gallery-controls {
     width: 940px;
     margin: 0 auto;
@@ -1291,7 +1292,8 @@ footer.main {
   #experiences.tabs-active nav.gallery-controls {
     display: none !important; }
   #experiences .exp-slideshow {
-    height: 100%; }
+    height: 450px;
+    display: block; }
     #experiences .exp-slideshow:hover nav.gallery-controls {
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
       opacity: 1; }
@@ -1461,7 +1463,10 @@ ul#gallery-images {
   margin: 0 0 0 20px;
   position: absolute;
   left: 0;
-  top: 0; }
+  top: 0;
+  display: inline-block;
+  z-index: 1;
+  zoom: 1; }
   ul#gallery-images li {
     width: 940px;
     float: left; }

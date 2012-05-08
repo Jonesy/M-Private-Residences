@@ -41,7 +41,12 @@
   <script>window.jQuery || document.write('<script src="/scripts/libs/jquery-1.7.1.min.js"><\/script>')</script>
   <script src="/scripts/libs/jquery.fancybox.js"></script>
   <script src="/scripts/libs/jquery.isotope.js"></script>
-  <script src="/scripts/libs/jquery.transform2d.js"></script>
+  <script>
+    Modernizr.load({
+      test: Modernizr.csstransitions,
+      yep: '/scripts/libs/jquery.transform2d.js'
+    });
+  </script>
   <script src="/scripts/libs/underscore.js"></script>
   <script src="/scripts/libs/backbone.js"></script>
   <script src="/scripts/libs/grayscale.js"></script>
@@ -50,7 +55,6 @@
   <script src="/scripts/m/checkbox.js"></script>
   <script src="/scripts/m/selectbox.js"></script>
   <script src="/scripts/m.js"></script>
-
   <?php 
   $file = substr($_SERVER["SCRIPT_NAME"], 1);
   if ($file == 'index.php'): ?>

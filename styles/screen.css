@@ -1349,7 +1349,8 @@ footer.main {
         #experiences nav.tabs .exp-thumbnails ol li, #experiences .exp-labels .exp-thumbnails ol li {
           width: 80px;
           margin: 0;
-          float: left; }
+          float: left;
+          cursor: pointer; }
   #experiences .exp-subnav-holder {
     position: absolute;
     bottom: -80px; }

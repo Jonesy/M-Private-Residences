@@ -1,6 +1,10 @@
 (function($) {
   window.M = {};
 
+  var SETTINGS = {
+    IMG_OFF_OPACITY: 0.45
+  };
+
   var IMAGES = _.flatten(_.pluck(EXP, 'images')),
       slideInt = 5000,
       timer;
@@ -9,9 +13,7 @@
   /**
     Models
     ---------------- */
-  M.Exp = Backbone.Model.extend({
-
-  });
+  M.Exp = Backbone.Model.extend({});
 
   // Model of the images, so thumbnail and large image can be bound.
   M.GalleryImage = Backbone.Model.extend({
@@ -72,17 +74,6 @@
     }
   });
 
-  // Kick off all the collections, controllers, timer.
-  M.experiences = new M.Experiences(EXP);
-  M.galleryImages = new M.GalleryImages(IMAGES);
-  M.galleryController.set('totalImages', M.galleryImages.length);
-  timer = setInterval(M.galleryController.nextSlide, slideInt);
-
-  // Update the gallery collection index when the controller updates.
-  M.galleryController.on('change:index', function(model, change) {
-    M.galleryImages.selectIndex(model.get('index'));
-  });
-
   /**
     Views
     ---------------- */
@@ -95,13 +86,13 @@
       if (model.get('isSelected')) {
         this.$el.addClass('current').fadeTo('slow', 1);
       } else {
-        this.$el.removeClass('current').fadeTo('slow', 0.25);
+        this.$el.removeClass('current').fadeTo('slow', SETTINGS.IMG_OFF_OPACITY);
       }
     },
     render: function() {
       var template = this.template(this.model.toJSON());
       this.$el.html(template);
-      this.$el.fadeTo(10, 0.25);
+      this.$el.fadeTo(10, SETTINGS.IMG_OFF_OPACITY);
       return this;
     }
   });
@@ -111,6 +102,16 @@
   });
 
   M.ThumbnailView = M.ImageView.extend({
+    events: {
+      'click img': 'goToImage'
+    },
+    // initialize: function() {
+    //   this.controller = this.options.controller;
+    // },
+    goToImage: function(event) {
+      this.options.controller.set('index', M.galleryImages.indexOf(this.model));
+      event.preventDefault();
+    },
     template: _.template('<img src="<%= thumb %>" alt="">')
   });
 
@@ -241,6 +242,7 @@
 
   // Tabs View
   M.TabView = Backbone.View.extend({
+    thumbsList: null,
     template: _.template($('#exp-details-template').html()),
     events: {
       'click a.tab-button': 'toggleTab',
@@ -260,14 +262,16 @@
       var data = _.extend({}, this.model.toJSON(), {thumbs: this.images}),
           template = this.template(data);
       this.$el.append(template);
+      this.thumbsList = this.$el.find('ol');
       _.each(this.images, this.renderThumbs, this);
     },
 
     renderThumbs: function(thumb) {
       var thumb = new M.ThumbnailView({
-        model: thumb
+        model: thumb,
+        controller: this.controller
       });
-      this.$el.find('ol').append(thumb.render().el);
+      this.thumbsList.append(thumb.render().el);
     },
 
     openDetails: function(controller) {
@@ -295,11 +299,15 @@
     // Button actions. Will clear timers.
     goToNextImage: function() {
       var controller = this.controller,
-          galleryIdx = this.$el.find('ol li.current').index(),
+          galleryIdx = this.$el.find('ol li.current').index() + 1,
           idx = controller.get('index');
-
-      if (galleryIdx < (this.images.length - 1)) {
+        
+      if (galleryIdx < this.images.length) {
         controller.set('index', idx + 1);
+      }
+
+      if (galleryIdx === this.images.length) {
+        controller.set('index', M.galleryImages.indexOf(this.images[0]));
       }
 
       window.clearInterval(timer);
@@ -313,19 +321,31 @@
       if (galleryIdx > 0) {
         controller.set('index', idx - 1);
       }
+
+      if (galleryIdx === 0) {
+        var lastImg = _.last(this.images);
+        controller.set('index', M.galleryImages.indexOf(lastImg));
+      }
       window.clearInterval(timer);
     },
 
     slideThumbs: function(model, changes) {
       var galleryId = model.get('gallery'),
           selectedGalleryId = this.controller.get('gallery'),
-          galleryIdx = this.$el.find('ol li.current').index(),
-          pullLeft = (galleryIdx === 0) ? 0 : (galleryIdx - 1) * 80 * -1;
-      
-      if (galleryId === selectedGalleryId && this.images.length > 3) {
-        if (galleryIdx < this.images.length - 1) {
-          this.$el.find('ol').animate({
+          totalImages = this.images.length,
+          galleryIdx = this.$el.find('ol li.current').index() + 1,
+          pullLeft = (galleryIdx === 1) 
+                    ? 0 
+                    : (galleryIdx - 2) * 80 * -1;
+
+      if (galleryId === selectedGalleryId && totalImages > 3) {
+        if (galleryIdx > 0 && galleryIdx < totalImages) {
+          this.thumbsList.animate({
             left: pullLeft
+          });
+        } else if (galleryIdx === totalImages) {
+          this.thumbsList.animate({
+            left: (totalImages - 3) * 80 * -1
           });
         }
       }
@@ -355,6 +375,18 @@
         $(this).removeClass('selected');
       });
     }
+  });
+
+  // Boot
+  // Kick off all the collections, controllers, timer.
+  M.experiences = new M.Experiences(EXP);
+  M.galleryImages = new M.GalleryImages(IMAGES);
+  M.galleryController.set('totalImages', M.galleryImages.length);
+  timer = setInterval(M.galleryController.nextSlide, slideInt);
+
+  // Update the gallery collection index when the controller updates.
+  M.galleryController.on('change:index', function(model, change) {
+    M.galleryImages.selectIndex(model.get('index'));
   });
 
   // Init the views

@@ -86,6 +86,10 @@
     }
   }
 
+  &.tabs-active nav.gallery-controls {
+    display: none !important;
+  }
+
   .exp-slideshow {
     height: 100%;
     
@@ -127,15 +131,19 @@
           margin: 0;
         }
 
-        &.selected {
+        &.selected {          
           @include background-image(linear-gradient(
             #414141, rgba(#212121, 1) 90%, rgba(#212121, 0.65)
           ));
 
+          .no-cssgradients & {
+            background: image-url("shim/bg-exp-nav.gif") repeat-x 0 0;
+          }
+
           span.close-tab {
             position: absolute;
             top: 12px;
-            right: 12px;
+            right: 0;
             font-size: 25px;
             color: rgba(#fff, 0.5);
 
@@ -221,6 +229,7 @@
         position: relative;
         top: 0;
         background: #fff;
+        -webkit-backface-visibility: hidden;
 
         h2 {
           margin-bottom: 0.2em;

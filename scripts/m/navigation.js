@@ -28,7 +28,7 @@
           if (plugin.checkMenuState()) {
             plugin.clearMenus();
           }
-        }, 500);
+        }, 250);
       },
 
       leaveNavigation: function(event) {

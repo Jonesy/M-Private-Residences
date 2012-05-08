@@ -988,7 +988,7 @@ header[role="banner"] {
   top: 80px;
   left: 0;
   right: 0;
-  z-index: 9999;
+  z-index: 999999;
   background: #f3f3f3; }
   .subnav-container .container, .subnav-container #experiences nav.tabs ul, #experiences nav.tabs .subnav-container ul, .subnav-container #experiences .exp-labels ul, #experiences .exp-labels .subnav-container ul, .subnav-container #experience-creator footer, #experience-creator .subnav-container footer {
     display: table;
@@ -1288,6 +1288,8 @@ footer.main {
         left: -30px; }
       #experiences nav.gallery-controls button.gallery-nav-next {
         right: -30px; }
+  #experiences.tabs-active nav.gallery-controls {
+    display: none !important; }
   #experiences .exp-slideshow {
     height: 100%; }
     #experiences .exp-slideshow:hover nav.gallery-controls {
@@ -1328,10 +1330,12 @@ footer.main {
           background-image: -o-linear-gradient(#414141, #212121 90%, rgba(33, 33, 33, 0.65));
           background-image: -ms-linear-gradient(#414141, #212121 90%, rgba(33, 33, 33, 0.65));
           background-image: linear-gradient(#414141, #212121 90%, rgba(33, 33, 33, 0.65)); }
+          .no-cssgradients #experiences nav.tabs ul li.selected, .no-cssgradients #experiences .exp-labels ul li.selected {
+            background: url('../images/shim/bg-exp-nav.gif?1334679552') repeat-x 0 0; }
           #experiences nav.tabs ul li.selected span.close-tab, #experiences .exp-labels ul li.selected span.close-tab {
             position: absolute;
             top: 12px;
-            right: 12px;
+            right: 0;
             font-size: 25px;
             color: rgba(255, 255, 255, 0.5); }
             #experiences nav.tabs ul li.selected span.close-tab:hover, #experiences .exp-labels ul li.selected span.close-tab:hover {
@@ -1415,7 +1419,8 @@ footer.main {
         float: left;
         position: relative;
         top: 0;
-        background: #fff; }
+        background: #fff;
+        -webkit-backface-visibility: hidden; }
         #experiences .exp-labels ul li h2, #experiences .exp-labels ul.locations-grid li.span4 dl dt label, #experiences .exp-labels ul.locations-grid #main article .features li.features-list dl dt label, #experiences .exp-labels #main article .features ul.locations-grid li.features-list dl dt label, #main article .features #experiences .exp-labels ul.locations-grid li.features-list dl dt label {
           margin-bottom: 0.2em; }
         #experiences .exp-labels ul li h3 {

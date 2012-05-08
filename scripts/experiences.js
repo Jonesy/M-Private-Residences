@@ -42,6 +42,8 @@
           total = this.get('totalImages');
       if ((idx + 1) < total) {
         this.set('index', idx + 1);
+      } else {
+        this.set('index', 0);
       }
     }
   });
@@ -127,11 +129,11 @@
       
       if (id === selectedGalleryId) {
         this.$el.animate({
-          top: -160
+          transform: 'translateY(-160px)'
         }, 500);
       } else {
         this.$el.animate({
-          top: 0
+          transform: 'translateY(0px)'
         }, 400);
       }
     },
@@ -178,6 +180,7 @@
     initialize: function() {
       this.totalImages = this.collection.length;
       this.model.bind('change:index', this.updateIndex, this);
+      this.model.bind('change:selectedNav', this.toggleSlideshowNav, this);
       // Be sure to remove the poster image which is there incase this all blows up.
       this.$el.empty();
       this.render();
@@ -200,9 +203,9 @@
 
     // Animate the carousel.
     updateIndex: function(model, change) {
-      var pullLeft = model.get('index') * this.imageWidth * -1;
+      var pullLeft = model.get('index') * this.imageWidth;
       this.$el.find('ul').animate({
-        left: pullLeft
+        transform: 'translateX(-' + pullLeft + 'px)'
       });
     },
 
@@ -212,6 +215,8 @@
           idx = model.get('index');
       if (idx < (this.totalImages - 1)) {
         model.set('index', idx + 1);
+      } else if (idx === (this.totalImages - 1)) {
+        model.set('index', 0);
       }
       window.clearInterval(timer);
     },
@@ -221,6 +226,8 @@
           idx = model.get('index');
       if (idx > 0) {
         model.set('index', idx - 1);
+      } else {
+        model.set('index', this.totalImages - 1);
       }
       window.clearInterval(timer);
     },
@@ -234,6 +241,14 @@
 
     pauseSlideshow: function() {
       window.clearInterval(timer);
+    },
+
+    toggleSlideshowNav: function(model, change) {
+      if (model.get('selectedNav')) {
+        this.$el.parent().addClass('tabs-active');
+      } else {
+        this.$el.parent().removeClass('tabs-active');
+      }
     }
   });
 
@@ -277,9 +292,10 @@
     },
 
     openDetails: function(controller) {
+      var self = this;
       if (controller.get('selectedNav') === this.model) {
         this.$el.addClass('selected').animate({
-          top: -240
+          transform: 'translateY(-240px)'
         }, 500);
 
         var expImages = M.galleryImages.getGalleryImages(this.model.get('id')),
@@ -291,8 +307,9 @@
         M.slideshow.pauseSlideshow();
       } else {
         this.$el.animate({
-          top: 0
+          transform: 'translateY(-0px)'
         }, 500, function() {
+          self.$el.find('a.tab-button > span.close-tab').remove();
           $(this).removeClass('selected');
         });
       }
@@ -338,16 +355,16 @@
           galleryIdx = this.$el.find('ol li.current').index() + 1,
           pullLeft = (galleryIdx === 1) 
                     ? 0 
-                    : (galleryIdx - 2) * 80 * -1;
+                    : (galleryIdx - 2) * 80;
 
       if (galleryId === selectedGalleryId && totalImages > 3) {
         if (galleryIdx > 0 && galleryIdx < totalImages) {
           this.thumbsList.animate({
-            left: pullLeft
+            transform: 'translateX(-' + pullLeft + 'px)'
           });
         } else if (galleryIdx === totalImages) {
           this.thumbsList.animate({
-            left: (totalImages - 3) * 80 * -1
+            transform: 'translateX(-' + ((totalImages - 3) * 80) + 'px)'
           });
         }
       }
@@ -366,18 +383,17 @@
     },
 
     open: function() {
-      this.$el.find('a.tab-button').append('<span class="close-tab">&times;</span>');
       this.controller.set('selectedNav', this.model);
+      this.$el.find('a.tab-button').append('<span class="close-tab">&times;</span>');
     },
 
     close: function() {
+      var self = this;
       this.controller.set('selectedNav', null);
-      this.$el.find('a.tab-button span.close-tab').fadeOut('fast', function() {
-        $(this).remove();
-      });
       this.$el.animate({
-        top: 0
+        transform: 'translateY(0px)'
       }, 500, function() {
+        self.$el.find('a.tab-button > span.close-tab').remove();
         $(this).removeClass('selected');
       });
     }

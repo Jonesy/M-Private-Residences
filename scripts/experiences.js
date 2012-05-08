@@ -120,10 +120,10 @@
     template: _.template('<h2><%= place %></h2><h3><%= location %></h3>'),
     initialize: function() {
       this.controller = this.options.controller;
-      this.controller.bind('change', this.toggle, this);
+      this.controller.bind('change:gallery', this.toggle, this);
     },
 
-    toggle: function(model) {
+    toggle: function(model, change) {
       var id = this.model.get('id'),
           selectedGalleryId = model.get('gallery'),
           animation1 = {
@@ -155,6 +155,7 @@
   M.GalleryLabelsView = Backbone.View.extend({
     el: '#exp-gallery-labels',
     initialize: function() {
+      _.bindAll(this, 'render');
       this.render();
     },
     render: function() {
@@ -469,4 +470,6 @@
     model: M.galleryController,
     collection: M.galleryImages
   });
+
+  M.galleryController.set('gallery', 1);
 })(jQuery);

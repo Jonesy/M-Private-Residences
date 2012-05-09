@@ -1,6 +1,18 @@
 <?php include('includes/header.php'); ?>
 
+    <section id="experiences">
+      <div id="exp-gallery" class="container banner exp-slideshow">
+        <!-- 
+          Insert a generic poster image here, so if the JS doesn't load we don't load
+          14 or so large images and there is also still something to show the user
 
+          This entire area will be managed by JS, so some elements will be removed once 
+          it is properly hooked up
+         -->
+
+        <img src="/images/_temp/fullsize/paradise_valley.jpg" alt="" style="margin:0 auto">
+      </div>
+    </section>
 
     <div id="main">
       <div class="container">

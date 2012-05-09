@@ -1,0 +1,14 @@
+May 09, 2012
+============
+
+[ADDED] Can click banner images to move the carousel up/down an image.
+[CHANGE] New classnames for carousel tabs: 
+
+    <li id="exp1" class="exp-details static-tab">
+      <a href="#" class="tab-button">
+        <h2>Experience Name One <i class="caret"><img src="images/svg/caret.svg" alt=""></i></h2>
+        <h3>For Couples</h3>
+      </a>
+    </li>
+
+[FIXED] Flickers in Safari, positioning of UI elements.

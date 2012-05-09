@@ -18,6 +18,7 @@
   <script type="text/javascript" src="http://use.typekit.com/iaz2gyo.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <script>
+    <?php $file = substr($_SERVER["SCRIPT_NAME"], 1); ?>
     window.EXP = [
       {
         id: 1,
@@ -100,8 +101,9 @@
           //   thumb: "/images/_temp/thumbnails/paradise_valley.jpg"
           // }
         ]
-      },
-      {
+      }
+      <?php if ($file == 'experience.php'): ?>
+      ,{
         id: 3,
         name: "New York, NY",
         subtext: "Featured Residence",
@@ -142,11 +144,11 @@
           }
         ]
       }
+      <?php endif; ?>
     ];
   </script>
 </head>
 <?php 
-$file = substr($_SERVER["SCRIPT_NAME"], 1);
 if ($file == 'index.php'):
 ?>
 <body id="index">

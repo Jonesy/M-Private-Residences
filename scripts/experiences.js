@@ -94,6 +94,9 @@
     ---------------- */
   M.ImageView = Backbone.View.extend({
     tagName: 'li',
+    events: {
+      'click img': 'goToImage'
+    },
     initialize: function() {
       this.model.bind('change', this.toggle, this);
     },
@@ -109,6 +112,10 @@
       this.$el.html(template);
       this.$el.fadeTo(10, SETTINGS.IMG_OFF_OPACITY);
       return this;
+    },
+    goToImage: function(event) {
+      var idx = this.model.collection.indexOf(this.model);
+      M.galleryController.set('index', idx);
     }
   });
 
@@ -146,10 +153,11 @@
             transform: 'translateY(0px)'
           };
       
-      if (!Modernizr.csstransitions) {
+      // TODO: Figure out why CSS transforms plugin isn't firing this on first run.
+      // if (!Modernizr.csstransitions) {
         animation1 = {top: -160};
         animation2 = {top: 0};
-      }
+      // }
 
       if (id === selectedGalleryId) {
         this.$el.animate(animation1, 500);
@@ -168,11 +176,11 @@
   M.GalleryLabelsView = Backbone.View.extend({
     el: '#exp-gallery-labels',
     initialize: function() {
-      _.bindAll(this, 'render');
       this.render();
     },
     render: function() {
       this.collection.each(this.renderLabel, this);
+      this.model.trigger('change', {gallery: 1});
     },
     renderLabel: function(model) {
       var label = new M.GalleryLabelView({

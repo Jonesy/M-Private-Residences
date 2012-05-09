@@ -142,7 +142,7 @@
           span.close-tab {
             position: absolute;
             top: 12px;
-            right: 0;
+            right: -10px;
             font-size: 25px;
             color: rgba(#fff, 0.5);
 
@@ -219,6 +219,7 @@
 
     ul {
       list-style: none;
+      position: relative;
 
       li {
         width: 300px - $gutter * 2;
@@ -293,6 +294,7 @@ ul#gallery-images {
   display: inline-block;
   z-index: 1;
   zoom: 1;
+  -webkit-backface-visibility: hidden;
 
   li {
     width: 940px;

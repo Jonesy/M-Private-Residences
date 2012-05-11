@@ -14,7 +14,8 @@ header[role="banner"] {
     & ul.main-nav li a {
       background: none;
       &:hover,
-      &.selected {
+      &.selected,
+      &.selected:hover {
         background: image-url("shim/bg-header-nav.gif");
       }
     }

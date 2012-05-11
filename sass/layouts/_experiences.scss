@@ -126,6 +126,10 @@
           position: relative;
         }
 
+        div.tab-button {
+          cursor: default !important;
+        }
+
         p {
           margin: 0;
         }
@@ -170,6 +174,25 @@
             left: 0;
             right: 0;
           }
+        }
+      }
+    }
+
+    .standalone-gallery-controls {
+      @extend .container;
+      padding: 0;
+
+
+
+      .gallery-thumb-control {
+        width: 300px;
+        float: right;
+        left: 0;
+        margin-right: $gutter;
+
+        .exp-thumbnails {
+          margin: 0;
+          left: auto;
         }
       }
     }
@@ -257,6 +280,7 @@
   &.full-page {
     height: 100%;
     padding-bottom: 50px;
+    display: block;
 
     nav {
       height: auto;

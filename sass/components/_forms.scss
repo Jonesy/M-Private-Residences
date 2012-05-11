@@ -118,6 +118,55 @@ textarea {
   }
 }
 
+span.checkbox {
+  width: 11px;
+  height: 11px;
+  margin: -7px 0 0 -7px;
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  display: inline-block;
+  border: 1px solid $body;
+  cursor: pointer;
+
+  input[type="checkbox"] {
+    @include opacity(0);
+    cursor: pointer;
+
+    .no-js & {
+      @include opacity(1);
+      margin: -7px 0 0 -7px;
+      position: absolute;
+      left: -20px;
+      top: 50%;
+      display: inline-block;
+    }
+  }
+
+  .svg & img,
+  .no-svg & span {
+    position: absolute;
+    top: -3px;
+    left: 1px;
+  }
+
+  &.checked img,
+  &.checked span {
+    display: block;
+  }
+
+  &.off img,
+  &.off span {
+    display: none !important;
+  }
+
+  span {
+    width: 17px;
+    height: 14px;
+    @include shim-sprite(check);
+  }
+}
+
 .sign-up-form {
   position: relative;
 

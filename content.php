@@ -12,6 +12,23 @@
 
         <img src="/images/_temp/fullsize/paradise_valley.jpg" alt="" style="margin:0 auto">
       </div>
+      <nav class="tabs">
+        <div class="standalone-gallery-controls">
+          <div id="residence-thumbs" class="gallery-thumb-control"></div>
+          <div class="exp-details">
+            <div class="tab-button">
+              <h2>Experience Name One</h2>
+              <h3>For Couples</h3>
+            </div>
+          </div> <!-- / .exp-details -->
+        </div>
+
+      </nav>
+      <div class="exp-subnav-holder exp-labels">
+        <ul id="exp-gallery-labels">
+          <li class="pull-right" style="top: -170px;margin-right:20px;float: right;">caption</li>
+        </ul>
+      </div>
     </section>
 
     <div id="main">

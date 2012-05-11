@@ -287,35 +287,12 @@
     }
   });
 
-  // Tabs View
-  M.TabView = Backbone.View.extend({
+  M.GalleryControls = Backbone.View.extend({
     thumbsList: null,
-    template: _.template($('#exp-details-template').html()),
-    events: {
-      'click a.tab-button': 'toggleTab',
+    
+    genericEvents: {
       'click button.gallery-nav-prev': 'goToPrevImage',
       'click button.gallery-nav-next': 'goToNextImage'
-    },
-
-    initialize: function() {
-      this.controller = this.options.controller;
-      this.controller.bind('change:selectedNav', this.openDetails, this);
-      this.controller.bind('change:index', this.slideThumbs, this);
-      this.images = M.galleryImages.getGalleryImages(this.model.get('id'));
-      this.render();
-    },
-
-    render: function() {
-      var data = _.extend({}, this.model.toJSON(), {thumbs: this.images}),
-          template = this.template(data);
-
-      this.$el
-        .removeClass('static-tab')
-        .addClass('exp-nav-on')
-        .append(template);
-
-      this.thumbsList = this.$el.find('ol');
-      _.each(this.images, this.renderThumbs, this);
     },
 
     renderThumbs: function(thumb) {
@@ -324,38 +301,6 @@
         controller: this.controller
       });
       this.thumbsList.append(thumb.render().el);
-    },
-
-    openDetails: function(controller) {
-      var self = this,
-          animation1 = {
-            transform: 'translateY(-240px)'
-          },
-          animation2 = {
-            transform: 'translateY(-0px)'
-          };
-
-      if (!Modernizr.csstransitions) {
-        animation1 = {top: -240};
-        animation2 = {top: 0};
-      }
-
-      if (controller.get('selectedNav') === this.model) {
-        this.$el.addClass('selected').animate(animation1, 500);
-
-        var expImages = M.galleryImages.getGalleryImages(this.model.get('id')),
-            firstImgId = expImages[0].get('id'),
-            imageIdx = _.indexOf(M.galleryImages.ids(), firstImgId);
-
-        controller.set('index', imageIdx);
-
-        M.slideshow.pauseSlideshow();
-      } else {
-        this.$el.animate(animation2, 500, function() {
-          self.$el.find('a.tab-button > span.close-tab').remove();
-          $(this).removeClass('selected');
-        });
-      }
     },
 
     // Button actions. Will clear timers.
@@ -419,6 +364,77 @@
           this.thumbsList.animate(animation2);
         }
       }
+    }
+  });
+
+  // Tabs View
+  M.TabView = M.GalleryControls.extend({
+    template: _.template($('#exp-details-template').html()),
+    events: {
+      'click a.tab-button': 'toggleTab'
+    },
+    
+    initialize: function() {
+      this.events = _.extend(this.genericEvents, this.events);
+      this.delegateEvents();
+
+      this.controller = this.options.controller;
+      this.controller.bind('change:selectedNav', this.openDetails, this);
+      this.controller.bind('change:index', this.slideThumbs, this);
+      this.images = M.galleryImages.getGalleryImages(this.model.get('id'));
+      this.render();
+    },
+
+    render: function() {
+      var data = _.extend(
+                  {}, 
+                  this.model.toJSON(), 
+                  {
+                    thumbs: this.images,
+                    isTab: true
+                  }
+                ),
+          template = this.template(data);
+
+      this.$el
+        .removeClass('static-tab')
+        .addClass('exp-nav-on')
+        .append(template);
+
+      this.thumbsList = this.$el.find('ol');
+      _.each(this.images, this.renderThumbs, this);
+    },
+
+    openDetails: function(controller) {
+      var self = this,
+          animation1 = {
+            transform: 'translateY(-240px)'
+          },
+          animation2 = {
+            transform: 'translateY(-0px)'
+          };
+
+      if (!Modernizr.csstransitions) {
+        animation1 = {top: -240};
+        animation2 = {top: 0};
+      }
+
+      if (controller.get('selectedNav') === this.model) {
+        this.$el.addClass('selected').animate(animation1, 500);
+
+        var expImages = M.galleryImages.getGalleryImages(this.model.get('id')),
+            firstImgId = expImages[0].get('id'),
+            imageIdx = _.indexOf(M.galleryImages.ids(), firstImgId);
+
+        controller.set('index', imageIdx);
+
+        M.slideshow.pauseSlideshow();
+      } else {
+        this.$el.animate(animation2, 500, function() {
+          self.$el.find('a.tab-button > span.close-tab').remove();
+          $(this).removeClass('selected');
+        });
+      }
     },
 
     toggleTab: function(event) {
@@ -456,6 +472,30 @@
       });
     }
   });
+  
+  M.GalleryThumbnailNavView = M.GalleryControls.extend({
+    template: _.template($('#exp-details-template').html()),
+    
+    initialize: function() {
+      this.events = _.extend(this.genericEvents, this.events);
+      this.delegateEvents();
 
+      this.controller = this.options.controller;
+      this.controller.bind('change:selectedNav', this.openDetails, this);
+      this.controller.bind('change:index', this.slideThumbs, this);
+      this.images = M.galleryImages.getGalleryImages(this.model.get('id'));
+      this.render();
+    },
+
+    render: function() {
+      var data = _.extend({}, this.model.toJSON(),{thumbs: this.images, isTab: false}),
+          template = this.template(data);
+
+      this.$el.append(template);
+
+      this.thumbsList = this.$el.find('ol');
+      _.each(this.images, this.renderThumbs, this);
+    }
+  });
   
 })(jQuery);

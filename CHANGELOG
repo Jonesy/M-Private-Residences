@@ -1,3 +1,11 @@
+May 11, 2012
+============
+[ADDED] Fixtures folder for Gallery JavaScript galleries
+[ADDED] Standalone gallery controls for residences page
+[CHANGE] content.php markup, see div#experiences
+[FIXED] Content template spacing
+
+
 May 09, 2012
 ============
 

@@ -57,7 +57,7 @@
   <script src="/scripts/m.js"></script>
   <?php 
   $file = substr($_SERVER["SCRIPT_NAME"], 1);
-  if ($file == 'index.php' || $file == 'experience.php'): ?>
+  if ($file == 'index.php' || $file == 'experience.php' || $file == 'content.php'): ?>
   <script type="text/template" id="gallery-template">
     <ul id="gallery-images"></ul>
     <nav class="gallery-controls">
@@ -66,7 +66,9 @@
     </nav>
   </script>
   <script type="text/template" id="exp-details-template">
+    <% if (isTab) { %>
     <p><%= description %></p>
+    <% } %>
     <div class="exp-thumbnails">
       <button class="gallery-nav-prev"><i><img src="images/svg/caret-lrg-left.svg" alt=""></i></button>
       <div class="exp-thumbnails-scroller">
@@ -74,7 +76,9 @@
       </div>
       <button class="gallery-nav-next"><i><img src="images/svg/caret-lrg-right.svg" alt=""></i></button>
     </div> <!-- / .exp-thumbnails -->
+    <% if (isTab) { %>
     <p class="learn-more-btn"><a href="<%= url %>" class="btn hover-silver">Learn More</a></p>
+    <% } %>
   </script> 
   <script src="/scripts/experiences.js"></script>
   <?php endif; ?>
@@ -138,6 +142,21 @@
     M.slideshow = new M.SlideshowView({
       model: M.galleryController,
       collection: M.galleryImages
+    });
+  </script>
+  <?php endif; ?>
+  <?php if ($file == 'content.php'): ?>
+  <script>
+    M.init();
+    M.slideshow = new M.SlideshowView({
+      model: M.galleryController,
+      collection: M.galleryImages
+    });
+
+    M.residenceGalleryControl = new M.GalleryThumbnailNavView({
+      el: '#residence-thumbs',
+      model: M.experiences.models[0],
+      controller: M.galleryController
     });
   </script>
   <?php endif; ?>

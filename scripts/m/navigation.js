@@ -15,7 +15,7 @@
       },
 
       clearMenus: function() {
-        $('#nav').find('a.selected').removeClass('selected');
+        $('#nav').find('a.selected').not('.current-page').removeClass('selected');
         $('.subnav-container:visible').fadeOut();
       },
 
@@ -47,6 +47,8 @@
           $buttons = $this.find('a'),
           $subnavButtons = $buttons.filter('.subnav'),
           $containers = $('.subnav-container');
+
+      $buttons.filter('.selected').addClass('current-page');
 
       $buttons.each(function() {
         var $button = $(this);

@@ -20,6 +20,11 @@
 
       $this.wrap($wrapper);
 
+      $this.parent().parent().css({
+        position: 'relative',
+        marginLeft: '2em'
+      });
+
       if (Modernizr.svg) {
         $this.after('<img src="/images/svg/check.svg">');
       } else {

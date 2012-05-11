@@ -36,19 +36,19 @@
   });
 
   // Grayscale images
-  var $grayImgs = $('.grayscale > img');
+  // var $grayImgs = $('.grayscale > img');
 
-  $('.grayscale')
-    .on('mouseover', function() {
-      grayscale.reset($(this));
-    })
-    .on('mouseleave', function() {
-      if (!$(this).hasClass('selected')) {
-        grayscale($(this));
-      }
-    });
-  if ($grayImgs.length) {
-    grayscale($grayImgs);
-  }
+  // $('.grayscale')
+  //   .on('mouseover', function() {
+  //     grayscale.reset($(this));
+  //   })
+  //   .on('mouseleave', function() {
+  //     if (!$(this).hasClass('selected')) {
+  //       grayscale($(this));
+  //     }
+  //   });
+  // if ($grayImgs.length) {
+  //   grayscale($grayImgs);
+  // }
   
 })(jQuery);

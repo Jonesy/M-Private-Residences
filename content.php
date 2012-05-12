@@ -24,10 +24,8 @@
         </div>
 
       </nav>
-      <div class="exp-subnav-holder exp-labels">
-        <ul id="exp-gallery-labels">
-          <li class="pull-right" style="top: -170px;margin-right:20px;float: right;">caption</li>
-        </ul>
+      <div class="exp-subnav-holder exp-labels gallery-caption">
+        <ul id="exp-gallery-labels"></ul>
       </div>
     </section>
 

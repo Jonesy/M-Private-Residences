@@ -158,6 +158,12 @@
       model: M.experiences.models[0],
       controller: M.galleryController
     });
+
+    M.captions = new M.GalleryCaptionView({
+      el: $('ul#exp-gallery-labels'),
+      controller: M.galleryController,
+      collection: M.galleryImages
+    })
   </script>
   <?php endif; ?>
 </body>

@@ -472,6 +472,49 @@
       });
     }
   });
+
+  // Residences page
+  M.GalleryCaptionView = Backbone.View.extend({
+    className: 'pull-right',
+    template: _.template('<li></li>'),
+    initialize: function() {
+      this.controller = this.options.controller;
+      this.controller.bind('change:index', this.toggle, this);
+      this.render();
+      this.toggle(this.controller);
+    },
+
+    toggle: function(model, change) {
+      var idx = model.get('index'),
+          image = this.collection.at(idx),
+          caption = image.get('caption'),
+          hasCaption = (caption) ? true : false,
+          animation1 = {
+            transform: 'translateY(-180px)'
+          },
+          animation2 = {
+            transform: 'translateY(0px)'
+          };
+      
+      // if (!Modernizr.csstransitions) {
+        animation1 = {top: -180};
+        animation2 = {top: 0};
+      // }
+
+      if (hasCaption) {
+        this.$el.find('li').animate(animation1, 500);
+        this.$el.find('li').text(caption);
+      } else {
+        this.$el.find('li').animate(animation2, 400);
+        this.$el.find('li').text('');
+      }
+    },
+
+    render: function() {
+      var template = this.template();
+      this.$el.append(template);
+    }
+  });
   
   M.GalleryThumbnailNavView = M.GalleryControls.extend({
     template: _.template($('#exp-details-template').html()),

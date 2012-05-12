@@ -262,6 +262,17 @@
           margin: 0;
         }
       }
+
+      &#exp-gallery-labels {
+        li {
+          margin-right:20px;
+          float: right;
+
+          @extend p;
+          font-style: italic;
+          line-height: 2.2em;
+        }
+      }
     }
   }
 

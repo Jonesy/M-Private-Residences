@@ -441,12 +441,14 @@
     },
 
     setSelected: function(model, change) {
-      var idx = this.collection.indexOf(this.model);
-      
-      if (model.get('gallery') === idx+1) {
-        this.$el.addClass('selected');
-      } else {
-        this.$el.removeClass('selected');
+      if (this.collection) {
+        var idx = this.collection.indexOf(this.model);
+        
+        if (model.get('gallery') === idx+1) {
+          this.$el.addClass('selected');
+        } else {
+          this.$el.removeClass('selected');
+        }
       }
     },
 

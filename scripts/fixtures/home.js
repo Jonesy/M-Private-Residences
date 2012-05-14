@@ -66,19 +66,7 @@ window.EXP = [
       galleryId: 2,
       large: "/images/_temp/fullsize/london.jpg",
       thumb: "/images/_temp/thumbnails/london.jpg"
-    },
-    // {
-    //   id: 24,
-    //   galleryId: 2,
-    //   large: "/images/_temp/fullsize/new_york.jpg",
-    //   thumb: "/images/_temp/thumbnails/new_york.jpg"
-    // },
-    // {
-    //   id: 25,
-    //   galleryId: 2,
-    //   large: "/images/_temp/fullsize/paradise_valley.jpg",
-    //   thumb: "/images/_temp/thumbnails/paradise_valley.jpg"
-    // }
+    }
   ]
 }
 ];

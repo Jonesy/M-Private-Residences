@@ -120,10 +120,12 @@
   });
 
   M.LargeImageView = M.ImageView.extend({
+    imgType: 'large',
     template: _.template('<img src="<%= large %>" alt="">')
   });
 
   M.ThumbnailView = M.ImageView.extend({
+    imgType: 'thumb',
     events: {
       'click a': 'goToImage'
     },
@@ -381,6 +383,7 @@
       this.controller = this.options.controller;
       this.controller.bind('change:selectedNav', this.openDetails, this);
       this.controller.bind('change:index', this.slideThumbs, this);
+      this.controller.bind('change:gallery', this.setSelected, this);
       this.images = M.galleryImages.getGalleryImages(this.model.get('id'));
       this.render();
     },
@@ -434,6 +437,16 @@
           self.$el.find('a.tab-button > span.close-tab').remove();
           $(this).removeClass('selected');
         });
+      }
+    },
+
+    setSelected: function(model, change) {
+      var idx = this.collection.indexOf(this.model);
+      
+      if (model.get('gallery') === idx+1) {
+        this.$el.addClass('selected');
+      } else {
+        this.$el.removeClass('selected');
       }
     },
 

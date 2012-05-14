@@ -59,7 +59,7 @@
   $file = substr($_SERVER["SCRIPT_NAME"], 1);
   if ($file == 'index.php' || $file == 'experience.php' || $file == 'content.php'): ?>
   <script type="text/template" id="gallery-template">
-    <ul id="gallery-images"></ul>
+    <ul id="gallery-images" class="carousel"></ul>
     <nav class="gallery-controls">
      <button class="gallery-nav-prev"><i><img src="images/svg/caret-lrg-left.svg"></i></button>
      <button class="gallery-nav-next"><i><img src="images/svg/caret-lrg-right.svg"></i></button>
@@ -122,6 +122,7 @@
       el: '#exp1',
       model: M.experiences.models[0],
       controller: M.galleryController,
+      collection: M.experiences,
       isVisible: true
     });
 
@@ -129,6 +130,7 @@
       el: '#exp2',
       model: M.experiences.models[1],
       controller: M.galleryController,
+      collection: M.experiences,
       isVisible: true
     });
 
@@ -136,6 +138,7 @@
       el: '#exp3',
       model: M.experiences.models[2],
       controller: M.galleryController,
+      collection: M.experiences,
       isVisible: true
     });
 

@@ -163,7 +163,7 @@ mark {
 /*
  * Addresses margins set differently in IE6/7
  */
-p, address, #experiences .exp-labels ul#exp-gallery-labels li,
+p, address, #experiences .exp-labels.gallery-caption ul li,
 pre {
   margin: 1em 0; }
 
@@ -548,7 +548,7 @@ a {
   a:hover {
     color: #000; }
 
-p, address, #experiences .exp-labels ul#exp-gallery-labels li {
+p, address, #experiences .exp-labels.gallery-caption ul li {
   font-size: 0.75em;
   line-height: 1.82em; }
 
@@ -906,7 +906,7 @@ dl.accordion dd {
   margin: 0;
   padding: 0 0 5px;
   border-bottom: 1px solid #ccc; }
-  dl.accordion dd p, dl.accordion dd address, dl.accordion dd #experiences .exp-labels ul#exp-gallery-labels li, #experiences .exp-labels ul#exp-gallery-labels dl.accordion dd li {
+  dl.accordion dd p, dl.accordion dd address, dl.accordion dd #experiences .exp-labels.gallery-caption ul li, #experiences .exp-labels.gallery-caption ul dl.accordion dd li {
     margin-top: 0; }
 dl.accordion.is-active dt {
   padding: 5px 0 15px 30px; }
@@ -1156,10 +1156,10 @@ footer.main {
         font-weight: 300; }
         footer.main nav ul li:nth-child(2n-1) {
           margin-right: 20px; }
-    footer.main nav p, footer.main nav address, footer.main nav #experiences .exp-labels ul#exp-gallery-labels li, #experiences .exp-labels ul#exp-gallery-labels footer.main nav li {
+    footer.main nav p, footer.main nav address, footer.main nav #experiences .exp-labels.gallery-caption ul li, #experiences .exp-labels.gallery-caption ul footer.main nav li {
       display: inline-block;
       margin: 1.5em 0; }
-      footer.main nav p a, footer.main nav address a, footer.main nav #experiences .exp-labels ul#exp-gallery-labels li a, #experiences .exp-labels ul#exp-gallery-labels footer.main nav li a {
+      footer.main nav p a, footer.main nav address a, footer.main nav #experiences .exp-labels.gallery-caption ul li a, #experiences .exp-labels.gallery-caption ul footer.main nav li a {
         color: #999; }
 
 .box {
@@ -1360,7 +1360,7 @@ footer.main {
           position: relative; }
         #experiences nav.tabs ul li div.tab-button, #experiences .exp-labels ul li div.tab-button {
           cursor: default !important; }
-        #experiences nav.tabs ul li p, #experiences .exp-labels ul li p, #experiences nav.tabs ul li address, #experiences .exp-labels ul li address, #experiences nav.tabs .exp-labels ul#exp-gallery-labels li li, #experiences .exp-labels nav.tabs ul#exp-gallery-labels li li, #experiences .exp-labels ul#exp-gallery-labels li li {
+        #experiences nav.tabs ul li p, #experiences .exp-labels ul li p, #experiences nav.tabs ul li address, #experiences .exp-labels ul li address, #experiences nav.tabs .exp-labels.gallery-caption ul li li, #experiences .exp-labels.gallery-caption nav.tabs ul li li, #experiences .exp-labels.gallery-caption ul li li {
           margin: 0; }
         #experiences nav.tabs ul li.selected, #experiences .exp-labels ul li.selected {
           background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #414141), color-stop(90%, #212121), color-stop(100%, rgba(33, 33, 33, 0.65)));
@@ -1475,11 +1475,11 @@ footer.main {
           margin-bottom: 0.2em; }
         #experiences .exp-labels ul li h3 {
           margin: 0; }
-      #experiences .exp-labels ul#exp-gallery-labels li {
-        margin-right: 20px;
-        float: right;
-        font-style: italic;
-        line-height: 2.2em; }
+    #experiences .exp-labels.gallery-caption ul li {
+      margin-right: 20px;
+      float: right;
+      font-style: italic;
+      line-height: 2.2em; }
   #experiences .exp-details {
     height: 352px; }
     #experiences .exp-details a {
@@ -1504,10 +1504,8 @@ footer.main {
       background-image: -o-linear-gradient(rgba(32, 32, 32, 0.1), #202020);
       background-image: -ms-linear-gradient(rgba(32, 32, 32, 0.1), #202020);
       background-image: linear-gradient(rgba(32, 32, 32, 0.1), #202020); }
-      #experiences.full-page .exp-details:hover {
-        background-color: #414141; }
-        .no-cssgradients #experiences.full-page .exp-details:hover {
-          background: url('../images/shim/bg-exp-nav.gif?1334679552') repeat-x 0 0; }
+      .no-cssgradients #experiences.full-page .exp-details:hover, .no-cssgradients #experiences.full-page .exp-details.selected {
+        background: url('../images/shim/bg-exp-nav.gif?1334679552') repeat-x 0 0; }
 
 ul#gallery-images {
   margin: 0;
@@ -1662,7 +1660,7 @@ header.page-header {
       margin: 0 0 30px; }
   .mbassadors blockquote {
     float: right; }
-    .mbassadors blockquote p, .mbassadors blockquote address, .mbassadors blockquote #experiences .exp-labels ul#exp-gallery-labels li, #experiences .exp-labels ul#exp-gallery-labels .mbassadors blockquote li {
+    .mbassadors blockquote p, .mbassadors blockquote address, .mbassadors blockquote #experiences .exp-labels.gallery-caption ul li, #experiences .exp-labels.gallery-caption ul .mbassadors blockquote li {
       margin: 0;
       line-height: 1.5em; }
 
@@ -1673,7 +1671,7 @@ header.page-header {
   position: relative; }
   .featured-quote blockquote {
     /* Insert the fancy quote before */ }
-    .featured-quote blockquote p, .featured-quote blockquote address, .featured-quote blockquote #experiences .exp-labels ul#exp-gallery-labels li, #experiences .exp-labels ul#exp-gallery-labels .featured-quote blockquote li {
+    .featured-quote blockquote p, .featured-quote blockquote address, .featured-quote blockquote #experiences .exp-labels.gallery-caption ul li, #experiences .exp-labels.gallery-caption ul .featured-quote blockquote li {
       font-family: "proxima-nova-condensed", "Arial Narrow", Helvetica, Arial, sans-serif;
       font-weight: 300;
       font-size: 1.25em;

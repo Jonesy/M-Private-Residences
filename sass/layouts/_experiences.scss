@@ -262,8 +262,9 @@
           margin: 0;
         }
       }
-
-      &#exp-gallery-labels {
+    }
+    &.gallery-caption {
+      ul {
         li {
           margin-right:20px;
           float: right;
@@ -308,8 +309,8 @@
       );
 
 
-      &:hover {
-        background-color: #414141;
+      &:hover,
+      &.selected {
 
         .no-cssgradients & {
           background: image-url("shim/bg-exp-nav.gif") repeat-x 0 0;

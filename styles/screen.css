@@ -1453,7 +1453,8 @@ footer.main {
           width: 80px;
           margin: 0;
           float: left;
-          cursor: pointer; }
+          cursor: pointer;
+          position: relative; }
   #experiences .exp-subnav-holder {
     position: absolute;
     bottom: -80px; }

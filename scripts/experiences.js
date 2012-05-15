@@ -103,6 +103,7 @@
 
     render: function() {
       this.loadImage(this.model.toJSON());
+      this.$el.fadeTo(10, SETTINGS.IMG_OFF_OPACITY);
       return this;
     },
 
@@ -118,35 +119,16 @@
 
             } else {
               self.$el.append($(this));
-              grayscale($(this));
               $(this).fadeIn();
             }
           });
     },
 
     toggle: function(model, change) {
-      var imgSize = this.imgType,
-          $selectedImage = $('<img>').attr('src', model.get(imgSize)).hide();
-
       if (model.get('isSelected')) {
-        this.$el.addClass('current');
-
-        $selectedImage
-          .addClass('temp')
-          .css({
-            position: 'absolute',
-            top: 0,
-            left: 0
-          })
-          .appendTo(this.$el)
-          .fadeIn();
+        this.$el.addClass('current').fadeTo('slow', 1);
       } else {
-        this.$el
-          .removeClass('current')
-          .find('img.temp')
-          .fadeOut('fast', function() {
-            $(this).remove();
-          });
+        this.$el.removeClass('current').fadeTo('slow', SETTINGS.IMG_OFF_OPACITY);
       }
     },
     goToImage: function(event) {
@@ -271,12 +253,13 @@
     updateIndex: function(model, change) {
       var self = this,
           previousIdx = model.previous('index'),
+          fullGalleryLength = (this.totalImages * this.imageWidth),
           pullLeft = model.get('index') * this.imageWidth,
           animation = {
             transform: 'translateX(-' + pullLeft + 'px)'
           },
           beginning = {
-            transform: 'translateX(-' + (this.totalImages * this.imageWidth) + 'px)'
+            transform: 'translateX(-' + fullGalleryLength + 'px)'
           },
           end = {
             transform: 'translateX(' + this.imageWidth + 'px)'
@@ -284,18 +267,28 @@
 
 
       if (!Modernizr.csstransitions) {
-        animation = {left: pullLeft * -1}
+        animation = {left: (pullLeft + fullGalleryLength) * -1}
+        beginning = {left: (fullGalleryLength * 2) * -1}
+        end = {left: (fullGalleryLength - this.imageWidth) * -1}
       }
 
 
       if (change === 0 && previousIdx === this.totalImages - 1) {
         this.$el.find('ul').animate(beginning, 800, function() {
-          $(this).css('transform', 'translateX(-0px)');
+          if (Modernizr.csstransitions) {
+            $(this).css('transform', 'translateX(-0px)');
+          } else {
+            $(this).css('left', fullGalleryLength * -1);
+          }
         });
       } else if (change === (this.totalImages - 1) && previousIdx === 0) {
         this.$el.find('ul').animate(end, 800, function() {
-          console.log('-' + (self.totalImages * self.imageWidth) + 'px');
-          $(this).css('transform', 'translateX(-' + (self.totalImages * self.imageWidth - self.imageWidth) + 'px)');
+          if (Modernizr.csstransitions) {
+            $(this).css('transform', 'translateX(-' + (self.totalImages * self.imageWidth - self.imageWidth) + 'px)');
+          } else {
+            $(this).css('left', ((fullGalleryLength * 2) - self.imageWidth) * -1);
+          }
+
         });
       } else {
         this.$el.find('ul').animate(animation, 800);

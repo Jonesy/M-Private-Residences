@@ -100,40 +100,72 @@
     initialize: function() {
       this.model.bind('change', this.toggle, this);
     },
-    toggle: function(model, change) {
-      if (model.get('isSelected')) {
-        this.$el.addClass('current').fadeTo('slow', 1);
-      } else {
-        this.$el.removeClass('current').fadeTo('slow', SETTINGS.IMG_OFF_OPACITY);
-      }
-    },
+
     render: function() {
-      var template = this.template(this.model.toJSON());
-      this.$el.html(template);
-      this.$el.fadeTo(10, SETTINGS.IMG_OFF_OPACITY);
+      this.loadImage(this.model.toJSON());
       return this;
     },
+
+    loadImage: function(model) {
+      var self = this,
+          imgSize = this.imgType;
+
+      $('<img />')
+          .hide()
+          .attr('src', model[imgSize])
+          .load(function() {
+            if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
+
+            } else {
+              self.$el.append($(this));
+              grayscale($(this));
+              $(this).fadeIn();
+            }
+          });
+    },
+
+    toggle: function(model, change) {
+      var imgSize = this.imgType,
+          $selectedImage = $('<img>').attr('src', model.get(imgSize)).hide();
+
+      if (model.get('isSelected')) {
+        this.$el.addClass('current');
+
+        $selectedImage
+          .addClass('temp')
+          .css({
+            position: 'absolute',
+            top: 0,
+            left: 0
+          })
+          .appendTo(this.$el)
+          .fadeIn();
+      } else {
+        this.$el
+          .removeClass('current')
+          .find('img.temp')
+          .fadeOut('fast', function() {
+            $(this).remove();
+          });
+      }
+    },
     goToImage: function(event) {
+      event.preventDefault();
       var idx = this.model.collection.indexOf(this.model);
       M.galleryController.set('index', idx);
     }
   });
 
   M.LargeImageView = M.ImageView.extend({
-    imgType: 'large',
-    template: _.template('<img src="<%= large %>" alt="">')
+    imgType: 'large'
   });
 
   M.ThumbnailView = M.ImageView.extend({
     imgType: 'thumb',
-    events: {
-      'click a': 'goToImage'
-    },
     goToImage: function(event) {
       event.preventDefault();
       this.options.controller.set('index', M.galleryImages.indexOf(this.model));
-    },
-    template: _.template('<a href="#"><img src="<%= thumb %>" alt=""></a>')
+    }
   });
 
   // The White labels
@@ -219,7 +251,10 @@
 
     render: function() {
       this.$el.html(this.template());
-      this.collection.each(this.renderImage, this);
+      this.$el.find('ul').css('left', this.imageWidth * this.totalImages * -1);
+      _.each(_.range(3), function() {
+        this.collection.each(this.renderImage, this);
+      }, this);
       this.collection.selectIndex(0);
     },
 
@@ -234,16 +269,37 @@
 
     // Animate the carousel.
     updateIndex: function(model, change) {
-      var pullLeft = model.get('index') * this.imageWidth,
+      var self = this,
+          previousIdx = model.previous('index'),
+          pullLeft = model.get('index') * this.imageWidth,
           animation = {
             transform: 'translateX(-' + pullLeft + 'px)'
+          },
+          beginning = {
+            transform: 'translateX(-' + (this.totalImages * this.imageWidth) + 'px)'
+          },
+          end = {
+            transform: 'translateX(' + this.imageWidth + 'px)'
           };
+
 
       if (!Modernizr.csstransitions) {
         animation = {left: pullLeft * -1}
       }
 
-      this.$el.find('ul').animate(animation, 800);
+
+      if (change === 0 && previousIdx === this.totalImages - 1) {
+        this.$el.find('ul').animate(beginning, 800, function() {
+          $(this).css('transform', 'translateX(-0px)');
+        });
+      } else if (change === (this.totalImages - 1) && previousIdx === 0) {
+        this.$el.find('ul').animate(end, 800, function() {
+          console.log('-' + (self.totalImages * self.imageWidth) + 'px');
+          $(this).css('transform', 'translateX(-' + (self.totalImages * self.imageWidth - self.imageWidth) + 'px)');
+        });
+      } else {
+        this.$el.find('ul').animate(animation, 800);
+      }
     },
 
     // Button actions. Will clear timers.

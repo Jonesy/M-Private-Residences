@@ -5,7 +5,7 @@
   position: relative;
   display: inline-block;
   color: #fff;
-  background-: rgba(#fff, 0);
+  /*background-color: rgba(#fff, 0);*/
   cursor: pointer;
   @include transition(background-color 0.25s ease-in);
 
@@ -335,5 +335,6 @@ ul#gallery-images {
   li {
     width: 940px;
     float: left;
+    position: relative;
   }
 }

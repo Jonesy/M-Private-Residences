@@ -1188,7 +1188,7 @@ footer.main {
   position: relative;
   display: inline-block;
   color: #fff;
-  background-: rgba(255, 255, 255, 0);
+  /*background-color: rgba(#fff, 0);*/
   cursor: pointer;
   -webkit-transition: background-color 0.25s ease-in;
   -moz-transition: background-color 0.25s ease-in;
@@ -1522,7 +1522,8 @@ ul#gallery-images {
   -webkit-backface-visibility: hidden; }
   ul#gallery-images li {
     width: 940px;
-    float: left; }
+    float: left;
+    position: relative; }
 
 #index aside strong {
   font-family: "proxima-nova-extra-condensed";

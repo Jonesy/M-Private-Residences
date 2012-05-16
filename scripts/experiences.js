@@ -103,32 +103,63 @@
 
     render: function() {
       this.loadImage(this.model.toJSON());
-      this.$el.fadeTo(10, SETTINGS.IMG_OFF_OPACITY);
+
+      if (this.imgType !== 'thumb') {
+        this.$el.fadeTo(10, SETTINGS.IMG_OFF_OPACITY);
+      }
       return this;
     },
 
-    loadImage: function(model) {
+    loadImage: function(model, options) {
       var self = this,
-          imgSize = this.imgType;
+          imgSize = this.imgType,
+          options = _.extend({}, options);
 
       $('<img />')
           .hide()
           .attr('src', model[imgSize])
           .load(function() {
-            if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
+            self.$el.append($(this));
 
-            } else {
-              self.$el.append($(this));
-              $(this).fadeIn();
+            if (options.grayscale) {
+              grayscale($(this));
             }
+
+            $(this).fadeIn();
           });
     },
 
     toggle: function(model, change) {
-      if (model.get('isSelected')) {
-        this.$el.addClass('current').fadeTo('slow', 1);
+      if (this.imgType === 'thumb') {
+        var imgSize = this.imgType,
+          $selectedImage = $('<img>').attr('src', model.get(imgSize)).hide();
+        if (model.get('isSelected')) {
+          this.$el.addClass('current');
+
+          $selectedImage
+            .addClass('temp')
+            .css({
+              position: 'absolute',
+              top: 0,
+              left: 0
+            })
+            .appendTo(this.$el)
+            .fadeIn();
+        } else {
+          this.$el
+            .removeClass('current')
+            .find('img.temp')
+            .fadeOut('fast', function() {
+              $(this).remove();
+            });
+        }
+
       } else {
-        this.$el.removeClass('current').fadeTo('slow', SETTINGS.IMG_OFF_OPACITY);
+        if (model.get('isSelected')) {
+          this.$el.addClass('current').fadeTo('slow', 1);
+        } else {
+          this.$el.removeClass('current').fadeTo('slow', SETTINGS.IMG_OFF_OPACITY);
+        }
       }
     },
     goToImage: function(event) {
@@ -144,6 +175,10 @@
 
   M.ThumbnailView = M.ImageView.extend({
     imgType: 'thumb',
+    render: function() {
+      this.loadImage(this.model.toJSON(), {grayscale: true});
+      return this;
+    },
     goToImage: function(event) {
       event.preventDefault();
       this.options.controller.set('index', M.galleryImages.indexOf(this.model));
@@ -403,10 +438,10 @@
             transform: 'translateX(-' + ((totalImages - 3) * 80) + 'px)'
           };
 
-      if (!Modernizr.csstransitions) {
+      // if (!Modernizr.csstransitions) {
         animation1 = {left: pullLeft * -1};
         animation2 = {left: ((totalImages - 3) * 80) * -1};
-      }
+      // }
 
       if (galleryId === selectedGalleryId && totalImages > 3) {
         if (galleryIdx > 0 && galleryIdx < totalImages) {
@@ -433,6 +468,7 @@
       this.controller.bind('change:selectedNav', this.openDetails, this);
       this.controller.bind('change:index', this.slideThumbs, this);
       this.controller.bind('change:gallery', this.setSelected, this);
+      this.controller.bind('change:gallery', this.resetScroller, this);
       this.images = M.galleryImages.getGalleryImages(this.model.get('id'));
       this.render();
     },
@@ -489,7 +525,7 @@
       }
     },
 
-    setSelected: function(model, change) {
+    setSelected: function(model, changes) {
       if (this.collection) {
         var idx = this.collection.indexOf(this.model);
         
@@ -498,6 +534,12 @@
         } else {
           this.$el.removeClass('selected');
         }
+      }
+    },
+
+    resetScroller: function(model, changes) {
+      if (model.get('gallery') !== this.model.get('id')) {
+        this.thumbsList.animate({left: 0}, 500);
       }
     },
 

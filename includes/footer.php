@@ -151,16 +151,17 @@
   <?php if ($file == 'content.php'): ?>
   <script>
     M.init();
-    M.slideshow = new M.SlideshowView({
-      model: M.galleryController,
-      collection: M.galleryImages
-    });
-
     M.residenceGalleryControl = new M.GalleryThumbnailNavView({
       el: '#residence-thumbs',
       model: M.experiences.models[0],
       controller: M.galleryController
     });
+
+    M.slideshow = new M.SlideshowView({
+      model: M.galleryController,
+      collection: M.galleryImages
+    });
+
 
     M.captions = new M.GalleryCaptionView({
       el: $('ul#exp-gallery-labels'),

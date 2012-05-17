@@ -4,6 +4,17 @@
   header {
     margin-bottom: 30px;
 
+    h1 {
+      margin-bottom: 0.5em;
+    }
+
+    h2 {
+      & a.btn-small {
+        top: -3px;
+        position: relative;
+      }
+    }
+
     h3 {
       @include ProximaCondensed;
       color: #999;
@@ -11,10 +22,6 @@
 
     h1, h3 {
       text-transform: uppercase;
-    }
-
-    h1 {
-      margin-bottom: 0.5em;
     }
 
     a.next-step {
@@ -34,10 +41,10 @@
     float: left;
     @extend .container;
     position: relative;
+  }
 
-    a {
-      float: right;
-    }
+  &.review footer {
+    margin-top: 70px;
   }
 }
 
@@ -182,6 +189,40 @@ ul.locations-grid {
   }
 }
 
+/* Review pages */
+.review-actions {
+  margin-top: 40px;
+  float: right;
+  clear: both;
+}
+
+#experience-review-banner {
+  margin-bottom: 30px;
+}
+
+.review-lists {
+  ul {
+    @include ul-reset(true);
+    margin: 18px 0;
+    border-top: 1px solid #cccccc;
+    color: $headlines;
+
+    li {
+      @extend p;
+      padding: 0;
+      margin: 0;
+      font-weight: bold;
+      line-height: 28px;
+      border-bottom: 1px solid #cccccc;
+
+      .btn-remove {
+        vertical-align: middle;
+        position: relative;
+        margin: -3px 10px 0 0;
+      }
+    }
+  }
+}
 
 .isotope-item {
   z-index: 2;

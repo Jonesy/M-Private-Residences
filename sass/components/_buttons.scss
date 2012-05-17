@@ -33,6 +33,15 @@
     background: #000;
   }
 
+  &.btn-small {
+    height: 15px;
+    padding: 0 8px;
+    font-size: 11px;
+    line-height: 15px;
+    text-transform: none;
+    @include border-radius(15px);
+  }
+
   &.btn-silver {
     background: $silver;
     color: #333;
@@ -209,5 +218,21 @@ a.btn-arrow {
           border-left-color: #000;
         }
     }
+  }
+}
+
+.btn-remove {
+  width: image-width("shim/btn-remove.png");
+  height: image-width("shim/btn-remove.png");
+  display: inline-block;
+
+  img {
+    display: block;
+  }
+
+  .no-svg,
+  .lt-ie9 {
+    @include hidetext;
+    @include shim-sprite(btn-remove);
   }
 }

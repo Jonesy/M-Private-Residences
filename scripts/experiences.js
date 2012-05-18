@@ -1,13 +1,49 @@
 (function($) {
   window.M = {};
 
-  var SETTINGS = {
-    IMG_OFF_OPACITY: 0.45
+  // Store any global settings here. Seconds are multiplied by milliseconds for convenience.
+  M.Settings = {
+    // Default image opacity that the slide show will $.fadeTo
+    IMG_OFF_OPACITY: 0.45,
+    // Intervals between slideshow transition
+    SLIDE_INTERVAL: 8 * 1000,
+    // Speed
+    SLIDE_TRANSITION: 850,
+    // If the Timer is stopped silently, wait this long before turning it on
+    RESTART_TIMEOUT: 8 * 1000,
+    // Tabs and captions
+    TAB_SLIDEUP_SPEED: 500,
+    TAB_SLIDEDOWN_SPEED: 400
   };
 
-  var IMAGES = _.flatten(_.pluck(EXP, 'images')),
-      slideInt = 5000,
-      timer;
+  var IMAGES = _.flatten(_.pluck(EXP, 'images'));
+
+  // Simple namespace for slideshow timers
+  M.Timer = {
+    // Store timer here
+    ticker: null,
+    // Only creates a timer that will go to the next slide.
+    create: function() {
+      this.ticker = setInterval(M.galleryController.nextSlide, M.Settings.SLIDE_INTERVAL);
+    },
+    /**
+      @param opts {Object} Takes an option of 'silent', which stops the slide show, but 
+                            gives tells the UI it's faux paused.
+    */
+    destroy: function(opts) {
+      var defaults = {
+            silent: false
+          },
+          settings = _.extend({}, defaults, opts);
+      window.clearInterval(M.Timer.ticker);
+
+      if (settings.silent) {
+        this.ticker = {};
+      } else {
+        this.ticker = null;
+      }
+    }
+  }
 
   M.init = function() {
     // Boot
@@ -15,7 +51,7 @@
     M.experiences = new M.Experiences(EXP);
     M.galleryImages = new M.GalleryImages(IMAGES);
     M.galleryController.set('totalImages', M.galleryImages.length);
-    timer = setInterval(M.galleryController.nextSlide, slideInt);
+    M.Timer.create();
 
     // Update the gallery collection index when the controller updates.
     M.galleryController.on('change:index', function(model, change) {
@@ -105,7 +141,7 @@
       this.loadImage(this.model.toJSON());
 
       if (this.imgType !== 'thumb') {
-        this.$el.fadeTo(10, SETTINGS.IMG_OFF_OPACITY);
+        this.$el.fadeTo(10, M.Settings.IMG_OFF_OPACITY);
       }
       return this;
     },
@@ -158,7 +194,7 @@
         if (model.get('isSelected')) {
           this.$el.addClass('current').fadeTo('slow', 1);
         } else {
-          this.$el.removeClass('current').fadeTo('slow', SETTINGS.IMG_OFF_OPACITY);
+          this.$el.removeClass('current').fadeTo('slow', M.Settings.IMG_OFF_OPACITY);
         }
       }
     },
@@ -181,7 +217,14 @@
     },
     goToImage: function(event) {
       event.preventDefault();
+      M.Timer.destroy();
       this.options.controller.set('index', M.galleryImages.indexOf(this.model));
+
+      setTimeout(function() {
+        if (!M.Timer.ticker) {
+          M.Timer.create();
+        }
+      }, M.Settings.RESTART_TIMEOUT);
     }
   });
 
@@ -196,24 +239,12 @@
 
     toggle: function(model, change) {
       var id = this.model.get('id'),
-          selectedGalleryId = model.get('gallery'),
-          animation1 = {
-            transform: 'translateY(-160px)'
-          },
-          animation2 = {
-            transform: 'translateY(0px)'
-          };
-      
-      // TODO: Figure out why CSS transforms plugin isn't firing this on first run.
-      // if (!Modernizr.csstransitions) {
-        animation1 = {top: -160};
-        animation2 = {top: 0};
-      // }
+          selectedGalleryId = model.get('gallery');
 
       if (id === selectedGalleryId) {
-        this.$el.animate(animation1, 500);
+        this.$el.animate({top: -160}, M.Settings.TAB_SLIDEUP_SPEED, 'easeInOut');
       } else {
-        this.$el.animate(animation2, 400);
+        this.$el.animate({top: 0}, M.Settings.TAB_SLIDEDOWN_SPEED, 'easeInOut');
       }
     },
 
@@ -289,27 +320,13 @@
       var self = this,
           previousIdx = model.previous('index'),
           fullGalleryLength = (this.totalImages * this.imageWidth),
-          pullLeft = model.get('index') * this.imageWidth,
-          animation = {
-            transform: 'translateX(-' + pullLeft + 'px)'
-          },
-          beginning = {
-            transform: 'translateX(-' + fullGalleryLength + 'px)'
-          },
-          end = {
-            transform: 'translateX(' + this.imageWidth + 'px)'
-          };
-
-
-      if (!Modernizr.csstransitions) {
-        animation = {left: (pullLeft + fullGalleryLength) * -1}
-        beginning = {left: (fullGalleryLength * 2) * -1}
-        end = {left: (fullGalleryLength - this.imageWidth) * -1}
-      }
+          pullLeft = model.get('index') * this.imageWidth;
 
 
       if (change === 0 && previousIdx === this.totalImages - 1) {
-        this.$el.find('ul').animate(beginning, 800, function() {
+        this.$el.find('ul').animate({
+          left: (fullGalleryLength * 2) * -1
+        }, M.Settings.SLIDE_TRANSITION, 'easeInOut', function() {
           if (Modernizr.csstransitions) {
             $(this).css('transform', 'translateX(-0px)');
           } else {
@@ -317,7 +334,9 @@
           }
         });
       } else if (change === (this.totalImages - 1) && previousIdx === 0) {
-        this.$el.find('ul').animate(end, 800, function() {
+        this.$el.find('ul').animate({
+          left: (fullGalleryLength - this.imageWidth) * -1
+        }, M.Settings.SLIDE_TRANSITION, 'easeInOut', function() {
           if (Modernizr.csstransitions) {
             $(this).css('transform', 'translateX(-' + (self.totalImages * self.imageWidth - self.imageWidth) + 'px)');
           } else {
@@ -326,7 +345,9 @@
 
         });
       } else {
-        this.$el.find('ul').animate(animation, 800);
+        this.$el.find('ul').animate({
+          left: (pullLeft + fullGalleryLength) * -1
+        }, M.Settings.SLIDE_TRANSITION);
       }
     },
 
@@ -339,7 +360,7 @@
       } else if (idx === (this.totalImages - 1)) {
         model.set('index', 0);
       }
-      window.clearInterval(timer);
+      M.Timer.destroy();
     },
 
     goToPrevImage: function() {
@@ -350,18 +371,18 @@
       } else {
         model.set('index', this.totalImages - 1);
       }
-      window.clearInterval(timer);
+      M.Timer.destroy();
     },
 
     // Slideshow timers
     startSlideshow: function() {
       if (!this.model.get('selectedNav')) {
-        timer = setInterval(M.galleryController.nextSlide, slideInt);
+        M.Timer.create();
       }
     },
 
     pauseSlideshow: function() {
-      window.clearInterval(timer);
+      M.Timer.destroy({silent: true});
     },
 
     toggleSlideshowNav: function(model, change) {
@@ -403,7 +424,7 @@
         controller.set('index', M.galleryImages.indexOf(this.images[0]));
       }
 
-      window.clearInterval(timer);
+      M.Timer.destroy();
     },
 
     goToPrevImage: function() {
@@ -419,7 +440,7 @@
         var lastImg = _.last(this.images);
         controller.set('index', M.galleryImages.indexOf(lastImg));
       }
-      window.clearInterval(timer);
+      M.Timer.destroy();
     },
 
     slideThumbs: function(model, changes) {
@@ -438,16 +459,12 @@
             transform: 'translateX(-' + ((totalImages - 3) * 80) + 'px)'
           };
 
-      // if (!Modernizr.csstransitions) {
-        animation1 = {left: pullLeft * -1};
-        animation2 = {left: ((totalImages - 3) * 80) * -1};
-      // }
 
       if (galleryId === selectedGalleryId && totalImages > 3) {
         if (galleryIdx > 0 && galleryIdx < totalImages) {
-          this.thumbsList.animate(animation1);
+          this.thumbsList.animate({left: pullLeft * -1}, M.Settings.SLIDE_TRANSITION, 'easeInOut');
         } else if (galleryIdx === totalImages) {
-          this.thumbsList.animate(animation2);
+          this.thumbsList.animate({left: ((totalImages - 3) * 80) * -1}, M.Settings.SLIDE_TRANSITION, 'easeInOut');
         }
       }
     }
@@ -494,21 +511,10 @@
     },
 
     openDetails: function(controller) {
-      var self = this,
-          animation1 = {
-            transform: 'translateY(-240px)'
-          },
-          animation2 = {
-            transform: 'translateY(-0px)'
-          };
-
-      if (!Modernizr.csstransitions) {
-        animation1 = {top: -240};
-        animation2 = {top: 0};
-      }
+      var self = this;
 
       if (controller.get('selectedNav') === this.model) {
-        this.$el.addClass('selected').animate(animation1, 500);
+        this.$el.addClass('selected').animate({top: -240}, M.Settings.TAB_SLIDEUP_SPEED, 'easeInOut');
 
         var expImages = M.galleryImages.getGalleryImages(this.model.get('id')),
             firstImgId = expImages[0].get('id'),
@@ -518,7 +524,9 @@
 
         M.slideshow.pauseSlideshow();
       } else {
-        this.$el.animate(animation2, 500, function() {
+        this.$el.animate({
+          top: 0
+        }, M.Settings.TAB_SLIDEUP_SPEED, 'easeInOut', function() {
           self.$el.find('a.tab-button > span.close-tab').remove();
           $(this).removeClass('selected');
         });
@@ -539,7 +547,7 @@
 
     resetScroller: function(model, changes) {
       if (model.get('gallery') !== this.model.get('id')) {
-        this.thumbsList.animate({left: 0}, 500);
+        this.thumbsList.animate({left: 0}, 500, 'easeInOut');
       }
     },
 
@@ -562,17 +570,10 @@
     },
 
     close: function() {
-      var self = this,
-          animation = {
-            transform: 'translateY(0px)'
-          };
-
-      if (!Modernizr.csstransitions) {
-        animation = {top: 0};
-      }
+      var self = this;
 
       this.controller.set('selectedNav', null);
-      this.$el.animate(animation, 500, function() {
+      this.$el.animate({top: 0}, M.Settings.TAB_SLIDEUP_SPEED, 'easeInOut', function() {
         self.$el.find('a.tab-button > span.close-tab').remove();
         $(this).removeClass('selected');
       });
@@ -594,24 +595,13 @@
       var idx = model.get('index'),
           image = this.collection.at(idx),
           caption = image.get('caption'),
-          hasCaption = (caption) ? true : false,
-          animation1 = {
-            transform: 'translateY(-180px)'
-          },
-          animation2 = {
-            transform: 'translateY(0px)'
-          };
-      
-      // if (!Modernizr.csstransitions) {
-        animation1 = {top: -180};
-        animation2 = {top: 0};
-      // }
+          hasCaption = (caption) ? true : false;
 
       if (hasCaption) {
-        this.$el.find('li').animate(animation1, 500);
+        this.$el.find('li').animate({top: -180}, M.Settings.TAB_SLIDEUP_SPEED, 'easeInOut');
         this.$el.find('li').text(caption);
       } else {
-        this.$el.find('li').animate(animation2, 400);
+        this.$el.find('li').animate({top: 0}, M.Settings.TAB_SLIDEDOWN_SPEED, 'easeInOut');
         this.$el.find('li').text('');
       }
     },

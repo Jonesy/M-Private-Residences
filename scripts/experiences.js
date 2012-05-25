@@ -51,7 +51,6 @@
     M.experiences = new M.Experiences(EXP);
     M.galleryImages = new M.GalleryImages(IMAGES);
     M.galleryController.set('totalImages', M.galleryImages.length);
-    M.Timer.create();
 
     // Update the gallery collection index when the controller updates.
     M.galleryController.on('change:index', function(model, change) {
@@ -122,6 +121,9 @@
     },
     ids: function() {
       return this.pluck('id');
+    },
+    getIndex: function(model) {
+	    return this.indexOf(model);
     }
   });
 
@@ -138,10 +140,10 @@
     },
 
     render: function() {
+    	var index = this.model.collection.getIndex(this.model);
       this.loadImage(this.model.toJSON());
-
       if (this.imgType !== 'thumb') {
-        this.$el.fadeTo(10, M.Settings.IMG_OFF_OPACITY);
+        this.$el.hide().delay(index * 50).fadeTo(10, M.Settings.IMG_OFF_OPACITY);
       }
       return this;
     },
@@ -206,7 +208,15 @@
   });
 
   M.LargeImageView = M.ImageView.extend({
-    imgType: 'large'
+  	events: {
+	  	'click img': 'goToPage'
+  	},
+    imgType: 'large',
+    goToPage: function(event) {
+	    var url = M.experiences.get(1).get('url');
+	    window.location = url;
+	    return false;
+    }
   });
 
   M.ThumbnailView = M.ImageView.extend({
@@ -289,13 +299,48 @@
     },
 
     initialize: function() {
+			var self = this;
       this.totalImages = this.collection.length;
       this.model.bind('change:index', this.updateIndex, this);
       this.model.bind('change:selectedNav', this.toggleSlideshowNav, this);
       // Be sure to remove the poster image which is there incase this all blows up.
       this.$el.empty();
-      this.render();
+      $.when(this.load()).then(
+      	function() {
+      		setTimeout(function() {
+      			self.render();
+      		}, 2000);
+	      	
+      	},
+      	function() {
+       	  this.fail();
+      	}
+      );
     },
+    
+    fail: function() {
+	    this.$el.append('<img src="/images/_temp/fullsize/paradise_valley.jpg" alt="" style="margin:0 auto">');
+    },
+    
+    load: function() {
+	    var dfd = new jQuery.Deferred(),
+	    		totalImages = this.collection.length,
+	    		images = this.collection.pluck('large'),
+	    		totalImagesLoaded = 0;
+	    		
+	    		_.each(images, function(src, idx) {
+			    	var img = new Image();
+		        $(img).load(function () {
+	            totalImagesLoaded++;
+	            if (totalImagesLoaded === totalImages) {
+		            dfd.resolve();
+		          }
+		        }).error(function () {
+			        dfd.reject();
+		        }).attr('src', src);
+		      });
+	    return dfd.promise();
+	  },
 
     render: function() {
       this.$el.html(this.template());
@@ -304,6 +349,7 @@
         this.collection.each(this.renderImage, this);
       }, this);
       this.collection.selectIndex(0);
+      M.Timer.create();
     },
 
     // Add the images

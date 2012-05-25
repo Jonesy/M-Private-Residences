@@ -1,3 +1,9 @@
+May 17, 2012
+============
+[FIXED] Timer issues when using thumbnails to click around a residence's gallery
+[CHANGE] Remove jQuery Transform2D plugin, animations to unreliable
+[ADDED] jQuery Easing plugin
+
 May 15, 2012
 ============
 [FIXED] Buggy behavior with the residence gallery

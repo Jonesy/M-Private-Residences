@@ -43,7 +43,7 @@
         this.ticker = null;
       }
     }
-  }
+  };
 
   M.init = function() {
     // Boot
@@ -149,7 +149,7 @@
     loadImage: function(model, options) {
       var self = this,
           imgSize = this.imgType,
-          options = _.extend({}, options);
+          settings = _.extend({}, options);
 
       $('<img />')
           .hide()
@@ -157,7 +157,7 @@
           .load(function() {
             self.$el.append($(this));
 
-            if (options.grayscale) {
+            if (settings.grayscale) {
               grayscale($(this));
             }
 
@@ -327,22 +327,13 @@
         this.$el.find('ul').animate({
           left: (fullGalleryLength * 2) * -1
         }, M.Settings.SLIDE_TRANSITION, 'easeInOut', function() {
-          if (Modernizr.csstransitions) {
-            $(this).css('transform', 'translateX(-0px)');
-          } else {
-            $(this).css('left', fullGalleryLength * -1);
-          }
+          $(this).css('left', fullGalleryLength * -1);
         });
       } else if (change === (this.totalImages - 1) && previousIdx === 0) {
         this.$el.find('ul').animate({
           left: (fullGalleryLength - this.imageWidth) * -1
         }, M.Settings.SLIDE_TRANSITION, 'easeInOut', function() {
-          if (Modernizr.csstransitions) {
-            $(this).css('transform', 'translateX(-' + (self.totalImages * self.imageWidth - self.imageWidth) + 'px)');
-          } else {
-            $(this).css('left', ((fullGalleryLength * 2) - self.imageWidth) * -1);
-          }
-
+          $(this).css('left', ((fullGalleryLength * 2) - self.imageWidth) * -1);
         });
       } else {
         this.$el.find('ul').animate({
@@ -402,9 +393,9 @@
       'click button.gallery-nav-next': 'goToNextImage'
     },
 
-    renderThumbs: function(thumb) {
+    renderThumbs: function(img) {
       var thumb = new M.ThumbnailView({
-        model: thumb,
+        model: img,
         controller: this.controller
       });
       this.thumbsList.append(thumb.render().el);
@@ -448,9 +439,7 @@
           selectedGalleryId = this.controller.get('gallery'),
           totalImages = this.images.length,
           galleryIdx = this.$el.find('ol li.current').index() + 1,
-          pullLeft = (galleryIdx === 1) 
-                    ? 0 
-                    : (galleryIdx - 2) * 80,
+          pullLeft = (galleryIdx === 1) ? 0 : (galleryIdx - 2) * 80,
 
           animation1 = {
             transform: 'translateX(-' + pullLeft + 'px)'
@@ -551,15 +540,18 @@
       }
     },
 
+    // If the tabs are set as visible, this method gets skipped and the links work
     toggleTab: function(event) {
-      event.preventDefault();
       if (!this.options.isVisible) {
-        var selectedNav = this.controller.get('selectedNav');
+        event.preventDefault();
+        if (!this.options.isVisible) {
+          var selectedNav = this.controller.get('selectedNav');
 
-        if (this.model === selectedNav) {
-          this.close();
-        } else {
-          this.open();
+          if (this.model === selectedNav) {
+            this.close();
+          } else {
+            this.open();
+          }
         }
       }
     },

@@ -13,7 +13,8 @@
     RESTART_TIMEOUT: 8 * 1000,
     // Tabs and captions
     TAB_SLIDEUP_SPEED: 500,
-    TAB_SLIDEDOWN_SPEED: 400
+    TAB_SLIDEDOWN_SPEED: 400,
+    ERROR_IMAGE: '/images/_temp/fullsize/paradise_valley.jpg'
   };
 
   var IMAGES = _.flatten(_.pluck(EXP, 'images'));
@@ -123,7 +124,7 @@
       return this.pluck('id');
     },
     getIndex: function(model) {
-	    return this.indexOf(model);
+      return this.indexOf(model);
     }
   });
 
@@ -140,7 +141,7 @@
     },
 
     render: function() {
-    	var index = this.model.collection.getIndex(this.model);
+      var index = this.model.collection.getIndex(this.model);
       this.loadImage(this.model.toJSON());
       if (this.imgType !== 'thumb') {
         this.$el.hide().delay(index * 50).fadeTo(10, M.Settings.IMG_OFF_OPACITY);
@@ -208,14 +209,17 @@
   });
 
   M.LargeImageView = M.ImageView.extend({
-  	events: {
-	  	'click img': 'goToPage'
-  	},
+    events: {
+      'click img': 'goToPage'
+    },
     imgType: 'large',
     goToPage: function(event) {
-	    var url = M.experiences.get(1).get('url');
-	    window.location = url;
-	    return false;
+      var url = M.experiences.get(1).get('url');
+      
+      if (window.location.pathname !== '/' + url) {
+        window.location = url; 
+      }
+      return false;
     }
   });
 
@@ -299,50 +303,65 @@
     },
 
     initialize: function() {
-			var self = this;
+      var self = this;
       this.totalImages = this.collection.length;
       this.model.bind('change:index', this.updateIndex, this);
       this.model.bind('change:selectedNav', this.toggleSlideshowNav, this);
       // Be sure to remove the poster image which is there incase this all blows up.
       this.$el.empty();
       $.when(this.load()).then(
-      	function() {
-      		setTimeout(function() {
-      			self.render();
-      		}, 2000);
-	      	
-      	},
-      	function() {
-       	  this.fail();
-      	}
+        function() {
+          setTimeout(function() {
+            self.render();
+          }, 2000);
+        },
+        function() {
+          self.fail();
+        }
       );
     },
     
     fail: function() {
-	    this.$el.append('<img src="/images/_temp/fullsize/paradise_valley.jpg" alt="" style="margin:0 auto">');
+      var $failImg = $('<img>');
+      $failImg.prop('src', M.Settings.ERROR_IMAGE);
+      $failImg.css('margin', '0 auto');
+      this.$el.empty().append($failImg);
     },
     
     load: function() {
-	    var dfd = new jQuery.Deferred(),
-	    		totalImages = this.collection.length,
-	    		images = this.collection.pluck('large'),
-	    		totalImagesLoaded = 0;
-	    		
-	    		_.each(images, function(src, idx) {
-			    	var img = new Image();
-		        $(img).load(function () {
-	            totalImagesLoaded++;
-	            if (totalImagesLoaded === totalImages) {
-		            dfd.resolve();
-		          }
-		        }).error(function () {
-			        dfd.reject();
-		        }).attr('src', src);
-		      });
-	    return dfd.promise();
-	  },
+      var dfd = new jQuery.Deferred(),
+          totalImages = this.collection.length,
+          images = this.collection.pluck('large'),
+          totalImagesLoaded = 0,
+          $loadImage = $('<img src="/images/m-loader.gif">'),
+          loadImageHeight = 35;
+
+          $loadImage.css({
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            marginTop: (loadImageHeight / 2) * -1,
+            marginLeft: (loadImageHeight / 2) * -1,
+          });
+          
+          this.$el.append($loadImage);
+
+          _.each(images, function(src, idx) {
+            var img = new Image();
+            $(img).load(function () {
+              totalImagesLoaded++;
+              if (totalImagesLoaded === totalImages) {
+                dfd.resolve();
+              }
+            }).error(function () {
+              dfd.reject();
+            }).attr('src', src);
+          });
+      return dfd.promise();
+    },
 
     render: function() {
+      this.$el.empty();
       this.$el.html(this.template());
       this.$el.find('ul').css('left', this.imageWidth * this.totalImages * -1);
       _.each(_.range(3), function() {
